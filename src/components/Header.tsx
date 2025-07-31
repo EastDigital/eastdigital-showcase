@@ -58,7 +58,7 @@ const Header = () => {
               </button>
               
               {/* Mega Menu */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-[878px] max-w-[95vw] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-2">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-[878px] max-w-[95vw] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-2 z-50">
                 <div className="bg-card border border-border rounded-2xl p-10 shadow-lg">
                   <div className="grid grid-cols-3 gap-10">
                     <div>
@@ -123,7 +123,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button 
               variant="outline" 
-              className="px-6 py-2.5 rounded-full text-foreground font-bold text-sm gradient-border-hover bg-primary/15 border-transparent hover:bg-primary/25"
+              className="px-6 py-2.5 rounded-full text-foreground font-bold text-sm gradient-border-hover bg-primary/15 border-0 hover:bg-primary/25"
             >
               Get Your Blueprint
             </Button>
@@ -224,7 +224,7 @@ const Header = () => {
           <div className="pt-6">
             <Button 
               variant="outline" 
-              className="px-6 py-2.5 rounded-full text-foreground font-bold text-sm glass-effect gradient-border-hover border-transparent"
+              className="px-6 py-2.5 rounded-full text-foreground font-bold text-sm glass-effect gradient-border-hover border-0"
             >
               Get Your Blueprint
             </Button>

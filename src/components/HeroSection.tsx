@@ -9,9 +9,14 @@ const HeroSection = () => {
         loop 
         muted 
         playsInline 
-        className="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2 z-[-1]"
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        onError={(e) => {
+          console.log('Video failed to load');
+          (e.target as HTMLVideoElement).style.display = 'none';
+        }}
       >
-        <source src="https://www.eastdigital.in/img/hero_video_folio.mp4" type="video/mp4" />
+        <source src="https://eastdigital.in/img/hero_video_folio.mp4" type="video/mp4" />
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
@@ -40,13 +45,13 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
             <Button 
               variant="outline" 
-              className="px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect-light gradient-border-hover border-transparent hover:bg-white/20"
+              className="px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect-light gradient-border-hover border-0 hover:bg-white/20"
             >
               Free Consultation
             </Button>
             <Button 
               variant="outline" 
-              className="px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect gradient-border-hover border-transparent hover:bg-white/10"
+              className="px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect gradient-border-hover border-0 hover:bg-white/10"
             >
               Our Expertise
             </Button>
