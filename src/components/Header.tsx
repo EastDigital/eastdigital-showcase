@@ -115,7 +115,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">About</a>
+            <a href="/about" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">About</a>
             <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Connect</a>
             <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Blog</a>
           </nav>
@@ -217,7 +217,7 @@ const Header = () => {
             </div>
           </div>
           
-          <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">About</a>
+          <a href="/about" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">About</a>
           <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Connect</a>
           <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Blog</a>
           
