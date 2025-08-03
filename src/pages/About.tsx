@@ -50,8 +50,8 @@ const About = () => {
 
         {/* Your Vision Section */}
         <section className="py-[50px] bg-black">
-          <div className="container mx-auto px-8">
-            <div className="max-w-[1100px] mx-auto">
+          <div className="container mx-auto px-[53px]">
+            <div className="max-w-[850px] mx-auto px-0">
               <h2 className="font-bold text-white mb-12" style={{
               fontSize: '26px',
               lineHeight: '34px',
