@@ -51,7 +51,7 @@ const About = () => {
         {/* Your Vision Section */}
         <section className="py-[50px] bg-black">
           <div className="container mx-auto px-8">
-            <div className="max-w-[1100px] mx-auto">
+            <div className="max-w-[850px] mx-auto">
               <h2 className="font-bold text-white mb-12" style={{
               fontSize: '26px',
               lineHeight: '34px',
@@ -115,7 +115,7 @@ const About = () => {
         {/* Our Foundation Section */}
         <section className="py-[50px] bg-black">
           <div className="container mx-auto px-8">
-            <div className="max-w-[1100px] mx-auto">
+            <div className="max-w-[850px] mx-auto">
               <h2 className="font-light" style={{
               fontSize: '32px',
               lineHeight: '40px',
@@ -134,7 +134,7 @@ const About = () => {
         {/* Trusted by Many Section */}
         <section className="py-[50px] bg-black">
           <div className="container mx-auto px-8">
-            <div className="max-w-[1100px] mx-auto">
+            <div className="max-w-[850px] mx-auto">
               <h2 className="font-bold mb-8" style={{
               fontSize: '26px',
               lineHeight: '34px',
@@ -159,8 +159,8 @@ const About = () => {
               </p>
               
               {/* Client Logos Grid */}
-              <div className="grid grid-cols-5 gap-6">
-                {['https://eastdigital.in/img/logo_puchkas.jpg', 'https://eastdigital.in/img/logo_acer.jpg', 'https://eastdigital.in/img/logo_agile.jpg', 'https://eastdigital.in/img/logo_anantraj.jpg', 'https://eastdigital.in/img/logo_arcop.jpg', 'https://eastdigital.in/img/logo_bharti.jpg', 'https://eastdigital.in/img/logo_ddf.jpg', 'https://eastdigital.in/img/logo_japare.jpg', 'https://eastdigital.in/img/logo_jaypee.jpg', 'https://eastdigital.in/img/logo_miraj.jpg', 'https://eastdigital.in/img/logo_omaxe.jpg', 'https://eastdigital.in/img/logo_reliance.jpg'].map((logoUrl, index) => <div key={index} className="bg-white rounded-lg p-4 h-20 flex items-center justify-center shadow-md">
+              <div className="grid grid-cols-3 gap-6">
+                {['https://eastdigital.in/img/logo_puchkas.jpg', 'https://eastdigital.in/img/logo_acer.jpg', 'https://eastdigital.in/img/logo_agile.jpg', 'https://eastdigital.in/img/logo_anantraj.jpg', 'https://eastdigital.in/img/logo_arcop.jpg', 'https://eastdigital.in/img/logo_bharti.jpg', 'https://eastdigital.in/img/logo_ddf.jpg', 'https://eastdigital.in/img/logo_japare.jpg', 'https://eastdigital.in/img/logo_jaypee.jpg', 'https://eastdigital.in/img/logo_miraj.jpg', 'https://eastdigital.in/img/logo_omaxe.jpg', 'https://eastdigital.in/img/logo_reliance.jpg'].map((logoUrl, index) => <div key={index} className="bg-white rounded-[20px] p-4 w-[185px] h-[111px] flex items-center justify-center shadow-md">
                     <img src={logoUrl} alt={`Client logo ${index + 1}`} className="max-w-full max-h-full object-contain" onError={e => {
                   e.currentTarget.style.display = 'none';
                 }} />
