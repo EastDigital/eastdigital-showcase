@@ -113,7 +113,7 @@ const About = () => {
         </section>
 
         {/* Our Foundation Section */}
-        <section className="py-[50px] bg-black">
+        <section className="py-[0px] bg-black">
           <div className="container mx-auto px-8">
             <div className="max-w-[1100px] mx-auto">
               <h2 className="font-light" style={{
