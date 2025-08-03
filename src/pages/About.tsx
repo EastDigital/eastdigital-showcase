@@ -159,7 +159,7 @@ const About = () => {
               </p>
               
               {/* Client Logos Grid */}
-              <div className="grid grid-cols-3 gap-[10px]">
+              <div className="grid grid-cols-4 gap-[10px]">
                 {['https://eastdigital.in/img/logo_puchkas.jpg', 'https://eastdigital.in/img/logo_acer.jpg', 'https://eastdigital.in/img/logo_agile.jpg', 'https://eastdigital.in/img/logo_anantraj.jpg', 'https://eastdigital.in/img/logo_arcop.jpg', 'https://eastdigital.in/img/logo_bharti.jpg', 'https://eastdigital.in/img/logo_ddf.jpg', 'https://eastdigital.in/img/logo_japare.jpg', 'https://eastdigital.in/img/logo_jaypee.jpg', 'https://eastdigital.in/img/logo_miraj.jpg', 'https://eastdigital.in/img/logo_omaxe.jpg', 'https://eastdigital.in/img/logo_reliance.jpg'].map((logoUrl, index) => <div key={index} className="bg-white rounded-[20px] p-4 w-[185px] h-[111px] flex items-center justify-center shadow-md">
                     <img src={logoUrl} alt={`Client logo ${index + 1}`} className="max-w-full max-h-full object-contain" onError={e => {
                   e.currentTarget.style.display = 'none';
