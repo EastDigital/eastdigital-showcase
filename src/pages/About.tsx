@@ -1,21 +1,16 @@
 import Header from '@/components/Header';
 import ProjectGallery from '@/components/ProjectGallery';
 import Footer from '@/components/Footer';
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background font-nunito">
+  return <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
         {/* Hero Section with Background Image */}
         <section className="relative h-screen flex items-center justify-center">
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: "url('https://eastdigital.in/img/about-east-digital.jpg')"
-            }}
-          >
-            <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+          backgroundImage: "url('https://eastdigital.in/img/about-east-digital.jpg')"
+        }}>
+            <div className="absolute inset-0 bg-black/30 py-0" />
           </div>
           
           <div className="relative z-10 container mx-auto px-8">
@@ -104,42 +99,21 @@ const About = () => {
               
               {/* Client Logos Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70">
-                {[
-                  'Rachna', 'ACBR', 'A&lle', 'Delta Eng', 
-                  'ARCOP', 'bharti', 'East Digital', 'JAPARA',
-                  'AIMS', 'RELIANCE Infrastructure', 'MALL', 'OMAXE'
-                ].map((client, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4 h-20 flex items-center justify-center">
+                {['Rachna', 'ACBR', 'A&lle', 'Delta Eng', 'ARCOP', 'bharti', 'East Digital', 'JAPARA', 'AIMS', 'RELIANCE Infrastructure', 'MALL', 'OMAXE'].map((client, index) => <div key={index} className="bg-white rounded-lg p-4 h-20 flex items-center justify-center">
                     <span className="text-gray-800 font-semibold text-sm">{client}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
         </section>
 
         {/* Industry-Specific Section */}
-        <section className="py-20 bg-card/20">
-          <div className="container mx-auto px-8">
-            <div className="max-w-6xl">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Industry-Specific Visualizations. <span className="font-light">Bespoke Results.</span>
-              </h2>
-              
-              <p className="text-lg text-foreground/80 mb-12 max-w-3xl leading-relaxed">
-                Our expertise is tailored to the distinct language and objectives of your sector. Select 
-                your industry to see how we translate your challenges into visual triumphs.
-              </p>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Project Gallery */}
         <ProjectGallery />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
