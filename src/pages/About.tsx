@@ -135,47 +135,47 @@ const About = () => {
 
         {/* Trusted by Many Section */}
         <section className="relative py-[50px] bg-black">
-          {/* Background Video */}
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            preload="metadata"
-            crossOrigin="anonymous"
-            className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
-            onLoadedData={() => {
-              console.log('Client video: Successfully loaded and ready to play');
-            }}
-            onCanPlay={() => {
-              console.log('Client video: Can play through');
-            }}
-            onError={(e) => {
-              console.error('Client video: Failed to load', e);
-              const target = e.target as HTMLVideoElement;
-              target.style.display = 'none';
-              // Show fallback background
-              const fallback = target.parentElement?.querySelector('.video-fallback') as HTMLElement;
-              if (fallback) {
-                fallback.style.display = 'block';
-              }
-            }}
-            onLoadStart={() => {
-              console.log('Client video: Load started');
-            }}
-          >
-            <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
-            </video>
-          
-          {/* Fallback Background Image */}
-          <div 
-            className="video-fallback absolute top-0 left-0 w-full h-full z-[-1] opacity-50"
-            style={{
-              display: 'none',
-              backgroundImage: 'url("https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
+            {/* Background Video */}
+      <video 
+        ref={videoRef}
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        preload="auto"
+        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+          videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'
+        }`}
+        style={{ zIndex: videoLoaded && !videoError ? 1 : -1 }}
+      >
+        <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Fallback Background Image */}
+      <div 
+        className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+          videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'
+        }`}
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: videoError || !videoLoaded ? 2 : 1
+        }}
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-[3]" />
+
+      {/* Loading State */}
+      {isLoading && (
+        <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
+          <div className="text-white">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
+            <p>Loading experience...</p>
+          </div>
+        </div>
           />
           
           <div className="absolute inset-0 bg-black/50 z-[-1]" />
