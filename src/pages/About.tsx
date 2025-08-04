@@ -165,9 +165,7 @@ const About = () => {
             }}
           >
             <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-          </video>
+            </video>
           
           {/* Fallback Background Image */}
           <div 
