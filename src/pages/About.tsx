@@ -164,7 +164,7 @@ const About = () => {
               console.log('Client video: Load started');
             }}
           >
-            <source src="https://drive.google.com/file/d/1SPMSiFqfmP9WsdNPNPjp9StqO6mfA_Xl/view?usp=sharing" type="video/mp4" />
+            <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
             </video>
           
           {/* Fallback Background Image */}
