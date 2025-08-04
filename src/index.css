@@ -115,7 +115,6 @@ All colors MUST be HSL.
     background: hsl(var(--glass-bg));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--glass-border));
   }
 
   .glass-effect-light {

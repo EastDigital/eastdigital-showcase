@@ -15,35 +15,37 @@ const About = () => {
           
           <div className="relative z-10 container mx-auto px-8 pb-12">
             <div className="max-w-[1100px]">
+              <h1 className="font-bold text-white mb-6" style={{
+              fontSize: '36px',
+              lineHeight: '45px',
+              letterSpacing: '3%',
+              fontWeight: 700
+            }}>
+                About
+              </h1>
+              
               {/* Breadcrumb */}
-              <nav className="mb-6">
+              <nav className="mb-8">
                 <div className="flex items-center space-x-2">
-                  <a href="/" className="text-white text-lg leading-6 tracking-[0.54px] hover:text-white/80 transition-colors" style={{
+                  <a href="/" className="text-white hover:text-white/80 transition-colors" style={{
                   fontSize: '18px',
                   lineHeight: '24px',
-                  letterSpacing: '0.54px'
+                  letterSpacing: '3%',
+                  fontWeight: 400
                 }}>
                     Home
                   </a>
                   <span className="text-white/50">›</span>
-                  <span className="text-white font-semibold" style={{
+                  <span className="text-white" style={{
                   fontSize: '18px',
                   lineHeight: '24px',
-                  letterSpacing: '0.54px'
+                  letterSpacing: '3%',
+                  fontWeight: 400
                 }}>
                     About
                   </span>
                 </div>
               </nav>
-              
-              <h1 className="font-bold text-white mb-8" style={{
-              fontSize: '36px',
-              lineHeight: '45px',
-              letterSpacing: '1.08px',
-              fontWeight: 700
-            }}>
-                About
-              </h1>
             </div>
           </div>
         </section>
@@ -132,8 +134,24 @@ const About = () => {
         </section>
 
         {/* Trusted by Many Section */}
-        <section className="py-[50px] bg-black">
-          <div className="container mx-auto px-8">
+        <section className="relative py-[50px] bg-black">
+          {/* Background Video */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+            onError={(e) => {
+              console.log('Client video failed to load');
+              (e.target as HTMLVideoElement).style.display = 'none';
+            }}
+          >
+            <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/50" />
+          
+          <div className="container mx-auto px-8 relative z-10">
             <div className="max-w-[850px]">
               <h2 className="font-bold mb-8" style={{
               fontSize: '26px',
