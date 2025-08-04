@@ -69,7 +69,7 @@ const HeroSection = () => {
           videoLoaded && !videoError ? 'opacity-100 z-0' : 'opacity-0 z-[-2]'
         }`}
       >
-        <source src="https://drive.google.com/file/d/1GUR-uf1_B2fvk5mRO-6fz1Q32aCVediN/view?usp=sharing" type="video/mp4" />
+        <iframe src="https://drive.google.com/file/d/1GUR-uf1_B2fvk5mRO-6fz1Q32aCVediN/preview" width="640" height="480" allow="autoplay"></iframe>
         Your browser does not support the video tag.
       </video>
 
