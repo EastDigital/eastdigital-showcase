@@ -196,7 +196,7 @@ All colors MUST be HSL.
   .gradient-border-hover::before {
     content: '';
     position: absolute;
-    inset: -1px;
+    inset: -5px;
     border-radius: inherit;
     background: var(--gradient-primary);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
