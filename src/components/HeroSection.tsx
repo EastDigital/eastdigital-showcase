@@ -147,13 +147,13 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
             <Button 
               variant="outline" 
-              className="px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect-light gradient-border-hover border-0 hover:bg-white/20"
+              className="cta-button px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect-light border-0 hover:bg-white/20 hover:text-white"
             >
               Free Consultation
             </Button>
             <Button 
               variant="outline" 
-              className="px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect gradient-border-hover border-0 hover:bg-white/10"
+              className="cta-button px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect border-0 hover:bg-white/10 hover:text-white"
             >
               Our Expertise
             </Button>

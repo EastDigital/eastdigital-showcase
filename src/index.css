@@ -124,7 +124,53 @@ All colors MUST be HSL.
     border: 1px solid hsl(var(--glass-light-border));
   }
 
-  /* Gradient border animation */
+  /* Rotating gradient border animation */
+  @keyframes rotate_gradient {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .cta-button {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 2px;
+    transition: box-shadow 0.4s ease-in-out;
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 250%;
+    height: 250%;
+    background: conic-gradient(
+      from 0deg,
+      hsl(var(--accent)),
+      hsl(var(--primary)) 15%,
+      hsl(var(--accent)) 30%
+    );
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .cta-button:hover::before {
+    animation: rotate_gradient 4s linear infinite;
+    opacity: 1;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  /* Legacy gradient border animation */
   .gradient-border-hover {
     position: relative;
     transition: all 0.3s ease;

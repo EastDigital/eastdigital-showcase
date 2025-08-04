@@ -123,7 +123,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button 
               variant="outline" 
-              className="px-6 py-2.5 rounded-full text-foreground font-bold text-sm gradient-border-hover bg-primary/15 border-0 hover:bg-primary/25"
+              className="cta-button px-6 py-2.5 rounded-full text-foreground font-bold text-sm bg-primary/15 border-0 hover:bg-primary/25 hover:text-white"
             >
               Get Your Blueprint
             </Button>
@@ -224,7 +224,7 @@ const Header = () => {
           <div className="pt-6">
             <Button 
               variant="outline" 
-              className="px-6 py-2.5 rounded-full text-foreground font-bold text-sm glass-effect gradient-border-hover border-0"
+              className="cta-button px-6 py-2.5 rounded-full text-foreground font-bold text-sm glass-effect border-0 hover:text-white"
             >
               Get Your Blueprint
             </Button>
