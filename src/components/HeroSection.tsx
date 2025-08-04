@@ -69,7 +69,7 @@ const HeroSection = () => {
           videoLoaded && !videoError ? 'opacity-100 z-0' : 'opacity-0 z-[-2]'
         }`}
       >
-        <iframe src="https://rawdkwlxbhpxblxnluyv.supabase.co/storage/v1/object/sign/images/hero_video_folio.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81MDk2Nzk2OC04YjViLTQ3M2QtOGExNS04NzBjNmRmYTE4MTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyb192aWRlb19mb2xpby5tcDQiLCJpYXQiOjE3NTQyODU4NjEsImV4cCI6MTc4NTgyMTg2MX0.uScjEuPTO4L5wV1mJ9YVDqRRUkoSatgav5GZgVqKJg0" width="100%" height="480" allow="autoplay"></iframe>
+        <source src="https://www.eastdigital.in/img/hero_video_folio.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
