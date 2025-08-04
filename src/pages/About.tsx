@@ -141,15 +141,46 @@ const About = () => {
             loop 
             muted 
             playsInline 
-            className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+            preload="metadata"
+            crossOrigin="anonymous"
+            className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
+            onLoadedData={() => {
+              console.log('Client video: Successfully loaded and ready to play');
+            }}
+            onCanPlay={() => {
+              console.log('Client video: Can play through');
+            }}
             onError={(e) => {
-              console.log('Client video failed to load');
-              (e.target as HTMLVideoElement).style.display = 'none';
+              console.error('Client video: Failed to load', e);
+              const target = e.target as HTMLVideoElement;
+              target.style.display = 'none';
+              // Show fallback background
+              const fallback = target.parentElement?.querySelector('.video-fallback') as HTMLElement;
+              if (fallback) {
+                fallback.style.display = 'block';
+              }
+            }}
+            onLoadStart={() => {
+              console.log('Client video: Load started');
             }}
           >
             <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/50" />
+          
+          {/* Fallback Background Image */}
+          <div 
+            className="video-fallback absolute top-0 left-0 w-full h-full z-[-1] opacity-50"
+            style={{
+              display: 'none',
+              backgroundImage: 'url("https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          
+          <div className="absolute inset-0 bg-black/50 z-[-1]" />
           
           <div className="container mx-auto px-8 relative z-10">
             <div className="max-w-[850px]">
