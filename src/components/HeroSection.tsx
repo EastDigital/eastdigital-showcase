@@ -69,7 +69,7 @@ const HeroSection = () => {
           videoLoaded && !videoError ? 'opacity-100 z-0' : 'opacity-0 z-[-2]'
         }`}
       >
-        <source src="https://eastdigital.in/img/hero_video_folio.mp4" type="video/mp4" />
+        <source src="https://drive.google.com/file/d/1GUR-uf1_B2fvk5mRO-6fz1Q32aCVediN/view?usp=sharing" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
