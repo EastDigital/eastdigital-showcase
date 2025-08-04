@@ -102,7 +102,7 @@ const HeroSection = () => {
           videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'
         }`}
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+          backgroundImage: 'url("https://eastdigital.in/img/bg-video.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: videoError || !videoLoaded ? 2 : 1
@@ -110,7 +110,7 @@ const HeroSection = () => {
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-[3]" />
+      <div className="absolute inset-0 bg-black/0 z-[3]" />
 
       {/* Loading State */}
       {isLoading && (
