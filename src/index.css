@@ -124,7 +124,7 @@ All colors MUST be HSL.
     border: 1px solid hsl(var(--glass-light-border));
   }
 
-  /* Rotating gradient border animation */
+  /* Rotating gradient border animation - Exact replica from reference */
   @keyframes rotate_gradient {
     0% {
       transform: translate(-50%, -50%) rotate(0deg);
@@ -138,6 +138,8 @@ All colors MUST be HSL.
     position: relative;
     z-index: 1;
     display: inline-block;
+    text-decoration: none;
+    border-radius: 9999px;
     overflow: hidden;
     padding: 2px;
     transition: box-shadow 0.4s ease-in-out;
@@ -171,11 +173,17 @@ All colors MUST be HSL.
     box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 
-  /* The inner content that masks the gradient to show only border */
+  /* The inner button content that masks the gradient */
   .cta-button > * {
+    display: block;
+    border-radius: 9999px;
     position: relative;
     z-index: 1;
-    border-radius: inherit;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .cta-button:hover > * {
+    color: hsl(var(--foreground)) !important;
   }
 
   /* Legacy gradient border animation */
