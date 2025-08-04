@@ -1,7 +1,36 @@
+import { useRef, useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import ProjectGallery from '@/components/ProjectGallery';
 import Footer from '@/components/Footer';
 const About = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      const handleLoadedData = () => {
+        setVideoLoaded(true);
+        setIsLoading(false);
+      };
+      
+      const handleError = () => {
+        setVideoError(true);
+        setIsLoading(false);
+      };
+
+      video.addEventListener('loadeddata', handleLoadedData);
+      video.addEventListener('error', handleError);
+
+      return () => {
+        video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('error', handleError);
+      };
+    }
+  }, []);
+
   return <div className="min-h-screen bg-black font-nunito">
       <Header />
       <main>
@@ -176,11 +205,9 @@ const About = () => {
             <p>Loading experience...</p>
           </div>
         </div>
-          />
+      )}
           
-          <div className="absolute inset-0 bg-black/50 z-[-1]" />
-          
-          <div className="container mx-auto px-8 relative z-10">
+      <div className="container mx-auto px-8 relative z-10">
             <div className="max-w-[850px]">
               <h2 className="font-bold mb-8" style={{
               fontSize: '26px',
