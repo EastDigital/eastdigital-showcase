@@ -178,7 +178,8 @@ All colors MUST be HSL.
     display: block;
     border-radius: 9999px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    background-color: hsl(var(--background)) !important;
     transition: color 0.3s ease, background-color 0.3s ease;
   }
 
