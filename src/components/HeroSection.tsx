@@ -145,7 +145,7 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="relative px-6 py-3 rounded-full text-white bg-background/60 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
+            <button className="relative px-6 py-3 rounded-full text-white bg-#FF6900/15 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
               <span 
                 className="absolute inset-0 rounded-full border-1 border-transparent opacity-0 group-hover:opacity-100 group-hover:animate-borderGradient z-0 transition-opacity duration-300"
                 style={{
