@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -46,9 +47,9 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-10 h-full">
-            <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">
+            <Link to="/" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">
               Home
-            </a>
+            </Link>
             <div className="group h-full flex items-center relative">
               <button className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300 flex items-center">
                 Expertise
@@ -63,15 +64,15 @@ const Header = () => {
                   <div className="grid grid-cols-3 gap-10">
                     <div>
                       <div className="min-h-[50px] flex items-center mb-4">
-                        <a href="#" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
+                        <Link to="/expertise/real-estate" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
                           REAL ESTATE
-                        </a>
+                        </Link>
                       </div>
                       <p className="font-light text-xs text-muted-foreground mb-4">
                         Launch your project with<br/>3d walkthrough video.
                       </p>
                       <ul className="space-y-2 text-foreground">
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Videos</a></li>
+                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Videos</Link></li>
                         <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Architectural Still Renderings</a></li>
                         <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Interactive Virtual Tours</a></li>
                       </ul>
@@ -80,9 +81,9 @@ const Header = () => {
                     
                     <div>
                       <div className="min-h-[50px] flex items-center mb-4">
-                        <a href="#" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
+                        <Link to="/expertise/infrastructure" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
                           INFRASTRUCTURE
-                        </a>
+                        </Link>
                       </div>
                       <p className="font-light text-xs text-muted-foreground mb-4">
                         Present your project to the<br/>investors/authorities.
@@ -97,9 +98,9 @@ const Header = () => {
                     
                     <div>
                       <div className="min-h-[50px] flex items-center mb-4">
-                        <a href="#" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
+                        <Link to="/expertise/architecture-design" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
                           ARCHITECTURE<br/>& DESIGN
-                        </a>
+                        </Link>
                       </div>
                       <p className="font-light text-xs text-muted-foreground mb-4">
                         For client approvals and<br/>internal assessment.
@@ -115,7 +116,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <a href="/about" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">About</a>
+            <Link to="/about" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">About</Link>
             <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Connect</a>
             <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Blog</a>
           </nav>
@@ -178,7 +179,7 @@ const Header = () => {
         </div>
         
         <div className="px-8 space-y-6 overflow-y-auto h-[calc(100vh-75px)] pb-24">
-          <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Home</a>
+          <Link to="/" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Home</Link>
           
           <div>
             <button 
@@ -193,17 +194,17 @@ const Header = () => {
             
             <div className={`pl-4 mt-4 space-y-8 ${isMobileExpertiseOpen ? 'block' : 'hidden'}`}>
               <div>
-                <a href="#" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">REAL ESTATE</a>
+                <Link to="/expertise/real-estate" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">REAL ESTATE</Link>
                 <p className="font-light text-xs text-muted-foreground mt-2 mb-3">Launch your project with 3d walkthrough video.</p>
                 <ul className="space-y-3 text-foreground">
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Videos</a></li>
+                  <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Videos</Link></li>
                   <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Architectural Still Renderings</a></li>
                   <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Interactive Virtual Tours</a></li>
                 </ul>
               </div>
               
               <div>
-                <a href="#" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">INFRASTRUCTURE</a>
+                <Link to="/expertise/infrastructure" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">INFRASTRUCTURE</Link>
                 <p className="font-light text-xs text-muted-foreground mt-2 mb-3">Present your project to the investors/authorities.</p>
                 <ul className="space-y-3 text-foreground">
                   <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Conceptual 3D Renderings</a></li>
@@ -213,7 +214,7 @@ const Header = () => {
               </div>
               
               <div>
-                <a href="#" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">ARCHITECTURE & PRODUCT DESIGN</a>
+                <Link to="/expertise/architecture-design" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">ARCHITECTURE & PRODUCT DESIGN</Link>
                 <p className="font-light text-xs text-muted-foreground mt-2 mb-3">For client approvals and internal assessment.</p>
                 <ul className="space-y-3 text-foreground">
                   <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Architectural Rendering</a></li>
@@ -224,7 +225,7 @@ const Header = () => {
             </div>
           </div>
           
-          <a href="/about" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">About</a>
+          <Link to="/about" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">About</Link>
           <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Connect</a>
           <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Blog</a>
           
