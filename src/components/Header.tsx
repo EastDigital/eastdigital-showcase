@@ -121,7 +121,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:block">
-            <button className="relative px-6 py-3 rounded-full text-white bg-#FF6900/15 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
+            <button className="relative px-6 py-3 rounded-full text-white bg-orange/15 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
               <span 
                 className="absolute inset-0 rounded-full border-0 border-transparent opacity-0 group-hover:opacity-100 group-hover:animate-borderGradient z-0 transition-opacity duration-300"
                 style={{
