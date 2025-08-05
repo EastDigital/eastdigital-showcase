@@ -30,25 +30,42 @@ const Expertise = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-br from-background via-background/95 to-muted/20">
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png')] bg-cover bg-center opacity-10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto">
+        <section className="relative py-20 sm:py-32 flex items-center">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img 
+              src="/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png" 
+              alt="Expertise Background" 
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+            />
+            <div className="absolute inset-0 bg-black/50" />
+          </div>
+          
+          {/* Content */}
+          <div className="container mx-auto px-8 relative z-10">
             {/* Breadcrumb */}
             <nav className="text-sm mb-8">
-              <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/" className="text-gray-300 hover:text-white transition-colors">
                 Home
               </Link>
-              <span className="mx-2 text-muted-foreground">{'>'}</span>
-              <span className="text-foreground font-medium">Expertise</span>
+              <span className="mx-2 text-gray-300">{'>'}</span>
+              <span className="text-white font-medium">Expertise</span>
             </nav>
 
-            <div className="max-w-4xl">
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Visualize Your Vision: High-Impact 3D Solutions for Real Estate Marketing & Sales.
+            <div className="max-w-[850px]">
+              <h1 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
+                <span className="font-bold">Visualize Your Vision: </span>
+                <span className="font-light">High-Impact 3D Solutions for Real Estate Marketing & Sales.</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
-              </p>
+              
+              <div className="mb-10">
+                <p className="text-xl leading-relaxed tracking-wide text-gray-200">
+                  For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
+                </p>
+              </div>
             </div>
           </div>
         </section>
