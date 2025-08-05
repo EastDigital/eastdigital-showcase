@@ -37,7 +37,7 @@ const ArchitectureDesign = () => {
       <Header />
       <main>
         <PageBanner
-          title="Bringing Architectural Visions to Life with Stunning Detail."
+          title="Architecture & Design"
           backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
@@ -46,12 +46,17 @@ const ArchitectureDesign = () => {
           ]}
         />
 
-        {/* Description Section */}
+        {/* New Details Section */}
         <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
-              Transform your architectural concepts into compelling visual narratives. Our specialized visualization services help architects and designers communicate their vision with unprecedented clarity and impact.
-            </p>
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Precision & Persuasion: Visualization for Architects, Designers & Innovators.
+              </h2>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Whether you're an architect refining a landmark design, an interior designer curating a space, or a product innovator bringing a concept to market, East Digital empowers your vision. We create stunning visuals that articulate your designs with precision and captivate your target audience.
+              </p>
+            </div>
           </div>
         </section>
 
