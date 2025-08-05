@@ -121,12 +121,19 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:block">
-            <Button 
-              variant="outline" 
-              className="cta-button px-6 py-2.5 rounded-full text-foreground font-bold text-sm bg-primary/15 border-0 hover:bg-primary/25 hover:text-white"
-            >
-              Get Your Blueprint
-            </Button>
+            <button className="relative px-6 py-3 rounded-full text-white bg-background/60 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
+              <span 
+                className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-transparent group-hover:animate-borderGradient z-0"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)))',
+                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  maskComposite: 'exclude',
+                  WebkitMaskComposite: 'destination-out',
+                  padding: '2px'
+                }}
+              ></span>
+              <span className="relative z-10">Get Your Blueprint</span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -222,12 +229,19 @@ const Header = () => {
           <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Blog</a>
           
           <div className="pt-6">
-            <Button 
-              variant="outline" 
-              className="cta-button px-6 py-2.5 rounded-full text-foreground font-bold text-sm glass-effect border-0 hover:text-white"
-            >
-              Get Your Blueprint
-            </Button>
+            <button className="relative px-6 py-3 rounded-full text-white bg-background/60 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
+              <span 
+                className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-transparent group-hover:animate-borderGradient z-0"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)))',
+                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  maskComposite: 'exclude',
+                  WebkitMaskComposite: 'destination-out',
+                  padding: '2px'
+                }}
+              ></span>
+              <span className="relative z-10">Get Your Blueprint</span>
+            </button>
           </div>
         </div>
       </div>

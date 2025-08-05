@@ -145,18 +145,32 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button 
-              variant="outline" 
-              className="cta-button px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect-light border-0 hover:bg-white/20 hover:text-white"
-            >
-              Free Consultation
-            </Button>
-            <Button 
-              variant="outline" 
-              className="cta-button px-8 py-3 rounded-full text-foreground font-semibold text-sm glass-effect border-0 hover:bg-white/10 hover:text-white"
-            >
-              Our Expertise
-            </Button>
+            <button className="relative px-6 py-3 rounded-full text-white bg-background/60 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
+              <span 
+                className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-transparent group-hover:animate-borderGradient z-0"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)))',
+                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  maskComposite: 'exclude',
+                  WebkitMaskComposite: 'destination-out',
+                  padding: '2px'
+                }}
+              ></span>
+              <span className="relative z-10">Free Consultation</span>
+            </button>
+            <button className="relative px-6 py-3 rounded-full text-white bg-background/60 backdrop-blur border border-white/20 font-semibold transition-all duration-300 overflow-hidden group">
+              <span 
+                className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-transparent group-hover:animate-borderGradient z-0"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)))',
+                  mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  maskComposite: 'exclude',
+                  WebkitMaskComposite: 'destination-out',
+                  padding: '2px'
+                }}
+              ></span>
+              <span className="relative z-10">Our Expertise</span>
+            </button>
           </div>
         </div>
       </div>
