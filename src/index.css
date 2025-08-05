@@ -185,4 +185,23 @@ All colors MUST be HSL.
   .font-extrabold {
     font-weight: 800;
   }
+
+  /* Page Banner Typography */
+  .page-title {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+  }
+
+  .page-breadcrumb {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+  }
 }

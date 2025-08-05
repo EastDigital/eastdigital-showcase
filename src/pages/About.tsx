@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import ProjectGallery from '@/components/ProjectGallery';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 const About = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -34,50 +35,14 @@ const About = () => {
   return <div className="min-h-screen bg-black font-nunito">
       <Header />
       <main>
-        {/* Hero Section with Background Image */}
-        <section className="relative h-[40vh] flex items-end">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: "url('https://eastdigital.in/img/about-east-digital.jpg')"
-        }}>
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
-          
-          <div className="relative z-10 container mx-auto px-8 pb-12">
-            <div className="max-w-[1100px]">
-              <h1 className="font-bold text-white mb-6" style={{
-              fontSize: '36px',
-              lineHeight: '45px',
-              letterSpacing: '3%',
-              fontWeight: 700
-            }}>
-                About
-              </h1>
-              
-              {/* Breadcrumb */}
-              <nav className="mb-8">
-                <div className="flex items-center space-x-2">
-                  <a href="/" className="text-white hover:text-white/80 transition-colors" style={{
-                  fontSize: '18px',
-                  lineHeight: '24px',
-                  letterSpacing: '3%',
-                  fontWeight: 400
-                }}>
-                    Home
-                  </a>
-                  <span className="text-white/50">›</span>
-                  <span className="text-white" style={{
-                  fontSize: '18px',
-                  lineHeight: '24px',
-                  letterSpacing: '3%',
-                  fontWeight: 400
-                }}>
-                    About
-                  </span>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </section>
+        <PageBanner
+          title="About"
+          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "About" }
+          ]}
+        />
 
         {/* Your Vision Section */}
         <section className="py-[50px] bg-black">

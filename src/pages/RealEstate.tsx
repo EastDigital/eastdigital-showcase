@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageBanner from '@/components/PageBanner';
 import { Button } from '@/components/ui/button';
 
 const RealEstate = () => {
@@ -35,48 +36,22 @@ const RealEstate = () => {
     <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-20 sm:py-32 flex items-center">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <img 
-              src="/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png" 
-              alt="Real Estate Background" 
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-            />
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
-          
-          {/* Content */}
-          <div className="container mx-auto px-8 relative z-10">
-            {/* Breadcrumb */}
-            <nav className="text-sm mb-8">
-              <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-                Home
-              </Link>
-              <span className="mx-2 text-gray-300">{'>'}</span>
-              <Link to="/expertise" className="text-gray-300 hover:text-white transition-colors">
-                Expertise
-              </Link>
-              <span className="mx-2 text-gray-300">{'>'}</span>
-              <span className="text-white font-medium">Real Estate</span>
-            </nav>
+        <PageBanner
+          title="Transform Property Marketing with Stunning 3D Visualizations."
+          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Expertise", href: "/expertise" },
+            { label: "Real Estate" }
+          ]}
+        />
 
-            <div className="max-w-[850px]">
-              <h1 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
-                <span className="font-bold">Transform Property Marketing </span>
-                <span className="font-light">with Stunning 3D Visualizations.</span>
-              </h1>
-              
-              <div className="mb-10">
-                <p className="text-xl leading-relaxed tracking-wide text-gray-200">
-                  Elevate your real estate marketing with our cutting-edge 3D visualization solutions. From pre-construction sales to virtual property tours, we create immersive experiences that captivate buyers and accelerate decision-making.
-                </p>
-              </div>
-            </div>
+        {/* Description Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
+              Elevate your real estate marketing with our cutting-edge 3D visualization solutions. From pre-construction sales to virtual property tours, we create immersive experiences that captivate buyers and accelerate decision-making.
+            </p>
           </div>
         </section>
 

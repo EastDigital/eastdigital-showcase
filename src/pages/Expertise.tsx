@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageBanner from '@/components/PageBanner';
 import { Button } from '@/components/ui/button';
 
 const Expertise = () => {
@@ -29,44 +30,21 @@ const Expertise = () => {
     <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-20 sm:py-32 flex items-center">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <img 
-              src="/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png" 
-              alt="Expertise Background" 
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-            />
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
-          
-          {/* Content */}
-          <div className="container mx-auto px-8 relative z-10">
-            {/* Breadcrumb */}
-            <nav className="text-sm mb-8">
-              <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-                Home
-              </Link>
-              <span className="mx-2 text-gray-300">{'>'}</span>
-              <span className="text-white font-medium">Expertise</span>
-            </nav>
+        <PageBanner
+          title="Visualize Your Vision: High-Impact 3D Solutions for Real Estate Marketing & Sales."
+          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Expertise" }
+          ]}
+        />
 
-            <div className="max-w-[850px]">
-              <h1 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
-                <span className="font-bold">Visualize Your Vision: </span>
-                <span className="font-light">High-Impact 3D Solutions for Real Estate Marketing & Sales.</span>
-              </h1>
-              
-              <div className="mb-10">
-                <p className="text-xl leading-relaxed tracking-wide text-gray-200">
-                  For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
-                </p>
-              </div>
-            </div>
+        {/* Description Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
+              For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
+            </p>
           </div>
         </section>
 

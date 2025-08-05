@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageBanner from '@/components/PageBanner';
 import { Button } from '@/components/ui/button';
 
 const WalkthroughVideo = () => {
@@ -36,60 +37,31 @@ const WalkthroughVideo = () => {
     <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-20 sm:py-32 flex items-center">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <img 
-              src="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png" 
-              alt="3D Walkthrough Video Background" 
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-            />
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
-          
-          {/* Content */}
-          <div className="container mx-auto px-8 relative z-10">
-            {/* Breadcrumb */}
-            <nav className="text-sm mb-8">
-              <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-                Home
-              </Link>
-              <span className="mx-2 text-gray-300">{'>'}</span>
-              <Link to="/expertise" className="text-gray-300 hover:text-white transition-colors">
-                Expertise
-              </Link>
-              <span className="mx-2 text-gray-300">{'>'}</span>
-              <Link to="/expertise/real-estate" className="text-gray-300 hover:text-white transition-colors">
-                Real Estate
-              </Link>
-              <span className="mx-2 text-gray-300">{'>'}</span>
-              <span className="text-white font-medium">3D Walkthrough Video</span>
-            </nav>
+        <PageBanner
+          title="Cinematic 3D Walkthrough Videos: Bring Your Property to Life"
+          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Expertise", href: "/expertise" },
+            { label: "Real Estate", href: "/expertise/real-estate" },
+            { label: "3D Walkthrough Video" }
+          ]}
+        />
 
-            <div className="max-w-[850px]">
-              <h1 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
-                <span className="font-bold">Cinematic 3D Walkthrough Videos: </span>
-                <span className="font-light">Bring Your Property to Life</span>
-              </h1>
-              
-              <div className="mb-10">
-                <p className="text-xl leading-relaxed tracking-wide text-gray-200">
-                  In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Our talented East Digital team creates dynamic narratives that allow viewers to feel how your future unfolds through immersive cinematic experiences.
-                </p>
-              </div>
-              
-              <div className="mb-10">
-                <h2 className="text-xl font-bold text-white mb-4">
-                  What is a 3D Walkthrough Video?
-                </h2>
-                <p className="text-lg leading-relaxed text-gray-200">
-                  A 3D Walkthrough is a dynamic video presentation that guides the viewer on a pre-determined path through a 3D model of a property. Unlike an interactive tour where the user controls the experience, a walkthrough is cinematic experience. It leverages professional camera movements, lighting, music, and editing to tell a compelling story that highlights key features, and evokes a specific lifestyle or atmosphere.
-                </p>
-              </div>
+        {/* Description Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10 text-center">
+              In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Our talented East Digital team creates dynamic narratives that allow viewers to feel how your future unfolds through immersive cinematic experiences.
+            </p>
+            
+            <div className="bg-card border rounded-lg p-8">
+              <h2 className="text-xl font-bold text-foreground mb-4">
+                What is a 3D Walkthrough Video?
+              </h2>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                A 3D Walkthrough is a dynamic video presentation that guides the viewer on a pre-determined path through a 3D model of a property. Unlike an interactive tour where the user controls the experience, a walkthrough is cinematic experience. It leverages professional camera movements, lighting, music, and editing to tell a compelling story that highlights key features, and evokes a specific lifestyle or atmosphere.
+              </p>
             </div>
           </div>
         </section>
