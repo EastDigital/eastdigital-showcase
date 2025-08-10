@@ -60,19 +60,21 @@ const RealEstate = () => {
 
         {/* Description Section */}
         <section className="py-16">
-          <div className="container mx-auto px-8 max-w-[850px]">
-            <h2 className="content-heading mb-4">
-              Visualize Your Vision: High-Impact 3D Solutions for Real Estate Marketing & Sales.
-            </h2>
-            <p className="content-paragraph">
-              For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
-            </p>
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
+              <h2 className="content-heading mb-4">
+                Visualize Your Vision: High-Impact 3D Solutions for Real Estate Marketing & Sales.
+              </h2>
+              <p className="content-paragraph">
+                For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="container mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {services.map((service, index) => (
                 <Link 
