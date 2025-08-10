@@ -8,7 +8,6 @@ const About = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -16,33 +15,27 @@ const About = () => {
         setVideoLoaded(true);
         setIsLoading(false);
       };
-      
       const handleError = () => {
         setVideoError(true);
         setIsLoading(false);
       };
-
       video.addEventListener('loadeddata', handleLoadedData);
       video.addEventListener('error', handleError);
-
       return () => {
         video.removeEventListener('loadeddata', handleLoadedData);
         video.removeEventListener('error', handleError);
       };
     }
   }, []);
-
   return <div className="min-h-screen bg-black font-nunito">
       <Header />
       <main>
-        <PageBanner
-          title="About"
-          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "About" }
-          ]}
-        />
+        <PageBanner title="About" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" breadcrumbs={[{
+        label: "Home",
+        href: "/"
+      }, {
+        label: "About"
+      }]} />
 
         {/* Your Vision Section */}
         <section className="py-[50px] bg-black">
@@ -109,7 +102,7 @@ const About = () => {
         </section>
 
         {/* Our Foundation Section */}
-        <section className="py-[50px] bg-black">
+        <section className="py-[20px] bg-black">
           <div className="container mx-auto px-8">
             <div className="max-w-[850px]">
               <h2 className="font-light" style={{
@@ -130,47 +123,31 @@ const About = () => {
         {/* Trusted by Many Section */}
         <section className="relative py-[50px] bg-black">
             {/* Background Video */}
-      <video 
-        ref={videoRef}
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        preload="auto"
-        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-          videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'
-        }`}
-        style={{ zIndex: videoLoaded && !videoError ? 1 : -1 }}
-      >
+      <video ref={videoRef} autoPlay loop muted playsInline preload="auto" className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'}`} style={{
+          zIndex: videoLoaded && !videoError ? 1 : -1
+        }}>
         <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       {/* Fallback Background Image */}
-      <div 
-        className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-          videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'
-        }`}
-        style={{
+      <div className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'}`} style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: videoError || !videoLoaded ? 2 : 1
-        }}
-      />
+        }} />
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50 z-[3]" />
 
       {/* Loading State */}
-      {isLoading && (
-        <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
+      {isLoading && <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
           <div className="text-white">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
             <p>Loading experience...</p>
           </div>
-        </div>
-      )}
+        </div>}
           
       <div className="container mx-auto px-8 relative z-10">
             <div className="max-w-[850px]">
