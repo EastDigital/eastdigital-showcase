@@ -39,7 +39,7 @@ const WalkthroughVideo = () => {
       <main>
         <PageBanner
           title="Cinematic 3D Walkthrough Videos: Bring Your Property to Life"
-          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          backgroundImage="https://eastdigital.in/img/bg-video.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Expertise", href: "/expertise" },
@@ -49,26 +49,28 @@ const WalkthroughVideo = () => {
         />
 
         {/* Description Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10 text-center">
-              In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Our talented East Digital team creates dynamic narratives that allow viewers to feel how your future unfolds through immersive cinematic experiences.
-            </p>
-            
-            <div className="bg-card border rounded-lg p-8">
-              <h2 className="text-xl font-bold text-foreground mb-4">
-                What is a 3D Walkthrough Video?
-              </h2>
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                A 3D Walkthrough is a dynamic video presentation that guides the viewer on a pre-determined path through a 3D model of a property. Unlike an interactive tour where the user controls the experience, a walkthrough is cinematic experience. It leverages professional camera movements, lighting, music, and editing to tell a compelling story that highlights key features, and evokes a specific lifestyle or atmosphere.
+        <section className="py-16">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
+              <p className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
+                In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Our talented East Digital team creates dynamic narratives that allow viewers to feel how your future unfolds through immersive cinematic experiences.
               </p>
+              
+              <div className="bg-card border rounded-lg p-8">
+                <h2 className="text-xl font-bold text-foreground mb-4">
+                  What is a 3D Walkthrough Video?
+                </h2>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  A 3D Walkthrough is a dynamic video presentation that guides the viewer on a pre-determined path through a 3D model of a property. Unlike an interactive tour where the user controls the experience, a walkthrough is cinematic experience. It leverages professional camera movements, lighting, music, and editing to tell a compelling story that highlights key features, and evokes a specific lifestyle or atmosphere.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Project Gallery */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="container mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projectImages.map((image, index) => (
                 <div key={index} className="relative group overflow-hidden rounded-lg bg-card border">

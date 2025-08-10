@@ -38,7 +38,7 @@ const Infrastructure = () => {
       <main>
         <PageBanner
           title="Precision, Clarity, and Impact for Your Infrastructure Projects."
-          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          backgroundImage="https://eastdigital.in/img/banner-page-about.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Expertise", href: "/expertise" },
@@ -47,17 +47,19 @@ const Infrastructure = () => {
         />
 
         {/* Description Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
-              At East Digital, we understand that every infrastructure project has unique challenges, audiences, and objectives. Our industry-first model ensures that our 3D visualization solutions are strategically aligned with your specific goals.
-            </p>
+        <section className="py-16">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
+              <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
+                At East Digital, we understand that every infrastructure project has unique challenges, audiences, and objectives. Our industry-first model ensures that our 3D visualization solutions are strategically aligned with your specific goals.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="container mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <Link 

@@ -38,7 +38,7 @@ const ArchitectureDesign = () => {
       <main>
         <PageBanner
           title="Architecture & Design"
-          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          backgroundImage="https://eastdigital.in/img/builders-art_003.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Expertise", href: "/expertise" },
@@ -47,9 +47,9 @@ const ArchitectureDesign = () => {
         />
 
         {/* New Details Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-4xl">
+        <section className="py-16">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Precision & Persuasion: Visualization for Architects, Designers & Innovators.
               </h2>
@@ -61,8 +61,8 @@ const ArchitectureDesign = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="container mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <Link 

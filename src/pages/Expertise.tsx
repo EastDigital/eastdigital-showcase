@@ -31,8 +31,8 @@ const Expertise = () => {
       <Header />
       <main>
         <PageBanner
-          title="Visualize Your Vision: High-Impact 3D Solutions for Real Estate Marketing & Sales."
-          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+          title="Expertise"
+          backgroundImage="https://eastdigital.in/img/banner-page-about.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Expertise" }
@@ -40,17 +40,19 @@ const Expertise = () => {
         />
 
         {/* Description Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
-              For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
-            </p>
+        <section className="py-16">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
+              <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
+                For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Categories Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="container mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {categories.map((category, index) => (
                 <Link 
