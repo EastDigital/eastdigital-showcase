@@ -9,37 +9,37 @@ const RealEstate = () => {
     {
       title: "3d Walkthrough Video",
       category: "3d Walkthrough Video",
-      image: "/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png",
+      image: "https://eastdigital.in/img/afc_private_004.jpg",
       link: "/expertise/real-estate/3d-walkthrough-video",
     },
     {
       title: "3d Walkthrough Video",
       category: "3d Walkthrough Video",
-      image: "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
+      image: "https://eastdigital.in/img/anantraj_001.jpg",
       link: "/expertise/real-estate/3d-walkthrough-video",
     },
     {
       title: "Architectural Still Renderings",
       category: "Architectural Still Renderings",
-      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
+      image: "https://eastdigital.in/img/apartment_001.jpg",
       link: "/expertise/real-estate/architectural-renderings",
     },
     {
       title: "Architectural Still Renderings",
       category: "Architectural Still Renderings",
-      image: "/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png",
+      image: "https://eastdigital.in/img/ascon_001.jpg",
       link: "/expertise/real-estate/architectural-renderings",
     },
     {
       title: "3d Walkthrough Video",
       category: "3d Walkthrough Video",
-      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
+      image: "https://eastdigital.in/img/ascon_003.jpg",
       link: "/expertise/real-estate/3d-walkthrough-video",
     },
     {
       title: "3d Walkthrough Video",
       category: "3d Walkthrough Video",
-      image: "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
+      image: "https://eastdigital.in/img/bahuguna_villa_001.jpg",
       link: "/expertise/real-estate/3d-walkthrough-video",
     },
   ];
@@ -59,8 +59,8 @@ const RealEstate = () => {
         />
 
         {/* Description Section */}
-        <section className="py-16 px-4">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-16">
+          <div className="container mx-auto px-8 max-w-[850px]">
             <h2 className="content-heading mb-4">
               Visualize Your Vision: High-Impact 3D Solutions for Real Estate Marketing & Sales.
             </h2>

@@ -29,8 +29,13 @@ const PageBanner = ({ title, backgroundImage, breadcrumbs }: PageBannerProps) =>
       
       {/* Content - Aligned with header logo */}
       <div className="container mx-auto px-8 relative z-10">
+        {/* Page Title above breadcrumb, aligned with header/logo */}
+        <h1 className="page-title">
+          {title}
+        </h1>
+
         {/* Breadcrumb */}
-        <nav className="page-breadcrumb mb-8" aria-label="Breadcrumb">
+        <nav className="page-breadcrumb mt-4" aria-label="Breadcrumb">
           {breadcrumbs.map((crumb, index) => (
             <span key={index}>
               {crumb.href ? (
@@ -46,11 +51,6 @@ const PageBanner = ({ title, backgroundImage, breadcrumbs }: PageBannerProps) =>
             </span>
           ))}
         </nav>
-
-        {/* Page Title */}
-        <h1 className="page-title max-w-[850px]">
-          {title}
-        </h1>
       </div>
     </section>
   );
