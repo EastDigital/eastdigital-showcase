@@ -7,29 +7,41 @@ import { Button } from '@/components/ui/button';
 const RealEstate = () => {
   const services = [
     {
-      title: "3D Walkthrough Video",
-      category: "3D Walkthrough Video",
+      title: "3d Walkthrough Video",
+      category: "3d Walkthrough Video",
       image: "/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png",
-      link: "/expertise/real-estate/3d-walkthrough-video"
+      link: "/expertise/real-estate/3d-walkthrough-video",
     },
     {
-      title: "3D Walkthrough Video",
-      category: "3D Walkthrough Video", 
-      image: "/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png",
-      link: "/expertise/real-estate/3d-walkthrough-video"
+      title: "3d Walkthrough Video",
+      category: "3d Walkthrough Video",
+      image: "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
+      link: "/expertise/real-estate/3d-walkthrough-video",
+    },
+    {
+      title: "Architectural Still Renderings",
+      category: "Architectural Still Renderings",
+      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
+      link: "/expertise/real-estate/architectural-renderings",
     },
     {
       title: "Architectural Still Renderings",
       category: "Architectural Still Renderings",
       image: "/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png",
-      link: "/expertise/real-estate/architectural-renderings"
+      link: "/expertise/real-estate/architectural-renderings",
     },
     {
-      title: "Architectural Still Renderings", 
-      category: "Architectural Still Renderings",
-      image: "/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png",
-      link: "/expertise/real-estate/architectural-renderings"
-    }
+      title: "3d Walkthrough Video",
+      category: "3d Walkthrough Video",
+      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
+      link: "/expertise/real-estate/3d-walkthrough-video",
+    },
+    {
+      title: "3d Walkthrough Video",
+      category: "3d Walkthrough Video",
+      image: "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
+      link: "/expertise/real-estate/3d-walkthrough-video",
+    },
   ];
 
   return (
@@ -37,7 +49,7 @@ const RealEstate = () => {
       <Header />
       <main>
         <PageBanner
-          title="Transform Property Marketing with Stunning 3D Visualizations."
+          title="Real Estate"
           backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
@@ -47,10 +59,13 @@ const RealEstate = () => {
         />
 
         {/* Description Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
-              Elevate your real estate marketing with our cutting-edge 3D visualization solutions. From pre-construction sales to virtual property tours, we create immersive experiences that captivate buyers and accelerate decision-making.
+        <section className="py-16 px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="content-heading mb-4">
+              Visualize Your Vision: High-Impact 3D Solutions for Real Estate Marketing & Sales.
+            </h2>
+            <p className="content-paragraph">
+              For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
             </p>
           </div>
         </section>
@@ -58,7 +73,7 @@ const RealEstate = () => {
         {/* Services Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {services.map((service, index) => (
                 <Link 
                   key={index}
@@ -73,7 +88,7 @@ const RealEstate = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-lg font-bold text-white">{service.category}</h3>
+                      <h3 className="text-sm font-semibold tracking-[0.03em] text-white">{service.category}</h3>
                     </div>
                   </div>
                 </Link>
@@ -97,7 +112,7 @@ const RealEstate = () => {
             <p className="text-sm text-muted-foreground mb-8">
               If you need guidance on what information should be provided, simply fill out our request a proposal form below.
             </p>
-            <Button asChild className="bg-primary hover:bg-primary/90">
+            <Button asChild variant="cta">
               <Link to="/contact">Take me to the form →</Link>
             </Button>
           </div>

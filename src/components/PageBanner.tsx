@@ -30,7 +30,7 @@ const PageBanner = ({ title, backgroundImage, breadcrumbs }: PageBannerProps) =>
       {/* Content - Aligned with header logo */}
       <div className="container mx-auto px-8 relative z-10">
         {/* Breadcrumb */}
-        <nav className="page-breadcrumb mb-8">
+        <nav className="page-breadcrumb mb-8" aria-label="Breadcrumb">
           {breadcrumbs.map((crumb, index) => (
             <span key={index}>
               {crumb.href ? (
@@ -41,7 +41,7 @@ const PageBanner = ({ title, backgroundImage, breadcrumbs }: PageBannerProps) =>
                 <span className="font-medium">{crumb.label}</span>
               )}
               {index < breadcrumbs.length - 1 && (
-                <span className="mx-2 text-white/60">{'>'}</span>
+                <span className="mx-2 text-white/70" aria-hidden="true">›</span>
               )}
             </span>
           ))}
