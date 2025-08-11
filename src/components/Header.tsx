@@ -44,58 +44,58 @@ const Header = () => {
               </button>
               
               {/* Mega Menu */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-[878px] max-w-[95vw] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-2 z-50">
-                <div className="bg-card border border-border rounded-2xl p-10 shadow-lg">
-                  <div className="grid grid-cols-3 gap-10">
-                    <div>
-                      <div className="min-h-[50px] flex items-center mb-4">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[878px] max-w-[95vw] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-2 z-50">
+                <div className="rounded-2xl border border-border/60 bg-gradient-to-b from-card to-card shadow-2xl ring-1 ring-border/40 p-8 md:p-10">
+                  <div className="grid grid-cols-3 gap-8 md:gap-10">
+                    <div className="space-y-3">
+                      <div className="min-h-[50px] flex items-center">
                         <Link to="/expertise/real-estate" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
                           REAL ESTATE
                         </Link>
                       </div>
-                      <p className="font-light text-xs text-muted-foreground mb-4">
+                      <p className="font-light text-xs text-muted-foreground">
                         Launch your project with<br />3d walkthrough video.
                       </p>
-                      <ul className="space-y-2 text-foreground">
-                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Videos</Link></li>
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Architectural Still Renderings</a></li>
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Interactive Virtual Tours</a></li>
+                      <ul className="space-y-1.5 text-foreground">
+                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Walkthrough Videos</Link></li>
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Architectural Still Renderings</a></li>
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Interactive Virtual Tours</a></li>
                       </ul>
-                      <p className="font-light text-xs text-muted-foreground mt-6">Ideal for: Real Estate Marketing</p>
+                      <p className="font-light text-xs text-muted-foreground">Ideal for: Real Estate Marketing</p>
                     </div>
-                    
-                    <div>
-                      <div className="min-h-[50px] flex items-center mb-4">
+
+                    <div className="space-y-3">
+                      <div className="min-h-[50px] flex items-center">
                         <Link to="/expertise/infrastructure" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
                           INFRASTRUCTURE
                         </Link>
                       </div>
-                      <p className="font-light text-xs text-muted-foreground mb-4">
+                      <p className="font-light text-xs text-muted-foreground">
                         Present your project to the<br />investors/authorities.
                       </p>
-                      <ul className="space-y-2 text-foreground">
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Conceptual 3D Renderings</a></li>
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Process Animations</a></li>
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Engineering 3D Models</a></li>
+                      <ul className="space-y-1.5 text-foreground">
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Conceptual 3D Renderings</a></li>
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Process Animations</a></li>
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Engineering 3D Models</a></li>
                       </ul>
-                      <p className="font-light text-xs text-muted-foreground mt-6">Ideal for: Project Tender & Updates</p>
+                      <p className="font-light text-xs text-muted-foreground">Ideal for: Project Tender & Updates</p>
                     </div>
-                    
-                    <div>
-                      <div className="min-h-[50px] flex items-center mb-4">
+
+                    <div className="space-y-3">
+                      <div className="min-h-[50px] flex items-center">
                         <Link to="/expertise/architecture-design" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
                           ARCHITECTURE<br />& DESIGN
                         </Link>
                       </div>
-                      <p className="font-light text-xs text-muted-foreground mb-4">
+                      <p className="font-light text-xs text-muted-foreground">
                         For client approvals and<br />internal assessment.
                       </p>
-                      <ul className="space-y-2 text-foreground">
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Architectural Rendering</a></li>
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Virtual Staging</a></li>
-                        <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Product 3D Renderings</a></li>
+                      <ul className="space-y-1.5 text-foreground">
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Architectural Rendering</a></li>
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Virtual Staging</a></li>
+                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Product 3D Renderings</a></li>
                       </ul>
-                      <p className="font-light text-xs text-muted-foreground mt-6">Ideal for: Ideation & Assessment</p>
+                      <p className="font-light text-xs text-muted-foreground">Ideal for: Ideation & Assessment</p>
                     </div>
                   </div>
                 </div>
