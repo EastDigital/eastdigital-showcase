@@ -11,6 +11,12 @@ import Infrastructure from "./pages/Infrastructure";
 import ArchitectureDesign from "./pages/ArchitectureDesign";
 import WalkthroughVideo from "./pages/WalkthroughVideo";
 import NotFound from "./pages/NotFound";
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import ProjectsList from "./pages/admin/ProjectsList";
+import ProjectForm from "./pages/admin/ProjectForm";
+import CarouselManager from "./pages/admin/CarouselManager";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +34,16 @@ const App = () => (
           <Route path="/expertise/infrastructure" element={<Infrastructure />} />
           <Route path="/expertise/architecture-design" element={<ArchitectureDesign />} />
           <Route path="/expertise/real-estate/3d-walkthrough-video" element={<WalkthroughVideo />} />
+
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="projects" element={<ProjectsList />} />
+            <Route path="projects/new" element={<ProjectForm />} />
+            <Route path="projects/:id/edit" element={<ProjectForm />} />
+            <Route path="carousel" element={<CarouselManager />} />
+          </Route>
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
