@@ -6,12 +6,10 @@ import { Button } from '@/components/ui/button';
 
 const WalkthroughVideo = () => {
   const projectImages = [
-    "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
-    "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
-    "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
-    "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
-    "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png",
-    "/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png"
+    "https://eastdigital.in/img/afc_private_004.jpg",
+    "https://eastdigital.in/img/anantraj_001.jpg",
+    "https://eastdigital.in/img/apartment_001.jpg",
+    "https://eastdigital.in/img/ascon_001.jpg"
   ];
 
   const applications = [
@@ -38,7 +36,7 @@ const WalkthroughVideo = () => {
       <Header />
       <main>
         <PageBanner
-          title="Cinematic 3D Walkthrough Videos: Bring Your Property to Life"
+          title="Expertise"
           backgroundImage="https://eastdigital.in/img/bg-video.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
@@ -52,8 +50,11 @@ const WalkthroughVideo = () => {
         <section className="py-16">
           <div className="container mx-auto px-8">
             <div className="max-w-[850px]">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Cinematic 3D Walkthrough Videos: Bring Your Property to Life
+              </h2>
               <p className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
-                In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Our talented East Digital team creates dynamic narratives that allow viewers to feel how your future unfolds through immersive cinematic experiences.
+                In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Static renderings are powerful, but a cinematic 3D walkthrough video from East Digital offers an unparalleled emotional connection. We create a dynamic, narrative-driven experience that allows viewers to feel the flow, ambiance, and true potential of a space before a brick is laid.
               </p>
               
               <div className="bg-card border rounded-lg p-8">
@@ -61,7 +62,7 @@ const WalkthroughVideo = () => {
                   What is a 3D Walkthrough Video?
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  A 3D Walkthrough is a dynamic video presentation that guides the viewer on a pre-determined path through a 3D model of a property. Unlike an interactive tour where the user controls the experience, a walkthrough is cinematic experience. It leverages professional camera movements, lighting, music, and editing to tell a compelling story that highlights key features, and evokes a specific lifestyle or atmosphere.
+                  A 3D Walkthrough is a dynamic video presentation that guides the viewer on a pre-determined path through a 3D model of a property. Unlike an interactive tour where the user controls the experience, a walkthrough is a curated, cinematic experience. It leverages professional camera movements, lighting, music, and editing to tell a compelling story that highlights key features and evokes a specific lifestyle or atmosphere.
                 </p>
               </div>
             </div>
@@ -71,7 +72,7 @@ const WalkthroughVideo = () => {
         {/* Project Gallery */}
         <section className="py-20">
           <div className="container mx-auto px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projectImages.map((image, index) => (
                 <div key={index} className="relative group overflow-hidden rounded-lg bg-card border">
                   <div className="aspect-video relative">
@@ -92,79 +93,86 @@ const WalkthroughVideo = () => {
         </section>
 
         {/* Process Section */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Our Process: From Blueprint to Blockbuster
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10">
+                Our meticulous process ensures your vision is translated into a powerful marketing asset.
+              </p>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Discovery & Storyboarding</h3>
+                  <p className="text-muted-foreground">
+                    We begin by understanding your project's unique selling points and target audience. We collaborate with you to create a storyboard and define the camera paths that best showcase the property's layout and features.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">3D Modeling & Environment</h3>
+                  <p className="text-muted-foreground">
+                    Our artists transform your 2D plans into a detailed, dimensionally accurate 3D model. We build out the surrounding environment, landscaping, and context.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Texturing & Lighting</h3>
+                  <p className="text-muted-foreground">
+                    This is where the magic happens. We apply photorealistic materials, textures, and sophisticated lighting techniques to create a convincing and evocative mood.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Animation & Rendering</h3>
+                  <p className="text-muted-foreground">
+                    We animate the camera along the planned path. Each frame is rendered in high definition using significant computational power to achieve flawless quality.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Post-Production & Delivery</h3>
+                  <p className="text-muted-foreground">
+                    Our editing team adds music, sound design, graphics, and branding. After your approval, we deliver videos in required formats, optimized for web, social media, and sales presentations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 px-4 bg-muted/30">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Our Process: From Blueprint to Blockbuster
-            </h2>
-            <p className="text-lg text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-              Our meticulous process ensures your vision is translated into a powerful marketing asset.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-foreground mb-4">Discovery & Storyboarding</h3>
-                <p className="text-muted-foreground">
-                  We begin by understanding your project's unique selling points and target audience. We collaborate with you to create a storyboard and script that best showcases your property's layout and features.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="aspect-video relative rounded-lg overflow-hidden">
+                <img 
+                  src="https://eastdigital.in/img/ascon_003.jpg"
+                  alt="3D Walkthrough Example"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-foreground mb-4">3D Modeling & Environment</h3>
-                <p className="text-muted-foreground">
-                  Our artists translate your 2D floor plan and vision into a detailed, dimensionally accurate 3D model. We build out the surrounding environment, landscaping, and setting.
-                </p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-foreground mb-4">Texturing & Lighting</h3>
-                <p className="text-muted-foreground">
-                  This is where the magic happens. We apply photorealistic materials, textures, and sophisticated lighting techniques to create a convincing and immersive world.
-                </p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-foreground mb-4">Animation & Rendering</h3>
-                <p className="text-muted-foreground">
-                  We animate the camera along the planned path. Each frame is then rendered in high definition, a process that requires significant computational power to achieve flawless quality.
-                </p>
+              <div className="aspect-video relative rounded-lg overflow-hidden">
+                <img 
+                  src="https://eastdigital.in/img/bahuguna_villa_001.jpg"
+                  alt="3D Walkthrough Example"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
         </section>
 
         {/* Applications Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Applications for 3D Walkthroughs
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {applications.map((app, index) => (
-                <div key={index} className="bg-card border rounded-lg p-8">
-                  <h3 className="text-xl font-bold text-foreground mb-4">{app.title}</h3>
-                  <p className="text-muted-foreground">{app.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Final Gallery */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-video relative rounded-lg overflow-hidden">
-                <img 
-                  src="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png"
-                  alt="3D Walkthrough Example"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-video relative rounded-lg overflow-hidden">
-                <img 
-                  src="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png"
-                  alt="3D Walkthrough Example"
-                  className="w-full h-full object-cover"
-                />
+        <section className="py-20">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Applications for 3D Walkthroughs
+              </h2>
+              <div className="space-y-6">
+                {applications.map((app, index) => (
+                  <p key={index} className="text-muted-foreground">
+                    <span className="font-semibold text-foreground">{app.title}:</span> {app.description}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
