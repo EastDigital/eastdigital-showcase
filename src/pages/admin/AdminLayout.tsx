@@ -17,6 +17,7 @@ export default function AdminLayout() {
   }, []);
 
   const logout = async () => {
+    localStorage.removeItem("ed_pms_dev_login");
     await supabase.auth.signOut();
     navigate("/admin/login");
   };
