@@ -78,7 +78,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-end justify-center text-center lg:justify-start lg:text-left overflow-hidden">
+    <section className="relative h-screen flex items-end justify-start text-left lg:justify-start lg:text-left overflow-hidden">
       {/* Background Video */}
       <video 
         ref={videoRef}
@@ -129,9 +129,6 @@ const HeroSection = () => {
             3D That Sells, Stuns, and <br /> Speaks to Your Industry.
           </h1>
           
-          <h1 className="lg:hidden font-bold text-3xl leading-tight tracking-wide text-foreground mb-6">
-            3D That Sells, Stuns, and Speaks to Your Industry.
-          </h1>
           
           <p className="hidden lg:block text-lg leading-relaxed tracking-wide text-accent mb-10">
             Elite 3D Visualization for B2B Leaders in Real Estate, <br /> 
@@ -144,7 +141,7 @@ const HeroSection = () => {
             We don't just create renders; we engineer results.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+          <div className="flex flex-row flex-wrap items-center justify-start gap-4">
             <button className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
               <span className="relative z-10">Free Consultation</span>
             </button>

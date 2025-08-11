@@ -30,10 +30,10 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-40 px-4 flex items-center h-[75px] transition-all duration-300 ${
+      <header className={`fixed top-0 left-0 right-0 z-40 px-0 md:px-4 flex items-center h-[75px] transition-all duration-300 ${
         isSticky ? 'glass-effect' : ''
       }`}>
-        <div className="container mx-auto flex justify-between items-center h-full">
+        <div className="container mx-auto px-0 md:px-8 flex justify-between items-center h-full">
           <div className="flex-shrink-0">
             <img 
               src="https://www.eastdigital.in/img/logo-east-digital-white.png" 

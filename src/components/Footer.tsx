@@ -14,7 +14,7 @@ const Footer = () => {
           />
         </div>
         
-        <div className="container mx-auto px-8 relative z-10 flex flex-col justify-between min-h-[40vh]">
+        <div className="container mx-auto px-8 relative z-10 flex flex-col items-start justify-between min-h-[40vh]">
           {/* Top Content */}
           <div>
             <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
@@ -79,7 +79,7 @@ const Footer = () => {
       {/* Sub-Footer */}
       <div className="bg-background py-8">
         <div className="container mx-auto px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+          <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-8 mb-8">
             <img 
               src="https://www.eastdigital.in/img/logo-east-digital-white.png" 
               alt="East Digital Logo" 
@@ -89,7 +89,7 @@ const Footer = () => {
               }}
             />
             
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            <div className="flex flex-wrap justify-start gap-x-6 gap-y-2 text-sm">
               <a href="#" className="text-foreground hover:text-accent transition-colors">Home</a>
               <a href="#" className="text-foreground hover:text-accent transition-colors">Expertise</a>
               <a href="#" className="text-foreground hover:text-accent transition-colors">About</a>
@@ -139,7 +139,7 @@ const Footer = () => {
           </div>
           
           <div className="border-t border-border pt-6">
-            <div className="flex flex-col sm:flex-row justify-between items-center text-muted-foreground text-xs">
+            <div className="flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center text-muted-foreground text-xs">
               <p>&copy; 2025 East Digital.</p>
               <div className="flex space-x-6 mt-4 sm:mt-0">
                 <a href="#" className="hover:text-foreground transition-colors">Terms Of Use</a>
