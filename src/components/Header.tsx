@@ -35,7 +35,7 @@ const Header = () => {
             <Link to="/" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">
               Home
             </Link>
-            <div className="group h-full flex items-center relative">
+            <div className="group h-full flex items-center">
               <button className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300 flex items-center">
                 Expertise
                 <svg className="ml-2 transition-transform duration-300 group-hover:rotate-180" width="10" height="10" viewBox="0 0 24 24" fill="none">
