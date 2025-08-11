@@ -99,7 +99,7 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="container mx-auto px-8 pb-12 lg:pb-24 relative z-[10]">
-        <div className="max-w-2xl">
+        <div className="max-w-[850px]">
           <h1 className="hidden lg:block font-bold text-4xl lg:text-5xl leading-tight tracking-wide text-foreground mb-6">
             3D That Sells, Stuns, and <br /> Speaks to Your Industry.
           </h1>
