@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBanner from "@/components/PageBanner";
 import { Helmet } from "react-helmet-async";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
@@ -79,6 +80,35 @@ export default function ProjectCaseStudy() {
     return null;
   }, [project?.schema_json]);
 
+  const breadcrumbs = useMemo(() => {
+    const items: Array<{ label: string; href?: string }> = [
+      { label: "Home", href: "/" },
+      { label: "Expertise", href: "/expertise" },
+    ];
+    if (project?.category) {
+      const map: Record<string, string> = {
+        "REAL ESTATE": "/expertise/real-estate",
+        "INFRASTRUCTURE": "/expertise/infrastructure",
+        "ARCHITECTURE & DESIGN": "/expertise/architecture-design",
+      };
+      const catPath = map[project.category] || "/expertise";
+      items.push({ label: project.category, href: catPath });
+    }
+    if (project?.title) items.push({ label: project.title });
+    return items;
+  }, [project?.category, project?.title]);
+
+  const feature = useMemo(() => {
+    const gal = (project?.gallery || []) as string[];
+    const isVideo = (u: string) => /\.(mp4|webm|ogg)$/i.test(u);
+    let featured = "";
+    for (const u of gal) {
+      if (!isVideo(u)) { featured = u; break; }
+    }
+    const remaining = gal.filter((u) => u !== featured);
+    return { featuredImage: featured || (project?.cover_image || ""), remainingGallery: remaining };
+  }, [project?.gallery, project?.cover_image]);
+
   return (
     <div className="min-h-screen bg-background font-nunito">
       <Helmet>
@@ -108,36 +138,37 @@ export default function ProjectCaseStudy() {
           </section>
         ) : (
           <>
+            <PageBanner title={project.title} backgroundImage={project.cover_image || ""} breadcrumbs={breadcrumbs} />
             <article>
-              <header className="bg-card border-b border-border">
-                <div className="container mx-auto px-4 py-8">
-                  <h1 className="text-3xl font-semibold">{project.title}</h1>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {project.category}{project.subcategory ? ` • ${project.subcategory}` : ""}
+              <section className="container mx-auto px-4 py-8">
+                {project.summary && (
+                  <p className="text-lg leading-relaxed text-muted-foreground max-w-[850px]">
+                    {project.summary}
                   </p>
-                  {project.summary && (
-                    <p className="mt-3 max-w-3xl text-base text-muted-foreground">{project.summary}</p>
-                  )}
-                </div>
-              </header>
+                )}
+              </section>
 
-              {project.cover_image && (
-                <section className="bg-background">
-                  <div className="container mx-auto px-4 py-6">
-                    <img
-                      src={project.cover_image}
-                      alt={`${project.title} cover image`}
-                      className="w-full rounded-md object-cover"
-                    />
-                  </div>
+              {feature.featuredImage && (
+                <section className="w-full">
+                  <img
+                    src={feature.featuredImage}
+                    alt={`${project.title} featured image`}
+                    className="w-full h-auto object-cover"
+                  />
                 </section>
               )}
 
-              {project.gallery && project.gallery.length > 0 && (
+              <section className="container mx-auto px-4 py-8">
+                <div className="prose max-w-none prose-invert border border-border rounded-md p-4 max-w-[850px]">
+                  <EditorContent editor={editor} />
+                </div>
+              </section>
+
+              {feature.remainingGallery && feature.remainingGallery.length > 0 && (
                 <section className="container mx-auto px-4 py-6">
                   <h2 className="text-xl font-semibold mb-3">Gallery</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {project.gallery.map((u, i) => {
+                    {feature.remainingGallery.map((u, i) => {
                       const isVideo = /\.(mp4|webm|ogg)$/i.test(u);
                       return (
                         <div key={u + i} className="rounded-md overflow-hidden border border-border bg-card">
@@ -154,13 +185,6 @@ export default function ProjectCaseStudy() {
                   </div>
                 </section>
               )}
-
-              <section className="container mx-auto px-4 py-8">
-                <h2 className="text-xl font-semibold mb-3">Case Study</h2>
-                <div className="prose max-w-none prose-invert border border-border rounded-md p-4">
-                  <EditorContent editor={editor} />
-                </div>
-              </section>
             </article>
           </>
         )}
