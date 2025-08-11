@@ -33,9 +33,22 @@ export default function ProjectForm() {
   const [carouselOrder, setCarouselOrder] = useState<number | "">("");
   const [coverImage, setCoverImage] = useState<string | null>(null);
   const [gallery, setGallery] = useState<string[]>([]);
+
+  // SEO / OG / AISEO
+  const [seoTitle, setSeoTitle] = useState("");
+  const [seoDescription, setSeoDescription] = useState("");
+  const [seoKeywords, setSeoKeywords] = useState("");
+  const [ogTitle, setOgTitle] = useState("");
+  const [ogDescription, setOgDescription] = useState("");
+  const [ogImage, setOgImage] = useState<string | null>(null);
+  const [schemaJson, setSchemaJson] = useState("");
+  const [aiseoKeywords, setAiseoKeywords] = useState("");
+
   const [saving, setSaving] = useState(false);
   const coverRef = useRef<HTMLInputElement | null>(null);
   const galleryRef = useRef<HTMLInputElement | null>(null);
+  const ogRef = useRef<HTMLInputElement | null>(null);
+
 
   const editor = useEditor({ extensions: [StarterKit], content: "<p></p>" });
 
@@ -58,6 +71,17 @@ export default function ProjectForm() {
           setCarouselOrder(data.carousel_order ?? "");
           setCoverImage(data.cover_image || null);
           setGallery(Array.isArray(data.gallery) ? (data.gallery as any[]).map(String) : []);
+
+          // SEO / OG / AISEO / Schema
+          setSeoTitle(data.seo_title || "");
+          setSeoDescription(data.seo_description || "");
+          setSeoKeywords(Array.isArray(data.seo_keywords) ? data.seo_keywords.join(", ") : (data.seo_keywords ?? ""));
+          setOgTitle(data.og_title || "");
+          setOgDescription(data.og_description || "");
+          setOgImage(data.og_image || null);
+          setSchemaJson(data.schema_json || "");
+          setAiseoKeywords(Array.isArray(data.aiseo_keywords) ? data.aiseo_keywords.join(", ") : (data.aiseo_keywords ?? ""));
+
           try {
             const content = data.case_study_content;
             if (content && typeof content === "object") editor?.commands.setContent(content as any);
@@ -95,6 +119,18 @@ export default function ProjectForm() {
         cover_image: coverImage,
         gallery,
         case_study_content: editor?.getJSON() ?? {},
+        // SEO
+        seo_title: seoTitle || null,
+        seo_description: seoDescription || null,
+        seo_keywords: seoKeywords ? seoKeywords.split(",").map(s => s.trim()).filter(Boolean) : null,
+        // Open Graph
+        og_title: ogTitle || null,
+        og_description: ogDescription || null,
+        og_image: ogImage,
+        // Schema JSON
+        schema_json: schemaJson || null,
+        // AISEO
+        aiseo_keywords: aiseoKeywords ? aiseoKeywords.split(",").map(s => s.trim()).filter(Boolean) : null,
       };
       let error;
       if (editing) {
@@ -123,6 +159,13 @@ export default function ProjectForm() {
     if (!f) return;
     const url = await uploadFile(f);
     setCoverImage(url);
+  };
+
+  const onUploadOg = async () => {
+    const f = ogRef.current?.files?.[0];
+    if (!f) return;
+    const url = await uploadFile(f);
+    setOgImage(url);
   };
 
   const onUploadGallery = async () => {
@@ -221,11 +264,65 @@ export default function ProjectForm() {
             </div>
           </div>
 
-          <div>
+  <div>
             <Label>Case Study Content</Label>
             <div className="prose prose-invert max-w-none border border-border rounded-md p-3">
               <EditorContent editor={editor} />
             </div>
+          </div>
+
+          {/* SEO Fields */}
+          <div className="grid gap-4">
+            <h2 className="text-lg font-semibold">SEO</h2>
+            <div>
+              <Label>SEO Title</Label>
+              <Input value={seoTitle} onChange={(e) => setSeoTitle(e.target.value)} />
+            </div>
+            <div>
+              <Label>Meta Description</Label>
+              <Input value={seoDescription} onChange={(e) => setSeoDescription(e.target.value)} />
+            </div>
+            <div>
+              <Label>Meta Keywords (comma-separated)</Label>
+              <Input value={seoKeywords} onChange={(e) => setSeoKeywords(e.target.value)} />
+            </div>
+          </div>
+
+          {/* AISEO Fields */}
+          <div className="grid gap-2">
+            <h2 className="text-lg font-semibold">AISEO</h2>
+            <div>
+              <Label>AISEO Keywords / Tags (comma-separated)</Label>
+              <Input value={aiseoKeywords} onChange={(e) => setAiseoKeywords(e.target.value)} />
+            </div>
+          </div>
+
+          {/* Open Graph Fields */}
+          <div className="grid gap-4">
+            <h2 className="text-lg font-semibold">Open Graph</h2>
+            <div>
+              <Label>OG Title</Label>
+              <Input value={ogTitle} onChange={(e) => setOgTitle(e.target.value)} />
+            </div>
+            <div>
+              <Label>OG Description</Label>
+              <Input value={ogDescription} onChange={(e) => setOgDescription(e.target.value)} />
+            </div>
+            <div>
+              <Label>OG Image</Label>
+              <div className="flex items-center gap-3">
+                <Input ref={ogRef} type="file" accept="image/*" />
+                <Button type="button" variant="outline" onClick={onUploadOg}>Upload</Button>
+              </div>
+              {ogImage && <img src={ogImage} alt="Open Graph" className="mt-3 h-32 rounded object-cover" />}
+            </div>
+          </div>
+
+          {/* Schema JSON */}
+          <div>
+            <h2 className="text-lg font-semibold">Schema JSON</h2>
+            <Label>Paste JSON-LD</Label>
+            <textarea className="w-full bg-background border border-border rounded-md p-3 h-40" value={schemaJson} onChange={(e) => setSchemaJson(e.target.value)} placeholder='{"@context":"https://schema.org","@type":"Article"}' />
           </div>
 
           <div className="flex gap-3">

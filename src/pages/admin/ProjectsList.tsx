@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CATEGORIES, SUBCATEGORIES, ProjectStatus } from "@/constants/pms";
 import AdminRoute from "@/components/AdminRoute";
+import { toast } from "@/components/ui/use-toast";
 
 interface ProjectRow {
   id: number;
@@ -29,6 +30,7 @@ export default function ProjectsList() {
   const category = searchParams.get("category") || "";
   const subcategory = searchParams.get("subcategory") || "";
   const status = (searchParams.get("status") as ProjectStatus | null) || "";
+  const carousel = searchParams.get("carousel") || "";
 
   const load = async () => {
     setLoading(true);
@@ -37,17 +39,31 @@ export default function ProjectsList() {
     if (category) query = query.eq("category", category);
     if (subcategory) query = query.eq("subcategory", subcategory);
     if (status) query = query.eq("status", status);
+    if (carousel === "yes") query = query.eq("carousel", true);
+    if (carousel === "no") query = query.eq("carousel", false);
     const { data } = await query;
     setProjects((data as any) ?? []);
     setLoading(false);
   };
 
-  useEffect(() => { load(); }, [q, category, subcategory, status]);
+  useEffect(() => { load(); }, [q, category, subcategory, status, carousel]);
 
   const onDelete = async (id: number) => {
     if (!confirm("Delete this project?")) return;
-    await supabase.from("projects").delete().eq("id", id);
-    load();
+    const { error } = await supabase.from("projects").delete().eq("id", id);
+    if (error) toast({ title: "Delete failed", description: error.message });
+    await load();
+  };
+
+  const togglePublish = async (p: ProjectRow) => {
+    const next = p.status === "Published" ? "Draft" : "Published";
+    const { error } = await supabase.from("projects").update({ status: next }).eq("id", p.id);
+    if (error) {
+      toast({ title: "Update failed", description: error.message });
+    } else {
+      toast({ title: next === "Published" ? "Project published" : "Project unpublished" });
+      await load();
+    }
   };
 
   const setParam = (key: string, value: string) => {
@@ -65,7 +81,7 @@ export default function ProjectsList() {
         <Button asChild><Link to="/admin/projects/new">Add Project</Link></Button>
       </div>
 
-      <div className="grid md:grid-cols-4 gap-4 mb-6">
+  <div className="grid md:grid-cols-5 gap-4 mb-6">
         <div className="md:col-span-2">
           <Label>Search</Label>
           <Input placeholder="Search by title" value={q} onChange={(e) => setParam("q", e.target.value)} />
@@ -90,6 +106,14 @@ export default function ProjectsList() {
             <option value="">All</option>
             <option value="Published">Published</option>
             <option value="Draft">Draft</option>
+          </select>
+        </div>
+        <div>
+          <Label>Carousel</Label>
+          <select className="w-full bg-background border border-border rounded-md h-10 px-3" value={carousel} onChange={(e) => setParam("carousel", e.target.value)}>
+            <option value="">All</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
           </select>
         </div>
       </div>
@@ -119,6 +143,9 @@ export default function ProjectsList() {
                 <TableCell>{p.carousel ? "Yes" : "No"}</TableCell>
                 <TableCell>{new Date(p.updated_at).toLocaleString()}</TableCell>
                 <TableCell className="text-right space-x-2">
+                  <Button variant="secondary" onClick={() => togglePublish(p)}>
+                    {p.status === "Published" ? "Unpublish" : "Publish"}
+                  </Button>
                   <Button variant="outline" asChild><Link to={`/admin/projects/${p.id}/edit`}>Edit</Link></Button>
                   <Button variant="destructive" onClick={() => onDelete(p.id)}>Delete</Button>
                 </TableCell>
