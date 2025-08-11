@@ -1,12 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { useState, useRef, useEffect } from 'react';
-
 const HeroSection = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
     const video = videoRef.current;
     if (!video) {
@@ -28,7 +26,6 @@ const HeroSection = () => {
       setIsLoading(true);
       setVideoError(false);
     };
-
     const handleLoadedData = () => {
       console.log('Hero video: Data loaded successfully');
       clearTimeout(loadingTimeout);
@@ -36,7 +33,6 @@ const HeroSection = () => {
       setIsLoading(false);
       setVideoError(false);
     };
-
     const handleCanPlay = () => {
       console.log('Hero video: Can play');
       clearTimeout(loadingTimeout);
@@ -44,7 +40,6 @@ const HeroSection = () => {
       setIsLoading(false);
       setVideoError(false);
     };
-
     const handleError = (e: Event) => {
       console.error('Hero video: Failed to load', e);
       clearTimeout(loadingTimeout);
@@ -52,7 +47,6 @@ const HeroSection = () => {
       setIsLoading(false);
       setVideoLoaded(false);
     };
-
     const handleLoadedMetadata = () => {
       console.log('Hero video: Metadata loaded');
     };
@@ -66,7 +60,6 @@ const HeroSection = () => {
 
     // Force load the video
     video.load();
-
     return () => {
       clearTimeout(loadingTimeout);
       video.removeEventListener('loadstart', handleLoadStart);
@@ -76,55 +69,37 @@ const HeroSection = () => {
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
     };
   }, []);
-
-  return (
-    <section className="relative h-screen flex items-end justify-start text-left lg:justify-start lg:text-left overflow-hidden">
+  return <section className="relative h-screen flex items-end justify-start text-left lg:justify-start lg:text-left overflow-hidden">
       {/* Background Video */}
-      <video 
-        ref={videoRef}
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        preload="auto"
-        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-          videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'
-        }`}
-        style={{ zIndex: videoLoaded && !videoError ? 1 : -1 }}
-      >
+      <video ref={videoRef} autoPlay loop muted playsInline preload="auto" className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'}`} style={{
+      zIndex: videoLoaded && !videoError ? 1 : -1
+    }}>
         <source src="https://www.eastdigital.in/img/hero_video_folio.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       {/* Fallback Background Image */}
-      <div 
-        className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-          videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'
-        }`}
-        style={{
-          backgroundImage: 'url("https://eastdigital.in/img/bg-video.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: videoError || !videoLoaded ? 2 : 1
-        }}
-      />
+      <div className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'}`} style={{
+      backgroundImage: 'url("https://eastdigital.in/img/bg-video.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      zIndex: videoError || !videoLoaded ? 2 : 1
+    }} />
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/0 z-[3]" />
 
       {/* Loading State */}
-      {isLoading && (
-        <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
+      {isLoading && <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
           <div className="text-white">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
             <p>Loading experience...</p>
           </div>
-        </div>
-      )}
+        </div>}
       
       {/* Content */}
       <div className="container mx-auto px-8 pb-12 lg:pb-24 relative z-[10]">
-        <div className="max-w-4xl">
+        <div className="max-w-2xl">
           <h1 className="hidden lg:block font-bold text-4xl lg:text-5xl leading-tight tracking-wide text-foreground mb-6">
             3D That Sells, Stuns, and <br /> Speaks to Your Industry.
           </h1>
@@ -151,8 +126,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
