@@ -1,7 +1,8 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import ProjectGallery from '@/components/ProjectGallery';
+import ProjectCarousel from '@/components/ProjectCarousel';
+import ProjectCards from '@/components/ProjectCards';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -11,7 +12,10 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
-        <ProjectGallery />
+        <ProjectCarousel />
+        <section className="py-10">
+          <ProjectCards />
+        </section>
       </main>
       <Footer />
     </div>

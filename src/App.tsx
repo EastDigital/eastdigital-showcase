@@ -17,6 +17,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProjectsList from "./pages/admin/ProjectsList";
 import ProjectForm from "./pages/admin/ProjectForm";
 import CarouselManager from "./pages/admin/CarouselManager";
+import ProjectCaseStudy from "./pages/ProjectCaseStudy";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="carousel" element={<CarouselManager />} />
           </Route>
 
+          <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
