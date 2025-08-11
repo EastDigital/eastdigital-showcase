@@ -8,6 +8,7 @@ import { CATEGORIES, SUBCATEGORIES, ProjectStatus } from "@/constants/pms";
 import AdminRoute from "@/components/AdminRoute";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import { toast } from "@/components/ui/use-toast";
 
 function slugify(text: string) {
   return text
@@ -84,6 +85,10 @@ export default function ProjectForm() {
   const onSave = async () => {
     setSaving(true);
     try {
+      if (!title || !slug || !category || !subcategory) {
+        toast({ title: "Missing required fields", description: "Please fill title, slug, category and subcategory." });
+        return;
+      }
       const payload: any = {
         title, slug, summary, category, subcategory, status,
         carousel, carousel_order: carousel ? (carouselOrder || 0) : null,
@@ -91,14 +96,23 @@ export default function ProjectForm() {
         gallery,
         case_study_content: editor?.getJSON() ?? {},
       };
+      let error;
       if (editing) {
-        await supabase.from("projects").update(payload).eq("id", Number(params.id));
+        const res = await supabase.from("projects").update(payload).eq("id", Number(params.id));
+        error = res.error;
       } else {
-        await supabase.from("projects").insert(payload);
+        const res = await supabase.from("projects").insert(payload);
+        error = res.error;
       }
+      if (error) {
+        toast({ title: "Save failed", description: error.message });
+        return;
+      }
+      toast({ title: "Project saved" });
       navigate("/admin/projects");
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      toast({ title: "Unexpected error", description: String(e?.message || e) });
     } finally {
       setSaving(false);
     }
