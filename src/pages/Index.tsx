@@ -4,22 +4,16 @@ import AboutSection from '@/components/AboutSection';
 import ProjectGallery from '@/components/ProjectGallery';
 import ProjectCards from '@/components/ProjectCards';
 import Footer from '@/components/Footer';
-
 const Index = () => {
-  return (
-    <div id="top" className="min-h-screen bg-background font-nunito">
+  return <div id="top" className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
         <HeroSection />
         <AboutSection />
         <ProjectGallery />
-        <section className="py-10">
-          <ProjectCards />
-        </section>
+        
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
