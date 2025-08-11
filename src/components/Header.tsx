@@ -1,48 +1,33 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileExpertiseOpen, setIsMobileExpertiseOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
     }
-
     return () => document.body.classList.remove('overflow-hidden');
   }, [isMenuOpen]);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  return (
-    <>
-      <header className={`fixed top-0 left-0 right-0 z-40 px-0 md:px-4 flex items-center h-[75px] transition-all duration-300 ${
-        isSticky ? 'glass-effect' : ''
-      }`}>
-        <div className="container mx-auto px-0 md:px-8 flex justify-between items-center h-full">
+  return <>
+      <header className={`fixed top-0 left-0 right-0 z-40 px-0 md:px-4 flex items-center h-[75px] transition-all duration-300 ${isSticky ? 'glass-effect' : ''}`}>
+        <div className="container mx-auto px-1 md:px-8 flex justify-between items-center h-full">
           <div className="flex-shrink-0">
-            <img 
-              src="https://www.eastdigital.in/img/logo-east-digital-white.png" 
-              alt="East Digital Logo" 
-              className="h-12"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
-              }}
-            />
+            <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-12" onError={e => {
+            (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
+          }} />
           </div>
 
           {/* Desktop Navigation */}
@@ -54,7 +39,7 @@ const Header = () => {
               <button className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300 flex items-center">
                 Expertise
                 <svg className="ml-2 transition-transform duration-300 group-hover:rotate-180" width="10" height="10" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 15L6 9H18L12 15Z" fill="currentColor"/>
+                  <path d="M12 15L6 9H18L12 15Z" fill="currentColor" />
                 </svg>
               </button>
               
@@ -69,7 +54,7 @@ const Header = () => {
                         </Link>
                       </div>
                       <p className="font-light text-xs text-muted-foreground mb-4">
-                        Launch your project with<br/>3d walkthrough video.
+                        Launch your project with<br />3d walkthrough video.
                       </p>
                       <ul className="space-y-2 text-foreground">
                         <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Videos</Link></li>
@@ -86,7 +71,7 @@ const Header = () => {
                         </Link>
                       </div>
                       <p className="font-light text-xs text-muted-foreground mb-4">
-                        Present your project to the<br/>investors/authorities.
+                        Present your project to the<br />investors/authorities.
                       </p>
                       <ul className="space-y-2 text-foreground">
                         <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Conceptual 3D Renderings</a></li>
@@ -99,11 +84,11 @@ const Header = () => {
                     <div>
                       <div className="min-h-[50px] flex items-center mb-4">
                         <Link to="/expertise/architecture-design" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
-                          ARCHITECTURE<br/>& DESIGN
+                          ARCHITECTURE<br />& DESIGN
                         </Link>
                       </div>
                       <p className="font-light text-xs text-muted-foreground mb-4">
-                        For client approvals and<br/>internal assessment.
+                        For client approvals and<br />internal assessment.
                       </p>
                       <ul className="space-y-2 text-foreground">
                         <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Architectural Rendering</a></li>
@@ -129,10 +114,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
-            <button 
-              onClick={toggleMenu}
-              className="text-foreground focus:outline-none z-50"
-            >
+            <button onClick={toggleMenu} className="text-foreground focus:outline-none z-50">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
@@ -142,26 +124,16 @@ const Header = () => {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out ${
-        isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-      }`} style={{
-        background: 'rgba(17, 17, 17, 0.85)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)'
-      }}>
+      <div className={`lg:hidden fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`} style={{
+      background: 'rgba(17, 17, 17, 0.85)',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)'
+    }}>
         <div className="flex justify-between items-center p-4 h-[75px]">
-          <img 
-            src="https://www.eastdigital.in/img/logo-east-digital-white.png" 
-            alt="East Digital Logo" 
-            className="h-12"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
-            }}
-          />
-          <button 
-            onClick={toggleMenu}
-            className="text-foreground focus:outline-none z-50"
-          >
+          <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-12" onError={e => {
+          (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
+        }} />
+          <button onClick={toggleMenu} className="text-foreground focus:outline-none z-50">
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -172,10 +144,7 @@ const Header = () => {
           <Link to="/" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Home</Link>
           
           <div>
-            <button 
-              onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)}
-              className="w-full flex justify-between items-center text-foreground text-xl font-light hover:text-accent transition-colors duration-300"
-            >
+            <button onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)} className="w-full flex justify-between items-center text-foreground text-xl font-light hover:text-accent transition-colors duration-300">
               <span>Expertise</span>
               <svg className={`w-5 h-5 transition-transform duration-300 ${isMobileExpertiseOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -226,8 +195,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Header;
