@@ -23,7 +23,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   return <>
       <header className={`fixed top-0 left-0 right-0 z-40 px-0 md:px-4 flex items-center h-[75px] transition-all duration-300 ${isSticky ? 'glass-effect' : ''}`}>
-        <div className="container mx-auto px-1 md:px-8 flex justify-between items-center h-full">
+        <div className="container mx-auto px-2 md:px-8 flex justify-between items-center h-full">
           <div className="flex-shrink-0">
             <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-12" onError={e => {
             (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
