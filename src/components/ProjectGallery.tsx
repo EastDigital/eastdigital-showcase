@@ -1,9 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
 
 interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  cover_image: string | null;
   category: string;
-  services: string;
-  img: string;
+  subcategory: string;
 }
 
 const ProjectGallery = () => {
@@ -12,20 +17,34 @@ const ProjectGallery = () => {
   const animationRef = useRef<number>();
   const isDraggingRef = useRef(false);
 
-  const projects: Project[] = [
-    { category: 'Real Estate', services: '3D Walkthroughs, Architectural Renderings, Interactive Tours', img: 'https://www.eastdigital.in/img/ascon_001.jpg' },
-    { category: 'Real Estate', services: 'Exterior Visualization, Interactive Tours', img: 'https://www.eastdigital.in/img/anantraj_001.jpg' },
-    { category: 'Architecture & Design', services: '3D Architectural Renderings, Virtual Staging', img: 'https://www.eastdigital.in/img/afc_private_001.jpg' },
-    { category: 'Real Estate', services: 'Apartment Complex Visualization', img: 'https://www.eastdigital.in/img/apartment_001.jpg' },
-    { category: 'Infrastructure', services: 'Conceptual 3D Renderings, Process Animations', img: 'https://www.eastdigital.in/img/ascon_003.jpg' },
-    { category: 'Real Estate', services: '3D Walkthroughs, Architectural Renderings', img: 'https://www.eastdigital.in/img/bahuguna_villa_001.jpg' },
-    { category: 'Infrastructure', services: 'Power Plant Visualization', img: 'https://www.eastdigital.in/img/Reliance-Sasan_ex_01.jpg' },
-    { category: 'Architecture & Design', services: 'Product 3D Renderings, Virtual Staging', img: 'https://www.eastdigital.in/img/afc_private_002.jpg' },
-    { category: 'Infrastructure', services: 'Industrial Process Animation', img: 'https://www.eastdigital.in/img/Reliance-Sasan_ex_02.jpg' },
-    { category: 'Infrastructure', services: 'Engineering 3D Models', img: 'https://www.eastdigital.in/img/Reliance-Sasan_ex_03.jpg' },
-    { category: 'Architecture & Design', services: '3D Architectural Renderings', img: 'https://www.eastdigital.in/img/builders-art_001.jpg' },
-    { category: 'Architecture & Design', services: 'Virtual Staging, Product 3D Renderings', img: 'https://www.eastdigital.in/img/afc_private_003.jpg' },
-  ];
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      const { data, error } = await supabase
+        .from('projects')
+        .select('id,title,slug,cover_image,category,subcategory,carousel_order,status,carousel')
+        .eq('status', 'Published')
+        .eq('carousel', true)
+        .order('carousel_order', { ascending: true, nullsFirst: false });
+      if (!mounted) return;
+      if (error) {
+        console.error(error);
+        setProjects([]);
+      } else {
+        setProjects(((data as any) || []).map((d: any) => ({
+          id: d.id,
+          title: d.title,
+          slug: d.slug,
+          cover_image: d.cover_image,
+          category: d.category,
+          subcategory: d.subcategory,
+        })));
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
 
   // Duplicate projects for seamless infinite scroll
   const allProjects = [...projects, ...projects];
@@ -106,14 +125,15 @@ const ProjectGallery = () => {
           className="flex gap-6 px-8"
         >
           {allProjects.map((project, index) => (
-            <a
-              key={index}
-              href="#"
+            <Link
+              key={project.slug + '-' + index}
+              to={`/projects/${project.slug}`}
               className="flex-shrink-0 w-[300px] bg-card rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 relative group"
             >
               <img
-                src={project.img}
-                alt="Project Image"
+                src={project.cover_image || 'https://placehold.co/400x600/111/fff?text=No+Image'}
+                alt={`${project.title} cover image`}
+                loading="lazy"
                 className="w-full h-[350px] object-cover"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = 'https://placehold.co/400x600/111/fff?text=Image+Not+Found';
@@ -121,13 +141,13 @@ const ProjectGallery = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
                 <h3 className="font-semibold text-base leading-5 tracking-wide text-foreground mb-2">
-                  {project.category}
+                  {project.title}
                 </h3>
                 <p className="font-normal text-sm leading-tight tracking-wide text-accent">
-                  {project.services}
+                  {project.category}{project.subcategory ? ` • ${project.subcategory}` : ''}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
