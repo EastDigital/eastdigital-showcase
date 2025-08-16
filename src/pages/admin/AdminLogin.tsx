@@ -11,11 +11,6 @@ export default function AdminLogin() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // If dev flag set, go straight to admin
-    if (localStorage.getItem("ed_pms_dev_login") === "1") {
-      window.location.replace("/admin");
-      return;
-    }
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session) window.location.replace("/admin");
     });
@@ -36,10 +31,6 @@ export default function AdminLogin() {
     }
   };
 
-  const devLogin = () => {
-    localStorage.setItem("ed_pms_dev_login", "1");
-    window.location.replace("/admin");
-  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
@@ -55,8 +46,7 @@ export default function AdminLogin() {
         </div>
         {error && <p className="text-destructive text-sm">{error}</p>}
         <Button type="submit" disabled={loading} className="w-full">{loading ? "Please wait..." : "Login"}</Button>
-        <Button type="button" variant="outline" className="w-full" onClick={devLogin}>Dev Login (Bypass)</Button>
-        <p className="text-xs text-muted-foreground">Writes restricted to eastdigitalcompany@gmail.com. Dev Login bypasses auth locally.</p>
+        <p className="text-xs text-muted-foreground">Admin access restricted to eastdigitalcompany@gmail.com</p>
       </form>
     </div>
   );
