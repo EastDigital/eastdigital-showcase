@@ -33,8 +33,8 @@ const PageBanner = ({
         <nav className="page-breadcrumb mt-4" aria-label="Breadcrumb">
           {breadcrumbs.map((crumb, index) => <span key={index}>
               {crumb.href ? <Link to={crumb.href} className="hover:text-white/80 transition-colors">
-                  {crumb.label}
-                </Link> : <span className="font-medium">{crumb.label}</span>}
+                  {crumb.label.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
+                </Link> : <span className="font-medium">{crumb.label.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}</span>}
               {index < breadcrumbs.length - 1 && <span className="mx-2 text-white/70" aria-hidden="true">›</span>}
             </span>)}
         </nav>

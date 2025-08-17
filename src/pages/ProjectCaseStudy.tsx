@@ -159,7 +159,7 @@ export default function ProjectCaseStudy() {
               )}
 
               <section className="container mx-auto px-4 py-8">
-                <div className="prose max-w-none prose-invert border border-border rounded-md p-4 max-w-[850px]">
+                <div className="prose max-w-none prose-invert max-w-[850px]">
                   <EditorContent editor={editor} />
                 </div>
               </section>
@@ -171,13 +171,13 @@ export default function ProjectCaseStudy() {
                     {feature.remainingGallery.map((u, i) => {
                       const isVideo = /\.(mp4|webm|ogg)$/i.test(u);
                       return (
-                        <div key={u + i} className="rounded-md overflow-hidden border border-border bg-card">
+                        <div key={u + i} className="rounded-md overflow-hidden border border-border bg-card cursor-pointer" onClick={() => !isVideo && window.open(u, '_blank')}>
                           {isVideo ? (
                             <video controls className="w-full h-full">
                               <source src={u} />
                             </video>
                           ) : (
-                            <img src={u} alt={`${project.title} gallery ${i + 1}`} loading="lazy" className="w-full h-full object-cover" />
+                            <img src={u} alt={`${project.title} gallery ${i + 1}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                           )}
                         </div>
                       );

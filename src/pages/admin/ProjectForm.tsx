@@ -196,7 +196,8 @@ export default function ProjectForm() {
             <p className="text-xs text-muted-foreground mt-1">Auto-generated from title; you can edit.</p>
           </div>
           <div>
-            <Label>Summary</Label>
+            <h2 className="text-2xl font-bold text-white mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>Summary</h2>
+            <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Summary</Label>
             <Input value={summary} onChange={(e) => setSummary(e.target.value)} />
           </div>
           <div className="grid md:grid-cols-2 gap-4">
@@ -264,8 +265,9 @@ export default function ProjectForm() {
             </div>
           </div>
 
-  <div>
-            <Label>Case Study Content</Label>
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>Case Study Content</h2>
+            <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Case Study Content</Label>
             <div className="prose prose-invert max-w-none border border-border rounded-md p-3">
               <EditorContent editor={editor} />
             </div>
