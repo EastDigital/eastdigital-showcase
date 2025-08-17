@@ -146,12 +146,12 @@ export default function ProjectCaseStudy() {
                 {(project.summary_heading || project.summary) && (
                   <div className="max-w-[850px]">
                     {project.summary_heading && (
-                      <h2 className="text-white font-bold" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em', marginBottom: '16px'}}>
+                      <h2 className="text-white font-bold font-nunito" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em', marginBottom: '16px'}}>
                         {project.summary_heading}
                       </h2>
                     )}
                     {project.summary && (
-                      <p className="text-[#DADADA] leading-relaxed" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
+                      <p className="text-[#DADADA] font-nunito" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
                         {project.summary}
                       </p>
                     )}
@@ -172,11 +172,11 @@ export default function ProjectCaseStudy() {
               <section className="container mx-auto px-4 py-8">
                 <div className="max-w-[850px]">
                   {project.case_study_heading && (
-                    <h2 className="text-white font-bold mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>
+                    <h2 className="text-white font-bold font-nunito mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>
                       {project.case_study_heading}
                     </h2>
                   )}
-                  <div className="prose max-w-none prose-invert">
+                  <div className="max-w-none text-[#DADADA] font-nunito" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
                     <EditorContent editor={editor} />
                   </div>
                 </div>
