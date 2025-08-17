@@ -3,12 +3,15 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [resetLoading, setResetLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -31,6 +34,28 @@ export default function AdminLogin() {
     }
   };
 
+  const resetPassword = async () => {
+    if (!email) {
+      setError("Please enter your email address first");
+      return;
+    }
+    setResetLoading(true);
+    setError(null);
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/admin/login`,
+      });
+      if (error) throw error;
+      toast({
+        title: "Password reset sent",
+        description: "Check your email for a password reset link",
+      });
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setResetLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
@@ -46,6 +71,15 @@ export default function AdminLogin() {
         </div>
         {error && <p className="text-destructive text-sm">{error}</p>}
         <Button type="submit" disabled={loading} className="w-full">{loading ? "Please wait..." : "Login"}</Button>
+        <Button 
+          type="button" 
+          variant="ghost" 
+          onClick={resetPassword} 
+          disabled={resetLoading} 
+          className="w-full text-sm"
+        >
+          {resetLoading ? "Sending..." : "Forgot Password?"}
+        </Button>
         <p className="text-xs text-muted-foreground">Admin access restricted to eastdigitalcompany@gmail.com</p>
       </form>
     </div>
