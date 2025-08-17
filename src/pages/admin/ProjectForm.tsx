@@ -113,6 +113,16 @@ export default function ProjectForm() {
   const onSave = async () => {
     setSaving(true);
     try {
+      // Check authentication state
+      const { data: { user } } = await supabase.auth.getUser();
+      console.log("Current user:", user);
+      console.log("User email:", user?.email);
+      
+      if (!user) {
+        toast({ title: "Authentication required", description: "Please log in to continue." });
+        return;
+      }
+      
       if (!title || !slug || !category || !subcategory) {
         toast({ title: "Missing required fields", description: "Please fill title, slug, category and subcategory." });
         return;
