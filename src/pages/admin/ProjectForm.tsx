@@ -117,6 +117,10 @@ export default function ProjectForm() {
         toast({ title: "Missing required fields", description: "Please fill title, slug, category and subcategory." });
         return;
       }
+      
+      console.log("Summary heading value:", summaryHeading);
+      console.log("Case study heading value:", caseStudyHeading);
+      
       const payload: any = {
         title, slug, summary, category, subcategory, status,
         carousel, carousel_order: carousel ? (carouselOrder || 0) : null,
