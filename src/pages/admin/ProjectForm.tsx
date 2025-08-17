@@ -33,6 +33,8 @@ export default function ProjectForm() {
   const [carouselOrder, setCarouselOrder] = useState<number | "">("");
   const [coverImage, setCoverImage] = useState<string | null>(null);
   const [gallery, setGallery] = useState<string[]>([]);
+  const [summaryHeading, setSummaryHeading] = useState("");
+  const [caseStudyHeading, setCaseStudyHeading] = useState("");
 
   // SEO / OG / AISEO
   const [seoTitle, setSeoTitle] = useState("");
@@ -71,6 +73,8 @@ export default function ProjectForm() {
           setCarouselOrder(data.carousel_order ?? "");
           setCoverImage(data.cover_image || null);
           setGallery(Array.isArray(data.gallery) ? (data.gallery as any[]).map(String) : []);
+          setSummaryHeading(data.summary_heading || "");
+          setCaseStudyHeading(data.case_study_heading || "");
 
           // SEO / OG / AISEO / Schema
           setSeoTitle(data.seo_title || "");
@@ -119,6 +123,8 @@ export default function ProjectForm() {
         cover_image: coverImage,
         gallery,
         case_study_content: editor?.getJSON() ?? {},
+        summary_heading: summaryHeading || null,
+        case_study_heading: caseStudyHeading || null,
         // SEO
         seo_title: seoTitle || null,
         seo_description: seoDescription || null,
@@ -197,8 +203,16 @@ export default function ProjectForm() {
           </div>
           <div>
             <h2 className="text-2xl font-bold text-white mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>Summary</h2>
-            <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Summary</Label>
-            <Input value={summary} onChange={(e) => setSummary(e.target.value)} />
+            <div className="grid gap-3">
+              <div>
+                <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Summary Heading</Label>
+                <Input value={summaryHeading} onChange={(e) => setSummaryHeading(e.target.value)} placeholder="Enter heading for summary section" />
+              </div>
+              <div>
+                <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Summary Content</Label>
+                <Input value={summary} onChange={(e) => setSummary(e.target.value)} />
+              </div>
+            </div>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
@@ -267,9 +281,17 @@ export default function ProjectForm() {
 
           <div>
             <h2 className="text-2xl font-bold text-white mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>Case Study Content</h2>
-            <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Case Study Content</Label>
-            <div className="prose prose-invert max-w-none border border-border rounded-md p-3">
-              <EditorContent editor={editor} />
+            <div className="grid gap-3">
+              <div>
+                <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Case Study Heading</Label>
+                <Input value={caseStudyHeading} onChange={(e) => setCaseStudyHeading(e.target.value)} placeholder="Enter heading for case study section" />
+              </div>
+              <div>
+                <Label className="text-xl text-gray-300" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>Case Study Content</Label>
+                <div className="prose prose-invert max-w-none border border-border rounded-md p-3">
+                  <EditorContent editor={editor} />
+                </div>
+              </div>
             </div>
           </div>
 

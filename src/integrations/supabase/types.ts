@@ -44,6 +44,7 @@ export type Database = {
           carousel: boolean | null
           carousel_order: number | null
           case_study_content: Json | null
+          case_study_heading: string | null
           category: string
           cover_image: string | null
           created_at: string | null
@@ -60,6 +61,7 @@ export type Database = {
           status: string | null
           subcategory: string
           summary: string | null
+          summary_heading: string | null
           title: string
           updated_at: string | null
         }
@@ -68,6 +70,7 @@ export type Database = {
           carousel?: boolean | null
           carousel_order?: number | null
           case_study_content?: Json | null
+          case_study_heading?: string | null
           category: string
           cover_image?: string | null
           created_at?: string | null
@@ -84,6 +87,7 @@ export type Database = {
           status?: string | null
           subcategory: string
           summary?: string | null
+          summary_heading?: string | null
           title: string
           updated_at?: string | null
         }
@@ -92,6 +96,7 @@ export type Database = {
           carousel?: boolean | null
           carousel_order?: number | null
           case_study_content?: Json | null
+          case_study_heading?: string | null
           category?: string
           cover_image?: string | null
           created_at?: string | null
@@ -108,6 +113,7 @@ export type Database = {
           status?: string | null
           subcategory?: string
           summary?: string | null
+          summary_heading?: string | null
           title?: string
           updated_at?: string | null
         }
