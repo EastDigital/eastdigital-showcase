@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+import { Link } from 'react-router-dom';
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -31,12 +33,25 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          projectType: formData.projectType,
+          message: formData.message
+        }
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Message Sent!",
         description: "Thank you for your inquiry. We'll get back to you within 24 hours."
       });
+      
       setFormData({
         name: '',
         email: '',
@@ -45,8 +60,16 @@ export default function Contact() {
         projectType: '',
         message: ''
       });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "There was an issue sending your message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
   return <>
       <Helmet>
@@ -57,7 +80,7 @@ export default function Contact() {
       
       <Header />
       
-      <PageBanner title="Contact Us" backgroundImage="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png" breadcrumbs={[{
+      <PageBanner title="Contact Us" backgroundImage="/contact-banner.jpg" breadcrumbs={[{
       label: 'Home',
       href: '/'
     }, {
@@ -100,22 +123,43 @@ export default function Contact() {
                           </svg>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground">Response Time</h3>
-                          <p className="text-muted-foreground">Within 24 hours</p>
+                          <h3 className="font-semibold text-foreground">Address</h3>
+                          <p className="text-muted-foreground">2nd Floor, JSV Hyundai Building, Near Engineering College,<br />Lucknow, Uttar Pradesh, INDIA - 226021</p>
                         </div>
                       </div>
                       
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 mt-1 text-accent">
                           <svg fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                            <path fillRule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clipRule="evenodd" />
                           </svg>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground">Business Hours</h3>
-                          <p className="text-muted-foreground">Monday - Friday, 9:00 AM - 6:00 PM</p>
+                          <h3 className="font-semibold text-foreground">Phone</h3>
+                          <p className="text-muted-foreground">+91-99105 68689</p>
                         </div>
                       </div>
+                    </div>
+                    
+                    {/* Guidance Note and CTA */}
+                    <div className="mt-8 p-6 bg-muted/50 rounded-lg border">
+                      <p className="text-muted-foreground mb-4">
+                        If you need guidance on what information should be provided, simply fill out our request a proposal form below.
+                      </p>
+                      <Link 
+                        to="/enquiry" 
+                        className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-all duration-300 group"
+                      >
+                        Take me to form
+                        <svg 
+                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </div>
