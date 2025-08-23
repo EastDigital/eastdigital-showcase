@@ -8,19 +8,16 @@ export const CATEGORIES = [
 
 export const SUBCATEGORIES: Record<typeof CATEGORIES[number], string[]> = {
   "REAL ESTATE": [
-    "3D Walkthrough Videos",
-    "Architectural Still Renderings",
-    "Interactive Virtual Tours",
+    "3D Walkthrough Video",
+    "3D Still Renderings",
   ],
   "INFRASTRUCTURE": [
     "Conceptual 3D Renderings",
-    "Process Animations",
     "Engineering 3D Models",
   ],
   "ARCHITECTURE & DESIGN": [
-    "3D Architectural Rendering",
-    "Virtual Staging",
-    "Product 3D Renderings",
+    "Architectural 3D Rendering",
+    "Product 3D Rendering",
   ],
 };
 
