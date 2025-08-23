@@ -115,33 +115,16 @@ export default function ProjectForm() {
     try {
       // Check authentication state
       const { data: { user } } = await supabase.auth.getUser();
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      console.log("Current user:", user);
-      console.log("User email:", user?.email);
-      console.log("Session:", session);
-      console.log("JWT claims:", session?.access_token ? JSON.parse(atob(session.access_token.split('.')[1])) : null);
       
       if (!user) {
         toast({ title: "Authentication required", description: "Please log in to continue." });
         return;
       }
       
-      // Test the RLS policy directly
-      try {
-        const testQuery = await supabase.from("admin_users").select("*").eq("email", user.email);
-        console.log("Admin user test query:", testQuery);
-      } catch (error) {
-        console.error("Admin user test error:", error);
-      }
-      
       if (!title || !slug || !category || !subcategory) {
         toast({ title: "Missing required fields", description: "Please fill title, slug, category and subcategory." });
         return;
       }
-      
-      console.log("Summary heading value:", summaryHeading);
-      console.log("Case study heading value:", caseStudyHeading);
       
       const payload: any = {
         title, slug, summary, category, subcategory, status,
