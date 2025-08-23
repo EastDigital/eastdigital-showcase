@@ -8,7 +8,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,22 +18,19 @@ export default function Contact() {
     message: ''
   });
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast({
@@ -52,9 +48,7 @@ export default function Contact() {
       setLoading(false);
     }, 1000);
   };
-
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Contact Us | East Digital</title>
         <meta name="description" content="Get in touch with East Digital for your 3D visualization needs. Contact our team for project inquiries and consultations." />
@@ -63,14 +57,12 @@ export default function Contact() {
       
       <Header />
       
-      <PageBanner
-        title="Contact Us"
-        backgroundImage="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Contact Us' }
-        ]}
-      />
+      <PageBanner title="Contact Us" backgroundImage="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png" breadcrumbs={[{
+      label: 'Home',
+      href: '/'
+    }, {
+      label: 'Contact Us'
+    }]} />
 
       <main>
         <section className="py-16 lg:py-24 bg-background">
@@ -91,8 +83,8 @@ export default function Contact() {
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 mt-1 text-accent">
                           <svg fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                           </svg>
                         </div>
                         <div>
@@ -104,7 +96,7 @@ export default function Contact() {
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 mt-1 text-accent">
                           <svg fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                           </svg>
                         </div>
                         <div>
@@ -116,7 +108,7 @@ export default function Contact() {
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 mt-1 text-accent">
                           <svg fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                           </svg>
                         </div>
                         <div>
@@ -134,64 +126,28 @@ export default function Contact() {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name">Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="mt-1"
-                        />
+                        <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} className="mt-1" />
                       </div>
                       <div>
                         <Label htmlFor="email">Email *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="mt-1"
-                        />
+                        <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className="mt-1" />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="phone">Phone</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="mt-1"
-                        />
+                        <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="mt-1" />
                       </div>
                       <div>
                         <Label htmlFor="company">Company</Label>
-                        <Input
-                          id="company"
-                          name="company"
-                          type="text"
-                          value={formData.company}
-                          onChange={handleChange}
-                          className="mt-1"
-                        />
+                        <Input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className="mt-1" />
                       </div>
                     </div>
 
                     <div>
                       <Label htmlFor="projectType">Project Type</Label>
-                      <select
-                        id="projectType"
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleChange}
-                        className="mt-1 w-full bg-background border border-border rounded-md h-10 px-3"
-                      >
+                      <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} className="mt-1 w-full bg-background border border-border rounded-md h-10 px-3">
                         <option value="">Select a service</option>
                         <option value="3d-walkthrough-video">3D Walkthrough Video</option>
                         <option value="3d-still-renderings">3D Still Renderings</option>
@@ -205,23 +161,10 @@ export default function Contact() {
 
                     <div>
                       <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your project..."
-                        className="mt-1"
-                      />
+                      <Textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} placeholder="Tell us about your project..." className="mt-1" />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      disabled={loading}
-                      className="w-full"
-                    >
+                    <Button type="submit" disabled={loading} className="w-full">
                       {loading ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
@@ -233,6 +176,5 @@ export default function Contact() {
       </main>
       
       <Footer />
-    </>
-  );
+    </>;
 }
