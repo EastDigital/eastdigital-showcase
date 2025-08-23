@@ -124,7 +124,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground">Address</h3>
-                          <p className="text-muted-foreground">2nd Floor, JSV Hyundai Building, Near Engineering College,<br />Lucknow, Uttar Pradesh, INDIA - 226021</p>
+                          <p className="text-muted-foreground">2nd Floor, JSV Hyundai Building, Near Engineering College, Lucknow, Uttar Pradesh, INDIA - 226021</p>
                         </div>
                       </div>
                       
