@@ -57,9 +57,8 @@ const Header = () => {
                         Launch your project with<br />3d walkthrough video.
                       </p>
                       <ul className="space-y-1.5 text-foreground">
-                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Walkthrough Videos</Link></li>
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Architectural Still Renderings</a></li>
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Interactive Virtual Tours</a></li>
+                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Walkthrough Video</Link></li>
+                        <li><Link to="/expertise/real-estate/3d-still-renderings" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Still Renderings</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground">Ideal for: Real Estate Marketing</p>
                     </div>
@@ -74,9 +73,8 @@ const Header = () => {
                         Present your project to the<br />investors/authorities.
                       </p>
                       <ul className="space-y-1.5 text-foreground">
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Conceptual 3D Renderings</a></li>
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Process Animations</a></li>
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Engineering 3D Models</a></li>
+                        <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Conceptual 3D Renderings</Link></li>
+                        <li><Link to="/expertise/infrastructure/engineering-3d-models" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Engineering 3D Models</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground">Ideal for: Project Tender & Updates</p>
                     </div>
@@ -91,9 +89,8 @@ const Header = () => {
                         For client approvals and<br />internal assessment.
                       </p>
                       <ul className="space-y-1.5 text-foreground">
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Architectural Rendering</a></li>
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Virtual Staging</a></li>
-                        <li><a href="#" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Product 3D Renderings</a></li>
+                        <li><Link to="/expertise/architecture-design/architectural-3d-rendering" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Architectural 3D Rendering</Link></li>
+                        <li><Link to="/expertise/architecture-design/product-3d-rendering" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Product 3D Rendering</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground">Ideal for: Ideation & Assessment</p>
                     </div>
@@ -102,14 +99,14 @@ const Header = () => {
               </div>
             </div>
             <Link to="/about" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">About</Link>
-            <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Connect</a>
+            <Link to="/contact" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Contact</Link>
             <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Blog</a>
           </nav>
 
           <div className="hidden lg:block">
-            <button className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+            <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
               <span className="relative z-10">Get Your Blueprint</span>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -156,9 +153,8 @@ const Header = () => {
                 <Link to="/expertise/real-estate" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">REAL ESTATE</Link>
                 <p className="font-light text-xs text-muted-foreground mt-2 mb-3">Launch your project with 3d walkthrough video.</p>
                 <ul className="space-y-3 text-foreground">
-                  <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Videos</Link></li>
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Architectural Still Renderings</a></li>
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Interactive Virtual Tours</a></li>
+                  <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Walkthrough Video</Link></li>
+                  <li><Link to="/expertise/real-estate/3d-still-renderings" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Still Renderings</Link></li>
                 </ul>
               </div>
               
@@ -166,9 +162,8 @@ const Header = () => {
                 <Link to="/expertise/infrastructure" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">INFRASTRUCTURE</Link>
                 <p className="font-light text-xs text-muted-foreground mt-2 mb-3">Present your project to the investors/authorities.</p>
                 <ul className="space-y-3 text-foreground">
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Conceptual 3D Renderings</a></li>
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Process Animations</a></li>
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Engineering 3D Models</a></li>
+                  <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Conceptual 3D Renderings</Link></li>
+                  <li><Link to="/expertise/infrastructure/engineering-3d-models" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Engineering 3D Models</Link></li>
                 </ul>
               </div>
               
@@ -176,22 +171,21 @@ const Header = () => {
                 <Link to="/expertise/architecture-design" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">ARCHITECTURE & PRODUCT DESIGN</Link>
                 <p className="font-light text-xs text-muted-foreground mt-2 mb-3">For client approvals and internal assessment.</p>
                 <ul className="space-y-3 text-foreground">
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">3D Architectural Rendering</a></li>
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Virtual Staging</a></li>
-                  <li><a href="#" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Product 3D Renderings</a></li>
+                  <li><Link to="/expertise/architecture-design/architectural-3d-rendering" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Architectural 3D Rendering</Link></li>
+                  <li><Link to="/expertise/architecture-design/product-3d-rendering" className="font-normal text-[15px] hover:text-accent transition-colors duration-300">Product 3D Rendering</Link></li>
                 </ul>
               </div>
             </div>
           </div>
           
           <Link to="/about" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">About</Link>
-          <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Connect</a>
+          <Link to="/contact" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Contact</Link>
           <a href="#" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300">Blog</a>
           
           <div className="pt-6">
-            <button className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+            <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
               <span className="relative z-10">Get Your Blueprint</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

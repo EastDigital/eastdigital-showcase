@@ -10,6 +10,13 @@ import RealEstate from "./pages/RealEstate";
 import Infrastructure from "./pages/Infrastructure";
 import ArchitectureDesign from "./pages/ArchitectureDesign";
 import WalkthroughVideo from "./pages/WalkthroughVideo";
+import RealEstate3DStillRenderings from "./pages/RealEstate3DStillRenderings";
+import ConceptualRenderings from "./pages/ConceptualRenderings";
+import Engineering3DModels from "./pages/Engineering3DModels";
+import Architectural3DRendering from "./pages/Architectural3DRendering";
+import Product3DRendering from "./pages/Product3DRendering";
+import Contact from "./pages/Contact";
+import Enquiry from "./pages/Enquiry";
 import NotFound from "./pages/NotFound";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminLogin from "./pages/admin/AdminLogin";
@@ -34,7 +41,22 @@ const App = () => (
           <Route path="/expertise/real-estate" element={<RealEstate />} />
           <Route path="/expertise/infrastructure" element={<Infrastructure />} />
           <Route path="/expertise/architecture-design" element={<ArchitectureDesign />} />
+          
+          {/* Real Estate Services */}
           <Route path="/expertise/real-estate/3d-walkthrough-video" element={<WalkthroughVideo />} />
+          <Route path="/expertise/real-estate/3d-still-renderings" element={<RealEstate3DStillRenderings />} />
+          
+          {/* Infrastructure Services */}
+          <Route path="/expertise/infrastructure/conceptual-3d-renderings" element={<ConceptualRenderings />} />
+          <Route path="/expertise/infrastructure/engineering-3d-models" element={<Engineering3DModels />} />
+          
+          {/* Architecture & Design Services */}
+          <Route path="/expertise/architecture-design/architectural-3d-rendering" element={<Architectural3DRendering />} />
+          <Route path="/expertise/architecture-design/product-3d-rendering" element={<Product3DRendering />} />
+          
+          {/* Contact & Enquiry */}
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/enquiry" element={<Enquiry />} />
 
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
