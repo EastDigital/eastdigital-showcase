@@ -3,48 +3,36 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
 import { Button } from '@/components/ui/button';
-
 const WalkthroughVideo = () => {
-  const projectImages = [
-    "https://eastdigital.in/img/afc_private_004.jpg",
-    "https://eastdigital.in/img/anantraj_001.jpg",
-    "https://eastdigital.in/img/apartment_001.jpg",
-    "https://eastdigital.in/img/ascon_001.jpg"
-  ];
-
-  const applications = [
-    {
-      title: "Real Estate Marketing",
-      description: "Pre-launch campaigns, perfect for property portals and social media advertising."
-    },
-    {
-      title: "Investor & Stakeholder Presentations", 
-      description: "Clearly communicate project vision and potential ROI to secure funding."
-    },
-    {
-      title: "Architectural Competitions",
-      description: "Present your design concept in a dynamic and unforgettable way."
-    },
-    {
-      title: "Sales Center Displays",
-      description: "Create a show-stopping centerpiece in your sales gallery to engage visitors."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background font-nunito">
+  const projectImages = ["https://eastdigital.in/img/afc_private_004.jpg", "https://eastdigital.in/img/anantraj_001.jpg", "https://eastdigital.in/img/apartment_001.jpg", "https://eastdigital.in/img/ascon_001.jpg"];
+  const applications = [{
+    title: "Real Estate Marketing",
+    description: "Pre-launch campaigns, perfect for property portals and social media advertising."
+  }, {
+    title: "Investor & Stakeholder Presentations",
+    description: "Clearly communicate project vision and potential ROI to secure funding."
+  }, {
+    title: "Architectural Competitions",
+    description: "Present your design concept in a dynamic and unforgettable way."
+  }, {
+    title: "Sales Center Displays",
+    description: "Create a show-stopping centerpiece in your sales gallery to engage visitors."
+  }];
+  return <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        <PageBanner
-          title="Expertise"
-          backgroundImage="https://eastdigital.in/img/bg-video.jpg"
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Expertise", href: "/expertise" },
-            { label: "Real Estate", href: "/expertise/real-estate" },
-            { label: "3D Walkthrough Video" }
-          ]}
-        />
+        <PageBanner title="Expertise" backgroundImage="https://eastdigital.in/img/bg-video.jpg" breadcrumbs={[{
+        label: "Home",
+        href: "/"
+      }, {
+        label: "Expertise",
+        href: "/expertise"
+      }, {
+        label: "Real Estate",
+        href: "/expertise/real-estate"
+      }, {
+        label: "3D Walkthrough Video"
+      }]} />
 
         {/* Description Section */}
         <section className="py-16">
@@ -73,21 +61,15 @@ const WalkthroughVideo = () => {
         <section className="py-20">
           <div className="container mx-auto px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projectImages.map((image, index) => (
-                <div key={index} className="relative group overflow-hidden rounded-lg bg-card border">
+              {projectImages.map((image, index) => <div key={index} className="relative group overflow-hidden rounded-lg bg-card border">
                   <div className="aspect-video relative">
-                    <img 
-                      src={image}
-                      alt={`3D Walkthrough Video ${index + 1}`}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                    <img src={image} alt={`3D Walkthrough Video ${index + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="text-white font-medium">3D Walkthrough Video</span>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -143,18 +125,10 @@ const WalkthroughVideo = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="aspect-video relative rounded-lg overflow-hidden">
-                <img 
-                  src="https://eastdigital.in/img/ascon_003.jpg"
-                  alt="3D Walkthrough Example"
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://eastdigital.in/img/ascon_003.jpg" alt="3D Walkthrough Example" className="w-full h-full object-cover" />
               </div>
               <div className="aspect-video relative rounded-lg overflow-hidden">
-                <img 
-                  src="https://eastdigital.in/img/bahuguna_villa_001.jpg"
-                  alt="3D Walkthrough Example"
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://eastdigital.in/img/bahuguna_villa_001.jpg" alt="3D Walkthrough Example" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -168,40 +142,18 @@ const WalkthroughVideo = () => {
                 Applications for 3D Walkthroughs
               </h2>
               <div className="space-y-6">
-                {applications.map((app, index) => (
-                  <p key={index} className="text-muted-foreground">
+                {applications.map((app, index) => <p key={index} className="text-muted-foreground">
                     <span className="font-semibold text-foreground">{app.title}:</span> {app.description}
-                  </p>
-                ))}
+                  </p>)}
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Ready to discuss your next project?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              Send us an email to get the conversation started.
-            </p>
-            <p className="text-muted-foreground mb-8">
-              sales@eastdigital.in
-            </p>
-            <p className="text-sm text-muted-foreground mb-8">
-              If you need guidance on what information should be provided, simply fill out our request a proposal form below.
-            </p>
-            <Button asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/contact">Take me to the form →</Link>
-            </Button>
-          </div>
-        </section>
+        
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default WalkthroughVideo;
