@@ -33,11 +33,11 @@ export default function RealEstate3DStillRenderings() {
       <main>
         <section className="py-16">
           <div className="container mx-auto px-8">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-foreground">Transform Your Real Estate Vision</h2>
+            <div className="max-w-[850px]">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Transform Your Real Estate Vision</h2>
               
               <div className="prose prose-lg prose-invert max-w-none">
-                <p className="text-lg text-muted-foreground mb-6">
+                <p className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
                   Create stunning, photorealistic 3D still renderings that bring your real estate projects to life. 
                   Our high-quality architectural visualizations help you market properties effectively, attract potential buyers, 
                   and secure investment funding.
