@@ -13,7 +13,7 @@ const PageBanner = ({
   backgroundImage,
   breadcrumbs
 }: PageBannerProps) => {
-  return <section className="relative pt-48 pb-16 sm:pt-64 sm:pb-24 flex items-center min-h-[40vh]">
+  return <section className="relative py-20 sm:py-32 flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={backgroundImage} alt={`${title} Background`} className="w-full h-full object-cover" onError={e => {
@@ -22,9 +22,9 @@ const PageBanner = ({
         <div className="absolute inset-0 bg-black/50" />
       </div>
       
-      {/* Content */}
-      <div className="container mx-auto relative z-10 px-[32px]">
-        {/* Page Title */}
+      {/* Content - Aligned with header logo */}
+      <div className="container mx-auto relative z-10 px-[32px] mt-10">
+        {/* Page Title above breadcrumb, aligned with header/logo */}
         <h1 className="page-title">
           {title}
         </h1>
