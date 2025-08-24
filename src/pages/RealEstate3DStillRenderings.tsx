@@ -3,8 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
-const WalkthroughVideo = () => {
-  const projectImages = ["https://eastdigital.in/img/afc_private_004.jpg", "https://eastdigital.in/img/anantraj_001.jpg", "https://eastdigital.in/img/apartment_001.jpg", "https://eastdigital.in/img/ascon_001.jpg"];
+
 export default function RealEstate3DStillRenderings() {
   useEffect(() => {
     window.scrollTo(0, 0);
