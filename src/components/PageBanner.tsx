@@ -13,7 +13,7 @@ const PageBanner = ({
   backgroundImage,
   breadcrumbs
 }: PageBannerProps) => {
-  return <section className="relative py-20 sm:py-32 flex items-end">
+  return <section className="relative py-20 sm:py-32 flex items-end mt-10">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={backgroundImage} alt={`${title} Background`} className="w-full h-full object-cover" onError={e => {
