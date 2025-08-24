@@ -81,38 +81,38 @@ const WalkthroughVideo = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Our Process: From Blueprint to Blockbuster
               </h2>
-              <p className="text-lg leading-relaxed text-muted-foreground">
+              <p className="text-lg leading-relaxed text-muted-foreground mb-10">
                 Our meticulous process ensures your vision is translated into a powerful marketing asset.
               </p>
 
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Discovery & Storyboarding</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     We begin by understanding your project's unique selling points and target audience. We collaborate with you to create a storyboard and define the camera paths that best showcase the property's layout and features.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">3D Modeling & Environment</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Our artists transform your 2D plans into a detailed, dimensionally accurate 3D model. We build out the surrounding environment, landscaping, and context.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Texturing & Lighting</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     This is where the magic happens. We apply photorealistic materials, textures, and sophisticated lighting techniques to create a convincing and evocative mood.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Animation & Rendering</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     We animate the camera along the planned path. Each frame is rendered in high definition using significant computational power to achieve flawless quality.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Post-Production & Delivery</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Our editing team adds music, sound design, graphics, and branding. After your approval, we deliver videos in required formats, optimized for web, social media, and sales presentations.
                   </p>
                 </div>
@@ -142,7 +142,7 @@ const WalkthroughVideo = () => {
                 Applications for 3D Walkthroughs
               </h2>
               <div className="space-y-6">
-                {applications.map((app, index) => <p key={index} className="text-muted-foreground">
+                {applications.map((app, index) => <p key={index} className="text-lg leading-relaxed text-muted-foreground">
                     <span className="font-semibold text-foreground">{app.title}:</span> {app.description}
                   </p>)}
               </div>
