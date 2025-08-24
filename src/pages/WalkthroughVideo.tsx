@@ -107,20 +107,6 @@ const WalkthroughVideo = () => {
             </div>
           </div>
         </section>
-
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="container mx-auto px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-video relative rounded-lg overflow-hidden">
-                <img src="https://eastdigital.in/img/ascon_003.jpg" alt="3D Walkthrough Example" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-video relative rounded-lg overflow-hidden">
-                <img src="https://eastdigital.in/img/bahuguna_villa_001.jpg" alt="3D Walkthrough Example" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Applications Section */}
         <section className="py-20">
           <div className="container mx-auto px-8">
