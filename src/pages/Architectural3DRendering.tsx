@@ -37,7 +37,7 @@ export default function Architectural3DRendering() {
               <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-foreground">Architectural Vision Realized</h2>
               
               <div className="prose prose-lg prose-invert max-w-none">
-                <p className="text-lg text-muted-foreground mb-6">
+                <p className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
                   Transform architectural concepts into stunning photorealistic visualizations. Our architectural 3D rendering 
                   services help architects, designers, and developers communicate design intent, secure approvals, and create 
                   compelling presentations for clients and stakeholders.
@@ -81,8 +81,6 @@ export default function Architectural3DRendering() {
             </div>
           </div>
         </section>
-        {/* Dynamic Project Gallery */}
-        <ShortcodeRenderer content="[gallery-3d-walkthrough-video]" />
       </main>
       
       <Footer />
