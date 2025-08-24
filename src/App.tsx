@@ -24,6 +24,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProjectsList from "./pages/admin/ProjectsList";
 import ProjectForm from "./pages/admin/ProjectForm";
 import CarouselManager from "./pages/admin/CarouselManager";
+import SEOManager from "./pages/admin/SEOManager";
 import ProjectCaseStudy from "./pages/ProjectCaseStudy";
 
 const queryClient = new QueryClient();
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="projects/new" element={<ProjectForm />} />
             <Route path="projects/:id/edit" element={<ProjectForm />} />
             <Route path="carousel" element={<CarouselManager />} />
+            <Route path="seo" element={<SEOManager />} />
           </Route>
 
           {/* Project Case Study Routes with SEO-friendly URLs */}
@@ -77,6 +79,7 @@ const App = () => (
           
           {/* Fallback route for old project URLs */}
           <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

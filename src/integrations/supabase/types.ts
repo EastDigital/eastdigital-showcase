@@ -38,6 +38,87 @@ export type Database = {
         }
         Relationships: []
       }
+      analytics_codes: {
+        Row: {
+          code: string
+          created_at: string
+          id: string
+          is_enabled: boolean
+          platform: string
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          id?: string
+          is_enabled?: boolean
+          platform: string
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          id?: string
+          is_enabled?: boolean
+          platform?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      page_seo: {
+        Row: {
+          canonical_url: string | null
+          created_at: string
+          id: string
+          is_followed: boolean
+          is_indexed: boolean
+          meta_description: string | null
+          meta_keywords: string[] | null
+          meta_title: string | null
+          og_description: string | null
+          og_image: string | null
+          og_title: string | null
+          page_slug: string
+          page_title: string
+          schema_json: string | null
+          updated_at: string
+        }
+        Insert: {
+          canonical_url?: string | null
+          created_at?: string
+          id?: string
+          is_followed?: boolean
+          is_indexed?: boolean
+          meta_description?: string | null
+          meta_keywords?: string[] | null
+          meta_title?: string | null
+          og_description?: string | null
+          og_image?: string | null
+          og_title?: string | null
+          page_slug: string
+          page_title: string
+          schema_json?: string | null
+          updated_at?: string
+        }
+        Update: {
+          canonical_url?: string | null
+          created_at?: string
+          id?: string
+          is_followed?: boolean
+          is_indexed?: boolean
+          meta_description?: string | null
+          meta_keywords?: string[] | null
+          meta_title?: string | null
+          og_description?: string | null
+          og_image?: string | null
+          og_title?: string | null
+          page_slug?: string
+          page_title?: string
+          schema_json?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       projects: {
         Row: {
           aiseo_keywords: string[] | null

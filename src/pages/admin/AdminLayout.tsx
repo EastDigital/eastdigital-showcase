@@ -30,6 +30,7 @@ export default function AdminLayout() {
             <Link to="/admin" className="hover:text-accent">Dashboard</Link>
             <Link to="/admin/projects" className="hover:text-accent">Projects</Link>
             <Link to="/admin/carousel" className="hover:text-accent">Carousel</Link>
+            <Link to="/admin/seo" className="hover:text-accent">SEO & Analytics</Link>
             <span className="text-sm text-muted-foreground">{email?.toLowerCase() === ADMIN_EMAIL ? email : ""}</span>
             <Button variant="outline" onClick={logout}>Logout</Button>
           </nav>

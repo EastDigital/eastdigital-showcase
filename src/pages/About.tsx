@@ -3,7 +3,10 @@ import Header from '@/components/Header';
 import ProjectGallery from '@/components/ProjectGallery';
 import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
+import { useSEO } from '@/hooks/useSEO';
 const About = () => {
+  useSEO('about');
+  
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
