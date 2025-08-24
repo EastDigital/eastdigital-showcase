@@ -121,7 +121,7 @@ const WalkthroughVideo = () => {
           </div>
         </section>
 
-        <section className="py-20 px-4 bg-muted/30">
+        <section className="py-20 px-8 bg-muted/30">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="aspect-video relative rounded-lg overflow-hidden">
