@@ -45,8 +45,8 @@ const WalkthroughVideo = () => {
                 In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Static renderings are powerful, but a cinematic 3D walkthrough video from East Digital offers an unparalleled emotional connection. We create a dynamic, narrative-driven experience that allows viewers to feel the flow, ambiance, and true potential of a space before a brick is laid.
               </p>
               
-              <div className="container mx-auto mb-1">
-                <h2 className="text-xl font-bold text-foreground">
+              <div className="container mb-1">
+                <h2 className="text-xl font-bold text-foreground mb-4">
                   What is a 3D Walkthrough Video?
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
