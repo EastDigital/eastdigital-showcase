@@ -46,7 +46,7 @@ const WalkthroughVideo = () => {
               </p>
               
               <div className="container mx-auto mb-1">
-                <h2 className="text-xl font-bold text-foreground mb-4">
+                <h2 className="text-xl font-bold text-foreground">
                   What is a 3D Walkthrough Video?
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
