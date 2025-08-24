@@ -43,7 +43,8 @@ export default function RealEstate3DStillRenderings() {
                   Our high-quality architectural visualizations help you market properties effectively, attract potential buyers, 
                   and secure investment funding.
                 </p>
-
+ {/* Dynamic Project Gallery */}
+        <ShortcodeRenderer content="[gallery-3d-still-renderings]" />
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">Why Choose Our 3D Still Renderings?</h3>
                 
                 <ul className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
@@ -82,9 +83,6 @@ export default function RealEstate3DStillRenderings() {
             </div>
           </div>
         </section>
-
-        {/* Dynamic Project Gallery */}
-        <ShortcodeRenderer content="[gallery-3d-still-renderings]" />
       </main>
       
       <Footer />
