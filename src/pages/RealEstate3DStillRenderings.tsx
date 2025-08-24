@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
-const RealEstate3DStillRenderings = () => {
+const WalkthroughVideo = () => {
   const projectImages = ["https://eastdigital.in/img/afc_private_004.jpg", "https://eastdigital.in/img/anantraj_001.jpg", "https://eastdigital.in/img/apartment_001.jpg", "https://eastdigital.in/img/ascon_001.jpg"];
 export default function RealEstate3DStillRenderings() {
   useEffect(() => {
@@ -54,22 +54,7 @@ export default function RealEstate3DStillRenderings() {
                   <li>• Seasonal and weather variations</li>
                   <li>• High-resolution outputs for print and digital use</li>
                 </ul>
-{/* Project Gallery */}
-        <section className="py-20">
-          <div className="container mx-auto px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projectImages.map((image, index) => <div key={index} className="relative group overflow-hidden rounded-lg bg-card border">
-                  <div className="aspect-video relative">
-                    <img src={image} alt={`3d Still Rendering ${index + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-white font-medium">3d Still Rendering</span>
-                    </div>
-                  </div>
-                </div>)}
-            </div>
-          </div>
-        </section>
+
                 <h3 className="text-2xl font-semibold mb-4 text-foreground mt-12">Perfect for:</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 mt-8">
