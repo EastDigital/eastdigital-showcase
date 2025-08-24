@@ -13,7 +13,7 @@ const PageBanner = ({
   backgroundImage,
   breadcrumbs
 }: PageBannerProps) => {
-  return <section className="relative py-20 sm:py-32 flex items-center">
+  return <section className="relative pt-48 pb-16 sm:pt-64 sm:pb-24 flex items-center min-h-[40vh]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={backgroundImage} alt={`${title} Background`} className="w-full h-full object-cover" onError={e => {
@@ -22,9 +22,9 @@ const PageBanner = ({
         <div className="absolute inset-0 bg-black/50" />
       </div>
       
-      {/* Content - Aligned with header logo */}
-      <div className="container relative z-10 mx-0 px-[32px]">
-        {/* Page Title above breadcrumb, aligned with header/logo */}
+      {/* Content */}
+      <div className="container mx-auto relative z-10 px-[32px]">
+        {/* Page Title */}
         <h1 className="page-title">
           {title}
         </h1>
@@ -34,7 +34,7 @@ const PageBanner = ({
           {breadcrumbs.map((crumb, index) => <span key={index}>
               {crumb.href ? <Link to={crumb.href} className="hover:text-white/80 transition-colors">
                   {crumb.label.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
-                </Link> : <span className="font-small">{crumb.label.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}</span>}
+                </Link> : <span className="font-medium">{crumb.label.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}</span>}
               {index < breadcrumbs.length - 1 && <span className="mx-2 text-white/70" aria-hidden="true">›</span>}
             </span>)}
         </nav>
