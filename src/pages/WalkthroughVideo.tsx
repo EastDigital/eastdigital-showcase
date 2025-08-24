@@ -81,7 +81,7 @@ const WalkthroughVideo = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Our Process: From Blueprint to Blockbuster
               </h2>
-              <p className="text-lg text-muted-foreground mb-10">
+              <p className="text-lg leading-relaxed text-muted-foreground">
                 Our meticulous process ensures your vision is translated into a powerful marketing asset.
               </p>
 
