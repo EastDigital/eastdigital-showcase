@@ -53,7 +53,8 @@ export default function Architectural3DRendering() {
                   <li>• Aerial and drone perspective views</li>
                   <li>• 360-degree panoramic renderings</li>
                 </ul>
-
+{/* Dynamic Project Gallery */}
+        <ShortcodeRenderer content="[gallery-architectural-3d-rendering]" />
                 <h3 className="text-2xl font-semibold mb-4 text-foreground mt-12">Design Applications:</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 mt-8">
