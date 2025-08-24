@@ -45,7 +45,7 @@ export default function Architectural3DRendering() {
 
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">Rendering Services</h3>
                 
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
                   <li>• Exterior architectural visualization</li>
                   <li>• Interior design and space planning</li>
                   <li>• Landscape and site context rendering</li>
