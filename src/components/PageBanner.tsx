@@ -23,7 +23,7 @@ const PageBanner = ({
       </div>
       
       {/* Content - Aligned with header logo */}
-      <div className="container mx-auto relative z-10 px-[20px] mt-12">
+      <div className="container mx-auto relative z-10 px-[32px] mt-10">
         {/* Page Title above breadcrumb, aligned with header/logo */}
         <h1 className="page-title">
           {title}
