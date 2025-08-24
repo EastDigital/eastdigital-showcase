@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import ShortcodeRenderer from '@/components/ShortcodeRenderer';
 
 export default function RealEstate3DStillRenderings() {
   useEffect(() => {
@@ -81,6 +82,9 @@ export default function RealEstate3DStillRenderings() {
             </div>
           </div>
         </section>
+
+        {/* Dynamic Project Gallery */}
+        <ShortcodeRenderer content="[gallery-3d-still-renderings]" />
       </main>
       
       <Footer />
