@@ -21,7 +21,7 @@ const WalkthroughVideo = () => {
   return <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        <PageBanner title="Expertise" backgroundImage="https://eastdigital.in/img/bg-video.jpg" breadcrumbs={[{
+        <PageBanner title="3D Walkthrough Video" backgroundImage="https://eastdigital.in/img/bg-video.jpg" breadcrumbs={[{
         label: "Home",
         href: "/"
       }, {
