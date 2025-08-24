@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import ShortcodeRenderer from '@/components/ShortcodeRenderer';
 
 export default function Architectural3DRendering() {
   useEffect(() => {
@@ -42,6 +43,9 @@ export default function Architectural3DRendering() {
                   services help architects, designers, and developers communicate design intent, secure approvals, and create 
                   compelling presentations for clients and stakeholders.
                 </p>
+
+                {/* Dynamic Project Gallery */}
+                <ShortcodeRenderer content="[gallery-architectural-3d-rendering]" />
 
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">Rendering Services</h3>
                 

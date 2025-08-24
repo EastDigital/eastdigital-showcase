@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import ShortcodeRenderer from '@/components/ShortcodeRenderer';
 
 export default function ConceptualRenderings() {
   useEffect(() => {
@@ -42,6 +43,9 @@ export default function ConceptualRenderings() {
                   help you communicate project vision to stakeholders, secure approvals, and attract investment for 
                   large-scale infrastructure developments.
                 </p>
+
+                {/* Dynamic Project Gallery */}
+                <ShortcodeRenderer content="[gallery-conceptual-3d-renderings]" />
 
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">Specialized Services</h3>
                 

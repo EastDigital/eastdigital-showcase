@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import ShortcodeRenderer from '@/components/ShortcodeRenderer';
 
 export default function Engineering3DModels() {
   useEffect(() => {
@@ -42,6 +43,9 @@ export default function Engineering3DModels() {
                   visual communication. Our engineering 3D models provide the precision needed for technical documentation 
                   while maintaining the clarity required for stakeholder presentations.
                 </p>
+
+                {/* Dynamic Project Gallery */}
+                <ShortcodeRenderer content="[gallery-engineering-3d-models]" />
 
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">Technical Capabilities</h3>
                 

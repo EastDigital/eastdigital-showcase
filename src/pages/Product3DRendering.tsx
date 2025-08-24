@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import ShortcodeRenderer from '@/components/ShortcodeRenderer';
 
 export default function Product3DRendering() {
   useEffect(() => {
@@ -42,6 +43,9 @@ export default function Product3DRendering() {
                   services help you create compelling marketing materials, demonstrate functionality, and accelerate 
                   the design development process across various industries.
                 </p>
+
+                {/* Dynamic Project Gallery */}
+                <ShortcodeRenderer content="[gallery-product-3d-rendering]" />
 
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">Product Categories</h3>
                 
