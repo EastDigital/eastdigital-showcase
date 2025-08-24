@@ -45,7 +45,7 @@ export default function RealEstate3DStillRenderings() {
 
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">Why Choose Our 3D Still Renderings?</h3>
                 
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
                   <li>• Photorealistic quality that showcases every detail</li>
                   <li>• Fast turnaround times for urgent marketing needs</li>
                   <li>• Multiple angle views and perspective options</li>
