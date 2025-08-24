@@ -3,8 +3,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
 import { Button } from '@/components/ui/button';
+import { useSEO } from '@/hooks/useSEO';
 
 const Infrastructure = () => {
+  useSEO("infrastructure");
   const services = [
     {
       title: "3D Infrastructure Modeling",

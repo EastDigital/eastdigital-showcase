@@ -1,0 +1,5 @@
+-- Add missing category pages to page_seo table
+INSERT INTO public.page_seo (page_slug, page_title, meta_title, meta_description, is_indexed, is_followed) VALUES
+('real-estate', 'Real Estate', 'Real Estate 3D Visualization Services | Professional Rendering', 'Professional real estate 3D visualization and rendering services. Transform your property marketing with stunning architectural visualizations and virtual tours.', true, true),
+('infrastructure', 'Infrastructure', 'Infrastructure 3D Modeling & Visualization Services', 'Expert infrastructure 3D modeling and visualization services for bridges, roads, utilities, and urban planning projects. Advanced engineering visualization solutions.', true, true),
+('architecture-design', 'Architecture & Design', 'Architecture & Design 3D Visualization Services', 'Professional architecture and design 3D visualization services. Bringing architectural concepts to life with photorealistic renderings and design visualization.', true, true);

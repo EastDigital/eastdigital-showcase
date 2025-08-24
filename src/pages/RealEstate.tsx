@@ -3,7 +3,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
 import { Button } from '@/components/ui/button';
+import { useSEO } from '@/hooks/useSEO';
 const RealEstate = () => {
+  useSEO("real-estate");
   const services = [{
     title: "3d Walkthrough Video",
     category: "3d Walkthrough Video",
