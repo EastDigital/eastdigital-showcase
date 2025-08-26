@@ -31,6 +31,18 @@ const Infrastructure = () => {
       category: "Technical Documentation",
       image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
       link: "/expertise/infrastructure/technical-docs"
+    },
+     {
+      title: "Technical Documentation", 
+      category: "Technical Documentation",
+      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
+      link: "/expertise/infrastructure/technical-docs"
+    },
+     {
+      title: "Technical Documentation", 
+      category: "Technical Documentation",
+      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
+      link: "/expertise/infrastructure/technical-docs"
     }
   ];
 
