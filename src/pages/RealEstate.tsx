@@ -26,17 +26,7 @@ const RealEstate = () => {
     category: "Architectural Still Renderings",
     image: "https://eastdigital.in/img/ascon_001.jpg",
     link: "/expertise/real-estate/architectural-renderings"
-  }, {
-    title: "3d Walkthrough Video",
-    category: "3d Walkthrough Video",
-    image: "https://eastdigital.in/img/ascon_003.jpg",
-    link: "/expertise/real-estate/3d-walkthrough-video"
-  }, {
-    title: "3d Walkthrough Video",
-    category: "3d Walkthrough Video",
-    image: "https://eastdigital.in/img/bahuguna_villa_001.jpg",
-    link: "/expertise/real-estate/3d-walkthrough-video"
-  }];
+  } ];
   return <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
