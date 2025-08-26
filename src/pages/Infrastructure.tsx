@@ -19,18 +19,6 @@ const Infrastructure = () => {
       category: "Engineering Visualizations", 
       image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
       link: "/expertise/infrastructure/engineering-viz"
-    },
-    {
-      title: "Project Planning Animations",
-      category: "Project Planning Animations",
-      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
-      link: "/expertise/infrastructure/planning-animations"
-    },
-    {
-      title: "Technical Documentation", 
-      category: "Technical Documentation",
-      image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
-      link: "/expertise/infrastructure/technical-docs"
     }
   ];
 
@@ -40,7 +28,7 @@ const Infrastructure = () => {
       <main>
         <PageBanner
           title="Infrastructure"
-          backgroundImage="https://eastdigital.in/img/industry-infrastructure.jpg"
+          backgroundImage="https://eastdigital.in/img/banner-page-about.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Expertise", href: "/expertise" },
