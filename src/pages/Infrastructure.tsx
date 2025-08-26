@@ -39,7 +39,7 @@ const Infrastructure = () => {
       <Header />
       <main>
         <PageBanner
-          title="Precision, Clarity, and Impact for Your Infrastructure Projects."
+          title="Infrastructure"
           backgroundImage="https://eastdigital.in/img/banner-page-about.jpg"
           breadcrumbs={[
             { label: "Home", href: "/" },
