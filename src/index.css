@@ -21,7 +21,7 @@
     --primary-foreground: 0 0% 100%;
     --secondary: 33 100% 89.4%;
     --secondary-foreground: 0 0% 0%;
-    --accent: 33 60% 75%;
+    --accent: 33 100% 89.4%;
     --accent-foreground: 0 0% 0%;
 
     /* UI Colors */
@@ -521,7 +521,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.6), hsl(var(--primary)));
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--ring)), hsl(var(--primary)));
     background-size: 300% 300%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
