@@ -2,43 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ========================================
+   DESIGN SYSTEM - All colors MUST be HSL
+   ======================================== */
 
 @layer base {
   :root {
+    /* Core Colors */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
-
     --card: 0 0% 6.3%;
     --card-foreground: 0 0% 100%;
-
     --popover: 0 0% 6.3%;
     --popover-foreground: 0 0% 100%;
 
+    /* Brand Colors */
     --primary: 17 100% 50%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 33 100% 89.4%;
     --secondary-foreground: 0 0% 0%;
-
-    --muted: 0 0% 10.2%;
-    --muted-foreground: 0 0% 60%;
-
     --accent: 33 100% 89.4%;
     --accent-foreground: 0 0% 0%;
 
+    /* UI Colors */
+    --muted: 0 0% 10.2%;
+    --muted-foreground: 0 0% 60%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 0 0% 10.2%;
     --input: 0 0% 10.2%;
     --ring: 17 100% 50%;
 
+    /* Layout */
     --radius: 0.75rem;
+    --content-width: 1200px;
+    --section-padding: 2rem;
+    --section-gap: 3rem;
 
-    /* Custom East Digital colors */
+    /* Custom Brand Elements */
     --glass-bg: 17 17 17 / 0.15;
     --glass-border: 255 255 255 / 0.1;
     --glass-light-bg: 255 255 255 / 0.15;
@@ -50,6 +51,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(to right, hsl(17 100% 50%), hsl(33 100% 89.4%));
     --gradient-glass: linear-gradient(135deg, hsl(17 17 17 / 0.2), hsl(17 17 17 / 0.05));
 
+    /* Sidebar */
     --sidebar-background: 0 0% 6.3%;
     --sidebar-foreground: 0 0% 95.9%;
     --sidebar-primary: 17 100% 50%;
@@ -58,33 +60,44 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 0 0% 95.9%;
     --sidebar-border: 0 0% 15.9%;
     --sidebar-ring: 17 100% 50%;
+
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+
+    /* Spacing Scale */
+    --space-xs: 0.25rem;   /* 4px */
+    --space-sm: 0.5rem;    /* 8px */
+    --space-md: 1rem;      /* 16px */
+    --space-lg: 1.5rem;    /* 24px */
+    --space-xl: 2rem;      /* 32px */
+    --space-2xl: 3rem;     /* 48px */
+    --space-3xl: 4rem;     /* 64px */
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -99,6 +112,10 @@ All colors MUST be HSL.
   }
 }
 
+/* ========================================
+   BASE STYLES & TYPOGRAPHY
+   ======================================== */
+
 @layer base {
   * {
     @apply border-border;
@@ -108,16 +125,216 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-nunito antialiased;
     scroll-behavior: smooth;
     font-feature-settings: "lnum" 1;
-    /* Mobile-first typography */
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
   }
 
-  /* Glassmorphism utilities */
+  /* Heading System */
+  h1, .h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+    font-size: var(--font-size-2xl);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: hsl(var(--foreground));
+    margin-bottom: var(--space-lg);
+  }
+
+  h2, .h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: hsl(var(--foreground));
+    margin-bottom: var(--space-md);
+  }
+
+  h3, .h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: hsl(var(--foreground));
+    margin-bottom: var(--space-md);
+  }
+
+  h4, .h4, h5, .h5, h6, .h6 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: hsl(var(--foreground));
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Body Text */
+  p, .text-body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: hsl(var(--muted-foreground) / 0.9);
+    margin-bottom: var(--space-md);
+    max-width: 65ch;
+  }
+
+  /* Small Text */
+  small, .text-small {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Links */
+  a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: hsl(var(--primary) / 0.8);
+  }
+}
+
+/* ========================================
+   LAYOUT & SPACING SYSTEM
+   ======================================== */
+
+@layer base {
+  /* Container System */
+  .container-fluid {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  /* Section Spacing */
+  .section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  .section-gap {
+    margin-bottom: var(--section-gap);
+  }
+
+  /* Grid System */
+  .grid-auto {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+  }
+
+  /* Content Alignment */
+  .content-center {
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+
+  .content-left {
+    text-align: left;
+  }
+
+  .content-balanced {
+    text-wrap: balance;
+  }
+}
+
+/* ========================================
+   COMPONENT STYLES
+   ======================================== */
+
+@layer components {
+  /* Button Enhancements */
+  .btn-touch {
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-touch:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.4);
+  }
+
+  .btn-touch:active {
+    transform: translateY(0);
+  }
+
+  /* Card Component */
+  .card-elevated {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+    box-shadow: 0 2px 8px hsl(var(--foreground) / 0.1);
+    transition: all 0.2s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: 0 8px 25px hsl(var(--foreground) / 0.15);
+    transform: translateY(-2px);
+  }
+
+  /* Form Elements */
+  .input-field {
+    width: 100%;
+    min-height: 44px;
+    padding: var(--space-sm) var(--space-md);
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    font-size: var(--font-size-base);
+    color: hsl(var(--foreground));
+    transition: all 0.2s ease;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+@layer utilities {
+  /* Glassmorphism Effects */
   .glass-effect {
     background: hsl(var(--glass-bg));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
   }
 
   .glass-effect-light {
@@ -127,41 +344,164 @@ All colors MUST be HSL.
     border: 1px solid hsl(var(--glass-light-border));
   }
 
-  /* Border gradient animation keyframes */
-  @keyframes borderGradient {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-  }
-
-  .animate-borderGradient {
-    background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
-    background-size: 200% 200%;
-    animation: borderGradient 2s linear infinite;
-  }
-
-  /* Legacy gradient border animation */
-  .gradient-border-hover {
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .gradient-border-hover::before {
-    content: '';
-    position: absolute;
-    inset: -5px;
-    border-radius: inherit;
+  /* Text Utilities */
+  .text-gradient {
     background: var(--gradient-primary);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -5;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .gradient-border-hover:hover::before {
-    opacity: 0;
+  .text-balance {
+    text-wrap: balance;
   }
 
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Scrollbar Utilities */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Interactive States */
+  .hover-lift {
+    transition: transform 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .focus-ring {
+    transition: box-shadow 0.2s ease;
+  }
+
+  .focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.5);
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN SYSTEM
+   ======================================== */
+
+/* Mobile First (320px+) */
+@media (min-width: 20rem) {
+  .container-fluid {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+  
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+/* Small tablets and large phones (480px+) */
+@media (min-width: 30rem) {
+  .container-fluid,
+  .container {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Typography scaling */
+  h1, .h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h2, .h2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Tablets (640px+) */
+@media (min-width: 40rem) {
+  .container-fluid,
+  .container {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+
+  .section {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  /* Enhanced typography */
+  h1, .h1 {
+    font-size: var(--font-size-4xl);
+    line-height: 1.1;
+  }
+
+  p, .text-body {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 64rem) {
+  .container-fluid,
+  .container {
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  /* Desktop typography */
+  h1, .h1 {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+  }
+
+  .btn-touch {
+    min-height: 48px;
+    padding: var(--space-md) var(--space-2xl);
+  }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 90rem) {
+  .section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* ========================================
+   ANIMATIONS & EFFECTS
+   ======================================== */
+
+@layer utilities {
   /* CTA Border Animation */
   @keyframes cta-gradient-flow {
     0% { background-position: 0% 50%; }
@@ -180,12 +520,12 @@ All colors MUST be HSL.
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1px; /* thickness of the border */
+    padding: 1px;
     background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--ring)), hsl(var(--primary)));
     background-size: 300% 300%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    mask-composite: exclude;
     pointer-events: none;
     opacity: 0.5;
   }
@@ -196,41 +536,74 @@ All colors MUST be HSL.
     animation: cta-gradient-flow 4s linear infinite;
   }
 
-  /* Smooth scrollbars */
-  .hide-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  /* Fade animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Staggered animations */
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+
+  /* Sticky CTA Button */
+  .sticky-cta {
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    z-index: 50;
+    min-height: 56px;
+    min-width: 56px;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px -8px hsl(var(--primary) / 0.5);
+    transition: all 0.2s ease;
+  }
+
+  .sticky-cta:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px -8px hsl(var(--primary) / 0.6);
+  }
+
+  /* Text overlay for images */
+  .text-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* ========================================
+   LEGACY CLASSES (MAINTAINED FOR COMPATIBILITY)
+   ======================================== */
+
+@layer base {
   /* Font weight utilities */
-  .font-light {
-    font-weight: 300;
-  }
+  .font-light { font-weight: 300; }
+  .font-semibold { font-weight: 600; }
+  .font-bold { font-weight: 700; }
+  .font-extrabold { font-weight: 800; }
 
-  .font-semibold {
-    font-weight: 600;
-  }
-
-  .font-bold {
-    font-weight: 700;
-  }
-
-  .font-extrabold {
-    font-weight: 800;
-  }
-
-  /* Mobile-First Typography System */
+  /* Legacy typography classes */
   .page-title {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.4;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
+    color: hsl(var(--foreground));
     text-align: left;
   }
 
@@ -240,7 +613,7 @@ All colors MUST be HSL.
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
+    color: hsl(var(--foreground));
     text-align: left;
   }
 
@@ -250,7 +623,7 @@ All colors MUST be HSL.
     font-size: 20px;
     line-height: 1.4;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
+    color: hsl(var(--foreground));
     text-align: left;
   }
 
@@ -260,53 +633,12 @@ All colors MUST be HSL.
     font-size: 16px;
     line-height: 1.6;
     letter-spacing: 0.01em;
-    color: #DADADA;
+    color: hsl(var(--muted-foreground) / 0.9);
     text-align: left;
     max-width: none;
   }
 
-  /* Responsive Typography for larger screens */
-  @media (min-width: 640px) {
-    .page-title {
-      font-size: 28px;
-      line-height: 1.3;
-    }
-    
-    .page-breadcrumb {
-      font-size: 16px;
-    }
-    
-    .content-heading {
-      font-size: 22px;
-    }
-    
-    .content-paragraph {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .page-title {
-      font-size: 36px;
-      line-height: 1.25;
-    }
-    
-    .page-breadcrumb {
-      font-size: 18px;
-    }
-    
-    .content-heading {
-      font-size: 26px;
-    }
-    
-    .content-paragraph {
-      font-size: 20px;
-      line-height: 1.5;
-    }
-  }
-
-  /* Mobile Content Formatting */
+  /* Mobile-specific classes */
   .mobile-paragraph {
     max-width: 100%;
     margin-bottom: 1rem;
@@ -316,7 +648,6 @@ All colors MUST be HSL.
     margin-top: 1.5rem;
   }
 
-  /* Mobile List Styling */
   .mobile-list {
     list-style: none;
     padding-left: 0;
@@ -340,32 +671,52 @@ All colors MUST be HSL.
     flex-shrink: 0;
   }
 
-  /* Touch-friendly spacing */
   .mobile-section {
     padding: 2rem 1rem;
   }
 
+  /* Responsive overrides for legacy classes */
   @media (min-width: 640px) {
+    .page-title {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+    
+    .page-breadcrumb {
+      font-size: 16px;
+    }
+    
+    .content-heading {
+      font-size: 22px;
+    }
+    
+    .content-paragraph {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
     .mobile-section {
       padding: 3rem 1.5rem;
     }
   }
 
-  /* Sticky CTA Button */
-  .sticky-cta {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 50;
-    min-height: 56px;
-    min-width: 56px;
-    border-radius: 50%;
-    box-shadow: 0 8px 25px -8px hsl(var(--primary) / 0.5);
-  }
-
-  /* High contrast text overlays */
-  .text-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
-    backdrop-filter: blur(8px);
+  @media (min-width: 1024px) {
+    .page-title {
+      font-size: 36px;
+      line-height: 1.25;
+    }
+    
+    .page-breadcrumb {
+      font-size: 18px;
+    }
+    
+    .content-heading {
+      font-size: 26px;
+    }
+    
+    .content-paragraph {
+      font-size: 20px;
+      line-height: 1.5;
+    }
   }
 }
