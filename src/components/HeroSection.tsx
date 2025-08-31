@@ -98,29 +98,30 @@ const HeroSection = () => {
         </div>}
       
       {/* Content */}
-      <div className="container mx-auto px-8 pb-12 lg:pb-24 relative z-[10]">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 lg:pb-24 relative z-[10]">
         <div className="max-w-[850px]">
-          <h1 className="hidden lg:block font-bold text-4xl lg:text-5xl leading-tight tracking-wide text-foreground mb-6">
-            3D That Sells, Stuns, and <br /> Speaks to Your Industry.
+          <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-wide text-foreground mb-6">
+            <span className="block lg:hidden">3D That Sells, Stuns, and Speaks to Your Industry.</span>
+            <span className="hidden lg:block">3D That Sells, Stuns, and <br /> Speaks to Your Industry.</span>
           </h1>
           
-          
-          <p className="hidden lg:block text-lg leading-relaxed tracking-wide text-accent mb-10">
-            Elite 3D Visualization for B2B Leaders in Real Estate, <br /> 
-            Engineering, and Design. We don't just create renders; <br /> 
-            we engineer results.
+          <p className="text-lg sm:text-xl leading-relaxed tracking-wide text-accent mb-8 sm:mb-10">
+            <span className="hidden lg:block">
+              Elite 3D Visualization for B2B Leaders in Real Estate, <br /> 
+              Engineering, and Design. We don't just create renders; <br /> 
+              we engineer results.
+            </span>
+            <span className="lg:hidden">
+              Elite 3D Visualization for B2B Leaders in Real Estate, Engineering, and Design. 
+              We don't just create renders; we engineer results.
+            </span>
           </p>
           
-          <p className="lg:hidden text-lg leading-relaxed tracking-wide text-accent mb-10">
-            Elite 3D Visualization for B2B Leaders in Real Estate, Engineering, and Design. 
-            We don't just create renders; we engineer results.
-          </p>
-          
-          <div className="flex flex-row flex-wrap items-center justify-start gap-4">
-            <a href="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+          <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-6">
+            <a href="/enquiry" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center text-lg sm:text-base">
               <span className="relative z-10">Free Consultation</span>
             </a>
-            <a href="/expertise" className="relative px-6 py-3 rounded-full text-foreground bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+            <a href="/expertise" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-foreground bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center text-lg sm:text-base">
               <span className="relative z-10">Our Expertise</span>
             </a>
           </div>
