@@ -21,11 +21,12 @@ const buttonVariants = cva(
         cta: "cta-border bg-transparent text-foreground rounded-full",
       },
       size: {
-        default: "h-10 px-4 py-2 min-h-[44px] min-w-[44px]",
-        sm: "h-9 rounded-md px-3 min-h-[40px]",
-        lg: "h-11 rounded-md px-8 min-h-[48px]",
-        icon: "h-10 w-10 min-h-[44px] min-w-[44px]",
-        mobile: "h-12 px-6 py-3 min-h-[48px] text-lg",
+        default: "h-12 px-6 py-3 min-h-[48px] min-w-[48px] text-base",
+        sm: "h-10 rounded-md px-4 min-h-[44px] text-sm",
+        lg: "h-14 rounded-md px-8 min-h-[56px] text-lg",
+        icon: "h-12 w-12 min-h-[48px] min-w-[48px]",
+        mobile: "h-14 px-8 py-4 min-h-[56px] text-lg font-medium",
+        touch: "h-12 px-6 py-3 min-h-[48px] min-w-[48px] text-base touch-manipulation",
       },
     },
     defaultVariants: {

@@ -21,6 +21,19 @@ export default {
 			fontFamily: {
 				nunito: ['Nunito Sans', 'sans-serif'],
 			},
+			fontSize: {
+				'mobile-xs': ['14px', { lineHeight: '1.5' }],
+				'mobile-sm': ['16px', { lineHeight: '1.5' }],
+				'mobile-base': ['18px', { lineHeight: '1.5' }],
+				'mobile-lg': ['20px', { lineHeight: '1.4' }],
+				'mobile-xl': ['22px', { lineHeight: '1.4' }],
+				'mobile-2xl': ['24px', { lineHeight: '1.3' }],
+				'mobile-3xl': ['28px', { lineHeight: '1.3' }],
+			},
+			spacing: {
+				'touch': '44px', // Minimum touch target size
+				'touch-lg': '56px', // Large touch target
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
