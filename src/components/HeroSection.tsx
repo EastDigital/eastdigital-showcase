@@ -117,11 +117,11 @@ const HeroSection = () => {
             </span>
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-6">
-            <a href="/enquiry" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center text-lg sm:text-base">
+          <div className="flex flex-col sm:flex-row items-center justify-start gap-3 sm:gap-4">
+            <a href="/enquiry" className="w-full sm:w-auto relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-medium transition-all duration-300 cta-border text-center text-base">
               <span className="relative z-10">Free Consultation</span>
             </a>
-            <a href="/expertise" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-foreground bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center text-lg sm:text-base">
+            <a href="/expertise" className="w-full sm:w-auto relative px-6 py-3 rounded-full text-foreground bg-background/60 backdrop-blur border border-transparent font-medium transition-all duration-300 text-center text-base hover:bg-background/80">
               <span className="relative z-10">Our Expertise</span>
             </a>
           </div>
