@@ -30,43 +30,55 @@ export default {
 			fontFamily: {
 				nunito: ['Nunito Sans', 'sans-serif'],
 			},
-			fontSize: {
-				// Mobile-first typography scale
-				'mobile-xs': ['0.75rem', { lineHeight: '1.5' }],    // 12px
-				'mobile-sm': ['0.875rem', { lineHeight: '1.5' }],   // 14px  
-				'mobile-base': ['1rem', { lineHeight: '1.6' }],     // 16px
-				'mobile-lg': ['1.125rem', { lineHeight: '1.5' }],   // 18px
-				'mobile-xl': ['1.25rem', { lineHeight: '1.4' }],    // 20px
-				'mobile-2xl': ['1.5rem', { lineHeight: '1.3' }],    // 24px
-				'mobile-3xl': ['1.875rem', { lineHeight: '1.2' }],  // 30px
-				'mobile-4xl': ['2.25rem', { lineHeight: '1.1' }],   // 36px
-				// Responsive text sizes
-				'responsive-xs': ['clamp(0.75rem, 0.9vw, 0.875rem)', { lineHeight: '1.5' }],
-				'responsive-sm': ['clamp(0.875rem, 1vw, 1rem)', { lineHeight: '1.5' }],
-				'responsive-base': ['clamp(1rem, 1.2vw, 1.125rem)', { lineHeight: '1.6' }],
-				'responsive-lg': ['clamp(1.125rem, 1.4vw, 1.25rem)', { lineHeight: '1.5' }],
-				'responsive-xl': ['clamp(1.25rem, 1.6vw, 1.5rem)', { lineHeight: '1.4' }],
-				'responsive-2xl': ['clamp(1.5rem, 2vw, 2rem)', { lineHeight: '1.3' }],
-				'responsive-3xl': ['clamp(1.875rem, 2.5vw, 2.5rem)', { lineHeight: '1.2' }],
-				'responsive-4xl': ['clamp(2.25rem, 3vw, 3.5rem)', { lineHeight: '1.1' }],
-			},
-			spacing: {
-				// Touch-friendly spacing
-				'touch': '44px',     // Minimum touch target
-				'touch-lg': '56px',  // Large touch target
-				'touch-xl': '64px',  // Extra large touch target
-				// Design system spacing scale
-				'xs': 'var(--space-xs)',    // 4px
-				'sm': 'var(--space-sm)',    // 8px
-				'md': 'var(--space-md)',    // 16px
-				'lg': 'var(--space-lg)',    // 24px
-				'xl': 'var(--space-xl)',    // 32px
-				'2xl': 'var(--space-2xl)',  // 48px
-				'3xl': 'var(--space-3xl)',  // 64px
-				// Section spacing
-				'section': 'var(--section-padding)',  // 2rem
-				'section-gap': 'var(--section-gap)',  // 3rem
-			},
+		fontSize: {
+			// Mobile/Tablet Typography (follows user specifications)
+			'mobile-h1': ['1.375rem', { lineHeight: '1.2', fontWeight: '800' }],    // 22px
+			'mobile-h2': ['1.25rem', { lineHeight: '1.3', fontWeight: '600' }],     // 20px
+			'mobile-h3': ['1.125rem', { lineHeight: '1.4', fontWeight: '600' }],    // 18px
+			'mobile-body': ['0.9375rem', { lineHeight: '1.5', fontWeight: '400' }], // 15px
+			'mobile-cta': ['0.9375rem', { lineHeight: '1.4', fontWeight: '700' }],  // 15px
+			
+			// Desktop Typography (follows user specifications)
+			'desktop-h1': ['1.75rem', { lineHeight: '1.2', fontWeight: '800' }],    // 28px
+			'desktop-h2': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }],     // 24px
+			'desktop-h3': ['1.25rem', { lineHeight: '1.4', fontWeight: '600' }],    // 20px
+			'desktop-body': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],     // 16px
+			'desktop-cta': ['1rem', { lineHeight: '1.4', fontWeight: '700' }],      // 16px
+			
+			// Legacy responsive sizes for compatibility
+			'responsive-xs': ['clamp(0.75rem, 0.9vw, 0.875rem)', { lineHeight: '1.5' }],
+			'responsive-sm': ['clamp(0.875rem, 1vw, 1rem)', { lineHeight: '1.5' }],
+			'responsive-base': ['clamp(0.9375rem, 1.2vw, 1rem)', { lineHeight: '1.6' }],
+			'responsive-lg': ['clamp(1.125rem, 1.4vw, 1.25rem)', { lineHeight: '1.5' }],
+			'responsive-xl': ['clamp(1.25rem, 1.6vw, 1.75rem)', { lineHeight: '1.4' }],
+			'responsive-2xl': ['clamp(1.375rem, 2vw, 1.75rem)', { lineHeight: '1.3' }],
+		},
+		spacing: {
+			// Touch-friendly spacing (44px minimum)
+			'touch': '44px',     // Minimum touch target
+			'touch-lg': '56px',  // Large touch target
+			'touch-xl': '64px',  // Extra large touch target
+			
+			// Mobile/Tablet Layout Spacing
+			'mobile-margin': 'var(--mobile-margin)',         // 8px
+			'mobile-section': 'var(--mobile-section-padding)', // 24px
+			'mobile-gap': 'var(--mobile-section-gap)',       // 32px
+			
+			// Desktop Layout Spacing  
+			'desktop-margin': 'var(--desktop-margin)',       // 20px
+			'desktop-margin-lg': 'var(--desktop-margin-large)', // 40px
+			'desktop-section': 'var(--desktop-section-padding)', // 24px
+			'desktop-gap': 'var(--desktop-section-gap)',     // 32px
+			
+			// Legacy spacing scale
+			'xs': '4px',    // 4px
+			'sm': '8px',    // 8px
+			'md': '16px',   // 16px
+			'lg': '24px',   // 24px
+			'xl': '32px',   // 32px
+			'2xl': '48px',  // 48px
+			'3xl': '64px',  // 64px
+		},
 			maxWidth: {
 				'content': 'var(--content-width)',  // 1200px
 				'prose': '65ch',  // Optimal reading width

@@ -33,11 +33,34 @@
     --input: 0 0% 10.2%;
     --ring: 17 100% 50%;
 
-    /* Layout */
+    /* Layout Variables */
     --radius: 0.75rem;
     --content-width: 1200px;
-    --section-padding: 2rem;
-    --section-gap: 3rem;
+    
+    /* Mobile/Tablet Layout (8-12px margins) */
+    --mobile-margin: 8px;
+    --mobile-section-padding: 24px;
+    --mobile-section-gap: 32px;
+    
+    /* Desktop Layout (20-40px margins) */
+    --desktop-margin: 20px;
+    --desktop-margin-large: 40px;
+    --desktop-section-padding: 24px;
+    --desktop-section-gap: 32px;
+
+    /* Mobile/Tablet Typography */
+    --mobile-h1: 1.375rem;     /* 22px */
+    --mobile-h2: 1.25rem;      /* 20px */
+    --mobile-h3: 1.125rem;     /* 18px */
+    --mobile-body: 0.9375rem;  /* 15px */
+    --mobile-cta: 0.9375rem;   /* 15px */
+    
+    /* Desktop Typography */
+    --desktop-h1: 1.75rem;     /* 28px */
+    --desktop-h2: 1.5rem;      /* 24px */
+    --desktop-h3: 1.25rem;     /* 20px */
+    --desktop-body: 1rem;      /* 16px */
+    --desktop-cta: 1rem;       /* 16px */
 
     /* Custom Brand Elements */
     --glass-bg: 17 17 17 / 0.15;
@@ -61,17 +84,7 @@
     --sidebar-border: 0 0% 15.9%;
     --sidebar-ring: 17 100% 50%;
 
-    /* Typography Scale */
-    --font-size-xs: 0.75rem;    /* 12px */
-    --font-size-sm: 0.875rem;   /* 14px */
-    --font-size-base: 1rem;     /* 16px */
-    --font-size-lg: 1.125rem;   /* 18px */
-    --font-size-xl: 1.25rem;    /* 20px */
-    --font-size-2xl: 1.5rem;    /* 24px */
-    --font-size-3xl: 1.875rem;  /* 30px */
-    --font-size-4xl: 2.25rem;   /* 36px */
-
-    /* Spacing Scale */
+    /* Legacy Spacing Scale */
     --space-xs: 0.25rem;   /* 4px */
     --space-sm: 0.5rem;    /* 8px */
     --space-md: 1rem;      /* 16px */
@@ -113,7 +126,7 @@
 }
 
 /* ========================================
-   BASE STYLES & TYPOGRAPHY
+   MOBILE/TABLET TYPOGRAPHY & BASE STYLES
    ======================================== */
 
 @layer base {
@@ -125,67 +138,72 @@
     @apply bg-background text-foreground font-nunito antialiased;
     scroll-behavior: smooth;
     font-feature-settings: "lnum" 1;
-    font-size: var(--font-size-base);
-    line-height: 1.6;
+    font-size: var(--mobile-body);
+    line-height: 1.5;
     margin: 0;
     padding: 0;
   }
 
-  /* Heading System */
+  /* Mobile/Tablet Typography */
   h1, .h1 {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
-    font-size: var(--font-size-2xl);
+    font-size: var(--mobile-h1);
     line-height: 1.2;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     color: hsl(var(--foreground));
-    margin-bottom: var(--space-lg);
+    margin-bottom: 16px;
+    text-align: left;
   }
 
   h2, .h2 {
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 700;
-    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-size: var(--mobile-h2);
     line-height: 1.3;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
     color: hsl(var(--foreground));
-    margin-bottom: var(--space-md);
+    margin-bottom: 12px;
+    text-align: left;
   }
 
   h3, .h3 {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
-    font-size: var(--font-size-lg);
+    font-size: var(--mobile-h3);
     line-height: 1.4;
     letter-spacing: -0.01em;
     color: hsl(var(--foreground));
-    margin-bottom: var(--space-md);
+    margin-bottom: 12px;
+    text-align: left;
   }
 
   h4, .h4, h5, .h5, h6, .h6 {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
-    font-size: var(--font-size-base);
+    font-size: var(--mobile-body);
     line-height: 1.5;
     color: hsl(var(--foreground));
-    margin-bottom: var(--space-sm);
+    margin-bottom: 8px;
+    text-align: left;
   }
 
-  /* Body Text */
+  /* Body Text - Mobile Optimized */
   p, .text-body {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
-    font-size: var(--font-size-base);
-    line-height: 1.6;
+    font-size: var(--mobile-body);
+    line-height: 1.5;
     color: hsl(var(--muted-foreground) / 0.9);
-    margin-bottom: var(--space-md);
-    max-width: 65ch;
+    margin-bottom: 16px;
+    text-align: left;
+    max-width: 100%;
   }
 
   /* Small Text */
   small, .text-small {
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
+    font-size: 0.8125rem; /* 13px */
+    line-height: 1.4;
     color: hsl(var(--muted-foreground));
   }
 
@@ -202,54 +220,61 @@
 }
 
 /* ========================================
-   LAYOUT & SPACING SYSTEM
+   MOBILE/TABLET LAYOUT & SPACING
    ======================================== */
 
 @layer base {
-  /* Container System */
+  /* Mobile Container System - Single Column */
   .container-fluid {
     width: 100%;
     max-width: var(--content-width);
     margin: 0 auto;
-    padding-left: var(--space-sm);
-    padding-right: var(--space-sm);
+    padding-left: var(--mobile-margin);
+    padding-right: var(--mobile-margin);
   }
 
   .container {
     width: 100%;
     max-width: var(--content-width);
     margin: 0 auto;
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
+    padding-left: var(--mobile-margin);
+    padding-right: var(--mobile-margin);
   }
 
-  /* Section Spacing */
+  /* Section Spacing - Consistent 24px */
   .section {
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+    padding-top: var(--mobile-section-padding);
+    padding-bottom: var(--mobile-section-padding);
   }
 
   .section-gap {
-    margin-bottom: var(--section-gap);
+    margin-bottom: var(--mobile-section-gap);
   }
 
-  /* Grid System */
+  /* Mobile Grid System - Single Column Flow */
   .grid-auto {
     display: grid;
-    gap: var(--space-lg);
+    gap: 20px;
     grid-template-columns: 1fr;
   }
 
   .grid-2 {
     display: grid;
-    gap: var(--space-lg);
+    gap: 20px;
     grid-template-columns: 1fr;
   }
 
-  /* Content Alignment */
+  .grid-3 {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  /* Content Alignment - Mobile Optimized */
   .content-center {
-    max-width: 65ch;
+    max-width: 100%;
     margin: 0 auto;
+    text-align: center;
   }
 
   .content-left {
@@ -259,25 +284,55 @@
   .content-balanced {
     text-wrap: balance;
   }
+
+  /* Mobile Image System */
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin: 16px 0;
+  }
+
+  .image-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    margin: 16px 0;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 /* ========================================
-   COMPONENT STYLES
+   MOBILE/TABLET COMPONENTS
    ======================================== */
 
 @layer components {
-  /* Button Enhancements */
+  /* Mobile CTA Buttons - 44px minimum height */
   .btn-touch {
     min-height: 44px;
-    min-width: 44px;
-    padding: var(--space-sm) var(--space-lg);
+    min-width: 120px;
+    padding: 12px 20px;
     border-radius: var(--radius);
-    font-weight: 600;
-    font-size: var(--font-size-base);
-    line-height: 1.5;
+    font-weight: 700;
+    font-size: var(--mobile-cta);
+    line-height: 1.4;
+    text-align: center;
     transition: all 0.2s ease;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
   .btn-touch:hover {
@@ -287,40 +342,53 @@
 
   .btn-touch:active {
     transform: translateY(0);
+    box-shadow: 0 2px 6px hsl(var(--primary) / 0.3);
   }
 
-  /* Card Component */
+  /* Mobile Card Component */
   .card-elevated {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
-    padding: var(--space-xl);
+    padding: 20px;
+    margin: 16px 0;
     box-shadow: 0 2px 8px hsl(var(--foreground) / 0.1);
     transition: all 0.2s ease;
   }
 
   .card-elevated:hover {
-    box-shadow: 0 8px 25px hsl(var(--foreground) / 0.15);
-    transform: translateY(-2px);
+    box-shadow: 0 6px 20px hsl(var(--foreground) / 0.15);
+    transform: translateY(-1px);
   }
 
-  /* Form Elements */
+  /* Mobile Form Elements */
   .input-field {
     width: 100%;
     min-height: 44px;
-    padding: var(--space-sm) var(--space-md);
+    padding: 12px 16px;
     background: hsl(var(--background));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
-    font-size: var(--font-size-base);
+    font-size: var(--mobile-body);
     color: hsl(var(--foreground));
     transition: all 0.2s ease;
+    box-sizing: border-box;
   }
 
   .input-field:focus {
     outline: none;
     border-color: hsl(var(--primary));
     box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: hsl(var(--background) / 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid hsl(var(--border));
   }
 }
 
@@ -390,110 +458,151 @@
 }
 
 /* ========================================
-   RESPONSIVE DESIGN SYSTEM
+   DESKTOP RESPONSIVE DESIGN
    ======================================== */
 
-/* Mobile First (320px+) */
-@media (min-width: 20rem) {
-  .container-fluid {
-    padding-left: var(--space-sm);
-    padding-right: var(--space-sm);
-  }
-  
-  .container {
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
-  }
-}
-
-/* Small tablets and large phones (480px+) */
-@media (min-width: 30rem) {
-  .container-fluid,
-  .container {
-    padding-left: var(--space-lg);
-    padding-right: var(--space-lg);
+/* Desktop (1024px+) - Multi-column layouts allowed */
+@media (min-width: 64rem) {
+  body {
+    font-size: var(--desktop-body);
+    line-height: 1.6;
   }
 
-  .grid-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* Typography scaling */
+  /* Desktop Typography */
   h1, .h1 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--desktop-h1);
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 
   h2, .h2 {
-    font-size: var(--font-size-2xl);
-  }
-}
-
-/* Tablets (640px+) */
-@media (min-width: 40rem) {
-  .container-fluid,
-  .container {
-    padding-left: var(--space-xl);
-    padding-right: var(--space-xl);
+    font-size: var(--desktop-h2);
+    line-height: 1.3;
+    margin-bottom: 16px;
   }
 
-  .section {
-    padding-top: var(--space-3xl);
-    padding-bottom: var(--space-3xl);
-  }
-
-  .grid-auto {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  /* Enhanced typography */
-  h1, .h1 {
-    font-size: var(--font-size-4xl);
-    line-height: 1.1;
+  h3, .h3 {
+    font-size: var(--desktop-h3);
+    line-height: 1.4;
+    margin-bottom: 16px;
   }
 
   p, .text-body {
-    font-size: var(--font-size-lg);
+    font-size: var(--desktop-body);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 65ch;
   }
-}
 
-/* Desktop (1024px+) */
-@media (min-width: 64rem) {
+  /* Desktop Layout - 20-40px margins */
   .container-fluid,
   .container {
-    padding-left: var(--space-2xl);
-    padding-right: var(--space-2xl);
+    padding-left: var(--desktop-margin);
+    padding-right: var(--desktop-margin);
   }
 
+  .section {
+    padding-top: var(--desktop-section-padding);
+    padding-bottom: var(--desktop-section-padding);
+  }
+
+  /* Desktop Grid System - Multi-column allowed */
   .grid-2 {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    gap: 32px;
   }
 
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
+    gap: 24px;
   }
 
-  /* Desktop typography */
-  h1, .h1 {
-    font-size: clamp(2.25rem, 4vw, 3.5rem);
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
   }
 
+  /* Desktop CTA Buttons */
   .btn-touch {
     min-height: 48px;
-    padding: var(--space-md) var(--space-2xl);
+    padding: 14px 28px;
+    font-size: var(--desktop-cta);
+    font-weight: 700;
+  }
+
+  .btn-touch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px hsl(var(--primary) / 0.4);
+  }
+
+  /* Desktop Cards */
+  .card-elevated {
+    padding: 32px;
+    margin: 24px 0;
+  }
+
+  /* Desktop Content Alignment */
+  .content-center {
+    max-width: 65ch;
+    text-align: left;
   }
 }
 
-/* Large Desktop (1440px+) */
+/* Large Desktop (1440px+) - Larger margins */
 @media (min-width: 90rem) {
-  .section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  .container-fluid,
+  .container {
+    padding-left: var(--desktop-margin-large);
+    padding-right: var(--desktop-margin-large);
+    max-width: 1400px;
   }
 
+  h1, .h1 {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  }
+
+  .grid-2 {
+    gap: 40px;
+  }
+
+  .grid-3 {
+    gap: 32px;
+  }
+
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+/* Tablet Range (768px - 1023px) - Hybrid approach */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .container-fluid,
   .container {
-    max-width: 1400px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  body {
+    font-size: var(--mobile-body);
+  }
+
+  h1, .h1 {
+    font-size: calc(var(--mobile-h1) + 0.125rem);
+  }
+
+  h2, .h2 {
+    font-size: calc(var(--mobile-h2) + 0.125rem);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .btn-touch {
+    min-height: 46px;
+    padding: 13px 24px;
   }
 }
 
