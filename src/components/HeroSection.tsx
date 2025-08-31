@@ -71,7 +71,7 @@ const HeroSection = () => {
   }, []);
   return <section className="relative h-screen flex items-end justify-start text-left lg:justify-start lg:text-left overflow-hidden">
       {/* Background Video */}
-      <video ref={videoRef} autoPlay loop muted playsInline preload="auto" className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'}`} style={{
+      <video ref={videoRef} autoPlay loop muted playsInline preload="metadata" className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'}`} style={{
       zIndex: videoLoaded && !videoError ? 1 : -1
     }}>
         <source src="https://www.eastdigital.in/img/hero_video_folio.mp4" type="video/mp4" />

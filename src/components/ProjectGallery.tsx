@@ -17,7 +17,8 @@ const ProjectGallery = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   useEffect(() => {
     let mounted = true;
-    (async () => {
+    // Use setTimeout to defer the API call and let the page render first
+    const timeoutId = setTimeout(async () => {
       const {
         data,
         error
@@ -39,9 +40,10 @@ const ProjectGallery = () => {
           subcategory: d.subcategory
         })));
       }
-    })();
+    }, 100);
     return () => {
       mounted = false;
+      clearTimeout(timeoutId);
     };
   }, []);
 

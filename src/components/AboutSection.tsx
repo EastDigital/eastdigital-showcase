@@ -7,6 +7,7 @@ const AboutSection = () => {
           src="https://eastdigital.in/img/about-east-digital.jpg" 
           alt="About East Digital Team" 
           className="w-full h-full object-cover"
+          loading="lazy"
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = 'none';
           }}
