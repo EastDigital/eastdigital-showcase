@@ -13,7 +13,7 @@ const PageBanner = ({
   backgroundImage,
   breadcrumbs
 }: PageBannerProps) => {
-  return <section className="relative py-16 sm:py-20 lg:py-32 flex items-end min-h-[60vh] sm:min-h-[70vh]">
+  return <section className="relative py-12 sm:py-16 lg:py-20 flex items-end min-h-[40vh] sm:min-h-[45vh]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={backgroundImage} alt={`${title} Background`} className="w-full h-full object-cover" loading="lazy" onError={e => {
@@ -25,12 +25,12 @@ const PageBanner = ({
       {/* Content - Aligned with header logo */}
       <div className="container mx-auto relative z-10 px-4 sm:px-6 md:px-8">
         {/* Page Title above breadcrumb, aligned with header/logo */}
-        <h1 className="page-title text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+        <h1 className="page-title text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 text-left leading-tight">
           {title}
         </h1>
 
         {/* Breadcrumb */}
-        <nav className="page-breadcrumb mt-4 text-sm sm:text-base text-white/80" aria-label="Breadcrumb">
+        <nav className="page-breadcrumb mt-2 text-xs sm:text-sm text-white/80 text-left" aria-label="Breadcrumb">
           {breadcrumbs.map((crumb, index) => <span key={index}>
               {crumb.href ? <Link to={crumb.href} className="hover:text-white/80 transition-colors">
                   {crumb.label.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
