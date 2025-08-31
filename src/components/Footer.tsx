@@ -16,7 +16,7 @@ const Footer = () => {
         
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-start justify-between min-h-[40vh]">
           {/* Top Content */}
-          <div className="w-full">
+          <div className="max-w-[auto]">
             <h2 className="text-xl sm:text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-8 sm:mb-10">
               <span className="font-bold">Ready to discuss your next project?</span>
             </h2>
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
           
           {/* Bottom Content */}
-          <div className="w-full mt-12 sm:mt-16">
+          <div className="w-full mt-12 sm:mt-16 max-w-[850px]">
             <div className="flex flex-col gap-6">
               <div className="flex items-start gap-3">
                 <svg className="w-6 h-6 text-foreground flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

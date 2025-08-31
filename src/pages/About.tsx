@@ -43,7 +43,7 @@ const About = () => {
         {/* Your Vision Section */}
         <section className="py-[50px] bg-black">
           <div className="container mx-auto px-8">
-            <div className="w-full">
+            <div className="max-w-[850px]">
               <h2 className="font-bold text-white mb-12" style={{
               fontSize: '26px',
               lineHeight: '34px',
@@ -53,7 +53,7 @@ const About = () => {
                 Your Vision, Brought to Life
               </h2>
               
-              <div className="space-y-8 px-[5px] py-0 my-0 mx-[4px]">
+              <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-start justify-between min-h-[40vh]">
                 <p style={{
                 fontSize: '20px',
                 lineHeight: '30px',
@@ -107,7 +107,7 @@ const About = () => {
         {/* Our Foundation Section */}
         <section className="py-[20px] bg-black">
           <div className="container mx-auto px-8">
-            <div className="w-full">
+            <div className="max-w-[850px]">
               <h2 className="font-light" style={{
               fontSize: '32px',
               lineHeight: '40px',
@@ -153,7 +153,7 @@ const About = () => {
         </div>}
           
       <div className="container mx-auto px-8 relative z-10">
-            <div className="w-full">
+            <div className="max-w-[850px]">
               <h2 className="font-bold mb-8" style={{
               fontSize: '26px',
               lineHeight: '34px',
