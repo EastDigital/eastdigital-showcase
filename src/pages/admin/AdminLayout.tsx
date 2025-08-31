@@ -24,8 +24,8 @@ export default function AdminLayout() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border">
-        <div className="container mx-auto page-gutter content-max py-4 flex items-center justify-between">
-          <Link to="/admin" className="font-bold text-left">East Digital PMS</Link>
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link to="/admin" className="font-bold">East Digital PMS</Link>
           <nav className="flex items-center gap-6">
             <Link to="/admin" className="hover:text-accent">Dashboard</Link>
             <Link to="/admin/projects" className="hover:text-accent">Projects</Link>
@@ -36,7 +36,7 @@ export default function AdminLayout() {
           </nav>
         </div>
       </header>
-      <main className="container mx-auto page-gutter content-max py-8">
+      <main className="container mx-auto px-4 py-8">
         <Outlet />
       </main>
     </div>

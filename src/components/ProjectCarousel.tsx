@@ -47,7 +47,7 @@ export default function ProjectCarousel() {
   if (loading && items.length === 0) {
     return (
       <section className="py-10">
-        <div className="container mx-auto page-gutter content-max">
+        <div className="container mx-auto px-4">
           <div className="h-48 rounded-md bg-muted animate-pulse" />
         </div>
       </section>
@@ -58,8 +58,8 @@ export default function ProjectCarousel() {
 
   return (
     <section className="py-10">
-      <div className="container mx-auto page-gutter content-max">
-        <header className="mb-4 text-left">
+      <div className="container mx-auto px-4">
+        <header className="mb-4">
           <h2 className="text-2xl font-semibold">Featured Projects</h2>
         </header>
         <div className="relative">

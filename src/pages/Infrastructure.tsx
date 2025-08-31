@@ -38,8 +38,8 @@ const Infrastructure = () => {
 
         {/* Description Section */}
         <section className="py-16">
-          <div className="container mx-auto page-gutter content-max">
-            <div className="max-w-[850px] text-left">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
               <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
                 At East Digital, we understand that every infrastructure project has unique challenges, audiences, and objectives. Our industry-first model ensures that our 3D visualization solutions are strategically aligned with your specific goals.
               </p>

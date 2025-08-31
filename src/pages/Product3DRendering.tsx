@@ -33,8 +33,8 @@ export default function Product3DRendering() {
 
       <main>
         <section className="py-16 lg:py-24 bg-background">
-          <div className="container mx-auto page-gutter content-max">
-            <div className="max-w-4xl mx-auto text-left">
+          <div className="container mx-auto px-8">
+            <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-foreground">Product Design Excellence</h2>
               
               <div className="prose prose-lg prose-invert max-w-none">

@@ -37,8 +37,8 @@ const WalkthroughVideo = () => {
 
         {/* Description Section */}
         <section className="py-16">
-          <div className="container mx-auto page-gutter content-max">
-            <div className="max-w-[850px] text-left">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Cinematic 3D Walkthrough Videos: Bring Your Property to Life
               </h2>
@@ -63,8 +63,8 @@ const WalkthroughVideo = () => {
 
         {/* Process Section */}
         <section className="py-20 bg-muted/30">
-          <div className="container mx-auto page-gutter content-max">
-            <div className="max-w-[850px] text-left">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Our Process: From Blueprint to Blockbuster
               </h2>
@@ -109,8 +109,8 @@ const WalkthroughVideo = () => {
         </section>
         {/* Applications Section */}
         <section className="py-20">
-          <div className="container mx-auto page-gutter content-max">
-            <div className="max-w-[850px] text-left">
+          <div className="container mx-auto px-8">
+            <div className="max-w-[850px]">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Applications for 3D Walkthroughs
               </h2>

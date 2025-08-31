@@ -41,7 +41,7 @@ export default function ProjectCards() {
 
   if (loading && items.length === 0) {
     return (
-      <div className="container mx-auto page-gutter content-max">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="h-64 rounded-md bg-muted animate-pulse" />
@@ -53,14 +53,14 @@ export default function ProjectCards() {
 
   if (!items.length) {
     return (
-      <div className="container mx-auto page-gutter content-max">
-        <p className="text-muted-foreground text-left">No projects published yet.</p>
+      <div className="container mx-auto px-4">
+        <p className="text-muted-foreground">No projects published yet.</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto page-gutter content-max">
+    <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((p) => (
           <Link key={p.id} to={`/projects/${p.slug}`}>
