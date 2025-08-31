@@ -33,7 +33,7 @@ const RealEstate = () => {
 
         {/* Description Section */}
         <section className="mobile-section sm:py-16">
-          <div className="space-y-8 px-[5px] py-0 my-0 mx-[4px]>
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="max-w-none lg:max-w-[850px]">
               <h2 className="content-heading mb-4 sm:mb-6">
                 <span className="block mobile-paragraph">Visualize Your Vision:</span>
