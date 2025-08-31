@@ -45,7 +45,7 @@ const Expertise = () => {
         {/* Description Section */}
         <section className="py-16">
           <div className="container mx-auto px-8">
-            <div className="max-w-[850px]">
+            <div className="w-full">
               <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
                 For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
               </p>
@@ -83,7 +83,7 @@ const Expertise = () => {
 
         {/* CTA Section */}
         <section className="py-20 px-4 bg-muted/30">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="w-full mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Ready to discuss your next project?
             </h2>

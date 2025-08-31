@@ -144,7 +144,7 @@ export default function ProjectCaseStudy() {
             <article>
               <section className="container mx-auto px-4 py-8">
                 {(project.summary_heading || project.summary) && (
-                  <div className="max-w-[850px]">
+                  <div className="w-full">
                     {project.summary_heading && (
                       <h2 className="text-white font-bold font-nunito" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em', marginBottom: '16px'}}>
                         {project.summary_heading}
@@ -170,7 +170,7 @@ export default function ProjectCaseStudy() {
               )}
 
               <section className="container mx-auto px-4 py-8">
-                <div className="max-w-[850px]">
+                <div className="w-full">
                   {project.case_study_heading && (
                     <h2 className="text-white font-bold font-nunito mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>
                       {project.case_study_heading}

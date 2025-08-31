@@ -34,7 +34,7 @@ export default function RealEstate3DStillRenderings() {
       <main>
         <section className="py-16">
           <div className="container mx-auto px-8">
-            <div className="max-w-[850px]">
+            <div className="w-full">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Transform Your Real Estate Vision</h2>
               
               <div className="prose prose-lg prose-invert max-w-none">
