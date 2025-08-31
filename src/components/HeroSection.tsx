@@ -98,7 +98,7 @@ const HeroSection = () => {
         </div>}
       
       {/* Content */}
-      <div className="page-gutter content-max pb-8 sm:pb-12 lg:pb-24 relative z-[10]">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 lg:pb-24 relative z-[10]">
         <div className="max-w-[850px]">
           <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-wide text-foreground mb-6">
             <span className="block lg:hidden">3D That Sells, Stuns, and Speaks to Your Industry.</span>

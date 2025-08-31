@@ -37,10 +37,6 @@
     --radius: 0.75rem;
     --content-width: 1200px;
     
-    /* Page Gutters - Global Alignment System */
-    --page-gutter-mobile: 12px;
-    --page-gutter-desktop: 32px;
-    
     /* Mobile/Tablet Layout (8-12px margins) */
     --mobile-margin: 8px;
     --mobile-section-padding: 24px;
@@ -406,49 +402,6 @@
    ======================================== */
 
 @layer utilities {
-  /* Global Page Gutter System */
-  .page-gutter {
-    padding-left: var(--page-gutter-mobile);
-    padding-right: var(--page-gutter-mobile);
-  }
-
-  @media (min-width: 1024px) {
-    .page-gutter {
-      padding-left: var(--page-gutter-desktop);
-      padding-right: var(--page-gutter-desktop);
-    }
-  }
-
-  .content-max {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .align-left {
-    text-align: left !important;
-  }
-
-  /* Typography Prose Normalization */
-  .prose {
-    margin: 0;
-  }
-
-  .prose :where(p, h1, h2, h3, h4, h5, h6, ul, ol) {
-    text-align: left;
-  }
-
-  .prose blockquote {
-    margin-left: 0;
-    padding-left: 0;
-    border-left-width: 0;
-  }
-
-  .prose ul,
-  .prose ol {
-    padding-left: 1.25rem;
-  }
-
   /* Glassmorphism Effects */
   .glass-effect {
     background: hsl(var(--glass-bg));

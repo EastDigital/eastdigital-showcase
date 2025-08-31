@@ -9,7 +9,7 @@ const AboutSection = () => {
       </div>
       
       {/* Content */}
-      <div className="page-gutter content-max relative z-10">
+      <div className="container mx-auto px-8 relative z-10">
         <div className="">
           <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
             <span className="font-bold">About </span>

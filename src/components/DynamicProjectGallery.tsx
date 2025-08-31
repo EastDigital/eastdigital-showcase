@@ -53,7 +53,7 @@ const DynamicProjectGallery: React.FC<DynamicProjectGalleryProps> = ({
   if (loading) {
     return (
       <section className="py-20">
-        <div className="page-gutter content-max">
+        <div className="container mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Array.from({ length: 4 }).map((_, index) => (
               <div key={index} className="relative overflow-hidden rounded-lg bg-card border">
@@ -69,8 +69,8 @@ const DynamicProjectGallery: React.FC<DynamicProjectGalleryProps> = ({
   if (projects.length === 0) {
     return (
       <section className="py-20">
-        <div className="page-gutter content-max">
-          <div className="align-left text-muted-foreground">
+        <div className="container mx-auto px-8">
+          <div className="text-center text-muted-foreground">
             No projects available for this category yet.
           </div>
         </div>
@@ -86,7 +86,7 @@ const DynamicProjectGallery: React.FC<DynamicProjectGalleryProps> = ({
 
   return (
     <section className="py-20">
-      <div className="page-gutter content-max">
+      <div className="container mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <Link 

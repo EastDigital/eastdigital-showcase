@@ -22,8 +22,8 @@ const Header = () => {
   }, [isMenuOpen]);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   return <>
-      <header className={`fixed top-0 left-0 right-0 z-40 flex items-center h-[70px] sm:h-[75px] transition-all duration-300 ${isSticky ? 'glass-effect' : ''}`}>
-        <div className="page-gutter content-max flex justify-between items-center h-full">
+      <header className={`fixed top-0 left-0 right-0 z-40 px-2 sm:px-4 flex items-center h-[70px] sm:h-[75px] transition-all duration-300 ${isSticky ? 'glass-effect' : ''}`}>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 flex justify-between items-center h-full">
           <div className="flex-shrink-0">
             <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-10 sm:h-12" onError={e => {
             (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
@@ -137,7 +137,7 @@ const Header = () => {
           </button>
         </div>
         
-        <div className="page-gutter space-y-8 overflow-y-auto h-[calc(100vh-70px)] sm:h-[calc(100vh-75px)] pb-24">
+        <div className="px-6 sm:px-8 space-y-8 overflow-y-auto h-[calc(100vh-70px)] sm:h-[calc(100vh-75px)] pb-24">
           <Link to="/" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-white/5" onClick={toggleMenu}>Home</Link>
           
           <div>

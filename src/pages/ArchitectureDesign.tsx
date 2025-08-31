@@ -52,8 +52,8 @@ const ArchitectureDesign = () => {
 
         {/* Services Grid */}
         <section className="py-24 bg-gradient-to-br from-background via-background to-muted/20">
-          <div className="page-gutter content-max">
-            <div className="align-left mb-16">
+          <div className="container mx-auto px-8">
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-6">
                 Our Services
               </h2>
