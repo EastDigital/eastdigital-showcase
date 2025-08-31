@@ -14,7 +14,7 @@ const Footer = () => {
           />
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-start justify-between min-h-[40vh]">
+        <div className="page-gutter content-max relative z-10 flex flex-col items-start justify-between min-h-[40vh]">
           {/* Top Content */}
           <div className="max-w-[850px]">
             <h2 className="text-xl sm:text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-8 sm:mb-10">
@@ -91,7 +91,7 @@ const Footer = () => {
       
       {/* Sub-Footer */}
       <div className="bg-background py-6 sm:py-8">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        <div className="page-gutter content-max">
           <div className="flex flex-col gap-6 sm:gap-8 mb-6 sm:mb-8">
             <img 
               src="https://www.eastdigital.in/img/logo-east-digital-white.png" 

@@ -396,7 +396,7 @@ export default function Enquiry() {
                   </div>
                 </div>
 
-                <div className="text-center">
+                <div className="align-left">
                   <Button 
                     type="submit" 
                     disabled={loading}

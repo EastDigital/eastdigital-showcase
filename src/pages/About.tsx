@@ -42,7 +42,7 @@ const About = () => {
 
         {/* Your Vision Section */}
         <section className="py-[50px] bg-black">
-          <div className="container mx-auto px-8">
+          <div className="page-gutter content-max">
             <div className="max-w-[850px]">
               <h2 className="font-bold text-white mb-12" style={{
               fontSize: '26px',
@@ -106,7 +106,7 @@ const About = () => {
 
         {/* Our Foundation Section */}
         <section className="py-[20px] bg-black">
-          <div className="container mx-auto px-8">
+          <div className="page-gutter content-max">
             <div className="max-w-[850px]">
               <h2 className="font-light" style={{
               fontSize: '32px',
@@ -152,7 +152,7 @@ const About = () => {
           </div>
         </div>}
           
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="page-gutter content-max relative z-10">
             <div className="max-w-[850px]">
               <h2 className="font-bold mb-8" style={{
               fontSize: '26px',
