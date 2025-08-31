@@ -224,21 +224,26 @@
    ======================================== */
 
 @layer base {
-  /* Mobile Container System - Single Column */
-  .container-fluid {
-    width: 100%;
-    max-width: var(--content-width);
-    margin: 0 auto;
-    padding-left: var(--mobile-margin);
-    padding-right: var(--mobile-margin);
-  }
-
+  /* Global Container System - Consistent Left Alignment */
+  .container-fluid,
   .container {
     width: 100%;
     max-width: var(--content-width);
     margin: 0 auto;
     padding-left: var(--mobile-margin);
     padding-right: var(--mobile-margin);
+    box-sizing: border-box;
+  }
+
+  /* Apply container to ALL page elements */
+  main, section, article, aside, nav, header, footer {
+    box-sizing: border-box;
+  }
+
+  /* Content alignment override for containers */
+  .container .text-center,
+  .container-fluid .text-center {
+    text-align: left !important;
   }
 
   /* Section Spacing - Consistent 24px */
@@ -270,11 +275,11 @@
     grid-template-columns: 1fr;
   }
 
-  /* Content Alignment - Mobile Optimized */
+  /* Content Alignment - Force Left Alignment */
   .content-center {
     max-width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
   }
 
   .content-left {
@@ -494,9 +499,20 @@
     max-width: 65ch;
   }
 
-  /* Desktop Layout - 20-40px margins */
+  /* Desktop Layout - 20-40px margins with left grid alignment */
   .container-fluid,
   .container {
+    padding-left: var(--desktop-margin);
+    padding-right: var(--desktop-margin);
+    max-width: var(--content-width);
+  }
+
+  /* Ensure all content follows the same left grid line */
+  main .container,
+  section .container,
+  header .container,
+  footer .container,
+  .page-content {
     padding-left: var(--desktop-margin);
     padding-right: var(--desktop-margin);
   }
@@ -548,10 +564,15 @@
   }
 }
 
-/* Large Desktop (1440px+) - Larger margins */
+/* Large Desktop (1440px+) - Larger margins with consistent alignment */
 @media (min-width: 90rem) {
   .container-fluid,
-  .container {
+  .container,
+  main .container,
+  section .container,
+  header .container,
+  footer .container,
+  .page-content {
     padding-left: var(--desktop-margin-large);
     padding-right: var(--desktop-margin-large);
     max-width: 1400px;
@@ -575,10 +596,15 @@
   }
 }
 
-/* Tablet Range (768px - 1023px) - Hybrid approach */
+/* Tablet Range (768px - 1023px) - Consistent 12px margins */
 @media (min-width: 48rem) and (max-width: 63.9375rem) {
   .container-fluid,
-  .container {
+  .container,
+  main .container,
+  section .container,
+  header .container,
+  footer .container,
+  .page-content {
     padding-left: 12px;
     padding-right: 12px;
   }

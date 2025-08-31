@@ -102,15 +102,16 @@ const Footer = () => {
               }}
             />
             
-            <div className="flex flex-wrap justify-start gap-x-4 sm:gap-x-6 gap-y-3 text-base sm:text-sm">
-              <a href="/" className="text-foreground hover:text-accent transition-colors py-2">Home</a>
-              <a href="/expertise" className="text-foreground hover:text-accent transition-colors py-2">Expertise</a>
-              <a href="/about" className="text-foreground hover:text-accent transition-colors py-2">About</a>
-              <a href="/contact" className="text-foreground hover:text-accent transition-colors py-2">Connect</a>
-              <a href="#" className="text-foreground hover:text-accent transition-colors py-2">Blog</a>
-            </div>
-            
-            <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
+              <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 text-base sm:text-sm">
+                <a href="/" className="text-foreground hover:text-accent transition-colors py-2">Home</a>
+                <a href="/expertise" className="text-foreground hover:text-accent transition-colors py-2">Expertise</a>
+                <a href="/about" className="text-foreground hover:text-accent transition-colors py-2">About</a>
+                <a href="/contact" className="text-foreground hover:text-accent transition-colors py-2">Connect</a>
+                <a href="#" className="text-foreground hover:text-accent transition-colors py-2">Blog</a>
+              </div>
+              
+              <div className="flex items-center gap-4 sm:gap-6 flex-wrap sm:flex-shrink-0">
               {/* YouTube */}
               <a href="#" className="text-foreground hover:text-accent transition-colors p-2 hover:bg-white/5 rounded-lg">
                 <svg className="w-7 h-7 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -148,6 +149,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
                 </svg>
               </a>
+              </div>
             </div>
           </div>
           
