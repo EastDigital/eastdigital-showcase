@@ -36,12 +36,12 @@ const Header = () => {
               Home
             </Link>
             <div className="group h-full flex items-center">
-              <button className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300 flex items-center">
+              <Link to="/expertise" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300 flex items-center">
                 Expertise
                 <svg className="ml-2 transition-transform duration-300 group-hover:rotate-180" width="10" height="10" viewBox="0 0 24 24" fill="none">
                   <path d="M12 15L6 9H18L12 15Z" fill="currentColor" />
                 </svg>
-              </button>
+              </Link>
               
               {/* Mega Menu */}
               <div className="absolute top-full left-1/2 -translate-x-1/2 w-[878px] max-w-[95vw] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-2 z-50">
@@ -105,7 +105,7 @@ const Header = () => {
 
           <div className="hidden lg:block">
             <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
-              <span className="relative z-10">Get Your Blueprint</span>
+              <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
 
@@ -184,7 +184,7 @@ const Header = () => {
           
           <div className="pt-6">
             <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
-              <span className="relative z-10">Get Your Blueprint</span>
+              <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
         </div>

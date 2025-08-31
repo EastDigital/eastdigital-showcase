@@ -31,7 +31,7 @@ const AboutSection = () => {
           
           <div>
             <a 
-              href="#" 
+              href="/about" 
               className="inline-flex items-center text-accent font-light text-sm hover:translate-x-1 transition-transform duration-300"
             >
               Read more 

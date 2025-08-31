@@ -39,7 +39,7 @@ const Footer = () => {
                   If you need guidance on what information should be provided, simply fill out our request a proposal form below.
                 </p>
                 <a 
-                  href="#" 
+                  href="/enquiry" 
                   className="inline-flex items-center text-lg leading-relaxed tracking-wide text-foreground hover:text-foreground transition-colors"
                 >
                   Take me to form 
@@ -64,12 +64,15 @@ const Footer = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <svg className="w-6 h-6 text-foreground flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-6 h-6 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <p className="text-lg leading-relaxed tracking-wide text-foreground">
-                  +91-99105 68689
-                </p>
+                <a 
+                  href="tel:+919910568689" 
+                  className="text-lg leading-relaxed tracking-wide text-accent hover:text-primary transition-colors duration-300 font-semibold px-4 py-2 rounded-lg bg-accent/10 hover:bg-accent/20 border border-accent/30 hover:border-accent/50"
+                >
+                  Call +91-99105 68689
+                </a>
               </div>
             </div>
           </div>
@@ -90,10 +93,10 @@ const Footer = () => {
             />
             
             <div className="flex flex-wrap justify-start gap-x-6 gap-y-2 text-sm">
-              <a href="#" className="text-foreground hover:text-accent transition-colors">Home</a>
-              <a href="#" className="text-foreground hover:text-accent transition-colors">Expertise</a>
-              <a href="#" className="text-foreground hover:text-accent transition-colors">About</a>
-              <a href="#" className="text-foreground hover:text-accent transition-colors">Connect</a>
+              <a href="/" className="text-foreground hover:text-accent transition-colors">Home</a>
+              <a href="/expertise" className="text-foreground hover:text-accent transition-colors">Expertise</a>
+              <a href="/about" className="text-foreground hover:text-accent transition-colors">About</a>
+              <a href="/contact" className="text-foreground hover:text-accent transition-colors">Connect</a>
               <a href="#" className="text-foreground hover:text-accent transition-colors">Blog</a>
             </div>
             
@@ -142,9 +145,9 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center text-muted-foreground text-xs">
               <p>&copy; 2025 East Digital.</p>
               <div className="flex space-x-6 mt-4 sm:mt-0">
-                <a href="#" className="hover:text-foreground transition-colors">Terms Of Use</a>
-                <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-foreground transition-colors">Sitemap</a>
+                <a href="/terms" className="hover:text-foreground transition-colors">Terms Of Use</a>
+                <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+                <a href="/sitemap" className="hover:text-foreground transition-colors">Sitemap</a>
               </div>
             </div>
           </div>

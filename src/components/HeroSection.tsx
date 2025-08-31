@@ -117,12 +117,12 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-row flex-wrap items-center justify-start gap-4">
-            <button className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+            <a href="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
               <span className="relative z-10">Free Consultation</span>
-            </button>
-            <button className="relative px-6 py-3 rounded-full text-foreground bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+            </a>
+            <a href="/expertise" className="relative px-6 py-3 rounded-full text-foreground bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
               <span className="relative z-10">Our Expertise</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
