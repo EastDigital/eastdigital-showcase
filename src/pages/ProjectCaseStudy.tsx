@@ -131,27 +131,27 @@ export default function ProjectCaseStudy() {
       <Header />
       <main>
         {loading ? (
-          <section className="container mx-auto px-4 py-10">
+          <section className="container mx-auto page-gutter content-max py-10">
             <div className="h-64 w-full rounded-md bg-muted animate-pulse" />
           </section>
         ) : !project ? (
-          <section className="container mx-auto px-4 py-10">
-            <h1 className="text-2xl font-semibold">Project not found</h1>
+          <section className="container mx-auto page-gutter content-max py-10">
+            <h1 className="text-2xl font-semibold text-left">Project not found</h1>
           </section>
         ) : (
           <>
             <PageBanner title={project.title} backgroundImage={project.cover_image || ""} breadcrumbs={breadcrumbs} />
             <article>
-              <section className="container mx-auto px-4 py-8">
+              <section className="container mx-auto page-gutter content-max py-8">
                 {(project.summary_heading || project.summary) && (
                   <div className="max-w-[850px]">
                     {project.summary_heading && (
-                      <h2 className="text-white font-bold font-nunito" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em', marginBottom: '16px'}}>
+                      <h2 className="text-white font-bold font-nunito text-left" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em', marginBottom: '16px'}}>
                         {project.summary_heading}
                       </h2>
                     )}
                     {project.summary && (
-                      <p className="text-[#DADADA] font-nunito" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
+                      <p className="text-[#DADADA] font-nunito text-left" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
                         {project.summary}
                       </p>
                     )}
@@ -169,22 +169,22 @@ export default function ProjectCaseStudy() {
                 </section>
               )}
 
-              <section className="container mx-auto px-4 py-8">
+              <section className="container mx-auto page-gutter content-max py-8">
                 <div className="max-w-[850px]">
                   {project.case_study_heading && (
-                    <h2 className="text-white font-bold font-nunito mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>
+                    <h2 className="text-white font-bold font-nunito mb-4 text-left" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>
                       {project.case_study_heading}
                     </h2>
                   )}
-                  <div className="max-w-none text-[#DADADA] font-nunito" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
+                  <div className="max-w-none text-[#DADADA] font-nunito text-left" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
                     <EditorContent editor={editor} />
                   </div>
                 </div>
               </section>
 
               {feature.remainingGallery && feature.remainingGallery.length > 0 && (
-                <section className="container mx-auto px-4 py-6">
-                  <h2 className="text-xl font-semibold mb-3">Gallery</h2>
+                <section className="container mx-auto page-gutter content-max py-6">
+                  <h2 className="text-xl font-semibold mb-3 text-left">Gallery</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {feature.remainingGallery.map((u, i) => {
                       const isVideo = /\.(mp4|webm|ogg)$/i.test(u);

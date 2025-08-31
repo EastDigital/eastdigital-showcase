@@ -57,8 +57,8 @@ const Header = () => {
                         Launch your project with<br />3d walkthrough video.
                       </p>
                       <ul className="space-y-1.5 text-foreground">
-                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Walkthrough Video</Link></li>
-                        <li><Link to="/expertise/real-estate/3d-still-renderings" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Still Renderings</Link></li>
+                         <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="block rounded-md py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Walkthrough Video</Link></li>
+                         <li><Link to="/expertise/real-estate/3d-still-renderings" className="block rounded-md py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">3D Still Renderings</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground">Ideal for: Real Estate Marketing</p>
                     </div>
@@ -73,8 +73,8 @@ const Header = () => {
                         Present your project to the<br />investors/authorities.
                       </p>
                       <ul className="space-y-1.5 text-foreground">
-                        <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Conceptual 3D Renderings</Link></li>
-                        <li><Link to="/expertise/infrastructure/engineering-3d-models" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Engineering 3D Models</Link></li>
+                         <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" className="block rounded-md py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Conceptual 3D Renderings</Link></li>
+                         <li><Link to="/expertise/infrastructure/engineering-3d-models" className="block rounded-md py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Engineering 3D Models</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground">Ideal for: Project Tender & Updates</p>
                     </div>
@@ -89,8 +89,8 @@ const Header = () => {
                         For client approvals and<br />internal assessment.
                       </p>
                       <ul className="space-y-1.5 text-foreground">
-                        <li><Link to="/expertise/architecture-design/architectural-3d-rendering" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Architectural 3D Rendering</Link></li>
-                        <li><Link to="/expertise/architecture-design/product-3d-rendering" className="block rounded-md px-2 py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Product 3D Rendering</Link></li>
+                        <li><Link to="/expertise/architecture-design/architectural-3d-rendering" className="block rounded-md py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Architectural 3D Rendering</Link></li>
+                        <li><Link to="/expertise/architecture-design/product-3d-rendering" className="block rounded-md py-1.5 text-[15px] font-normal text-foreground/90 hover:bg-muted hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors">Product 3D Rendering</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground">Ideal for: Ideation & Assessment</p>
                     </div>
@@ -104,7 +104,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:block">
-            <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+            <Link to="/enquiry" className="relative py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border btn-touch">
               <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
@@ -138,52 +138,52 @@ const Header = () => {
         </div>
         
         <div className="page-gutter space-y-8 overflow-y-auto h-[calc(100vh-70px)] sm:h-[calc(100vh-75px)] pb-24">
-          <Link to="/" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-white/5" onClick={toggleMenu}>Home</Link>
+          <Link to="/" className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 rounded-lg hover:bg-white/5" onClick={toggleMenu}>Home</Link>
           
           <div>
-            <button onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)} className="w-full flex justify-between items-center text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-white/5">
+            <button onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)} className="w-full flex justify-between items-center text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 rounded-lg hover:bg-white/5">
               <span>Expertise</span>
               <svg className={`w-6 h-6 transition-transform duration-300 ${isMobileExpertiseOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
             
-            <div className={`pl-4 mt-6 space-y-8 ${isMobileExpertiseOpen ? 'block' : 'hidden'}`}>
+            <div className={`mt-6 space-y-8 ${isMobileExpertiseOpen ? 'block' : 'hidden'}`}>
               <div className="pb-4 border-b border-white/10">
-                <Link to="/expertise/real-estate" onClick={toggleMenu} className="font-semibold text-lg text-foreground hover:text-accent transition-colors duration-300 tracking-wider block py-2">REAL ESTATE</Link>
+                <Link to="/expertise/real-estate" onClick={toggleMenu} className="font-semibold text-lg text-foreground hover:text-accent transition-colors duration-300 tracking-wider block py-2 text-left">REAL ESTATE</Link>
                 <p className="font-light text-sm text-muted-foreground mt-2 mb-4">Launch your project with 3d walkthrough video.</p>
                 <ul className="space-y-3 text-foreground">
-                  <li><Link to="/expertise/real-estate/3d-walkthrough-video" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5">3D Walkthrough Video</Link></li>
-                  <li><Link to="/expertise/real-estate/3d-still-renderings" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5">3D Still Renderings</Link></li>
+                   <li><Link to="/expertise/real-estate/3d-walkthrough-video" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 rounded-lg hover:bg-white/5">3D Walkthrough Video</Link></li>
+                   <li><Link to="/expertise/real-estate/3d-still-renderings" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 rounded-lg hover:bg-white/5">3D Still Renderings</Link></li>
                 </ul>
               </div>
               
               <div className="pb-4 border-b border-white/10">
-                <Link to="/expertise/infrastructure" onClick={toggleMenu} className="font-semibold text-lg text-foreground hover:text-accent transition-colors duration-300 tracking-wider block py-2">INFRASTRUCTURE</Link>
+                <Link to="/expertise/infrastructure" onClick={toggleMenu} className="font-semibold text-lg text-foreground hover:text-accent transition-colors duration-300 tracking-wider block py-2 text-left">INFRASTRUCTURE</Link>
                 <p className="font-light text-sm text-muted-foreground mt-2 mb-4">Present your project to the investors/authorities.</p>
                 <ul className="space-y-3 text-foreground">
-                  <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5">Conceptual 3D Renderings</Link></li>
-                  <li><Link to="/expertise/infrastructure/engineering-3d-models" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5">Engineering 3D Models</Link></li>
+                   <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 rounded-lg hover:bg-white/5">Conceptual 3D Renderings</Link></li>
+                   <li><Link to="/expertise/infrastructure/engineering-3d-models" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 rounded-lg hover:bg-white/5">Engineering 3D Models</Link></li>
                 </ul>
               </div>
               
               <div>
-                <Link to="/expertise/architecture-design" onClick={toggleMenu} className="font-semibold text-lg text-foreground hover:text-accent transition-colors duration-300 tracking-wider block py-2">ARCHITECTURE & PRODUCT DESIGN</Link>
+                <Link to="/expertise/architecture-design" onClick={toggleMenu} className="font-semibold text-lg text-foreground hover:text-accent transition-colors duration-300 tracking-wider block py-2 text-left">ARCHITECTURE & PRODUCT DESIGN</Link>
                 <p className="font-light text-sm text-muted-foreground mt-2 mb-4">For client approvals and internal assessment.</p>
                 <ul className="space-y-3 text-foreground">
-                  <li><Link to="/expertise/architecture-design/architectural-3d-rendering" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5">Architectural 3D Rendering</Link></li>
-                  <li><Link to="/expertise/architecture-design/product-3d-rendering" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5">Product 3D Rendering</Link></li>
+                   <li><Link to="/expertise/architecture-design/architectural-3d-rendering" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 rounded-lg hover:bg-white/5">Architectural 3D Rendering</Link></li>
+                   <li><Link to="/expertise/architecture-design/product-3d-rendering" onClick={toggleMenu} className="block font-normal text-base hover:text-accent transition-colors duration-300 py-2 rounded-lg hover:bg-white/5">Product 3D Rendering</Link></li>
                 </ul>
               </div>
             </div>
           </div>
           
-          <Link to="/about" onClick={toggleMenu} className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-white/5">About</Link>
-          <Link to="/contact" onClick={toggleMenu} className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-white/5">Contact</Link>
-          <a href="#" onClick={toggleMenu} className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-white/5">Blog</a>
+          <Link to="/about" onClick={toggleMenu} className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 rounded-lg hover:bg-white/5">About</Link>
+          <Link to="/contact" onClick={toggleMenu} className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 rounded-lg hover:bg-white/5">Contact</Link>
+          <a href="#" onClick={toggleMenu} className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 rounded-lg hover:bg-white/5">Blog</a>
           
           <div className="pt-8">
-            <Link to="/enquiry" onClick={toggleMenu} className="block w-full text-center relative px-8 py-4 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-lg">
+            <Link to="/enquiry" onClick={toggleMenu} className="block w-full text-left relative py-4 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-lg btn-touch">
               <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
