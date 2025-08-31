@@ -53,7 +53,7 @@ const About = () => {
                 Your Vision, Brought to Life
               </h2>
               
-              <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-start justify-between min-h-[40vh]">
+              <div className="space-y-8 px-[5px] py-0 my-0 mx-[4px]">
                 <p style={{
                 fontSize: '20px',
                 lineHeight: '30px',
