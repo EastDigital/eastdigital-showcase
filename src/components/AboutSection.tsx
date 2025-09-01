@@ -5,11 +5,11 @@ const AboutSection = () => {
         <img src="https://eastdigital.in/img/about-east-digital.jpg" alt="About East Digital Team" className="w-full h-full object-cover" loading="lazy" onError={e => {
         (e.target as HTMLImageElement).style.display = 'none';
       }} />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="container mx-auto px-8 w-full absolute inset-0 bg-black/50" />
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-8 w-full">
+      <div className="relative z-10 px-4">
         <div className="text-left w-full mb-12">
           <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
             <span className="font-bold">About </span>
