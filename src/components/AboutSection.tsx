@@ -5,7 +5,7 @@ const AboutSection = () => {
         <img src="https://eastdigital.in/img/about-east-digital.jpg" alt="About East Digital Team" className="w-full h-full object-cover" loading="lazy" onError={e => {
         (e.target as HTMLImageElement).style.display = 'none';
       }} />
-        <div className="container mx-auto px-8 w-full absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/50 container mx-auto px-8 w-full" />
       </div>
       
       {/* Content */}
