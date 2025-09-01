@@ -9,15 +9,15 @@ const AboutSection = () => {
       </div>
       
       {/* Content */}
-      <div className="container mx-auto px-8 relative z-10">
-        <div className="w-full ">
+      <div className="text-center lg:text-left w-full mb-12">
+        <div className="text-center lg:text-left w-full mb-12">
           <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
             <span className="font-bold">About </span>
             <span className="font-light">East Digital™</span>
           </h2>
           
           <div className="mb-10">
-            <p className="text-xl leading-relaxed tracking-wide text-gray-200">
+            <p className="text-xl leading-relaxed tracking-wide text-gray-200 text-left">
               East Digital™ is more than a 3D visualization studio; we are a dedicated B2B visualization 
               partner for industry leaders who require world class visual assets to drive decisive action.
             </p>
