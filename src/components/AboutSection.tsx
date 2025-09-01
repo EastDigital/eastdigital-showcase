@@ -9,8 +9,8 @@ const AboutSection = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 px-4 ">
-        <div className="text-left w-full mb-12">
+      <div className="relative z-10 px-4 sm:px-6 md:px-8">
+        <div className="text-left w-full mb-12 lg:pl-0">
           <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
             <span className="font-bold">About </span>
             <span className="font-light">East Digital™</span>
