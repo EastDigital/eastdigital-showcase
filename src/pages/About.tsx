@@ -104,16 +104,16 @@ const About = () => {
         </section>
 
         {/* Our Foundation Section */}
-        <section className="py-[20px] bg-black">
-          <div className="container mx-auto px-0 w-full relative z-10 px-4 pt-10 ">
+        <section className="bg-black py-[40px]">
+          <div className="container mx-auto px-0 w-full relative z-10 px-4">
             <div className="max-w-[850px]">
-              <h2 className="font-light" style={{
+              <h2 style={{
               fontSize: '32px',
               lineHeight: '40px',
               letterSpacing: '0.96px',
               color: '#DADADA',
               fontWeight: 300
-            }}>
+            }} className="font-light text-3xl text-gray-300">
                 Our work is built on a foundation of more than just 
                 pixels and polygons. It's built on a few core beliefs that 
                 guide every single project we touch.
