@@ -40,12 +40,12 @@ const Footer = () => {
                 </p>
                 <a 
                   href="/enquiry" 
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur-sm border border-primary/20 text-primary hover:bg-gradient-to-r hover:from-primary/20 hover:to-accent/20 hover:border-primary/40 transition-all duration-500 font-medium text-lg shadow-lg hover:shadow-primary/20 hover:shadow-xl group"
+                  className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full text-primary bg-primary/10 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border hover:bg-primary/20 group"
                 >
                   <svg className="w-5 h-5 text-primary/70 group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  Request Proposal
+                  <span className="relative z-10">Request Proposal</span>
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -71,16 +71,16 @@ const Footer = () => {
               <div className="flex items-center gap-4">
                 <a 
                   href="tel:+919910568689" 
-                  className="inline-flex items-center gap-4 px-8 py-5 rounded-2xl bg-gradient-to-r from-emerald-500/10 to-blue-500/10 backdrop-blur-sm border border-emerald-400/30 text-emerald-100 hover:text-white hover:bg-gradient-to-r hover:from-emerald-500/20 hover:to-blue-500/20 hover:border-emerald-400/50 transition-all duration-500 font-semibold text-lg shadow-xl hover:shadow-emerald-400/20 group"
+                  className="relative inline-flex items-center gap-3 px-6 py-3 rounded-full text-accent bg-accent/10 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border hover:bg-accent/20 group"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-400/20 group-hover:bg-emerald-400/30 transition-colors">
-                    <svg className="w-6 h-6 text-emerald-300 group-hover:text-emerald-200 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 group-hover:bg-accent/30 transition-colors">
+                    <svg className="w-4 h-4 text-accent group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <div className="text-left">
-                    <div className="text-sm text-emerald-200/80 font-normal">Call Us Now</div>
-                    <div className="text-lg font-bold">+91-99105 68689</div>
+                  <div className="text-left relative z-10">
+                    <div className="text-sm text-accent/80 font-normal">Call Us Now</div>
+                    <div className="text-base font-bold">+91-99105 68689</div>
                   </div>
                 </a>
               </div>
