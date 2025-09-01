@@ -151,8 +151,8 @@ const About = () => {
           </div>
         </div>}
           
-      <div className="container mx-auto px-8 relative z-10">
-            <div className="max-w-[850px]">
+      <div className="container mx-auto px-4 w-full relative z-10">
+            <div className="text-left lg:text-left w-full mb-12">
               <h2 className="font-bold mb-8" style={{
               fontSize: '26px',
               lineHeight: '34px',
