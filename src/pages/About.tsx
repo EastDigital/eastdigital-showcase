@@ -40,9 +40,9 @@ const About = () => {
       }]} />
 
         {/* Your Vision Section */}
-        <section className="container mx-auto px-4 w-full relative z-10 px-4">
+        <section className="container mx-auto px-0 w-full relative z-10 px-4">
           <div className="text-left w-full mb-12">
-            <div className="text-left max-w-full mb-12 ">
+            <div className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10 text-left">
               <h2 className="font-bold text-white mb-12" style={{
               fontSize: '26px',
               lineHeight: '34px',
@@ -52,7 +52,7 @@ const About = () => {
                 Your Vision, Brought to Life
               </h2>
               
-              <div className="space-y-8 px-[5px] py-0 my-0 mx-[4px]">
+              <div className="text-xl leading-relaxed tracking-wide text-gray-200 text-left">
                 <p style={{
                 fontSize: '20px',
                 lineHeight: '30px',
