@@ -40,8 +40,8 @@ const About = () => {
       }]} />
 
         {/* Your Vision Section */}
-        <section className="py-[50px] bg-black">
-          <div className="container mx-auto px-4 w-full relative z-10 px-4">
+        <section className="container mx-auto px-4 w-full relative z-10 px-4">
+          <div className="text-left w-full mb-12">
             <div className="text-left max-w-full mb-12 ">
               <h2 className="font-bold text-white mb-12" style={{
               fontSize: '26px',
