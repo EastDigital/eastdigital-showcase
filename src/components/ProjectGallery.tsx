@@ -97,7 +97,7 @@ const ProjectGallery = () => {
   }, []);
   return <section className="py-20 sm:py-32 bg-background">
       <div className="container mx-auto px-8w-full w-full ">
-        <div className="text-center lg:text-left w-full mb-12">
+        <div className="text-left lg:text-left w-full mb-12">
           <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10 text-left">
             <span className="font-bold">Industry-Specific Visualizations. </span>
             <span className="font-light">Bespoke Results.</span>

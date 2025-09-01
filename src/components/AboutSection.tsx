@@ -10,7 +10,7 @@ const AboutSection = () => {
       
       {/* Content */}
       <div className="container mx-auto px-8 relative z-10">
-        <div className="w-full ">
+        <div className="text-left lg:text-left w-full mb-12">
           <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
             <span className="font-bold">About </span>
             <span className="font-light">East Digital™</span>
