@@ -2,7 +2,7 @@ const AboutSection = () => {
   return <section className="relative py-20 sm:py-32 flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src="https://eastdigital.in/img/about-east-digital.jpg" alt="About East Digital Team" className="w-full h-full object-cover" loading="lazy" onError={e => {
+        <img src="https://eastdigital.in/img/home-bg-banner-about-us-east-digital-3d.jpg" alt="About East Digital Team" className="w-full h-full object-cover" loading="lazy" onError={e => {
         (e.target as HTMLImageElement).style.display = 'none';
       }} />
         <div className="container mx-auto px-8 w-full" />
