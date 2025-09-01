@@ -105,7 +105,7 @@ const About = () => {
 
         {/* Our Foundation Section */}
         <section className="py-[20px] bg-black">
-          <div className="container mx-auto px-8">
+          <div className="container mx-auto px-0 w-full relative z-10 px-4 pt-10 ">
             <div className="max-w-[850px]">
               <h2 className="font-light" style={{
               fontSize: '32px',
