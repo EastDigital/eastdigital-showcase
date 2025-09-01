@@ -9,7 +9,7 @@ const AboutSection = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 px-4">
+      <div className="container mx-auto px-8 w-full relative z-10 px-4">
         <div className="text-left w-full mb-12">
           <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
             <span className="font-bold">About </span>
