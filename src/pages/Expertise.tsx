@@ -43,12 +43,21 @@ const Expertise = () => {
         />
 
         {/* Description Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-8">
-            <div className="w-full">
-              <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
-                For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage. From pre-selling properties to securing stakeholder buy-in, we create immersive experiences that bring your developments to life.
-              </p>
+        <section className="mobile-section sm:py-16">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
+            <div className="max-w-none lg:max-w-[850px]">
+              <h2 className="content-heading mb-4 sm:mb-6">
+                <span className="block mobile-paragraph">Industry-Focused Visualization Expertise</span>
+                <span className="text-primary">Precision, Clarity, and Impact</span> for Your Sector.
+              </h2>
+              <div className="space-y-4">
+                <p className="content-paragraph mobile-paragraph">
+                  At East Digital, we understand that every industry has unique challenges, audiences, and objectives. A real estate development requires a different emotional narrative than an infrastructure project, and a product launch demands a different focus than an architectural review.
+                </p>
+                <p className="content-paragraph mobile-paragraph">
+                  Explore our specialized services below to see how we empower leaders in your field. 
+                </p>
+              </div>
             </div>
           </div>
         </section>
