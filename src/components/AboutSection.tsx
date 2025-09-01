@@ -5,19 +5,19 @@ const AboutSection = () => {
         <img src="https://eastdigital.in/img/about-east-digital.jpg" alt="About East Digital Team" className="w-full h-full object-cover" loading="lazy" onError={e => {
         (e.target as HTMLImageElement).style.display = 'none';
       }} />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
       
       {/* Content */}
-      <div className="container mx-auto px-8 relative z-10">
-        <div className="w-full ">
-          <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
+      <div className="container mx-auto px-8">
+        <div className="text-left lg:text-left w-full mb-12">
+          <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10 text-left">
             <span className="font-bold">About </span>
             <span className="font-light">East Digital™</span>
           </h2>
           
           <div className="mb-10">
-            <p className="text-xl leading-relaxed tracking-wide text-gray-200">
+            <p className="text-xl leading-relaxed tracking-wide text-gray-200 text-left">
               East Digital™ is more than a 3D visualization studio; we are a dedicated B2B visualization 
               partner for industry leaders who require world class visual assets to drive decisive action.
             </p>
