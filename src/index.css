@@ -405,8 +405,8 @@
   /* Glassmorphism Effects */
   .glass-effect {
     background: hsl(var(--glass-bg));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border: 0px solid hsl(var(--glass-border));
   }
 
