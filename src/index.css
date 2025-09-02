@@ -404,8 +404,8 @@
 @layer utilities {
   /* Glassmorphism Effects */
   .glass-effect {
-    background: hsl(var(--glass-bg));
-    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(6px);
     border: 0px solid hsl(var(--glass-border));
   }
