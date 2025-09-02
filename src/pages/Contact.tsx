@@ -11,6 +11,15 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
+import FAQMini from '@/components/FAQMini';
+import FAQSchema from '@/components/FAQSchema';
+const contactFAQs = [
+  { q: "How do quotes work?", a: "Share drawings/references; we send a fixed quote and timeline in 24–48 hours." },
+  { q: "Do you take partial upfront payments?", a: "Yes—standard 50% to start, 50% on final delivery." },
+  { q: "What if my inputs change mid-project?", a: "Minor tweaks are fine; major changes get a revised quote and timeline." },
+  { q: "What time zones do you support?", a: "We operate IST and schedule regular global check-ins." }
+];
+
 export default function Contact() {
   useSEO('contact');
   
@@ -82,6 +91,12 @@ export default function Contact() {
         <meta name="description" content="Get in touch with East Digital for your 3D visualization needs. Contact our team for project inquiries and consultations." />
         <meta name="keywords" content="contact East Digital, 3D visualization inquiry, project consultation" />
       </Helmet>
+      
+      <FAQSchema 
+        faqs={contactFAQs} 
+        pageTitle="East Digital - Contact Information"
+        pageUrl="https://eastdigital.in/contact"
+      />
       
       <Header />
       
@@ -170,7 +185,14 @@ export default function Contact() {
                 </div>
 
                 {/* Contact Form */}
-                <div>
+                <div className="space-y-8">
+                  {/* FAQ Mini */}
+                  <FAQMini 
+                    faqs={contactFAQs}
+                    title="Before You Contact Us"
+                    className="mb-8"
+                  />
+                  
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
                       <div>

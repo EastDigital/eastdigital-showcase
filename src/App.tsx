@@ -18,6 +18,7 @@ import Architectural3DRendering from "./pages/Architectural3DRendering";
 import Product3DRendering from "./pages/Product3DRendering";
 import Contact from "./pages/Contact";
 import Enquiry from "./pages/Enquiry";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminLogin from "./pages/admin/AdminLogin";
@@ -63,6 +64,7 @@ const App = () => (
           {/* Contact & Enquiry */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/enquiry" element={<Enquiry />} />
+          <Route path="/faq" element={<FAQ />} />
 
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>

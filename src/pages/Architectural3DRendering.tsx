@@ -4,6 +4,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
 import ShortcodeRenderer from '@/components/ShortcodeRenderer';
+import FAQAccordion from '@/components/FAQAccordion';
+import FAQSchema from '@/components/FAQSchema';
+
+const architecturalFAQs = [
+  { q: "What drives photorealism in your renders?", a: "Accurate materials, calibrated lighting (HDRIs), real-world camera settings, and color-managed post." },
+  { q: "Can you match a reference mood/brand style?", a: "Yes. Share mood boards or sample shots; we will align lighting and styling to your brand." },
+  { q: "What's the typical cost range?", a: "We provide a fixed quote after reviewing drawings and scope complexity." }
+];
 
 export default function Architectural3DRendering() {
   useEffect(() => {
@@ -17,6 +25,12 @@ export default function Architectural3DRendering() {
         <meta name="description" content="Professional architectural 3D rendering services for design visualization. Bring your architectural concepts to life with photorealistic quality." />
         <meta name="keywords" content="architectural 3D rendering, design visualization, architectural visualization, building rendering" />
       </Helmet>
+      
+      <FAQSchema 
+        faqs={architecturalFAQs} 
+        pageTitle="East Digital - Architectural 3D Rendering Services"
+        pageUrl="https://eastdigital.in/expertise/architectural-3d-rendering"
+      />
       
       <Header />
       
@@ -82,6 +96,40 @@ export default function Architectural3DRendering() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* FAQ Section */}
+        <FAQAccordion 
+          faqs={architecturalFAQs}
+          title="Architectural Rendering FAQ"
+          subtitle="Common questions about our rendering process and services"
+          className="bg-muted/30"
+        />
+        
+        {/* Final CTA */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-8 text-center">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground">
+              Ready to Visualize Your Architecture?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Let's bring your architectural vision to life with stunning photorealistic renderings.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Start Your Project
+              </a>
+              <a 
+                href="/enquiry"
+                className="inline-flex items-center justify-center px-8 py-3 bg-transparent border border-border text-foreground rounded-lg font-semibold hover:bg-muted/50 transition-colors"
+              >
+                Request Quote
+              </a>
             </div>
           </div>
         </section>

@@ -103,7 +103,7 @@ const Footer = () => {
                 <a href="/expertise" className="text-foreground hover:text-accent transition-colors py-2">Expertise</a>
                 <a href="/about" className="text-foreground hover:text-accent transition-colors py-2">About</a>
                 <a href="/contact" className="text-foreground hover:text-accent transition-colors py-2">Connect</a>
-                <a href="#" className="text-foreground hover:text-accent transition-colors py-2">Blog</a>
+                <a href="/faq" className="text-foreground hover:text-accent transition-colors py-2">FAQ</a>
               </div>
               
               <div className="flex items-center gap-4 sm:gap-6 flex-wrap sm:flex-shrink-0">
