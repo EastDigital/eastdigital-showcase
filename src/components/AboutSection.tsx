@@ -24,9 +24,16 @@ const AboutSection = () => {
           </div>
           
           <div>
-            <a href="/about" className="inline-flex items-center text-accent font-light text-sm hover:translate-x-1 transition-transform duration-300">
+            <a href="/about" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-colors group">
               Read more 
-              <span className="ml-2 transition-transform duration-300">&gt;</span>
+              <svg 
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
         </div>
