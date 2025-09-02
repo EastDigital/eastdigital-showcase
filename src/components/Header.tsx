@@ -104,7 +104,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:block">
-            <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300">
+            <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
               <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
@@ -183,7 +183,7 @@ const Header = () => {
           <a href="#" onClick={toggleMenu} className="block text-foreground text-xl font-light hover:text-accent transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-white/5">Blog</a>
           
           <div className="pt-8">
-            <Link to="/enquiry" onClick={toggleMenu} className="block w-full text-center relative px-8 py-4 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 text-lg">
+            <Link to="/enquiry" onClick={toggleMenu} className="block w-full text-center relative px-8 py-4 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-lg">
               <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
