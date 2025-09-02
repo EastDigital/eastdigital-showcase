@@ -22,15 +22,15 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
   subtitle
 }) => {
   return (
-    <section className={`py-16 ${className}`}>
+    <section className={`py-12 ${className}`}>
       <div className="container mx-auto px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-foreground">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-3 text-foreground">
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 {subtitle}
               </p>
             )}
@@ -39,19 +39,19 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
           <Accordion 
             type="single" 
             collapsible 
-            className="w-full space-y-4"
+            className="w-full space-y-3"
             defaultValue={defaultOpen}
           >
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border border-border rounded-lg px-6 py-2 bg-card/50 hover:bg-card/70 transition-colors"
+                className="border border-border rounded-lg px-5 py-1 bg-card/50 hover:bg-card/70 transition-colors"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-accent py-6 hover:no-underline">
+                <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-accent py-4 hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6 pt-2 leading-relaxed">
+                <AccordionContent className="text-sm text-muted-foreground pb-4 pt-1 leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
