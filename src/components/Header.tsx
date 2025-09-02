@@ -30,9 +30,11 @@ const Header = () => {
       <header className={`fixed top-0 left-0 right-0 z-40 px-2 sm:px-4 flex items-center h-[70px] sm:h-[75px] transition-all duration-300 ${isSticky ? 'glass-effect' : ''}`}>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 flex justify-between items-center h-full">
           <div className="flex-shrink-0">
-            <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-10 sm:h-12" onError={e => {
-            (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
-          }} />
+            <Link to="/" className="block">
+              <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-10 sm:h-12" onError={e => {
+              (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
+            }} />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -133,9 +135,11 @@ const Header = () => {
           WebkitBackdropFilter: 'blur(16px)'
         }}>
         <div className="flex justify-between items-center p-4 h-[70px] sm:h-[75px] border-b border-white/5">
-          <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-8 sm:h-10" onError={e => {
-          (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
-        }} />
+          <Link to="/" onClick={toggleMenu}>
+            <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-8 sm:h-10" onError={e => {
+            (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
+          }} />
+          </Link>
           <button onClick={toggleMenu} className="text-foreground focus:outline-none z-50 p-2 hover:bg-white/10 rounded-lg transition-all duration-200 active:scale-95 hover:scale-105">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
