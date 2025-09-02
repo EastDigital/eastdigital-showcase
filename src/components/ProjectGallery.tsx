@@ -52,8 +52,12 @@ const ProjectGallery = () => {
   useEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
+
+    let isUserInteracting = false;
+    let wheelTimeoutId: NodeJS.Timeout;
+
     const autoScroll = () => {
-      if (!isDraggingRef.current) {
+      if (!isDraggingRef.current && !isUserInteracting) {
         gallery.scrollLeft += 0.5;
 
         // Infinite loop logic
@@ -64,17 +68,35 @@ const ProjectGallery = () => {
       }
       animationRef.current = requestAnimationFrame(autoScroll);
     };
+
     const startDragging = (e: MouseEvent | TouchEvent) => {
       isDraggingRef.current = true;
+      isUserInteracting = true;
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
+
     const stopDragging = () => {
       if (isDraggingRef.current) {
         isDraggingRef.current = false;
-        animationRef.current = requestAnimationFrame(autoScroll);
+        // Resume auto-scroll after a short delay
+        setTimeout(() => {
+          isUserInteracting = false;
+          animationRef.current = requestAnimationFrame(autoScroll);
+        }, 1000);
       }
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      // Pause auto-scroll during wheel events
+      isUserInteracting = true;
+      clearTimeout(wheelTimeoutId);
+      
+      // Resume auto-scroll after wheel interaction stops
+      wheelTimeoutId = setTimeout(() => {
+        isUserInteracting = false;
+      }, 1500);
     };
 
     // Start auto-scroll
@@ -83,14 +105,18 @@ const ProjectGallery = () => {
     // Event listeners
     gallery.addEventListener('mousedown', startDragging);
     gallery.addEventListener('touchstart', startDragging);
+    gallery.addEventListener('wheel', handleWheel, { passive: true });
     window.addEventListener('mouseup', stopDragging);
     window.addEventListener('touchend', stopDragging);
+
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      clearTimeout(wheelTimeoutId);
       gallery.removeEventListener('mousedown', startDragging);
       gallery.removeEventListener('touchstart', startDragging);
+      gallery.removeEventListener('wheel', handleWheel);
       window.removeEventListener('mouseup', stopDragging);
       window.removeEventListener('touchend', stopDragging);
     };
