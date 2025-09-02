@@ -126,11 +126,12 @@ const Header = () => {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 z-50 transform transition-all duration-300 ease-smooth ${isMenuOpen ? 'animate-slide-in-right backdrop-blur-lg' : 'animate-slide-out-right'}`} style={{
-      background: 'rgba(17, 17, 17, 0.9)',
-      backdropFilter: 'blur(16px)',
-      WebkitBackdropFilter: 'blur(16px)'
-    }}>
+      {isMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-50 transform animate-slide-in-right backdrop-blur-lg transition-all duration-300 ease-smooth" style={{
+          background: 'rgba(17, 17, 17, 0.9)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)'
+        }}>
         <div className="flex justify-between items-center p-4 h-[70px] sm:h-[75px] border-b border-white/5">
           <img src="https://www.eastdigital.in/img/logo-east-digital-white.png" alt="East Digital Logo" className="h-8 sm:h-10" onError={e => {
           (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
@@ -153,7 +154,7 @@ const Header = () => {
               </svg>
             </button>
             
-            <div className={`overflow-hidden transition-all duration-300 ${isMobileExpertiseOpen ? 'animate-accordion-down max-h-96 opacity-100' : 'animate-accordion-up max-h-0 opacity-0'}`}>
+            <div className={`transition-all duration-300 ${isMobileExpertiseOpen ? 'animate-accordion-down max-h-screen opacity-100' : 'animate-accordion-up max-h-0 opacity-0 overflow-hidden'}`}>
               <div className="pl-3 mt-3 space-y-4 border-l border-white/10">
                 <div className="pb-3 border-b border-white/5">
                   <Link to="/expertise/real-estate" onClick={toggleMenu} className="font-medium text-base text-foreground hover:text-accent transition-all duration-200 tracking-wide block py-1 active:scale-95">REAL ESTATE</Link>
@@ -194,8 +195,9 @@ const Header = () => {
               <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
+          </div>
         </div>
-      </div>
+      )}
     </>;
 };
 
