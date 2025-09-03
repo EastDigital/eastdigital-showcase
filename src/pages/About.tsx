@@ -58,20 +58,20 @@ const About = () => {
                 lineHeight: '30px',
                 letterSpacing: '0.6px',
                 color: '#DADADA'
-              }}>
+              }} className="content-paragraph mobile-paragraph text-lg text-gray-300">
                   Every great project begins with a spark—an idea, a sketch, a dream. But somewhere 
                   between the blueprint and the boardroom, that spark can get lost in translation. How do 
                   you show someone the soul of a building, the feel of a space, or the impact of a design 
                   when all they see are lines on a page?
                 </p>
                 
-                <p className="font-light" style={{
+                <p style={{
                 fontSize: '20px',
                 lineHeight: '30px',
                 letterSpacing: '0.6px',
                 color: '#DADADA',
                 fontWeight: 300
-              }}>
+              }} className="content-paragraph mobile-paragraph text-xl text-gray-300 font-light">
                   That's where our story begins.
                 </p>
                 
@@ -80,7 +80,7 @@ const About = () => {
                 lineHeight: '30px',
                 letterSpacing: '0.6px',
                 color: '#DADADA'
-              }}>
+              }} className="content-paragraph mobile-paragraph text-lg text-gray-300">
                   East Digital wasn't born in a sterile office. It was born from late-night conversations and 
                   shared frustrations among friends—architects who felt unheard, engineers who were 
                   misunderstood, engineers who saw complex solutions simplified, and digital artists who 
@@ -89,13 +89,13 @@ const About = () => {
                   could see, feel, and believe in.
                 </p>
                 
-                <p className="font-light italic" style={{
+                <p style={{
                 fontSize: '20px',
                 lineHeight: '30px',
                 letterSpacing: '0.6px',
                 color: '#DADADA',
                 fontWeight: 300
-              }}>
+              }} className="content-paragraph mobile-paragraph text-gray-300 text-xl font-light">
                   We're here to be your partner in that journey, to ensure your vision is not just seen, but felt.
                 </p>
               </div>
@@ -104,7 +104,7 @@ const About = () => {
         </section>
 
         {/* Our Foundation Section */}
-        <section className="bg-black py-[40px]">
+        <section className="bg-black py-[40px] pt-0 ">
           <div className="container mx-auto px-0 w-full relative z-10 px-4">
             <div className="max-w-[850px]">
               <h2 style={{
@@ -113,7 +113,7 @@ const About = () => {
               letterSpacing: '0.96px',
               color: '#DADADA',
               fontWeight: 300
-            }} className="font-light text-3xl text-gray-300">
+            }} className="content-paragraph mobile-paragraph text-lg font-normal">
                 Our work is built on a foundation of more than just 
                 pixels and polygons. It's built on a few core beliefs that 
                 guide every single project we touch.
@@ -178,13 +178,11 @@ const About = () => {
               
               {/* Client Logos Grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 justify-items-center">
-                {['https://eastdigital.in/img/logo_puchkas.jpg', 'https://eastdigital.in/img/logo_acer.jpg', 'https://eastdigital.in/img/logo_agile.jpg', 'https://eastdigital.in/img/logo_anantraj.jpg', 'https://eastdigital.in/img/logo_arcop.jpg', 'https://eastdigital.in/img/logo_bharti.jpg', 'https://eastdigital.in/img/logo_ddf.jpg', 'https://eastdigital.in/img/logo_japare.jpg', 'https://eastdigital.in/img/logo_jaypee.jpg', 'https://eastdigital.in/img/logo_miraj.jpg', 'https://eastdigital.in/img/logo_omaxe.jpg', 'https://eastdigital.in/img/logo_reliance.jpg'].slice().sort((a, b) => a.localeCompare(b)).map((logoUrl, index) => 
-                  <div key={index} className="bg-white rounded-[20px] p-4 w-full max-w-[185px] aspect-[5/3] flex items-center justify-center shadow-md">
+                {['https://eastdigital.in/img/logo_puchkas.jpg', 'https://eastdigital.in/img/logo_acer.jpg', 'https://eastdigital.in/img/logo_agile.jpg', 'https://eastdigital.in/img/logo_anantraj.jpg', 'https://eastdigital.in/img/logo_arcop.jpg', 'https://eastdigital.in/img/logo_bharti.jpg', 'https://eastdigital.in/img/logo_ddf.jpg', 'https://eastdigital.in/img/logo_japare.jpg', 'https://eastdigital.in/img/logo_jaypee.jpg', 'https://eastdigital.in/img/logo_miraj.jpg', 'https://eastdigital.in/img/logo_omaxe.jpg', 'https://eastdigital.in/img/logo_reliance.jpg'].slice().sort((a, b) => a.localeCompare(b)).map((logoUrl, index) => <div key={index} className="bg-white rounded-[20px] p-4 w-full max-w-[185px] aspect-[5/3] flex items-center justify-center shadow-md">
                     <img src={logoUrl} alt={`Client logo ${index + 1}`} className="max-w-full max-h-full object-contain" onError={e => {
-                      e.currentTarget.style.display = 'none';
-                    }} />
-                  </div>
-                )}
+                  e.currentTarget.style.display = 'none';
+                }} />
+                  </div>)}
               </div>
             </div>
           </div>
