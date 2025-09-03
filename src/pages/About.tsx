@@ -42,7 +42,7 @@ const About = () => {
         {/* Your Vision Section */}
         <section className="container mx-auto px-0 w-full relative z-10 px-4 pt-10 ">
           <div className="text-left w-full mb-12">
-            <div className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10 text-left">
+            <div className="">
               <h2 className="font-bold text-white mb-12" style={{
               fontSize: '26px',
               lineHeight: '34px',
