@@ -58,7 +58,7 @@ const About = () => {
                 lineHeight: '30px',
                 letterSpacing: '0.6px',
                 color: '#DADADA'
-              }} className="content-paragraph mobile-paragraph text-gray-300 text-base">
+              }} className="content-paragraph mobile-paragraph">
                   Every great project begins with a spark—an idea, a sketch, a dream. But somewhere 
                   between the blueprint and the boardroom, that spark can get lost in translation. How do 
                   you show someone the soul of a building, the feel of a space, or the impact of a design 
@@ -80,7 +80,7 @@ const About = () => {
                 lineHeight: '30px',
                 letterSpacing: '0.6px',
                 color: '#DADADA'
-              }} className="content-paragraph mobile-paragraph text-gray-300 text-base">
+              }} className="content-paragraph mobile-paragraph">
                   East Digital wasn't born in a sterile office. It was born from late-night conversations and 
                   shared frustrations among friends—architects who felt unheard, engineers who were 
                   misunderstood, engineers who saw complex solutions simplified, and digital artists who 
@@ -113,7 +113,7 @@ const About = () => {
               letterSpacing: '0.96px',
               color: '#DADADA',
               fontWeight: 300
-            }} className="content-paragraph mobile-paragraph font-normal text-gray-300 text-lg">
+            }} className="content-paragraph mobile-paragraph">
                 Our work is built on a foundation of more than just 
                 pixels and polygons. It's built on a few core beliefs that 
                 guide every single project we touch.
