@@ -102,7 +102,7 @@ const HeroSection = () => {
         <div className="w-full">
           <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-wide text-foreground mb-6">
             <span className="block lg:hidden">3D That Sells, Stuns, and Speaks to Your Industry.</span>
-            <span className="content-paragraph mobile-paragraph text-4xl">3D That Sells, Stuns, and <br /> Speaks to Your Industry.</span>
+            <span className="hidden lg:block">3D That Sells, Stuns, and <br /> Speaks to Your Industry.</span>
           </h1>
           
           <p className="text-lg sm:text-xl leading-relaxed tracking-wide text-accent mb-8 sm:mb-10">
