@@ -106,7 +106,7 @@ const DynamicProjectGallery: React.FC<DynamicProjectGalleryProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white font-medium">{project.title}</span>
+                  <span className="text-gray-300 font-medium">{project.title}</span>
                 </div>
               </div>
             </Link>

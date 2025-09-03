@@ -80,8 +80,8 @@ const Expertise = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-2">{category.title}</h3>
-                      <p className="text-sm text-white/90">{category.description}</p>
+                      <h3 className="text-xl font-bold text-gray-300 mb-2">{category.title}</h3>
+                      <p className="text-sm text-gray-300/90">{category.description}</p>
                     </div>
                   </div>
                 </Link>

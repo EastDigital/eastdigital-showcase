@@ -43,12 +43,12 @@ const About = () => {
         <section className="container mx-auto px-0 w-full relative z-10 px-4 pt-10 ">
           <div className="text-left w-full mb-12">
             <div className="">
-              <h2 className="font-bold text-white mb-12 content-heading">
+              <h2 className="font-bold text-gray-300 mb-12 content-heading">
                 Your Vision, Brought to Life
               </h2>
               
-              <div className="text-xl leading-relaxed tracking-wide text-gray-200 text-left">
-                <p className="content-paragraph mobile-paragraph text-gray-200">
+              <div className="text-xl leading-relaxed tracking-wide text-gray-300 text-left">
+                <p className="content-paragraph mobile-paragraph text-gray-300">
                   Every great project begins with a spark—an idea, a sketch, a dream. But somewhere 
                   between the blueprint and the boardroom, that spark can get lost in translation. How do 
                   you show someone the soul of a building, the feel of a space, or the impact of a design 
@@ -59,7 +59,7 @@ const About = () => {
                   That's where our story begins.
                 </p>
                 
-                <p className="content-paragraph mobile-paragraph text-gray-200">
+                <p className="content-paragraph mobile-paragraph text-gray-300">
                   East Digital wasn't born in a sterile office. It was born from late-night conversations and 
                   shared frustrations among friends—architects who felt unheard, engineers who were 
                   misunderstood, engineers who saw complex solutions simplified, and digital artists who 
@@ -80,7 +80,7 @@ const About = () => {
         <section className="bg-black py-[40px] pt-0 ">
           <div className="container mx-auto px-0 w-full relative z-10 px-4">
             <div className="max-w-[850px]">
-              <h2 className="content-paragraph mobile-paragraph text-gray-200 font-light text-2xl">
+              <h2 className="content-paragraph mobile-paragraph text-gray-300 font-light text-2xl">
                 Our work is built on a foundation of more than just 
                 pixels and polygons. It's built on a few core beliefs that 
                 guide every single project we touch.
@@ -112,7 +112,7 @@ const About = () => {
 
       {/* Loading State */}
       {isLoading && <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
-          <div className="text-white">
+          <div className="text-gray-300">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
             <p>Loading experience...</p>
           </div>
@@ -120,7 +120,7 @@ const About = () => {
           
       <div className="container mx-auto px-4 w-full relative z-10">
             <div className="text-left lg:text-left w-full mb-12">
-              <h2 className="font-bold mb-8 text-white content-heading">
+              <h2 className="font-bold mb-8 text-gray-300 content-heading">
                 Trusted by many
               </h2>
               

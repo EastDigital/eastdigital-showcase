@@ -211,7 +211,7 @@ export default function ProjectForm() {
             <p className="text-xs text-muted-foreground mt-1">Auto-generated from title; you can edit.</p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4 content-heading">Summary</h2>
+            <h2 className="text-2xl font-bold text-gray-300 mb-4 content-heading">Summary</h2>
             <div className="grid gap-3">
               <div>
                 <Label className="text-xl text-gray-300 content-paragraph mobile-paragraph">Summary Heading</Label>
@@ -289,7 +289,7 @@ export default function ProjectForm() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4 content-heading">Case Study Content</h2>
+            <h2 className="text-2xl font-bold text-gray-300 mb-4 content-heading">Case Study Content</h2>
             <div className="grid gap-3">
               <div>
                 <Label className="text-xl text-gray-300 content-paragraph mobile-paragraph">Case Study Heading</Label>
