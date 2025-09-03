@@ -46,15 +46,15 @@ const Expertise = () => {
         <section className="mobile-section sm:py-16">
           <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="max-w-none lg:max-w-[850px]">
-              <h2 className="content-heading mb-4 sm:mb-6">
-                <span className="block mobile-paragraph">Industry-Focused Visualization Expertise</span>
+              <h1 className="mb-4 sm:mb-6">
+                <span className="block">Industry-Focused Visualization Expertise</span>
                 <span className="text-primary">Precision, Clarity, and Impact</span> for Your Sector.
-              </h2>
+              </h1>
               <div className="space-y-4">
-                <p className="content-paragraph mobile-paragraph">
+                <p>
                   At East Digital, we understand that every industry has unique challenges, audiences, and objectives. A real estate development requires a different emotional narrative than an infrastructure project, and a product launch demands a different focus than an architectural review.
                 </p>
-                <p className="content-paragraph mobile-paragraph">
+                <p>
                   Explore our specialized services below to see how we empower leaders in your field. 
                 </p>
               </div>
@@ -80,8 +80,8 @@ const Expertise = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-gray-300 mb-2">{category.title}</h3>
-                      <p className="text-sm text-gray-300/90">{category.description}</p>
+                      <h3 className="font-bold text-on-black mb-2">{category.title}</h3>
+                      <p className="text-on-black">{category.description}</p>
                     </div>
                   </div>
                 </Link>
@@ -93,16 +93,16 @@ const Expertise = () => {
         {/* CTA Section */}
         <section className="py-20 px-4 bg-muted/30">
           <div className="w-full mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="font-bold text-foreground mb-6">
               Ready to discuss your next project?
             </h2>
-            <p className="text-lg text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-4">
               Send us an email to get the conversation started.
             </p>
             <p className="text-muted-foreground mb-8">
               sales@eastdigital.in
             </p>
-            <p className="text-sm text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-8">
               If you need guidance on what information should be provided, simply fill out our request a proposal form below.
             </p>
             <Button asChild className="bg-primary hover:bg-primary/90">

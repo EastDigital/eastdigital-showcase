@@ -198,7 +198,7 @@ export default function ProjectForm() {
   return (
     <AdminRoute>
       <div className="max-w-3xl">
-        <h1 className="text-xl font-semibold mb-6">{editing ? "Edit" : "Add"} Project</h1>
+        <h1 className="font-semibold mb-6">{editing ? "Edit" : "Add"} Project</h1>
 
         <div className="grid gap-5">
           <div>
@@ -211,14 +211,14 @@ export default function ProjectForm() {
             <p className="text-xs text-muted-foreground mt-1">Auto-generated from title; you can edit.</p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-300 mb-4 content-heading">Summary</h2>
+            <h2 className="font-bold text-on-black mb-4">Summary</h2>
             <div className="grid gap-3">
               <div>
-                <Label className="text-xl text-gray-300 content-paragraph mobile-paragraph">Summary Heading</Label>
+                <Label className="text-on-black">Summary Heading</Label>
                 <Input value={summaryHeading} onChange={(e) => setSummaryHeading(e.target.value)} placeholder="Enter heading for summary section" />
               </div>
               <div>
-                <Label className="text-xl text-gray-300 content-paragraph mobile-paragraph">Summary Content</Label>
+                <Label className="text-on-black">Summary Content</Label>
                 <Input value={summary} onChange={(e) => setSummary(e.target.value)} />
               </div>
             </div>
@@ -289,14 +289,14 @@ export default function ProjectForm() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-gray-300 mb-4 content-heading">Case Study Content</h2>
+            <h2 className="font-bold text-on-black mb-4">Case Study Content</h2>
             <div className="grid gap-3">
               <div>
-                <Label className="text-xl text-gray-300 content-paragraph mobile-paragraph">Case Study Heading</Label>
+                <Label className="text-on-black">Case Study Heading</Label>
                 <Input value={caseStudyHeading} onChange={(e) => setCaseStudyHeading(e.target.value)} placeholder="Enter heading for case study section" />
               </div>
               <div>
-                <Label className="text-xl text-gray-300 content-paragraph mobile-paragraph">Case Study Content</Label>
+                <Label className="text-on-black">Case Study Content</Label>
                 <div className="prose prose-invert max-w-none border border-border rounded-md p-3">
                   <EditorContent editor={editor} />
                 </div>
@@ -306,7 +306,7 @@ export default function ProjectForm() {
 
           {/* SEO Fields */}
           <div className="grid gap-4">
-            <h2 className="text-lg font-semibold">SEO</h2>
+            <h3 className="font-semibold">SEO</h3>
             <div>
               <Label>SEO Title</Label>
               <Input value={seoTitle} onChange={(e) => setSeoTitle(e.target.value)} />
@@ -323,7 +323,7 @@ export default function ProjectForm() {
 
           {/* AISEO Fields */}
           <div className="grid gap-2">
-            <h2 className="text-lg font-semibold">AISEO</h2>
+            <h3 className="font-semibold">AISEO</h3>
             <div>
               <Label>AISEO Keywords / Tags (comma-separated)</Label>
               <Input value={aiseoKeywords} onChange={(e) => setAiseoKeywords(e.target.value)} />
@@ -332,7 +332,7 @@ export default function ProjectForm() {
 
           {/* Open Graph Fields */}
           <div className="grid gap-4">
-            <h2 className="text-lg font-semibold">Open Graph</h2>
+            <h3 className="font-semibold">Open Graph</h3>
             <div>
               <Label>OG Title</Label>
               <Input value={ogTitle} onChange={(e) => setOgTitle(e.target.value)} />
@@ -353,7 +353,7 @@ export default function ProjectForm() {
 
           {/* Schema JSON */}
           <div>
-            <h2 className="text-lg font-semibold">Schema JSON</h2>
+            <h3 className="font-semibold">Schema JSON</h3>
             <Label>Paste JSON-LD</Label>
             <textarea className="w-full bg-background border border-border rounded-md p-3 h-40" value={schemaJson} onChange={(e) => setSchemaJson(e.target.value)} placeholder='{"@context":"https://schema.org","@type":"Article"}' />
           </div>

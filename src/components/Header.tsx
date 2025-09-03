@@ -39,11 +39,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-10 h-full">
-            <Link to="/" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">
+            <Link to="/" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">
               Home
             </Link>
             <div className="group h-full flex items-center">
-              <Link to="/expertise" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300 flex items-center">
+              <Link to="/expertise" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300 flex items-center">
                 Expertise
                 <svg className="ml-2 transition-transform duration-300 group-hover:rotate-180" width="10" height="10" viewBox="0 0 24 24" fill="none">
                   <path d="M12 15L6 9H18L12 15Z" fill="currentColor" />
@@ -56,7 +56,7 @@ const Header = () => {
                   <div className="grid grid-cols-3 gap-8 md:gap-10">
                     <div className="space-y-3">
                       <div className="min-h-[50px] flex items-center">
-                        <Link to="/expertise/real-estate" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
+                        <Link to="/expertise/real-estate" className="font-semibold text-cta hover:text-cta-hover transition-colors duration-300 tracking-wider">
                           REAL ESTATE
                         </Link>
                       </div>
@@ -105,13 +105,13 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <Link to="/about" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">About</Link>
-            <Link to="/contact" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Contact</Link>
-            <a href="#" className="text-foreground hover:text-accent font-semibold text-base transition-colors duration-300">Blog</a>
+            <Link to="/about" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">About</Link>
+            <Link to="/contact" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Contact</Link>
+            <a href="#" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Blog</a>
           </nav>
 
           <div className="hidden lg:block">
-            <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border">
+            <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-cta bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border hover:text-cta-hover">
               <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>

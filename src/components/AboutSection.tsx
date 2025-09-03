@@ -11,21 +11,21 @@ const AboutSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 w-full relative z-10 px-4">
         <div className="text-left w-full mb-12">
-          <h2 className="text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-10">
+          <h2 className="leading-tight tracking-wide text-on-graphics mb-10">
             <span className="font-bold">About </span>
             <span className="font-light">East Digital™</span>
           </h2>
           
           <div className="mb-10">
-            <p className="content-paragraph mobile-paragraph text-lg text-yellow-50">
+            <p className="text-on-graphics">
               East Digital™ is more than a 3D visualization studio; we are a dedicated B2B visualization 
               partner for industry leaders who require world class visual assets to drive decisive action.
             </p>
           </div>
           
           <div>
-            <a href="/about" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-colors group">
-              Read more 
+            <a href="/about" className="inline-flex items-center gap-2 text-cta hover:text-cta-hover font-semibold transition-colors group">
+              Read more
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

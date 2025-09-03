@@ -17,30 +17,30 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-start justify-between min-h-[40vh]">
           {/* Top Content */}
           <div className="max-w-[auto]">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl leading-tight tracking-wide text-foreground mb-8 sm:mb-10">
-              <span className="font-bold">Ready to discuss your next project?</span>
+            <h2 className="font-bold text-on-graphics mb-8 sm:mb-10">
+              Ready to discuss your next project?
             </h2>
             
             <div className="space-y-6 sm:space-y-8 max-w-lg">
               <div>
-                <p className="text-base sm:text-lg leading-relaxed tracking-wide text-accent mb-2">
+                <p className="leading-relaxed tracking-wide text-on-graphics mb-2">
                   Send us an email to get the conversation started.
                 </p>
                 <a 
                   href="mailto:sales@eastdigital.in" 
-                  className="text-base leading-relaxed tracking-wide text-foreground hover:text-primary transition-colors break-words"
+                  className="leading-relaxed tracking-wide text-cta hover:text-cta-hover transition-colors break-words"
                 >
                   sales@eastdigital.in
                 </a>
               </div>
               
               <div>
-                <p className="text-base sm:text-lg leading-relaxed tracking-wide text-accent mb-6">
+                <p className="leading-relaxed tracking-wide text-on-graphics mb-6">
                   If you need guidance on what information should be provided, simply fill out our request a proposal form below.
                 </p>
                 <a 
                   href="/enquiry" 
-                  className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border group"
+                  className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full text-cta bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border group hover:text-cta-hover"
                 >
                   <svg className="w-5 h-5 text-foreground/70 group-hover:text-foreground transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

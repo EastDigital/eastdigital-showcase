@@ -102,7 +102,7 @@ const HeroSection = () => {
         <div className="w-full">
           
           
-          <p className="text-lg sm:text-xl leading-tight tracking-wide text-accent mb-8 sm:mb-10">
+          <p className="leading-tight tracking-wide text-on-graphics mb-8 sm:mb-10">
             <span className="hidden lg:block">
               Elite 3D Visualization for B2B Leaders in Real Estate, <br /> 
               Engineering, and Design. We don't just create renders; <br /> 
@@ -115,10 +115,10 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-6">
-            <a href="/enquiry" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center text-lg sm:text-base">
+            <a href="/enquiry" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-cta bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
               <span className="relative z-10">Free Consultation</span>
             </a>
-            <a href="/expertise" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-foreground bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center text-lg sm:text-base">
+            <a href="/expertise" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-cta bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
               <span className="relative z-10">Our Expertise</span>
             </a>
           </div>

@@ -53,7 +53,7 @@ const Index = () => {
           <div className="container mx-auto px-8 text-center">
             <Link 
               to="/faq"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-colors group"
+              className="inline-flex items-center gap-2 text-cta hover:text-cta-hover font-semibold transition-colors group"
             >
               View all FAQs
               <svg 

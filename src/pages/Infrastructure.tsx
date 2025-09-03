@@ -40,7 +40,7 @@ const Infrastructure = () => {
         <section className="py-16">
           <div className="container mx-auto px-8">
             <div className="w-full">
-              <p className="text-xl leading-relaxed tracking-wide text-muted-foreground">
+              <p className="leading-relaxed tracking-wide text-muted-foreground">
                 At East Digital, we understand that every infrastructure project has unique challenges, audiences, and objectives. Our industry-first model ensures that our 3D visualization solutions are strategically aligned with your specific goals.
               </p>
             </div>
@@ -51,10 +51,10 @@ const Infrastructure = () => {
         <section className="py-24 bg-gradient-to-br from-background via-background to-muted/20">
           <div className="container mx-auto px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-6">
+              <h2 className="font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-6">
                 Our Services
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Advanced infrastructure visualization for complex engineering projects
               </p>
             </div>
@@ -75,7 +75,7 @@ const Infrastructure = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-300 mb-2 group-hover:text-primary-foreground transition-colors duration-300">
+                    <h3 className="font-bold text-on-black mb-2 group-hover:text-primary-foreground transition-colors duration-300">
                       {service.category}
                     </h3>
                     <div className="w-20 h-1 bg-primary rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
@@ -94,16 +94,16 @@ const Infrastructure = () => {
         {/* CTA Section */}
         <section className="py-20 px-4 bg-muted/30">
           <div className="w-full mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="font-bold text-foreground mb-6">
               Ready to discuss your next project?
             </h2>
-            <p className="text-lg text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-4">
               Send us an email to get the conversation started.
             </p>
             <p className="text-muted-foreground mb-8">
               sales@eastdigital.in
             </p>
-            <p className="text-sm text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-8">
               If you need guidance on what information should be provided, simply fill out our request a proposal form below.
             </p>
             <Button asChild className="bg-primary hover:bg-primary/90">

@@ -114,10 +114,10 @@ export default function Contact() {
               <div className="grid lg:grid-cols-2 gap-12">
                 {/* Contact Information */}
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-foreground">Get In Touch</h2>
+                  <h1 className="font-bold mb-8 text-foreground">Get In Touch</h1>
                   
                   <div className="space-y-6">
-                    <p className="text-lg text-muted-foreground">
+                    <p className="text-muted-foreground">
                       Ready to bring your project to life? We're here to help you create stunning 3D visualizations 
                       that exceed your expectations.
                     </p>
@@ -131,8 +131,8 @@ export default function Contact() {
                            </svg>
                          </div>
                         <div>
-                          <h3 className="font-semibold text-foreground">Email</h3>
-                          <p className="text-muted-foreground">eastdigitalcompany@gmail.com</p>
+                           <h3 className="font-semibold text-foreground">Email</h3>
+                           <p className="text-muted-foreground">eastdigitalcompany@gmail.com</p>
                         </div>
                       </div>
                       
