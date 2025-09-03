@@ -43,44 +43,23 @@ const About = () => {
         <section className="container mx-auto px-0 w-full relative z-10 px-4 pt-10 ">
           <div className="text-left w-full mb-12">
             <div className="">
-              <h2 className="font-bold text-white mb-12" style={{
-              fontSize: '26px',
-              lineHeight: '34px',
-              letterSpacing: '0.78px',
-              fontWeight: 700
-            }}>
+              <h2 className="font-bold text-white mb-12 content-heading">
                 Your Vision, Brought to Life
               </h2>
               
               <div className="text-xl leading-relaxed tracking-wide text-gray-200 text-left">
-                <p style={{
-                fontSize: '20px',
-                lineHeight: '30px',
-                letterSpacing: '0.6px',
-                color: '#DADADA'
-              }} className="content-paragraph mobile-paragraph">
+                <p className="content-paragraph mobile-paragraph text-gray-200">
                   Every great project begins with a spark—an idea, a sketch, a dream. But somewhere 
                   between the blueprint and the boardroom, that spark can get lost in translation. How do 
                   you show someone the soul of a building, the feel of a space, or the impact of a design 
                   when all they see are lines on a page?
                 </p>
                 
-                <p style={{
-                fontSize: '20px',
-                lineHeight: '30px',
-                letterSpacing: '0.6px',
-                color: '#DADADA',
-                fontWeight: 300
-              }} className="content-paragraph mobile-paragraph text-xl text-gray-300 font-light">
+                <p className="content-paragraph mobile-paragraph text-gray-300 font-light">
                   That's where our story begins.
                 </p>
                 
-                <p style={{
-                fontSize: '20px',
-                lineHeight: '30px',
-                letterSpacing: '0.6px',
-                color: '#DADADA'
-              }} className="content-paragraph mobile-paragraph">
+                <p className="content-paragraph mobile-paragraph text-gray-200">
                   East Digital wasn't born in a sterile office. It was born from late-night conversations and 
                   shared frustrations among friends—architects who felt unheard, engineers who were 
                   misunderstood, engineers who saw complex solutions simplified, and digital artists who 
@@ -89,13 +68,7 @@ const About = () => {
                   could see, feel, and believe in.
                 </p>
                 
-                <p style={{
-                fontSize: '20px',
-                lineHeight: '30px',
-                letterSpacing: '0.6px',
-                color: '#DADADA',
-                fontWeight: 300
-              }} className="content-paragraph mobile-paragraph text-gray-300 text-xl font-light">
+                <p className="content-paragraph mobile-paragraph text-gray-300 font-light">
                   We're here to be your partner in that journey, to ensure your vision is not just seen, but felt.
                 </p>
               </div>
@@ -107,13 +80,7 @@ const About = () => {
         <section className="bg-black py-[40px] pt-0 ">
           <div className="container mx-auto px-0 w-full relative z-10 px-4">
             <div className="max-w-[850px]">
-              <h2 style={{
-              fontSize: '32px',
-              lineHeight: '40px',
-              letterSpacing: '0.96px',
-              color: '#DADADA',
-              fontWeight: 300
-            }} className="content-paragraph mobile-paragraph">
+              <h2 className="content-paragraph mobile-paragraph text-gray-200 font-light text-2xl">
                 Our work is built on a foundation of more than just 
                 pixels and polygons. It's built on a few core beliefs that 
                 guide every single project we touch.
@@ -153,22 +120,11 @@ const About = () => {
           
       <div className="container mx-auto px-4 w-full relative z-10">
             <div className="text-left lg:text-left w-full mb-12">
-              <h2 className="font-bold mb-8" style={{
-              fontSize: '26px',
-              lineHeight: '34px',
-              letterSpacing: '0.78px',
-              color: '#FFFFFF',
-              fontWeight: 700
-            }}>
+              <h2 className="font-bold mb-8 text-white content-heading">
                 Trusted by many
               </h2>
               
-              <p style={{
-              fontSize: '18px',
-              lineHeight: '24px',
-              letterSpacing: '0.54px',
-              color: '#FFE0CA'
-            }} className="content-paragraph mobile-paragraph font-normal text-lg text-orange-100">
+              <p className="content-paragraph mobile-paragraph font-normal text-orange-100">
                 Our journey is defined by the remarkable designers who choose 
                 to collaborate with us. We want to express our deepest gratitude for your 
                 continued trust. While we value our professional collaborations 
