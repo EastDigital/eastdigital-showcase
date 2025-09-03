@@ -113,7 +113,7 @@ const About = () => {
               letterSpacing: '0.96px',
               color: '#DADADA',
               fontWeight: 300
-            }} className="content-paragraph mobile-paragraph text-lg font-normal">
+            }} className="content-paragraph mobile-paragraph text-lg font-normal text-gray-300">
                 Our work is built on a foundation of more than just 
                 pixels and polygons. It's built on a few core beliefs that 
                 guide every single project we touch.
