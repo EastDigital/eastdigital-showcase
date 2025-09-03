@@ -17,7 +17,7 @@ const AboutSection = () => {
           </h2>
           
           <div className="mb-10">
-            <p className="text-xl leading-relaxed tracking-wide text-gray-200">
+            <p className="content-paragraph mobile-paragraph text-lg text-slate-50">
               East Digital™ is more than a 3D visualization studio; we are a dedicated B2B visualization 
               partner for industry leaders who require world class visual assets to drive decisive action.
             </p>
@@ -26,12 +26,7 @@ const AboutSection = () => {
           <div>
             <a href="/about" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-colors group">
               Read more 
-              <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </a>
