@@ -52,10 +52,8 @@ const ProjectGallery = () => {
   useEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
-
     let isUserInteracting = false;
     let wheelTimeoutId: NodeJS.Timeout;
-
     const autoScroll = () => {
       if (!isDraggingRef.current && !isUserInteracting) {
         gallery.scrollLeft += 0.5;
@@ -68,7 +66,6 @@ const ProjectGallery = () => {
       }
       animationRef.current = requestAnimationFrame(autoScroll);
     };
-
     const startDragging = (e: MouseEvent | TouchEvent) => {
       isDraggingRef.current = true;
       isUserInteracting = true;
@@ -76,7 +73,6 @@ const ProjectGallery = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-
     const stopDragging = () => {
       if (isDraggingRef.current) {
         isDraggingRef.current = false;
@@ -87,12 +83,11 @@ const ProjectGallery = () => {
         }, 1000);
       }
     };
-
     const handleWheel = (e: WheelEvent) => {
       // Pause auto-scroll during wheel events
       isUserInteracting = true;
       clearTimeout(wheelTimeoutId);
-      
+
       // Resume auto-scroll after wheel interaction stops
       wheelTimeoutId = setTimeout(() => {
         isUserInteracting = false;
@@ -105,10 +100,11 @@ const ProjectGallery = () => {
     // Event listeners
     gallery.addEventListener('mousedown', startDragging);
     gallery.addEventListener('touchstart', startDragging);
-    gallery.addEventListener('wheel', handleWheel, { passive: true });
+    gallery.addEventListener('wheel', handleWheel, {
+      passive: true
+    });
     window.addEventListener('mouseup', stopDragging);
     window.addEventListener('touchend', stopDragging);
-
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
@@ -128,7 +124,7 @@ const ProjectGallery = () => {
             <span className="font-bold">Industry-Specific Visualizations. </span>
             <span className="font-light">Bespoke Results.</span>
           </h2>
-          <p className="text-xl leading-relaxed tracking-wide text-gray-200 text-left">
+          <p className="content-paragraph mobile-paragraph">
             Our expertise is tailored to the distinct language and objectives of your sector. 
             Select your industry to see how we translate your challenges into visual triumphs.
           </p>
