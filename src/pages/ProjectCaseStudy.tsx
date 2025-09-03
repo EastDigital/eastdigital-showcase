@@ -146,12 +146,12 @@ export default function ProjectCaseStudy() {
                 {(project.summary_heading || project.summary) && (
                   <div className="w-full">
                     {project.summary_heading && (
-                      <h2 className="text-white font-bold font-nunito" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em', marginBottom: '16px'}}>
+                      <h2 className="text-white font-bold font-nunito content-heading mb-4">
                         {project.summary_heading}
                       </h2>
                     )}
                     {project.summary && (
-                      <p className="text-[#DADADA] font-nunito" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
+                      <p className="text-[#DADADA] font-nunito content-paragraph mobile-paragraph">
                         {project.summary}
                       </p>
                     )}
@@ -172,11 +172,11 @@ export default function ProjectCaseStudy() {
               <section className="container mx-auto px-4 py-8">
                 <div className="w-full">
                   {project.case_study_heading && (
-                    <h2 className="text-white font-bold font-nunito mb-4" style={{fontSize: '26px', lineHeight: '34px', letterSpacing: '0.03em'}}>
+                    <h2 className="text-white font-bold font-nunito mb-4 content-heading">
                       {project.case_study_heading}
                     </h2>
                   )}
-                  <div className="max-w-none text-[#DADADA] font-nunito" style={{fontSize: '20px', lineHeight: '30px', letterSpacing: '0.03em'}}>
+                  <div className="max-w-none text-[#DADADA] font-nunito content-paragraph mobile-paragraph">
                     <EditorContent editor={editor} />
                   </div>
                 </div>
