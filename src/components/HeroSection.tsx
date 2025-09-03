@@ -102,7 +102,7 @@ const HeroSection = () => {
         <div className="w-full">
           
           
-          <p className="text-lg sm:text-xl leading-relaxed tracking-wide text-accent mb-8 sm:mb-10">
+          <p className="text-lg sm:text-xl leading-tight tracking-wide text-accent mb-8 sm:mb-10">
             <span className="hidden lg:block">
               Elite 3D Visualization for B2B Leaders in Real Estate, <br /> 
               Engineering, and Design. We don't just create renders; <br /> 
