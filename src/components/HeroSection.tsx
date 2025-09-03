@@ -98,12 +98,9 @@ const HeroSection = () => {
         </div>}
       
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 lg:pb-24 relative z-[10]">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 lg:pb-32 relative z-[10]">
         <div className="w-full">
-          <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-wide text-foreground mb-6">
-            <span className="block lg:hidden">3D That Sells, Stuns, and Speaks to Your Industry.</span>
-            <span className="hidden lg:block">3D That Sells, Stuns, and <br /> Speaks to Your Industry.</span>
-          </h1>
+          
           
           <p className="text-lg sm:text-xl leading-relaxed tracking-wide text-accent mb-8 sm:mb-10">
             <span className="hidden lg:block">
