@@ -108,7 +108,7 @@ const HeroSection = () => {
               Engineering, and Design. We don't just create renders; <br /> 
               we engineer results.
             </span>
-            <span className="lg:hidden">
+            <span className="lg:hidden block ">
               Elite 3D Visualization for B2B Leaders in Real Estate, Engineering, and Design. 
               We don't just create renders; we engineer results.
             </span>
