@@ -163,12 +163,12 @@ const About = () => {
                 Trusted by many
               </h2>
               
-              <p className="mb-12" style={{
+              <p style={{
               fontSize: '18px',
               lineHeight: '24px',
               letterSpacing: '0.54px',
               color: '#FFE0CA'
-            }}>
+            }} className="content-paragraph mobile-paragraph font-normal text-lg text-orange-100">
                 Our journey is defined by the remarkable designers who choose 
                 to collaborate with us. We want to express our deepest gratitude for your 
                 continued trust. While we value our professional collaborations 
