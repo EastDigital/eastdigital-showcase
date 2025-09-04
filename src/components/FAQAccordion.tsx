@@ -52,7 +52,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
 
       <div className="text-left lg:text-left w-full mb-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-6 px-4">
             <h2 className="font-bold mb-3 text-foreground">
               {title}
             </h2>
