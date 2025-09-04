@@ -69,6 +69,7 @@ const RealEstate = () => {
                   <div className="aspect-[16/9] sm:aspect-[16/10] relative overflow-hidden">
                     <img src={service.image} alt={`${service.title} - Real Estate 3D Visualization`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                     <div className="absolute inset-0 text-overlay"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                   
