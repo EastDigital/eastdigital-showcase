@@ -64,7 +64,7 @@ const Expertise = () => {
 
         {/* Categories Grid */}
         <section className="py-20">
-          <div className="container mx-auto px-8">
+          <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {categories.map((category, index) => (
                 <Link 
@@ -87,27 +87,6 @@ const Expertise = () => {
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="w-full mx-auto text-center">
-            <h2 className="font-bold text-foreground mb-6">
-              Ready to discuss your next project?
-            </h2>
-            <p className="text-muted-foreground mb-4">
-              Send us an email to get the conversation started.
-            </p>
-            <p className="text-muted-foreground mb-8">
-              sales@eastdigital.in
-            </p>
-            <p className="text-muted-foreground mb-8">
-              If you need guidance on what information should be provided, simply fill out our request a proposal form below.
-            </p>
-            <Button asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/contact">Take me to the form →</Link>
-            </Button>
           </div>
         </section>
       </main>
