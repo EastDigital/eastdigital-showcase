@@ -771,7 +771,6 @@
   /* Text overlay for images */
   .text-overlay {
     background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
-    backdrop-filter: blur(8px);
   }
 }
 
