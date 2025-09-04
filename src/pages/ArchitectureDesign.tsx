@@ -104,27 +104,6 @@ const ArchitectureDesign = () => {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="w-full mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Ready to discuss your next project?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              Send us an email to get the conversation started.
-            </p>
-            <p className="text-muted-foreground mb-8">
-              sales@eastdigital.in
-            </p>
-            <p className="text-sm text-muted-foreground mb-8">
-              If you need guidance on what information should be provided, simply fill out our request a proposal form below.
-            </p>
-            <Button asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/contact">Take me to the form →</Link>
-            </Button>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
