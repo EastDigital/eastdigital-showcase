@@ -76,14 +76,24 @@ const Infrastructure = () => {
                   className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-card to-card/50 border-2 border-border/20 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm touch-manipulation block min-h-[200px] sm:min-h-[280px]"
                 >
                   <div className="aspect-[16/9] sm:aspect-[16/10] relative overflow-hidden">
-                    <img 
-                      src={service.image}
-                      alt={`${service.title} - Infrastructure 3D Visualization`}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 text-overlay"></div>
+                    {service.image.endsWith('.mp4') || service.image.endsWith('.webm') || service.image.endsWith('.mov') ? (
+                      <video 
+                        src={service.image}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    ) : (
+                      <img 
+                        src={service.image}
+                        alt={`${service.title} - Infrastructure 3D Visualization`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    )}
                     <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
