@@ -68,8 +68,8 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
                 <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary py-4 hover:no-underline relative z-10 transition-colors duration-300">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4 pt-1 leading-relaxed relative z-10">
-                  {faq.a}
+                <AccordionContent className="pb-4 pt-1 relative z-10">
+                  <p className="text-muted-foreground">{faq.a}</p>
                 </AccordionContent>
               </AccordionItem>)}
           </Accordion>

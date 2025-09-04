@@ -55,8 +55,8 @@ const FAQMini: React.FC<FAQMiniProps> = ({
             <AccordionTrigger className="text-left font-medium text-foreground hover:text-accent py-3 hover:no-underline relative z-10">
               {faq.q}
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground pb-3 pt-1 leading-relaxed relative z-10">
-              {faq.a}
+            <AccordionContent className="pb-3 pt-1 relative z-10">
+              <p className="text-muted-foreground">{faq.a}</p>
             </AccordionContent>
           </AccordionItem>
         ))}
