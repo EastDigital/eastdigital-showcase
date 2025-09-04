@@ -36,20 +36,26 @@ const ArchitectureDesign = () => {
           ]}
         />
 
-        {/* New Details Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-8">
-            <div className="w-full">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Precision & Persuasion: Visualization for Architects, Designers & Innovators.
+       {/* Description Section */}
+        <section className="mobile-section sm:py-16">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
+            <div className="max-w-none lg:max-w-">
+              <h2 className="content-heading mb-4 sm:mb-6">
+                <span className="block mobile-paragraph">Visualize Your Vision:</span>
+                <span className="text-primary">High-Impact 3D Solutions</span> for Real Estate Marketing & Sales.
               </h2>
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                Whether you're an architect refining a landmark design, an interior designer curating a space, or a product innovator bringing a concept to market, East Digital empowers your vision. We create stunning visuals that articulate your designs with precision and captivate your target audience.
-              </p>
+              <div className="space-y-4">
+                <p className="content-paragraph mobile-paragraph">
+                  For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage.
+                </p>
+                <p className="content-paragraph mobile-paragraph">
+                  From pre-selling properties to securing stakeholder buy-in, we create <strong className="text-primary font-semibold">immersive experiences</strong> that bring your developments to life.
+                </p>
+              </div>
             </div>
           </div>
         </section>
-
+        
         {/* Services Grid */}
         <section className="py-24 bg-gradient-to-br from-background via-background to-muted/20">
           <div className="container mx-auto px-8">
