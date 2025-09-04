@@ -35,7 +35,7 @@ const FAQMini: React.FC<FAQMiniProps> = ({
         <div className="absolute inset-0 bg-gradient-to-br from-primary/4 via-transparent to-accent/4 opacity-70"></div>
       </div>
 
-      <h3 className="text-xl font-semibold mb-6 text-foreground relative z-10">
+      <h3 className="font-semibold mb-6 text-foreground relative z-10">
         {title}
       </h3>
       
@@ -52,10 +52,10 @@ const FAQMini: React.FC<FAQMiniProps> = ({
           >
             {/* Subtle item glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/2 via-transparent to-accent/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out"></div>
-            <AccordionTrigger className="text-left text-base font-medium text-foreground hover:text-accent py-3 hover:no-underline relative z-10">
+            <AccordionTrigger className="text-left font-medium text-foreground hover:text-accent py-3 hover:no-underline relative z-10">
               {faq.q}
             </AccordionTrigger>
-            <AccordionContent className="text-sm text-muted-foreground pb-3 pt-1 leading-relaxed relative z-10">
+            <AccordionContent className="text-muted-foreground pb-3 pt-1 leading-relaxed relative z-10">
               {faq.a}
             </AccordionContent>
           </AccordionItem>
