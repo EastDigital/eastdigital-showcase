@@ -39,7 +39,7 @@ const RealEstate = () => {
                 <span className="block mobile-paragraph">Visualize Your Vision:</span>
                 <span className="text-primary">High-Impact 3D Solutions</span> for Real Estate Marketing & Sales.
               </h2>
-              <div className="">
+              <div className="space-y-4">
                 <p className="content-paragraph mobile-paragraph">
                   For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage.
                 </p>
