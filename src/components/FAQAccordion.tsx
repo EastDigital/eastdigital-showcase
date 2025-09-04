@@ -62,7 +62,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-2" defaultValue={defaultOpen}>
-            {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="border border-border/20 rounded-xl px-5 py-1 bg-card/10 backdrop-blur-sm hover:bg-card/15 hover:border-border/30 transition-all duration-500 ease-out hover:shadow-xl hover:shadow-primary/5 relative overflow-hidden group hover:translate-y-[-2px]">
+            {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="border border-border/20 rounded-xl px-4 py-1 bg-card/10 backdrop-blur-sm hover:bg-card/15 hover:border-border/30 transition-all duration-500 ease-out hover:shadow-xl hover:shadow-primary/5 relative overflow-hidden group hover:translate-y-[-2px]">
                 {/* Subtle item glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/3 via-transparent to-accent/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out"></div>
                 <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary py-4 hover:no-underline relative z-10 transition-colors duration-300">
