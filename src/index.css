@@ -145,7 +145,7 @@
     scroll-behavior: smooth;
     font-feature-settings: "lnum" 1;
     font-size: var(--mobile-body);
-    line-height: 1.867; /* 28px for 15px mobile font */
+    line-height: 1.733; /* 26px for 15px mobile font */
     letter-spacing: 0.03em; /* 3% letter spacing */
     margin: 0;
     padding: 0;
@@ -200,7 +200,7 @@
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     font-size: var(--mobile-body);
-    line-height: 1.867; /* 28px for 15px mobile font */
+    line-height: 1.733; /* 26px for 15px mobile font */
     letter-spacing: 0.03em; /* 3% letter spacing */
     color: hsl(var(--muted-foreground) / 0.9);
     margin-bottom: 16px;
