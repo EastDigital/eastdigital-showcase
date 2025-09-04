@@ -52,14 +52,14 @@
     --mobile-h1: 1.375rem;     /* 22px */
     --mobile-h2: 1.25rem;      /* 20px */
     --mobile-h3: 1.125rem;     /* 18px */
-    --mobile-body: 0.875rem;   /* 14px - User specified */
+    --mobile-body: 0.9375rem;  /* 15px - User specified */
     --mobile-cta: 0.875rem;    /* 14px */
     
     /* Desktop Typography */
     --desktop-h1: 1.75rem;     /* 28px */
     --desktop-h2: 1.5rem;      /* 24px */
     --desktop-h3: 1.25rem;     /* 20px */
-    --desktop-body: 1rem;      /* 16px - User specified */
+    --desktop-body: 1.125rem;  /* 18px - User specified */
     --desktop-cta: 1rem;       /* 16px */
 
     /* Context-specific Text Colors */
@@ -145,7 +145,8 @@
     scroll-behavior: smooth;
     font-feature-settings: "lnum" 1;
     font-size: var(--mobile-body);
-    line-height: 1.5;
+    line-height: 1.867; /* 28px for 15px mobile font */
+    letter-spacing: 0.03em; /* 3% letter spacing */
     margin: 0;
     padding: 0;
   }
@@ -199,7 +200,8 @@
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     font-size: var(--mobile-body);
-    line-height: 1.5;
+    line-height: 1.867; /* 28px for 15px mobile font */
+    letter-spacing: 0.03em; /* 3% letter spacing */
     color: hsl(var(--muted-foreground) / 0.9);
     margin-bottom: 16px;
     text-align: left;
@@ -521,7 +523,8 @@
 @media (min-width: 64rem) {
   body {
     font-size: var(--desktop-body);
-    line-height: 1.6;
+    line-height: 1.667; /* 30px for 18px desktop font */
+    letter-spacing: 0.03em; /* 3% letter spacing */
   }
 
   /* Desktop Typography */
@@ -545,7 +548,8 @@
 
   p, .text-body {
     font-size: var(--desktop-body);
-    line-height: 1.6;
+    line-height: 1.667; /* 30px for 18px desktop font */
+    letter-spacing: 0.03em; /* 3% letter spacing */
     margin-bottom: 20px;
     max-width: 65ch;
   }
