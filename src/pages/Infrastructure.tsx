@@ -37,12 +37,21 @@ const Infrastructure = () => {
         />
 
         {/* Description Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-8">
-            <div className="w-full">
-              <p className="leading-relaxed tracking-wide text-muted-foreground">
-                At East Digital, we understand that every infrastructure project has unique challenges, audiences, and objectives. Our industry-first model ensures that our 3D visualization solutions are strategically aligned with your specific goals.
-              </p>
+        <section className="mobile-section sm:py-16">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
+            <div className="max-w-none lg:max-w-">
+              <h2 className="content-heading mb-4 sm:mb-6">
+                <span className="block mobile-paragraph">Visualize Your Vision:</span>
+                <span className="text-primary">High-Impact 3D Solutions</span> for Real Estate Marketing & Sales.
+              </h2>
+              <div className="space-y-4">
+                <p className="content-paragraph mobile-paragraph">
+                  For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage.
+                </p>
+                <p className="content-paragraph mobile-paragraph">
+                  From pre-selling properties to securing stakeholder buy-in, we create <strong className="text-primary font-semibold">immersive experiences</strong> that bring your developments to life.
+                </p>
+              </div>
             </div>
           </div>
         </section>
