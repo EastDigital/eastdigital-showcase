@@ -7,8 +7,7 @@ import { useSEO } from '@/hooks/useSEO';
 
 const ArchitectureDesign = () => {
   useSEO("architecture-design");
-  const services = [
-    {
+  const services = [{
       title: "Architectural 3D Rendering",
       category: "Architectural 3D Rendering",
       image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
