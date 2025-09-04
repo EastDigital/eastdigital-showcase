@@ -103,7 +103,7 @@ const HeroSection = () => {
           
           
           <p className="leading-tight tracking-wide text-on-graphics mb-8 sm:mb-10">
-            <span className="hidden lg:block">
+            <span className="hidden lg:block text-2xl">
               Elite 3D Visualization for B2B Leaders in Real Estate, <br /> 
               Engineering, and Design. We don't just create renders; <br /> 
               we engineer results.
