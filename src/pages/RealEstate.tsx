@@ -34,16 +34,15 @@ const RealEstate = () => {
         {/* Description Section */}
         <section className="mobile-section sm:py-16">
           <div className="container mx-auto px-4 sm:px-0 md:px-8">
-            <div className="max-w-none lg:max-w-[850px]">
               <h2 className="content-heading mb-4 sm:mb-6">
                 <span className="block mobile-paragraph">Visualize Your Vision:</span>
                 <span className="text-primary">High-Impact 3D Solutions</span> for Real Estate Marketing & Sales.
               </h2>
               <div className="space-y-4">
-                <p className="">
+                <p className="content-paragraph mobile-paragraph">
                   For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage.
                 </p>
-                <p className="">
+                <p className="content-paragraph mobile-paragraph">
                   From pre-selling properties to securing stakeholder buy-in, we create <strong className="text-primary font-semibold">immersive experiences</strong> that bring your developments to life.
                 </p>
               </div>
@@ -54,11 +53,11 @@ const RealEstate = () => {
         {/* Services Grid */}
         <section className="mobile-section sm:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted/20">
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
-            <div className="text-left sm:text-left mb-8 sm:mb-16">
+            <div className="text-left sm:text-center mb-8 sm:mb-16">
               <h2 className="mobile-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-4 sm:mb-6">
                 Our Services
               </h2>
-              <p className="">
+              <p className="content-paragraph mobile-paragraph sm:text-xl sm:text-center max-w-none sm:max-w-2xl sm:mx-auto">
                 Transform your real estate projects with cutting-edge 3D visualization
               </p>
             </div>
