@@ -58,7 +58,7 @@ const RealEstate = () => {
               <h2 className="mobile-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-4 sm:mb-6 text-4xl">
                 Our Services
               </h2>
-              <p className="sm:text-left">
+              <p className="text-on-black">
                 Transform your real estate projects with cutting-edge 3D visualization
               </p>
             </div>
