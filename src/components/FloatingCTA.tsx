@@ -90,11 +90,11 @@ const FloatingCTA = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-glass backdrop-blur-glass border border-glass-border shadow-elevated hover:shadow-glow transition-all duration-300">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <FileText className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-black border-2 border-[#FF6900] shadow-elevated hover:shadow-glow hover:bg-[#FF6900]/10 active:bg-[#FF6900]/20 transition-all duration-300 w-[140px]">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-[#FF6900]" />
                   </div>
-                  <span className="text-sm font-medium text-foreground pr-2">Get Quote</span>
+                  <span className="text-sm font-medium text-white">Get Quote</span>
                 </div>
               </motion.a>
 
@@ -112,11 +112,11 @@ const FloatingCTA = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-glass backdrop-blur-glass border border-glass-border shadow-elevated hover:shadow-glow transition-all duration-300">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-600/20 flex items-center justify-center">
-                    <MessageCircle className="w-5 h-5 text-green-500" />
+                <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-black border-2 border-[#FF6900] shadow-elevated hover:shadow-glow hover:bg-[#FF6900]/10 active:bg-[#FF6900]/20 transition-all duration-300 w-[140px]">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
+                    <MessageCircle className="w-4 h-4 text-[#FF6900]" />
                   </div>
-                  <span className="text-sm font-medium text-foreground pr-2">WhatsApp</span>
+                  <span className="text-sm font-medium text-white">WhatsApp</span>
                 </div>
               </motion.a>
 
@@ -132,11 +132,11 @@ const FloatingCTA = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-glass backdrop-blur-glass border border-glass-border shadow-elevated hover:shadow-glow transition-all duration-300">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-blue-500" />
+                <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-black border-2 border-[#FF6900] shadow-elevated hover:shadow-glow hover:bg-[#FF6900]/10 active:bg-[#FF6900]/20 transition-all duration-300 w-[140px]">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-[#FF6900]" />
                   </div>
-                  <span className="text-sm font-medium text-foreground pr-2">Call Now</span>
+                  <span className="text-sm font-medium text-white">Call Now</span>
                 </div>
               </motion.a>
             </>
