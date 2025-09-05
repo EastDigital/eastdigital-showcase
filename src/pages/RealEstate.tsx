@@ -33,7 +33,7 @@ const RealEstate = () => {
 
         {/* Description Section */}
         <section className="mobile-section sm:py-16">
-          <div className="px-4 sm:px-0 md:px-8">
+          <div className="">
             <div className="max-w-none lg:max-w-">
               <h2 className="content-heading mb-4 sm:mb-6">
                 <span className="block mobile-paragraph">Visualize Your Vision:</span>
@@ -53,7 +53,7 @@ const RealEstate = () => {
 
         {/* Services Grid */}
         <section className="mobile-section sm:py-20 lg:py-5 bg-gradient-to-br from-background via-background to-muted/20">
-          <div className="px-4 sm:px-6 md:px-8">
+          <div className="">
             <div className="text-left sm:text-left mb-8 sm:mb-16">
               <h2 className="mobile-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-4 sm:mb-6 text-4xl">
                 Our Services
