@@ -5,30 +5,49 @@ import { Phone, MessageCircle, FileText, X, Plus } from 'lucide-react';
 const FloatingCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const rubberBandVariants = {
+  const genieVariants = {
     hidden: { 
       scale: 0, 
       opacity: 0, 
-      y: 20,
+      y: 60,
+      x: 20,
+      rotate: -15,
+      transformOrigin: "bottom right"
     },
     visible: (i: number) => ({
       scale: 1,
       opacity: 1,
       y: 0,
+      x: 0,
+      rotate: 0,
+      transformOrigin: "bottom right",
       transition: {
-        delay: i * 0.1,
+        delay: i * 0.08,
         type: "spring" as const,
-        stiffness: 400,
-        damping: 25,
+        stiffness: 200,
+        damping: 20,
         mass: 0.8,
+        scale: {
+          type: "spring" as const,
+          stiffness: 300,
+          damping: 25,
+        },
+        rotate: {
+          type: "spring" as const,
+          stiffness: 180,
+          damping: 22,
+        }
       },
     }),
     exit: { 
       scale: 0, 
       opacity: 0, 
-      y: 20,
+      y: 60,
+      x: 20,
+      rotate: 15,
+      transformOrigin: "bottom right",
       transition: { 
-        duration: 0.15
+        duration: 0.25
       }
     }
   };
@@ -65,7 +84,7 @@ const FloatingCTA = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                variants={rubberBandVariants}
+                variants={genieVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 href="/enquiry"
@@ -85,7 +104,7 @@ const FloatingCTA = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                variants={rubberBandVariants}
+                variants={genieVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 href="https://wa.me/919910568689"
@@ -107,7 +126,7 @@ const FloatingCTA = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                variants={rubberBandVariants}
+                variants={genieVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 href="tel:+919910568689"
