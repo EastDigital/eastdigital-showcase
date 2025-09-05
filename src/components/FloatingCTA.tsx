@@ -5,32 +5,32 @@ import { Phone, MessageCircle, FileText, X, Plus } from 'lucide-react';
 const FloatingCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const dropletVariants = {
+  const rubberBandVariants = {
     hidden: { 
-      scale: 0.5, 
+      scale: 0, 
       opacity: 0, 
-      y: 40,
-      filter: "blur(4px)"
+      y: 20,
     },
     visible: (i: number) => ({
       scale: 1,
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: {
-        delay: i * 0.15,
+        delay: i * 0.1,
         type: "spring" as const,
-        stiffness: 250,
-        damping: 18,
+        stiffness: 400,
+        damping: 25,
+        mass: 0.8,
       },
     }),
     exit: { 
-      scale: 0.5, 
+      scale: 0, 
       opacity: 0, 
-      y: 40,
-      filter: "blur(4px)",
-      transition: { duration: 0.2 }
-    },
+      y: 20,
+      transition: { 
+        duration: 0.15
+      }
+    }
   };
 
   const mainButtonVariants = {
@@ -55,26 +55,7 @@ const FloatingCTA = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      {/* Gooey SVG Filter */}
-      <svg className="absolute -z-10 pointer-events-none">
-        <defs>
-          <filter id="goo-filter">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-              result="goo"
-            />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
-
-      <div 
-        style={{ filter: "url(#goo-filter)" }} 
-        className="flex flex-col items-end space-y-3"
-      >
+      <div className="flex flex-col items-end space-y-3">
         <AnimatePresence>
           {isOpen && (
             <>
@@ -84,15 +65,15 @@ const FloatingCTA = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                variants={dropletVariants}
+                variants={rubberBandVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
                 href="/enquiry"
                 className="group relative overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-black border-2 border-[#FF6900] shadow-elevated hover:shadow-glow hover:bg-[#FF6900]/10 active:bg-[#FF6900]/20 transition-all duration-300 w-[140px]">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[#FF6900]" />
+                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 w-[140px] backdrop-blur-sm">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
+                    <FileText className="w-3.5 h-3.5 text-[#FF6900]" />
                   </div>
                   <span className="text-sm font-medium text-white">Get Quote</span>
                 </div>
@@ -104,17 +85,17 @@ const FloatingCTA = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                variants={dropletVariants}
+                variants={rubberBandVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
                 href="https://wa.me/919910568689"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-black border-2 border-[#FF6900] shadow-elevated hover:shadow-glow hover:bg-[#FF6900]/10 active:bg-[#FF6900]/20 transition-all duration-300 w-[140px]">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
-                    <MessageCircle className="w-4 h-4 text-[#FF6900]" />
+                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 w-[140px] backdrop-blur-sm">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
+                    <MessageCircle className="w-3.5 h-3.5 text-[#FF6900]" />
                   </div>
                   <span className="text-sm font-medium text-white">WhatsApp</span>
                 </div>
@@ -126,15 +107,15 @@ const FloatingCTA = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                variants={dropletVariants}
+                variants={rubberBandVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
                 href="tel:+919910568689"
                 className="group relative overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-black border-2 border-[#FF6900] shadow-elevated hover:shadow-glow hover:bg-[#FF6900]/10 active:bg-[#FF6900]/20 transition-all duration-300 w-[140px]">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
-                    <Phone className="w-4 h-4 text-[#FF6900]" />
+                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 w-[140px] backdrop-blur-sm">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
+                    <Phone className="w-3.5 h-3.5 text-[#FF6900]" />
                   </div>
                   <span className="text-sm font-medium text-white">Call Now</span>
                 </div>
