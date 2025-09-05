@@ -72,7 +72,7 @@ const Header = () => {
 
                     <div className="space-y-3">
                       <div className="min-h-[50px] flex items-center">
-                        <Link to="/expertise/infrastructure" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
+                        <Link to="/expertise/infrastructure" className="font-semibold text-cta hover:text-cta-hover transition-colors duration-300 tracking-wider">
                           INFRASTRUCTURE
                         </Link>
                       </div>
@@ -88,7 +88,7 @@ const Header = () => {
 
                     <div className="space-y-3">
                       <div className="min-h-[50px] flex items-center">
-                        <Link to="/expertise/architecture-design" className="font-semibold text-base text-foreground hover:text-accent transition-colors duration-300 tracking-wider">
+                        <Link to="/expertise/architecture-design" className="font-semibold text-cta hover:text-cta-hover transition-colors duration-300 tracking-wider">
                           ARCHITECTURE<br />& DESIGN
                         </Link>
                       </div>
