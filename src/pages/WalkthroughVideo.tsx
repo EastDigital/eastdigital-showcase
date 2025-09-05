@@ -81,25 +81,25 @@ const WalkthroughVideo = () => {
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">3D Modeling & Environment</h3>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-on-black">
                     Our artists transform your 2D plans into a detailed, dimensionally accurate 3D model. We build out the surrounding environment, landscaping, and context.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Texturing & Lighting</h3>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-on-black">
                     This is where the magic happens. We apply photorealistic materials, textures, and sophisticated lighting techniques to create a convincing and evocative mood.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Animation & Rendering</h3>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-on-black">
                     We animate the camera along the planned path. Each frame is rendered in high definition using significant computational power to achieve flawless quality.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Post-Production & Delivery</h3>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-on-black">
                     Our editing team adds music, sound design, graphics, and branding. After your approval, we deliver videos in required formats, optimized for web, social media, and sales presentations.
                   </p>
                 </div>
@@ -115,7 +115,7 @@ const WalkthroughVideo = () => {
                 Applications for 3D Walkthroughs
               </h2>
               <div className="space-y-6">
-                {applications.map((app, index) => <p key={index} className="text-lg leading-relaxed text-muted-foreground">
+                {applications.map((app, index) => <p key={index} className="text-on-black">
                     <span className="font-semibold text-foreground">{app.title}:</span> {app.description}
                   </p>)}
               </div>
