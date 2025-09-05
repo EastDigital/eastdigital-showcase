@@ -7,8 +7,7 @@ import PageBanner from "@/components/PageBanner";
 import { Helmet } from "react-helmet-async";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProjectRow {
   id: number;
@@ -38,8 +37,7 @@ export default function ProjectCaseStudy() {
   const { slug } = useParams();
   const [project, setProject] = useState<ProjectRow | null>(null);
   const [loading, setLoading] = useState(true);
-  const [showGallery, setShowGallery] = useState(false);
-  const [galleryStartIndex, setGalleryStartIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const editor = useEditor({ extensions: [StarterKit], content: "<p></p>", editable: false });
 
@@ -109,20 +107,38 @@ export default function ProjectCaseStudy() {
     const isVideo = (u: string) => /\.(mp4|webm|ogg)$/i.test(u);
     const images = gal.filter(url => !isVideo(url));
     const videos = gal.filter(url => isVideo(url));
-    
-    const galleryItems = images.map(url => ({
-      original: url,
-      thumbnail: url,
-      description: `${project?.title} gallery image`
-    }));
 
     return { 
-      featuredImage: images[0] || project?.cover_image || "", 
-      galleryItems,
+      images,
       videos,
       allImages: images
     };
-  }, [project?.gallery, project?.cover_image, project?.title]);
+  }, [project?.gallery]);
+
+  // Auto-slide functionality
+  useEffect(() => {
+    if (galleryData.images.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => 
+        prev === galleryData.images.length - 1 ? 0 : prev + 1
+      );
+    }, 4000); // Auto slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [galleryData.images.length]);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === galleryData.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? galleryData.images.length - 1 : prev - 1
+    );
+  };
 
   return (
     <div className="min-h-screen bg-background font-nunito">
@@ -174,6 +190,73 @@ export default function ProjectCaseStudy() {
                 </div>
               </section>
 
+              {galleryData.images.length > 0 && (
+                <section className="mobile-section sm:py-16">
+                  <div className="container mx-auto px-4 sm:px-0 md:px-8">
+                    <h2 className="text-xl font-semibold mb-6 text-on-black">Project Gallery</h2>
+                    
+                    {/* Main slideshow image */}
+                    <div className="relative w-full mb-6">
+                      <div className="relative aspect-video overflow-hidden rounded-lg bg-muted">
+                        <img
+                          src={galleryData.images[currentImageIndex]}
+                          alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                        
+                        {/* Navigation arrows */}
+                        {galleryData.images.length > 1 && (
+                          <>
+                            <button
+                              onClick={prevImage}
+                              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="w-6 h-6" />
+                            </button>
+                            <button
+                              onClick={nextImage}
+                              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="w-6 h-6" />
+                            </button>
+                          </>
+                        )}
+                        
+                        {/* Image counter */}
+                        <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                          {currentImageIndex + 1} / {galleryData.images.length}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Thumbnail navigation */}
+                    {galleryData.images.length > 1 && (
+                      <div className="flex gap-2 overflow-x-auto pb-2">
+                        {galleryData.images.map((image, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`flex-shrink-0 w-20 h-20 rounded-md overflow-hidden border-2 transition-colors ${
+                              index === currentImageIndex 
+                                ? 'border-primary' 
+                                : 'border-transparent hover:border-primary/50'
+                            }`}
+                          >
+                            <img
+                              src={image}
+                              alt={`${project.title} thumbnail ${index + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </section>
+              )}
+
               <section className="mobile-section sm:py-16">
                 <div className="container mx-auto px-4 sm:px-0 md:px-4">
                   <div className="max-w-none">
@@ -183,44 +266,12 @@ export default function ProjectCaseStudy() {
                       </h2>
                     )}
                     
-                    {galleryData.featuredImage && (
-                      <div className="w-full mb-8">
-                        <img
-                          src={galleryData.featuredImage}
-                          alt={`${project.title} featured image`}
-                          className="w-full h-auto object-cover cursor-pointer"
-                          onClick={() => {
-                            setGalleryStartIndex(0);
-                            setShowGallery(true);
-                          }}
-                        />
-                      </div>
-                    )}
-                    
                     <div className="max-w-none text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
                       <EditorContent editor={editor} />
                     </div>
                   </div>
                 </div>
               </section>
-
-              {galleryData.allImages.length > 1 && (
-                <section className="mobile-section sm:py-16">
-                  <div className="container mx-auto px-4 sm:px-0 md:px-8">
-                    <h2 className="text-xl font-semibold mb-3 text-on-black">Gallery</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {galleryData.allImages.slice(1).map((url, i) => (
-                        <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card cursor-pointer" onClick={() => {
-                          setGalleryStartIndex(i + 1);
-                          setShowGallery(true);
-                        }}>
-                          <img src={url} alt={`${project.title} gallery ${i + 2}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </section>
-              )}
 
               {galleryData.videos.length > 0 && (
                 <section className="mobile-section sm:py-16">
@@ -237,29 +288,6 @@ export default function ProjectCaseStudy() {
                     </div>
                   </div>
                 </section>
-              )}
-
-              {showGallery && galleryData.galleryItems.length > 0 && (
-                <div className="fixed inset-0 z-50 bg-black bg-opacity-90">
-                  <div className="flex items-center justify-center h-full">
-                    <div className="relative w-full h-full max-w-6xl max-h-full">
-                      <button
-                        onClick={() => setShowGallery(false)}
-                        className="absolute top-4 right-4 z-10 text-white text-2xl hover:text-gray-300"
-                      >
-                        ✕
-                      </button>
-                      <ImageGallery
-                        items={galleryData.galleryItems}
-                        startIndex={galleryStartIndex}
-                        showThumbnails={true}
-                        showFullscreenButton={true}
-                        showPlayButton={false}
-                        onSlide={(index) => setGalleryStartIndex(index)}
-                      />
-                    </div>
-                  </div>
-                </div>
               )}
             </article>
           </>
