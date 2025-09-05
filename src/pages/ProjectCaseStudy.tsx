@@ -104,20 +104,25 @@ export default function ProjectCaseStudy() {
 
   const galleryData = useMemo(() => {
     const gal = (project?.gallery || []) as string[];
-    const isVideo = (u: string) => /\.(mp4|webm|ogg)$/i.test(u);
+    const isVideo = (u: string) => /\.(mp4|webm|ogg|mov|avi)$/i.test(u);
+    const allMedia = gal.map(url => ({
+      url,
+      isVideo: isVideo(url)
+    }));
     const images = gal.filter(url => !isVideo(url));
     const videos = gal.filter(url => isVideo(url));
 
     return { 
       images,
       videos,
-      allImages: images
+      allImages: images,
+      allMedia
     };
   }, [project?.gallery]);
 
   // Auto-slide functionality
   useEffect(() => {
-    if (galleryData.images.length <= 1) return;
+    if (galleryData.allMedia.length <= 1) return;
     
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => 
@@ -126,17 +131,17 @@ export default function ProjectCaseStudy() {
     }, 4000); // Auto slide every 4 seconds
 
     return () => clearInterval(interval);
-  }, [galleryData.images.length]);
+  }, [galleryData.allMedia.length]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => 
-      prev === galleryData.images.length - 1 ? 0 : prev + 1
+      prev === galleryData.allMedia.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = () => {
     setCurrentImageIndex((prev) => 
-      prev === 0 ? galleryData.images.length - 1 : prev - 1
+      prev === 0 ? galleryData.allMedia.length - 1 : prev - 1
     );
   };
 
@@ -190,65 +195,89 @@ export default function ProjectCaseStudy() {
                 </div>
               </section>
 
-              {galleryData.images.length > 0 && (
+              {galleryData.allMedia.length > 0 && (
                 <section className="mobile-section sm:py-16">
                   <div className="container mx-auto px-4 sm:px-0 md:px-8">
                     <h2 className="text-xl font-semibold mb-6 text-on-black">Project Gallery</h2>
                     
-                    {/* Main slideshow image */}
+                    {/* Main slideshow media */}
                     <div className="relative w-full mb-6">
                       <div className="relative aspect-video overflow-hidden rounded-lg bg-muted">
-                        <img
-                          src={galleryData.images[currentImageIndex]}
-                          alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                          className="w-full h-full object-cover"
-                        />
+                        {galleryData.allMedia[currentImageIndex]?.isVideo ? (
+                          <video
+                            src={galleryData.allMedia[currentImageIndex].url}
+                            className="w-full h-full object-cover"
+                            controls
+                            playsInline
+                            muted
+                          />
+                        ) : (
+                          <img
+                            src={galleryData.allMedia[currentImageIndex]?.url}
+                            alt={`${project.title} - Media ${currentImageIndex + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                         
                         {/* Navigation arrows */}
-                        {galleryData.images.length > 1 && (
+                        {galleryData.allMedia.length > 1 && (
                           <>
                             <button
                               onClick={prevImage}
                               className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                              aria-label="Previous image"
+                              aria-label="Previous media"
                             >
                               <ChevronLeft className="w-6 h-6" />
                             </button>
                             <button
                               onClick={nextImage}
                               className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                              aria-label="Next image"
+                              aria-label="Next media"
                             >
                               <ChevronRight className="w-6 h-6" />
                             </button>
                           </>
                         )}
                         
-                        {/* Image counter */}
+                        {/* Media counter */}
                         <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-                          {currentImageIndex + 1} / {galleryData.images.length}
+                          {currentImageIndex + 1} / {galleryData.allMedia.length}
                         </div>
                       </div>
                     </div>
                     
                     {/* Thumbnail navigation */}
-                    {galleryData.images.length > 1 && (
+                    {galleryData.allMedia.length > 1 && (
                       <div className="flex gap-2 overflow-x-auto pb-2">
-                        {galleryData.images.map((image, index) => (
+                        {galleryData.allMedia.map((media, index) => (
                           <button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
-                            className={`flex-shrink-0 w-20 h-20 rounded-md overflow-hidden border-2 transition-colors ${
+                            className={`flex-shrink-0 w-20 h-20 rounded-md overflow-hidden border-2 transition-colors relative ${
                               index === currentImageIndex 
                                 ? 'border-primary' 
                                 : 'border-transparent hover:border-primary/50'
                             }`}
                           >
-                            <img
-                              src={image}
-                              alt={`${project.title} thumbnail ${index + 1}`}
-                              className="w-full h-full object-cover"
-                            />
+                            {media.isVideo ? (
+                              <div className="w-full h-full bg-muted flex items-center justify-center relative">
+                                <video 
+                                  src={media.url} 
+                                  className="w-full h-full object-cover" 
+                                  muted 
+                                  playsInline
+                                />
+                                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                  <span className="text-white text-sm">▶</span>
+                                </div>
+                              </div>
+                            ) : (
+                              <img
+                                src={media.url}
+                                alt={`${project.title} thumbnail ${index + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                            )}
                           </button>
                         ))}
                       </div>
@@ -272,23 +301,6 @@ export default function ProjectCaseStudy() {
                   </div>
                 </div>
               </section>
-
-              {galleryData.videos.length > 0 && (
-                <section className="mobile-section sm:py-16">
-                  <div className="container mx-auto px-4 sm:px-0 md:px-8">
-                    <h2 className="text-xl font-semibold mb-3 text-on-black">Videos</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {galleryData.videos.map((url, i) => (
-                        <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card">
-                          <video controls className="w-full h-full">
-                            <source src={url} />
-                          </video>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </section>
-              )}
             </article>
           </>
         )}

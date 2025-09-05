@@ -47,9 +47,9 @@ export default function ProjectForm() {
   const [aiseoKeywords, setAiseoKeywords] = useState("");
 
   const [saving, setSaving] = useState(false);
-  const coverRef = useRef<HTMLInputElement | null>(null);
-  const galleryRef = useRef<HTMLInputElement | null>(null);
-  const ogRef = useRef<HTMLInputElement | null>(null);
+  const [coverImageUrl, setCoverImageUrl] = useState("");
+  const [galleryUrl, setGalleryUrl] = useState("");
+  const [ogImageUrl, setOgImageUrl] = useState("");
 
 
   const editor = useEditor({ extensions: [StarterKit], content: "<p></p>" });
@@ -101,13 +101,29 @@ export default function ProjectForm() {
 
   const subcats = useMemo(() => (category ? SUBCATEGORIES[category as keyof typeof SUBCATEGORIES] : []), [category]);
 
-  const uploadFile = async (file: File) => {
-    const ext = file.name.split(".").pop();
-    const path = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-    const { error } = await supabase.storage.from("projects").upload(path, file, { upsert: false });
-    if (error) throw error;
-    const { data } = supabase.storage.from("projects").getPublicUrl(path);
-    return data.publicUrl;
+  const addCoverImageFromUrl = () => {
+    if (coverImageUrl.trim()) {
+      setCoverImage(coverImageUrl.trim());
+      setCoverImageUrl("");
+    }
+  };
+
+  const addGalleryImageFromUrl = () => {
+    if (galleryUrl.trim()) {
+      setGallery(prev => [...prev, galleryUrl.trim()]);
+      setGalleryUrl("");
+    }
+  };
+
+  const addOgImageFromUrl = () => {
+    if (ogImageUrl.trim()) {
+      setOgImage(ogImageUrl.trim());
+      setOgImageUrl("");
+    }
+  };
+
+  const isVideoUrl = (url: string) => {
+    return url.match(/\.(mp4|webm|ogg|mov|avi)(\?.*)?$/i);
   };
 
   const onSave = async () => {
@@ -169,31 +185,6 @@ export default function ProjectForm() {
     }
   };
 
-  const onUploadCover = async () => {
-    const f = coverRef.current?.files?.[0];
-    if (!f) return;
-    const url = await uploadFile(f);
-    setCoverImage(url);
-  };
-
-  const onUploadOg = async () => {
-    const f = ogRef.current?.files?.[0];
-    if (!f) return;
-    const url = await uploadFile(f);
-    setOgImage(url);
-  };
-
-  const onUploadGallery = async () => {
-    const files = Array.from(galleryRef.current?.files || []);
-    if (files.length === 0) return;
-    const urls: string[] = [];
-    for (const f of files) {
-      const url = await uploadFile(f);
-      urls.push(url);
-    }
-    setGallery(prev => [...prev, ...urls]);
-    if (galleryRef.current) galleryRef.current.value = "";
-  };
 
   return (
     <AdminRoute>
@@ -264,23 +255,47 @@ export default function ProjectForm() {
             <div>
               <Label>Cover image</Label>
               <div className="flex items-center gap-3">
-                <Input ref={coverRef} type="file" accept="image/*" />
-                <Button type="button" variant="outline" onClick={onUploadCover}>Upload</Button>
+                <Input 
+                  value={coverImageUrl} 
+                  onChange={(e) => setCoverImageUrl(e.target.value)} 
+                  placeholder="Paste URL" 
+                />
+                <Button type="button" variant="outline" onClick={addCoverImageFromUrl}>Add</Button>
               </div>
               {coverImage && <img src={coverImage} alt="Cover" className="mt-3 h-32 rounded object-cover" />}
             </div>
             <div>
               <Label>Gallery</Label>
               <div className="flex items-center gap-3">
-                <Input ref={galleryRef} type="file" accept="image/*,video/*" multiple />
-                <Button type="button" variant="outline" onClick={onUploadGallery}>Upload</Button>
+                <Input 
+                  value={galleryUrl} 
+                  onChange={(e) => setGalleryUrl(e.target.value)} 
+                  placeholder="Paste URL" 
+                />
+                <Button type="button" variant="outline" onClick={addGalleryImageFromUrl}>+ Add more</Button>
               </div>
               {gallery.length > 0 && (
                 <div className="mt-3 grid grid-cols-3 gap-2">
-                  {gallery.map((u, i) => (
-                    <div key={u + i} className="relative">
-                      <img src={u} alt={`Gallery ${i+1}`} className="h-24 w-full object-cover rounded" />
-                      <button className="absolute top-1 right-1 text-xs bg-background/70 border border-border rounded px-1" onClick={() => setGallery(prev => prev.filter((_, idx) => idx !== i))}>×</button>
+                  {gallery.map((url, i) => (
+                    <div key={url + i} className="relative">
+                      {isVideoUrl(url) ? (
+                        <video 
+                          src={url} 
+                          className="h-24 w-full object-cover rounded" 
+                          muted 
+                          playsInline
+                          onMouseEnter={(e) => e.currentTarget.play()}
+                          onMouseLeave={(e) => e.currentTarget.pause()}
+                        />
+                      ) : (
+                        <img src={url} alt={`Gallery ${i+1}`} className="h-24 w-full object-cover rounded" />
+                      )}
+                      <button 
+                        className="absolute top-1 right-1 text-xs bg-background/70 border border-border rounded px-1" 
+                        onClick={() => setGallery(prev => prev.filter((_, idx) => idx !== i))}
+                      >
+                        ×
+                      </button>
                     </div>
                   ))}
                 </div>
@@ -344,8 +359,12 @@ export default function ProjectForm() {
             <div>
               <Label>OG Image</Label>
               <div className="flex items-center gap-3">
-                <Input ref={ogRef} type="file" accept="image/*" />
-                <Button type="button" variant="outline" onClick={onUploadOg}>Upload</Button>
+                <Input 
+                  value={ogImageUrl} 
+                  onChange={(e) => setOgImageUrl(e.target.value)} 
+                  placeholder="Paste URL" 
+                />
+                <Button type="button" variant="outline" onClick={addOgImageFromUrl}>Add</Button>
               </div>
               {ogImage && <img src={ogImage} alt="Open Graph" className="mt-3 h-32 rounded object-cover" />}
             </div>
