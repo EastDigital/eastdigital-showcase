@@ -64,8 +64,8 @@ const Header = () => {
                         Launch your project with<br />3d walkthrough video.
                       </p>
                       <ul className="space-y-2 text-foreground">
-                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-foreground/90 hover:text-foreground transition-colors">3D Walkthrough Video</Link></li>
-                        <li><Link to="/expertise/real-estate/3d-still-renderings" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-foreground/90 hover:text-foreground transition-colors">3D Still Renderings</Link></li>
+                        <li><Link to="/expertise/real-estate/3d-walkthrough-video" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-cta hover:text-cta-hover transition-colors">3D Walkthrough Video</Link></li>
+                        <li><Link to="/expertise/real-estate/3d-still-renderings" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-cta hover:text-cta-hover transition-colors">3D Still Renderings</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground pt-2">Ideal for: Real Estate Marketing</p>
                     </div>
@@ -80,8 +80,8 @@ const Header = () => {
                         Present your project to the<br />investors/authorities.
                       </p>
                       <ul className="space-y-2 text-foreground">
-                        <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-foreground/90 hover:text-foreground transition-colors">Conceptual 3D Renderings</Link></li>
-                        <li><Link to="/expertise/infrastructure/engineering-3d-models" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-foreground/90 hover:text-foreground transition-colors">Engineering 3D Models</Link></li>
+                        <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-cta hover:text-cta-hover transition-colors">Conceptual 3D Renderings</Link></li>
+                        <li><Link to="/expertise/infrastructure/engineering-3d-models" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-cta hover:text-cta-hover transition-colors">Engineering 3D Models</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground pt-2">Ideal for: Project Tender & Updates</p>
                     </div>
@@ -96,8 +96,8 @@ const Header = () => {
                         For client approvals and<br />internal assessment.
                       </p>
                       <ul className="space-y-2 text-foreground">
-                        <li><Link to="/expertise/architecture-design/architectural-3d-rendering" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-foreground/90 hover:text-foreground transition-colors">Architectural 3D Rendering</Link></li>
-                        <li><Link to="/expertise/architecture-design/product-3d-rendering" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-foreground/90 hover:text-foreground transition-colors">Product 3D Rendering</Link></li>
+                        <li><Link to="/expertise/architecture-design/architectural-3d-rendering" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-cta hover:text-cta-hover transition-colors">Architectural 3D Rendering</Link></li>
+                        <li><Link to="/expertise/architecture-design/product-3d-rendering" className="block rounded-md px-0 py-1.5 text-[15px] font-normal text-cta hover:text-cta-hover transition-colors">Product 3D Rendering</Link></li>
                       </ul>
                       <p className="font-light text-xs text-muted-foreground pt-2">Ideal for: Ideation & Assessment</p>
                     </div>
