@@ -40,10 +40,10 @@ const RealEstate = () => {
                 <span className="text-primary">High-Impact 3D Solutions</span> for Real Estate Marketing & Sales.
               </h2>
               <div className="space-y-4">
-                <p className="">
+                <p className="text-on-black">
                   For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage.
                 </p>
-                <p className="">
+                <p className="text-on-black">
                   From pre-selling properties to securing stakeholder buy-in, we create <strong className="text-primary font-semibold">immersive experiences</strong> that bring your developments to life.
                 </p>
               </div>
