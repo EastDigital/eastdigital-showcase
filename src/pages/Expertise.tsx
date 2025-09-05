@@ -45,7 +45,7 @@ const Expertise = () => {
         {/* Description Section */}
         <section className="mobile-section sm:py-16">
           <div className="container mx-auto px-4 sm:px-0 md:px-8">
-            <div className="max-w-none lg:max-w-[850px]">
+            <div className="w-full">
               <h1 className="mb-4 sm:mb-6">
                 <span className="block">Industry-Focused Visualization Expertise</span>
                 <span className="text-primary">Precision, Clarity, and Impact</span> for Your Sector.

@@ -79,7 +79,7 @@ const About = () => {
         {/* Our Foundation Section */}
         <section className="bg-black py-[40px] pt-0 ">
           <div className="container mx-auto px-0 w-full relative z-10 px-4">
-            <div className="max-w-[850px]">
+            <div className="w-full">
               <h2 className="text-on-black font-light">
                 Our work is built on a foundation of more than just 
                 pixels and polygons. It's built on a few core beliefs that 
