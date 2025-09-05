@@ -42,7 +42,7 @@ const WalkthroughVideo = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Cinematic 3D Walkthrough Videos: Bring Your Property to Life
               </h2>
-              <p className="text-xl leading-relaxed tracking-wide text-muted-foreground mb-10">
+              <p className="text-on-black">
                 In today's competitive real estate market, capturing a potential buyer's imagination is paramount. Static renderings are powerful, but a cinematic 3D walkthrough video from East Digital offers an unparalleled emotional connection. We create a dynamic, narrative-driven experience that allows viewers to feel the flow, ambiance, and true potential of a space before a brick is laid.
               </p>
               
@@ -53,7 +53,7 @@ const WalkthroughVideo = () => {
                 <h2 className="text-xl font-bold text-foreground mb-4">
                   What is a 3D Walkthrough Video?
                 </h2>
-                <p className="text-lg leading-relaxed text-muted-foreground">
+                <p className="text-on-black">
                   A 3D Walkthrough is a dynamic video presentation that guides the viewer on a pre-determined path through a 3D model of a property. Unlike an interactive tour where the user controls the experience, a walkthrough is a curated, cinematic experience. It leverages professional camera movements, lighting, music, and editing to tell a compelling story that highlights key features and evokes a specific lifestyle or atmosphere.
                 </p>
               </div>
@@ -68,14 +68,14 @@ const WalkthroughVideo = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Our Process: From Blueprint to Blockbuster
               </h2>
-              <p className="text-lg leading-relaxed text-muted-foreground mb-10">
+              <p className="text-on-black">
                 Our meticulous process ensures your vision is translated into a powerful marketing asset.
               </p>
 
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Discovery & Storyboarding</h3>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-on-black">
                     We begin by understanding your project's unique selling points and target audience. We collaborate with you to create a storyboard and define the camera paths that best showcase the property's layout and features.
                   </p>
                 </div>
