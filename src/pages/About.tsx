@@ -40,9 +40,9 @@ const About = () => {
       }]} />
 
         {/* Your Vision Section */}
-        <section className="container mx-auto px-0 w-full relative z-10 px-4 pt-10 ">
-          <div className="text-left w-full mb-12">
-            <div className="">
+        <section className="py-10">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
+            <div className="text-left w-full mb-12">
               <h1 className="font-bold text-on-black mb-12">
                 Your Vision, Brought to Life
               </h1>
@@ -77,8 +77,8 @@ const About = () => {
         </section>
 
         {/* Our Foundation Section */}
-        <section className="bg-black py-[40px] pt-0 ">
-          <div className="container mx-auto px-0 w-full relative z-10 px-4">
+        <section className="bg-black py-[40px] pt-0">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="w-full">
               <h2 className="text-on-black font-light">
                 Our work is built on a foundation of more than just 
@@ -118,7 +118,7 @@ const About = () => {
           </div>
         </div>}
           
-      <div className="container mx-auto px-4 w-full relative z-10">
+      <div className="container mx-auto px-4 sm:px-0 md:px-8 w-full relative z-10">
             <div className="text-left lg:text-left w-full mb-12">
               <h2 className="font-bold mb-8 text-on-graphics">
                 Trusted by many

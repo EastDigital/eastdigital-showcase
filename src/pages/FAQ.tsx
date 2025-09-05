@@ -82,7 +82,7 @@ export default function FAQ() {
         
         {/* Contact CTA */}
         <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-8 text-center">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground">
               Still have questions?
             </h2>

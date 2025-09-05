@@ -50,7 +50,7 @@ const Index = () => {
         
         {/* View All FAQs Link */}
         <section className="py-8 bg-muted/30 border-t border-border/50">
-          <div className="container mx-auto px-8 text-center">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8 text-center">
             <Link 
               to="/faq"
               className="inline-flex items-center gap-2 text-cta hover:text-cta-hover font-semibold transition-colors group"

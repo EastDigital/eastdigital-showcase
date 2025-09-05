@@ -33,7 +33,7 @@ export default function Product3DRendering() {
 
       <main>
         <section className="py-16 lg:py-24 bg-background">
-          <div className="container mx-auto px-8">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="w-full mx-auto">
               <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-foreground">Product Design Excellence</h2>
               

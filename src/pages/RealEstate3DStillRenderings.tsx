@@ -32,7 +32,7 @@ export default function RealEstate3DStillRenderings() {
 
       <main>
         <section className="py-16">
-          <div className="container mx-auto px-8">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="w-full">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Transform Your Real Estate Vision</h2>
               

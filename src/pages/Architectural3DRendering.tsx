@@ -47,7 +47,7 @@ export default function Architectural3DRendering() {
 
       <main>
         <section className="py-16">
-          <div className="container mx-auto px-8">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="w-full">
               <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-foreground">Architectural Vision Realized</h2>
               
@@ -110,7 +110,7 @@ export default function Architectural3DRendering() {
         
         {/* Final CTA */}
         <section className="py-16 bg-background">
-          <div className="container mx-auto px-8 text-center">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground">
               Ready to Visualize Your Architecture?
             </h2>

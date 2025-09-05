@@ -109,7 +109,7 @@ export default function Contact() {
 
       <main>
         <section className="py-16 lg:py-24 bg-background">
-          <div className="container mx-auto px-8">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="w-full mx-auto">
               <div className="grid lg:grid-cols-2 gap-12">
                 {/* Contact Information */}
