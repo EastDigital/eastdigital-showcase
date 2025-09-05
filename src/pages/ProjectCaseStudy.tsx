@@ -155,78 +155,86 @@ export default function ProjectCaseStudy() {
           <>
             <PageBanner title={project.title} backgroundImage={project.cover_image || ""} breadcrumbs={breadcrumbs} />
             <article>
-              <section className="w-full px-4 py-8">
-                {(project.summary_heading || project.summary) && (
-                  <div className="w-full">
-                    {project.summary_heading && (
-                      <h2 className="text-on-black font-bold font-nunito content-heading mb-4">
-                        {project.summary_heading}
-                      </h2>
-                    )}
-                    {project.summary && (
-                      <p className="text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em]">
-                        {project.summary}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </section>
-
-              <section className="w-full px-4 py-8">
-                <div className="w-full">
-                  {project.case_study_heading && (
-                    <h2 className="text-on-black font-bold font-nunito mb-4 content-heading">
-                      {project.case_study_heading}
-                    </h2>
-                  )}
-                  
-                  {galleryData.featuredImage && (
-                    <div className="w-full mb-8">
-                      <img
-                        src={galleryData.featuredImage}
-                        alt={`${project.title} featured image`}
-                        className="w-full h-auto object-cover cursor-pointer"
-                        onClick={() => {
-                          setGalleryStartIndex(0);
-                          setShowGallery(true);
-                        }}
-                      />
+              <section className="mobile-section sm:py-16">
+                <div className="container mx-auto px-4 sm:px-0 md:px-8">
+                  {(project.summary_heading || project.summary) && (
+                    <div className="max-w-none">
+                      {project.summary_heading && (
+                        <h2 className="text-on-black font-bold font-nunito content-heading mb-4">
+                          {project.summary_heading}
+                        </h2>
+                      )}
+                      {project.summary && (
+                        <p className="text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em]">
+                          {project.summary}
+                        </p>
+                      )}
                     </div>
                   )}
-                  
-                  <div className="max-w-none text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
-                    <EditorContent editor={editor} />
+                </div>
+              </section>
+
+              <section className="mobile-section sm:py-16">
+                <div className="container mx-auto px-4 sm:px-0 md:px-8">
+                  <div className="max-w-none">
+                    {project.case_study_heading && (
+                      <h2 className="text-on-black font-bold font-nunito mb-4 content-heading">
+                        {project.case_study_heading}
+                      </h2>
+                    )}
+                    
+                    {galleryData.featuredImage && (
+                      <div className="w-full mb-8">
+                        <img
+                          src={galleryData.featuredImage}
+                          alt={`${project.title} featured image`}
+                          className="w-full h-auto object-cover cursor-pointer"
+                          onClick={() => {
+                            setGalleryStartIndex(0);
+                            setShowGallery(true);
+                          }}
+                        />
+                      </div>
+                    )}
+                    
+                    <div className="max-w-none text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
+                      <EditorContent editor={editor} />
+                    </div>
                   </div>
                 </div>
               </section>
 
               {galleryData.allImages.length > 1 && (
-                <section className="w-full px-4 py-6">
-                  <h2 className="text-xl font-semibold mb-3 text-on-black">Gallery</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {galleryData.allImages.slice(1).map((url, i) => (
-                      <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card cursor-pointer" onClick={() => {
-                        setGalleryStartIndex(i + 1);
-                        setShowGallery(true);
-                      }}>
-                        <img src={url} alt={`${project.title} gallery ${i + 2}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform" />
-                      </div>
-                    ))}
+                <section className="mobile-section sm:py-16">
+                  <div className="container mx-auto px-4 sm:px-0 md:px-8">
+                    <h2 className="text-xl font-semibold mb-3 text-on-black">Gallery</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {galleryData.allImages.slice(1).map((url, i) => (
+                        <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card cursor-pointer" onClick={() => {
+                          setGalleryStartIndex(i + 1);
+                          setShowGallery(true);
+                        }}>
+                          <img src={url} alt={`${project.title} gallery ${i + 2}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               )}
 
               {galleryData.videos.length > 0 && (
-                <section className="w-full px-4 py-6">
-                  <h2 className="text-xl font-semibold mb-3 text-on-black">Videos</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {galleryData.videos.map((url, i) => (
-                      <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card">
-                        <video controls className="w-full h-full">
-                          <source src={url} />
-                        </video>
-                      </div>
-                    ))}
+                <section className="mobile-section sm:py-16">
+                  <div className="container mx-auto px-4 sm:px-0 md:px-8">
+                    <h2 className="text-xl font-semibold mb-3 text-on-black">Videos</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {galleryData.videos.map((url, i) => (
+                        <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card">
+                          <video controls className="w-full h-full">
+                            <source src={url} />
+                          </video>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               )}
