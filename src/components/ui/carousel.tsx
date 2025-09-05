@@ -113,8 +113,58 @@ const Carousel = React.forwardRef<
       api.on("reInit", onSelect)
       api.on("select", onSelect)
 
+      // Fix: Ensure vertical scrolling works when hovering over carousel
+      const carouselNode = api.rootNode() as HTMLElement
+      
+      const handleWheel = (event: WheelEvent) => {
+        // Only prevent default for horizontal scrolling when shift key is pressed
+        // or when scrolling horizontally with a trackpad/mouse
+        if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+          event.preventDefault()
+          if (event.deltaX > 0) {
+            api.scrollNext()
+          } else {
+            api.scrollPrev()
+          }
+        }
+        // Allow vertical scrolling to pass through normally
+      }
+
+      const handleTouchStart = (event: TouchEvent) => {
+        // Don't interfere with single-finger vertical scrolling
+        if (event.touches.length === 1) {
+          const touch = event.touches[0]
+          carouselNode.dataset.touchStartX = touch.clientX.toString()
+          carouselNode.dataset.touchStartY = touch.clientY.toString()
+        }
+      }
+
+      const handleTouchMove = (event: TouchEvent) => {
+        if (event.touches.length === 1 && carouselNode.dataset.touchStartX) {
+          const touch = event.touches[0]
+          const startX = parseInt(carouselNode.dataset.touchStartX)
+          const startY = parseInt(carouselNode.dataset.touchStartY)
+          const deltaX = touch.clientX - startX
+          const deltaY = touch.clientY - startY
+          
+          // Only prevent default if horizontal movement is dominant
+          if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+            event.preventDefault()
+          }
+        }
+      }
+
+      carouselNode.addEventListener('wheel', handleWheel, { passive: false })
+      carouselNode.addEventListener('touchstart', handleTouchStart, { passive: true })
+      carouselNode.addEventListener('touchmove', handleTouchMove, { passive: false })
+
       return () => {
         api?.off("select", onSelect)
+        carouselNode.removeEventListener('wheel', handleWheel)
+        carouselNode.removeEventListener('touchstart', handleTouchStart)
+        carouselNode.removeEventListener('touchmove', handleTouchMove)
+        delete carouselNode.dataset.touchStartX
+        delete carouselNode.dataset.touchStartY
       }
     }, [api, onSelect])
 

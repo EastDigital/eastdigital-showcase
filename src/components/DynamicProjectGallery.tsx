@@ -98,7 +98,7 @@ const DynamicProjectGallery: React.FC<DynamicProjectGalleryProps> = ({
                 <img 
                   src={project.cover_image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 will-change-transform" 
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://via.placeholder.com/640x360/f0f0f0/666666?text=Image+Not+Available';
