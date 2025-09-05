@@ -7,6 +7,8 @@ import PageBanner from "@/components/PageBanner";
 import { Helmet } from "react-helmet-async";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 interface ProjectRow {
   id: number;
@@ -36,6 +38,8 @@ export default function ProjectCaseStudy() {
   const { slug } = useParams();
   const [project, setProject] = useState<ProjectRow | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showGallery, setShowGallery] = useState(false);
+  const [galleryStartIndex, setGalleryStartIndex] = useState(0);
 
   const editor = useEditor({ extensions: [StarterKit], content: "<p></p>", editable: false });
 
@@ -100,16 +104,25 @@ export default function ProjectCaseStudy() {
     return items;
   }, [project?.category, project?.title]);
 
-  const feature = useMemo(() => {
+  const galleryData = useMemo(() => {
     const gal = (project?.gallery || []) as string[];
     const isVideo = (u: string) => /\.(mp4|webm|ogg)$/i.test(u);
-    let featured = "";
-    for (const u of gal) {
-      if (!isVideo(u)) { featured = u; break; }
-    }
-    const remaining = gal.filter((u) => u !== featured);
-    return { featuredImage: featured || (project?.cover_image || ""), remainingGallery: remaining };
-  }, [project?.gallery, project?.cover_image]);
+    const images = gal.filter(url => !isVideo(url));
+    const videos = gal.filter(url => isVideo(url));
+    
+    const galleryItems = images.map(url => ({
+      original: url,
+      thumbnail: url,
+      description: `${project?.title} gallery image`
+    }));
+
+    return { 
+      featuredImage: images[0] || project?.cover_image || "", 
+      galleryItems,
+      videos,
+      allImages: images
+    };
+  }, [project?.gallery, project?.cover_image, project?.title]);
 
   return (
     <div className="min-h-screen bg-background font-nunito">
@@ -142,7 +155,7 @@ export default function ProjectCaseStudy() {
           <>
             <PageBanner title={project.title} backgroundImage={project.cover_image || ""} breadcrumbs={breadcrumbs} />
             <article>
-              <section className="container mx-auto px-4 py-8">
+              <section className="w-full px-4 py-8">
                 {(project.summary_heading || project.summary) && (
                   <div className="w-full">
                     {project.summary_heading && (
@@ -159,49 +172,86 @@ export default function ProjectCaseStudy() {
                 )}
               </section>
 
-              {feature.featuredImage && (
-                <section className="w-full">
-                  <img
-                    src={feature.featuredImage}
-                    alt={`${project.title} featured image`}
-                    className="w-full h-auto object-cover"
-                  />
+              <section className="w-full px-4 py-8">
+                <div className="w-full">
+                  {project.case_study_heading && (
+                    <h2 className="text-on-black font-bold font-nunito mb-4 content-heading">
+                      {project.case_study_heading}
+                    </h2>
+                  )}
+                  
+                  {galleryData.featuredImage && (
+                    <div className="w-full mb-8">
+                      <img
+                        src={galleryData.featuredImage}
+                        alt={`${project.title} featured image`}
+                        className="w-full h-auto object-cover cursor-pointer"
+                        onClick={() => {
+                          setGalleryStartIndex(0);
+                          setShowGallery(true);
+                        }}
+                      />
+                    </div>
+                  )}
+                  
+                  <div className="max-w-none text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
+                    <EditorContent editor={editor} />
+                  </div>
+                </div>
+              </section>
+
+              {galleryData.allImages.length > 1 && (
+                <section className="w-full px-4 py-6">
+                  <h2 className="text-xl font-semibold mb-3 text-on-black">Gallery</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {galleryData.allImages.slice(1).map((url, i) => (
+                      <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card cursor-pointer" onClick={() => {
+                        setGalleryStartIndex(i + 1);
+                        setShowGallery(true);
+                      }}>
+                        <img src={url} alt={`${project.title} gallery ${i + 2}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+                      </div>
+                    ))}
+                  </div>
                 </section>
               )}
 
-              <section className="container mx-auto px-4 py-8">
-                  <div className="w-full">
-                    {project.case_study_heading && (
-                      <h2 className="text-on-black font-bold font-nunito mb-4 content-heading">
-                        {project.case_study_heading}
-                      </h2>
-                    )}
-                    <div className="max-w-none text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
-                      <EditorContent editor={editor} />
-                    </div>
-                  </div>
-              </section>
-
-              {feature.remainingGallery && feature.remainingGallery.length > 0 && (
-                <section className="container mx-auto px-4 py-6">
-                  <h2 className="text-xl font-semibold mb-3 text-on-black">Gallery</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {feature.remainingGallery.map((u, i) => {
-                      const isVideo = /\.(mp4|webm|ogg)$/i.test(u);
-                      return (
-                        <div key={u + i} className="rounded-md overflow-hidden border border-border bg-card cursor-pointer" onClick={() => !isVideo && window.open(u, '_blank')}>
-                          {isVideo ? (
-                            <video controls className="w-full h-full">
-                              <source src={u} />
-                            </video>
-                          ) : (
-                            <img src={u} alt={`${project.title} gallery ${i + 1}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform" />
-                          )}
-                        </div>
-                      );
-                    })}
+              {galleryData.videos.length > 0 && (
+                <section className="w-full px-4 py-6">
+                  <h2 className="text-xl font-semibold mb-3 text-on-black">Videos</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {galleryData.videos.map((url, i) => (
+                      <div key={url + i} className="rounded-md overflow-hidden border border-border bg-card">
+                        <video controls className="w-full h-full">
+                          <source src={url} />
+                        </video>
+                      </div>
+                    ))}
                   </div>
                 </section>
+              )}
+
+              {showGallery && galleryData.galleryItems.length > 0 && (
+                <div className="fixed inset-0 z-50 bg-black bg-opacity-90">
+                  <div className="flex items-center justify-center h-full">
+                    <div className="relative w-full h-full max-w-6xl max-h-full">
+                      <button
+                        onClick={() => setShowGallery(false)}
+                        className="absolute top-4 right-4 z-10 text-white text-2xl hover:text-gray-300"
+                      >
+                        ✕
+                      </button>
+                      <ImageGallery
+                        items={galleryData.galleryItems}
+                        startIndex={galleryStartIndex}
+                        showThumbnails={true}
+                        showFullscreenButton={true}
+                        showPlayButton={false}
+                        onSlide={(index) => setGalleryStartIndex(index)}
+                      />
+                    </div>
+                  </div>
+                </div>
               )}
             </article>
           </>
