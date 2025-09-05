@@ -71,11 +71,11 @@ const FloatingCTA = () => {
                 href="/enquiry"
                 className="group relative overflow-hidden"
               >
-                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 w-[140px] backdrop-blur-sm">
+                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 min-w-[150px] backdrop-blur-sm">
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
                     <FileText className="w-3.5 h-3.5 text-[#FF6900]" />
                   </div>
-                  <span className="text-sm font-medium text-white">Get Quote</span>
+                  <span className="text-sm font-medium text-white whitespace-nowrap">Get Quote</span>
                 </div>
               </motion.a>
 
@@ -93,11 +93,11 @@ const FloatingCTA = () => {
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden"
               >
-                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 w-[140px] backdrop-blur-sm">
+                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 min-w-[150px] backdrop-blur-sm">
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
                     <MessageCircle className="w-3.5 h-3.5 text-[#FF6900]" />
                   </div>
-                  <span className="text-sm font-medium text-white">WhatsApp</span>
+                  <span className="text-sm font-medium text-white whitespace-nowrap">WhatsApp</span>
                 </div>
               </motion.a>
 
@@ -113,11 +113,11 @@ const FloatingCTA = () => {
                 href="tel:+919910568689"
                 className="group relative overflow-hidden"
               >
-                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 w-[140px] backdrop-blur-sm">
+                <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 min-w-[150px] backdrop-blur-sm">
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FF6900]/20 flex items-center justify-center">
                     <Phone className="w-3.5 h-3.5 text-[#FF6900]" />
                   </div>
-                  <span className="text-sm font-medium text-white">Call Now</span>
+                  <span className="text-sm font-medium text-white whitespace-nowrap">Call Now</span>
                 </div>
               </motion.a>
             </>
