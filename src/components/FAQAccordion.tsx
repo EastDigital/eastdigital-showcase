@@ -56,7 +56,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
             <h2 className="font-bold mb-3 text-foreground">
               {title}
             </h2>
-            {subtitle && <p className="text-muted-foreground">
+            {subtitle && <p className="text-on-black">
                 {subtitle}
               </p>}
           </div>
@@ -69,7 +69,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 pt-1 relative z-10">
-                  <p className="text-muted-foreground">{faq.a}</p>
+                  <p className="text-on-black">{faq.a}</p>
                 </AccordionContent>
               </AccordionItem>)}
           </Accordion>
