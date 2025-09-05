@@ -69,12 +69,16 @@
     --text-cta-hover: 17 100% 65.1%;       /* #FF954A - hover state for CTAs & links */
 
     /* Custom Brand Elements */
-    --glass-bg: rgba(22, 22, 23, .8)/*17 17 17 / 0.15*/;
+    --glass-bg: 22 22 23 / 0.8;
     --glass-border: 255 255 255 / 0.1;
     --glass-light-bg: 255 255 255 / 0.15;
     --glass-light-border: 255 255 255 / 0.2;
     --orange-glow: 17 100% 50%;
     --cream: 33 100% 89.4%;
+    
+    /* Floating CTA Enhancements */
+    --floating-cta-bg: 0 0 0 / 0.9;
+    --floating-cta-border: 255 255 255 / 0.15;
     
     /* Gradients */
     --gradient-primary: linear-gradient(to right, hsl(17 100% 50%), hsl(33 100% 89.4%));

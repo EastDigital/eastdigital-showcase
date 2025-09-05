@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
-import StickyCtaButton from '@/components/StickyCtaButton';
+import FloatingCTA from '@/components/FloatingCTA';
 import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/useSEO';
 const RealEstate = () => {
@@ -90,7 +90,7 @@ const RealEstate = () => {
         </section>
 
       </main>
-      <StickyCtaButton />
+      <FloatingCTA />
       <Footer />
     </div>;
 };

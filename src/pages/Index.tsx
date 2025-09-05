@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import Footer from '@/components/Footer';
+import FloatingCTA from '@/components/FloatingCTA';
 import { useSEO } from '@/hooks/useSEO';
 import { lazy, Suspense } from 'react';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -68,6 +69,7 @@ const Index = () => {
           </div>
         </section>
       </main>
+      <FloatingCTA />
       <Footer />
     </div>
   </>;

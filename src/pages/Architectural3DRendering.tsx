@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import FloatingCTA from '@/components/FloatingCTA';
 import ShortcodeRenderer from '@/components/ShortcodeRenderer';
 import FAQAccordion from '@/components/FAQAccordion';
 import FAQSchema from '@/components/FAQSchema';
@@ -135,6 +136,7 @@ export default function Architectural3DRendering() {
         </section>
       </main>
       
+      <FloatingCTA />
       <Footer />
     </>
   );

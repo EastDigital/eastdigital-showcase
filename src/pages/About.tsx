@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import ProjectGallery from '@/components/ProjectGallery';
 import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
+import FloatingCTA from '@/components/FloatingCTA';
 import { useSEO } from '@/hooks/useSEO';
 const About = () => {
   useSEO('about');
@@ -150,6 +151,7 @@ const About = () => {
         {/* Project Gallery */}
         <ProjectGallery />
       </main>
+      <FloatingCTA />
       <Footer />
     </div>;
 };
