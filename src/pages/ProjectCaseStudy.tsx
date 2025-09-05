@@ -175,7 +175,7 @@ export default function ProjectCaseStudy() {
               </section>
 
               <section className="mobile-section sm:py-16">
-                <div className="container mx-auto px-4 sm:px-0 md:px-8">
+                <div className="container mx-auto px-4 sm:px-0 md:px-4">
                   <div className="max-w-none">
                     {project.case_study_heading && (
                       <h2 className="text-on-black font-bold font-nunito mb-4 content-heading">
