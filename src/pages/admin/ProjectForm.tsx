@@ -9,6 +9,11 @@ import AdminRoute from "@/components/AdminRoute";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { toast } from "@/components/ui/use-toast";
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
+import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from "@dnd-kit/sortable";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { GripVertical } from "lucide-react";
 
 function slugify(text: string) {
   return text
@@ -16,6 +21,76 @@ function slugify(text: string) {
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-");
+}
+
+// Sortable Item Component for Gallery
+function SortableGalleryItem({ id, url, index, onRemove, isVideo }: { 
+  id: string; 
+  url: string; 
+  index: number; 
+  onRemove: () => void;
+  isVideo: boolean;
+}) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className={`relative group ${isDragging ? 'z-10' : ''}`}
+    >
+      <div className="relative bg-background border border-border rounded-lg overflow-hidden">
+        {/* Drag Handle */}
+        <button
+          {...attributes}
+          {...listeners}
+          className="absolute top-1 left-1 z-20 p-1 bg-background/80 border border-border rounded cursor-grab active:cursor-grabbing hover:bg-accent"
+          aria-label="Drag to reorder"
+        >
+          <GripVertical className="w-3 h-3" />
+        </button>
+
+        {/* Media Content */}
+        {isVideo ? (
+          <video 
+            src={url} 
+            className="h-24 w-full object-cover" 
+            muted 
+            playsInline
+            onMouseEnter={(e) => e.currentTarget.play()}
+            onMouseLeave={(e) => e.currentTarget.pause()}
+          />
+        ) : (
+          <img src={url} alt={`Gallery ${index + 1}`} className="h-24 w-full object-cover" />
+        )}
+
+        {/* Remove Button */}
+        <button 
+          className="absolute top-1 right-1 z-20 text-xs bg-destructive text-destructive-foreground hover:bg-destructive/90 border border-border rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity" 
+          onClick={onRemove}
+        >
+          Remove
+        </button>
+
+        {/* Order Indicator */}
+        <div className="absolute bottom-1 left-1 bg-background/80 text-xs px-1 py-0.5 rounded text-muted-foreground">
+          #{index + 1}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function ProjectForm() {
@@ -49,6 +124,28 @@ export default function ProjectForm() {
   const [saving, setSaving] = useState(false);
   const [coverImageUrl, setCoverImageUrl] = useState("");
   const [galleryUrl, setGalleryUrl] = useState("");
+
+  // Drag and drop sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  // Handle drag end for gallery reordering
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (active.id !== over?.id) {
+      setGallery((items) => {
+        const oldIndex = items.findIndex((_, index) => `gallery-${index}` === active.id);
+        const newIndex = items.findIndex((_, index) => `gallery-${index}` === over?.id);
+        
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  };
   const [ogImageUrl, setOgImageUrl] = useState("");
 
 
@@ -123,7 +220,7 @@ export default function ProjectForm() {
   };
 
   const isVideoUrl = (url: string) => {
-    return url.match(/\.(mp4|webm|ogg|mov|avi)(\?.*)?$/i);
+    return !!url.match(/\.(mp4|webm|ogg|mov|avi)(\?.*)?$/i);
   };
 
   const onSave = async () => {
@@ -275,29 +372,33 @@ export default function ProjectForm() {
                 <Button type="button" variant="outline" onClick={addGalleryImageFromUrl}>+ Add more</Button>
               </div>
               {gallery.length > 0 && (
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  {gallery.map((url, i) => (
-                    <div key={url + i} className="relative">
-                      {isVideoUrl(url) ? (
-                        <video 
-                          src={url} 
-                          className="h-24 w-full object-cover rounded" 
-                          muted 
-                          playsInline
-                          onMouseEnter={(e) => e.currentTarget.play()}
-                          onMouseLeave={(e) => e.currentTarget.pause()}
-                        />
-                      ) : (
-                        <img src={url} alt={`Gallery ${i+1}`} className="h-24 w-full object-cover rounded" />
-                      )}
-                      <button 
-                        className="absolute top-1 right-1 text-xs bg-background/70 border border-border rounded px-1" 
-                        onClick={() => setGallery(prev => prev.filter((_, idx) => idx !== i))}
-                      >
-                        ×
-                      </button>
-                    </div>
-                  ))}
+                <div className="mt-3">
+                  <DndContext 
+                    sensors={sensors}
+                    collisionDetection={closestCenter}
+                    onDragEnd={handleDragEnd}
+                  >
+                    <SortableContext 
+                      items={gallery.map((_, index) => `gallery-${index}`)}
+                      strategy={verticalListSortingStrategy}
+                    >
+                      <div className="grid grid-cols-3 gap-3">
+                        {gallery.map((url, i) => (
+                          <SortableGalleryItem
+                            key={`gallery-${i}`}
+                            id={`gallery-${i}`}
+                            url={url}
+                            index={i}
+                            isVideo={isVideoUrl(url)}
+                            onRemove={() => setGallery(prev => prev.filter((_, idx) => idx !== i))}
+                          />
+                        ))}
+                      </div>
+                    </SortableContext>
+                  </DndContext>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Drag and drop to reorder gallery items. The order will be preserved in the case study.
+                  </p>
                 </div>
               )}
             </div>
