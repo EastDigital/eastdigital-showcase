@@ -8,6 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { CATEGORIES, SUBCATEGORIES, ProjectStatus } from "@/constants/pms";
 import AdminRoute from "@/components/AdminRoute";
 import { toast } from "@/components/ui/use-toast";
+import { Eye, EyeOff, Edit, Trash2 } from "lucide-react";
 
 interface ProjectRow {
   id: number;
@@ -142,12 +143,33 @@ export default function ProjectsList() {
                 <TableCell>{p.status}</TableCell>
                 <TableCell>{p.carousel ? "Yes" : "No"}</TableCell>
                 <TableCell>{new Date(p.updated_at).toLocaleString()}</TableCell>
-                <TableCell className="text-right space-x-2">
-                  <Button variant="secondary" onClick={() => togglePublish(p)}>
-                    {p.status === "Published" ? "Unpublish" : "Publish"}
+                <TableCell className="text-right space-x-1">
+                  <Button 
+                    variant="secondary" 
+                    size="icon" 
+                    onClick={() => togglePublish(p)}
+                    title={p.status === "Published" ? "Unpublish" : "Publish"}
+                  >
+                    {p.status === "Published" ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </Button>
-                  <Button variant="outline" asChild><Link to={`/admin/projects/${p.id}/edit`}>Edit</Link></Button>
-                  <Button variant="destructive" onClick={() => onDelete(p.id)}>Delete</Button>
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    asChild
+                    title="Edit"
+                  >
+                    <Link to={`/admin/projects/${p.id}/edit`}>
+                      <Edit className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button 
+                    variant="destructive" 
+                    size="icon" 
+                    onClick={() => onDelete(p.id)}
+                    title="Delete"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
