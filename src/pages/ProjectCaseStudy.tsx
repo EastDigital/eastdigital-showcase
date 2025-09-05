@@ -146,12 +146,12 @@ export default function ProjectCaseStudy() {
                 {(project.summary_heading || project.summary) && (
                   <div className="w-full">
                     {project.summary_heading && (
-                      <h2 className="text-gray-300 font-bold font-nunito content-heading mb-4">
+                      <h2 className="text-on-black font-bold font-nunito content-heading mb-4">
                         {project.summary_heading}
                       </h2>
                     )}
                     {project.summary && (
-                      <p className="text-gray-300 font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em]">
+                      <p className="text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em]">
                         {project.summary}
                       </p>
                     )}
@@ -172,11 +172,11 @@ export default function ProjectCaseStudy() {
               <section className="container mx-auto px-4 py-8">
                   <div className="w-full">
                     {project.case_study_heading && (
-                      <h2 className="text-gray-300 font-bold font-nunito mb-4 content-heading">
+                      <h2 className="text-on-black font-bold font-nunito mb-4 content-heading">
                         {project.case_study_heading}
                       </h2>
                     )}
-                    <div className="max-w-none text-gray-300 font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em]">
+                    <div className="max-w-none text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
                       <EditorContent editor={editor} />
                     </div>
                   </div>
@@ -184,7 +184,7 @@ export default function ProjectCaseStudy() {
 
               {feature.remainingGallery && feature.remainingGallery.length > 0 && (
                 <section className="container mx-auto px-4 py-6">
-                  <h2 className="text-xl font-semibold mb-3">Gallery</h2>
+                  <h2 className="text-xl font-semibold mb-3 text-on-black">Gallery</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {feature.remainingGallery.map((u, i) => {
                       const isVideo = /\.(mp4|webm|ogg)$/i.test(u);
