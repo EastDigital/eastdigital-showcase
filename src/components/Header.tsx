@@ -147,55 +147,55 @@ const Header = () => {
           </button>
         </div>
         
-        <div className="px-4 sm:px-6 space-y-3 overflow-y-auto h-[calc(100vh-70px)] sm:h-[calc(100vh-75px)] pb-16">
-          <Link to="/" className="block text-foreground text-lg font-light hover:text-accent transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5 active:scale-95" onClick={toggleMenu}>Home</Link>
+        <div className="px-4 sm:px-6 space-y-4 overflow-y-auto h-[calc(100vh-70px)] sm:h-[calc(100vh-75px)] pb-16">
+          <Link to="/" className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform" onClick={toggleMenu}>Home</Link>
           
           <div>
-            <button onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)} className="w-full flex justify-between items-center text-foreground text-lg font-light hover:text-accent transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5 active:scale-95">
+            <button onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)} className="w-full flex justify-between items-center text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">
               <span>Expertise</span>
-              <svg className={`w-5 h-5 transition-transform duration-300 ${isMobileExpertiseOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
+              <svg className={`w-5 h-5 transition-transform duration-500 ease-out ${isMobileExpertiseOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
             
-            <div className={`transition-all duration-300 ${isMobileExpertiseOpen ? 'animate-accordion-down max-h-screen opacity-100' : 'animate-accordion-up max-h-0 opacity-0 overflow-hidden'}`}>
-              <div className="pl-3 mt-3 space-y-4 border-l border-white/10">
-                <div className="pb-3 border-b border-white/5">
-                  <Link to="/expertise/real-estate" onClick={toggleMenu} className="font-medium text-base text-foreground hover:text-accent transition-all duration-200 tracking-wide block py-1 active:scale-95">REAL ESTATE</Link>
-                  <p className="font-light text-xs text-muted-foreground mt-1 mb-2">Launch your project with 3d walkthrough video.</p>
-                  <ul className="space-y-1 text-foreground">
-                    <li><Link to="/expertise/real-estate/3d-walkthrough-video" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-200 py-1 px-2 rounded hover:bg-white/5 active:scale-95">3D Walkthrough Video</Link></li>
-                    <li><Link to="/expertise/real-estate/3d-still-renderings" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-200 py-1 px-2 rounded hover:bg-white/5 active:scale-95">3D Still Renderings</Link></li>
+            <div className={`transition-all duration-500 ease-in-out ${isMobileExpertiseOpen ? 'max-h-[800px] opacity-100 mt-3' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+              <div className="pl-4 space-y-5 border-l-2 border-white/20">
+                <div className="pb-4 border-b border-white/10">
+                  <Link to="/expertise/real-estate" onClick={toggleMenu} className="font-medium text-base text-foreground hover:text-accent transition-all duration-300 tracking-wide block py-2 px-3 rounded-lg active:scale-[0.98] active:bg-white/15 hover:bg-white/5 transform">REAL ESTATE</Link>
+                  <p className="font-light text-xs text-muted-foreground mt-2 mb-3 px-3">Launch your project with 3d walkthrough video.</p>
+                  <ul className="space-y-2 text-foreground">
+                    <li><Link to="/expertise/real-estate/3d-walkthrough-video" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-300 py-2 px-4 rounded-lg hover:bg-white/8 active:scale-[0.98] active:bg-white/15 transform">3D Walkthrough Video</Link></li>
+                    <li><Link to="/expertise/real-estate/3d-still-renderings" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-300 py-2 px-4 rounded-lg hover:bg-white/8 active:scale-[0.98] active:bg-white/15 transform">3D Still Renderings</Link></li>
                   </ul>
                 </div>
                 
-                <div className="pb-3 border-b border-white/5">
-                  <Link to="/expertise/infrastructure" onClick={toggleMenu} className="font-medium text-base text-foreground hover:text-accent transition-all duration-200 tracking-wide block py-1 active:scale-95">INFRASTRUCTURE</Link>
-                  <p className="font-light text-xs text-muted-foreground mt-1 mb-2">Present your project to the investors/authorities.</p>
-                  <ul className="space-y-1 text-foreground">
-                    <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-200 py-1 px-2 rounded hover:bg-white/5 active:scale-95">Conceptual 3D Renderings</Link></li>
-                    <li><Link to="/expertise/infrastructure/engineering-3d-models" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-200 py-1 px-2 rounded hover:bg-white/5 active:scale-95">Engineering 3D Models</Link></li>
+                <div className="pb-4 border-b border-white/10">
+                  <Link to="/expertise/infrastructure" onClick={toggleMenu} className="font-medium text-base text-foreground hover:text-accent transition-all duration-300 tracking-wide block py-2 px-3 rounded-lg active:scale-[0.98] active:bg-white/15 hover:bg-white/5 transform">INFRASTRUCTURE</Link>
+                  <p className="font-light text-xs text-muted-foreground mt-2 mb-3 px-3">Present your project to the investors/authorities.</p>
+                  <ul className="space-y-2 text-foreground">
+                    <li><Link to="/expertise/infrastructure/conceptual-3d-renderings" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-300 py-2 px-4 rounded-lg hover:bg-white/8 active:scale-[0.98] active:bg-white/15 transform">Conceptual 3D Renderings</Link></li>
+                    <li><Link to="/expertise/infrastructure/engineering-3d-models" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-300 py-2 px-4 rounded-lg hover:bg-white/8 active:scale-[0.98] active:bg-white/15 transform">Engineering 3D Models</Link></li>
                   </ul>
                 </div>
                 
                 <div>
-                  <Link to="/expertise/architecture-design" onClick={toggleMenu} className="font-medium text-base text-foreground hover:text-accent transition-all duration-200 tracking-wide block py-1 active:scale-95">ARCHITECTURE & PRODUCT DESIGN</Link>
-                  <p className="font-light text-xs text-muted-foreground mt-1 mb-2">For client approvals and internal assessment.</p>
-                  <ul className="space-y-1 text-foreground">
-                    <li><Link to="/expertise/architecture-design/architectural-3d-rendering" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-200 py-1 px-2 rounded hover:bg-white/5 active:scale-95">Architectural 3D Rendering</Link></li>
-                    <li><Link to="/expertise/architecture-design/product-3d-rendering" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-200 py-1 px-2 rounded hover:bg-white/5 active:scale-95">Product 3D Rendering</Link></li>
+                  <Link to="/expertise/architecture-design" onClick={toggleMenu} className="font-medium text-base text-foreground hover:text-accent transition-all duration-300 tracking-wide block py-2 px-3 rounded-lg active:scale-[0.98] active:bg-white/15 hover:bg-white/5 transform">ARCHITECTURE & PRODUCT DESIGN</Link>
+                  <p className="font-light text-xs text-muted-foreground mt-2 mb-3 px-3">For client approvals and internal assessment.</p>
+                  <ul className="space-y-2 text-foreground">
+                    <li><Link to="/expertise/architecture-design/architectural-3d-rendering" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-300 py-2 px-4 rounded-lg hover:bg-white/8 active:scale-[0.98] active:bg-white/15 transform">Architectural 3D Rendering</Link></li>
+                    <li><Link to="/expertise/architecture-design/product-3d-rendering" onClick={toggleMenu} className="block font-normal text-sm hover:text-accent transition-all duration-300 py-2 px-4 rounded-lg hover:bg-white/8 active:scale-[0.98] active:bg-white/15 transform">Product 3D Rendering</Link></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
           
-          <Link to="/about" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5 active:scale-95">About</Link>
-          <Link to="/contact" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5 active:scale-95">Contact</Link>
-          <a href="#" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5 active:scale-95">Blog</a>
+          <Link to="/about" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">About</Link>
+          <Link to="/contact" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Contact</Link>
+          <a href="#" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Blog</a>
           
-          <div className="pt-6">
-            <Link to="/enquiry" onClick={toggleMenu} className="block w-full text-center relative px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-200 cta-border text-base active:scale-95">
+          <div className="pt-8">
+            <Link to="/enquiry" onClick={toggleMenu} className="block w-full text-center relative px-6 py-4 rounded-2xl text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-base active:scale-[0.96] active:bg-white/20 hover:bg-white/10 transform">
               <span className="relative z-10">Request a Proposal</span>
             </Link>
           </div>
