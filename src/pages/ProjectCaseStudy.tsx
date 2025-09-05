@@ -181,7 +181,7 @@ export default function ProjectCaseStudy() {
                         </h2>
                       )}
                       {project.summary && (
-                        <p className="text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em]">
+                        <p className="text-on-black font-nunito text-[15px] leading-[26px] tracking-[0.03em] md:text-[18px] md:leading-[30px] md:tracking-[0.03em]">
                           {project.summary}
                         </p>
                       )}
@@ -258,7 +258,7 @@ export default function ProjectCaseStudy() {
               )}
 
               <section className="mobile-section sm:py-16">
-                <div className="container mx-auto px-4 sm:px-0 md:px-4">
+                <div className="container mx-auto px-4 sm:px-0 md:px-8">
                   <div className="max-w-none">
                     {project.case_study_heading && (
                       <h2 className="text-on-black font-bold font-nunito mb-4 content-heading">
@@ -266,7 +266,7 @@ export default function ProjectCaseStudy() {
                       </h2>
                     )}
                     
-                    <div className="max-w-none text-on-black font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
+                    <div className="max-w-none text-on-black font-nunito text-[15px] leading-[26px] tracking-[0.03em] md:text-[18px] md:leading-[30px] md:tracking-[0.03em] [&_p]:text-on-black [&_p]:text-[15px] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] md:[&_p]:text-[18px] md:[&_p]:leading-[30px] md:[&_p]:tracking-[0.03em] [&_h1]:text-on-black [&_h2]:text-on-black [&_h3]:text-on-black [&_h4]:text-on-black [&_h5]:text-on-black [&_h6]:text-on-black [&_a]:text-cta hover:[&_a]:text-cta-hover">
                       <EditorContent editor={editor} />
                     </div>
                   </div>
