@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { triggerHapticFeedback, HapticPatterns } from '@/lib/haptics';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +26,10 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
+  const handleMobileTouch = () => {
+    triggerHapticFeedback(HapticPatterns.TAP);
+  };
 
   return <>
       <header className={`fixed top-0 left-0 right-0 z-40 px-2 sm:px-4 flex items-center h-[70px] sm:h-[75px] transition-all duration-300 ${isSticky ? 'glass-effect' : ''}`}>
@@ -118,7 +123,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
-            <button onClick={toggleMenu} className="text-foreground focus:outline-none z-50 p-2 hover:bg-white/10 rounded-lg transition-all duration-200 active:scale-95 hover:scale-105">
+            <button onClick={toggleMenu} onTouchStart={handleMobileTouch} className="text-foreground focus:outline-none z-50 p-2 hover:bg-white/10 rounded-lg transition-all duration-200 active:scale-95 hover:scale-105">
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
@@ -140,7 +145,7 @@ const Header = () => {
             (e.target as HTMLImageElement).src = 'https://placehold.co/200x50/111/fff?text=East+Digital';
           }} />
           </Link>
-          <button onClick={toggleMenu} className="text-foreground focus:outline-none z-50 p-2 hover:bg-white/10 rounded-lg transition-all duration-200 active:scale-95 hover:scale-105">
+          <button onClick={toggleMenu} onTouchStart={handleMobileTouch} className="text-foreground focus:outline-none z-50 p-2 hover:bg-white/10 rounded-lg transition-all duration-200 active:scale-95 hover:scale-105">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -151,7 +156,7 @@ const Header = () => {
           <Link to="/" className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform" onClick={toggleMenu}>Home</Link>
           
           <div>
-            <button onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)} className="w-full flex justify-between items-center text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">
+            <button onClick={() => setIsMobileExpertiseOpen(!isMobileExpertiseOpen)} onTouchStart={handleMobileTouch} className="w-full flex justify-between items-center text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">
               <span>Expertise</span>
               <svg className={`w-5 h-5 transition-transform duration-500 ease-out ${isMobileExpertiseOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />

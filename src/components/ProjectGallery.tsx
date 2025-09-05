@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { triggerHapticFeedback, HapticPatterns } from '@/lib/haptics';
 interface Project {
   id: number;
   title: string;
@@ -69,6 +70,12 @@ const ProjectGallery = () => {
     const startDragging = (e: MouseEvent | TouchEvent) => {
       isDraggingRef.current = true;
       isUserInteracting = true;
+      
+      // Add haptic feedback for touch events
+      if (e.type === 'touchstart') {
+        triggerHapticFeedback(HapticPatterns.TAP);
+      }
+      
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }

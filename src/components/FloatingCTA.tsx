@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, MessageCircle, FileText, X, Plus } from 'lucide-react';
+import { triggerHapticFeedback, HapticPatterns } from '@/lib/haptics';
 
 const FloatingCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,6 +73,10 @@ const FloatingCTA = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleTouch = () => {
+    triggerHapticFeedback(HapticPatterns.TAP);
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <div className="flex flex-col items-end space-y-3">
@@ -87,6 +92,7 @@ const FloatingCTA = () => {
                 variants={genieVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
+                onTouchStart={handleTouch}
                 href="/enquiry"
                 className="group relative overflow-hidden"
               >
@@ -107,6 +113,7 @@ const FloatingCTA = () => {
                 variants={genieVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
+                onTouchStart={handleTouch}
                 href="https://wa.me/919910568689"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -129,6 +136,7 @@ const FloatingCTA = () => {
                 variants={genieVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
+                onTouchStart={handleTouch}
                 href="tel:+919910568689"
                 className="group relative overflow-hidden"
               >
@@ -146,6 +154,7 @@ const FloatingCTA = () => {
         {/* Main Toggle Button */}
         <motion.button
           onClick={toggleOpen}
+          onTouchStart={handleTouch}
           className="relative overflow-hidden w-14 h-14 rounded-2xl bg-primary/90 backdrop-blur-glass border border-primary/20 shadow-cta hover:shadow-glow transition-all duration-300"
           variants={mainButtonVariants}
           initial="rest"
