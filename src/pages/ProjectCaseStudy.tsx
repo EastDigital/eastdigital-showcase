@@ -151,7 +151,7 @@ export default function ProjectCaseStudy() {
                       </h2>
                     )}
                     {project.summary && (
-                      <p className="text-gray-300 font-nunito content-paragraph mobile-paragraph">
+                      <p className="text-gray-300 font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em]">
                         {project.summary}
                       </p>
                     )}
@@ -170,16 +170,16 @@ export default function ProjectCaseStudy() {
               )}
 
               <section className="container mx-auto px-4 py-8">
-                <div className="w-full">
-                  {project.case_study_heading && (
-                    <h2 className="text-gray-300 font-bold font-nunito mb-4 content-heading">
-                      {project.case_study_heading}
-                    </h2>
-                  )}
-                  <div className="max-w-none text-gray-300 font-nunito content-paragraph mobile-paragraph">
-                    <EditorContent editor={editor} />
+                  <div className="w-full">
+                    {project.case_study_heading && (
+                      <h2 className="text-gray-300 font-bold font-nunito mb-4 content-heading">
+                        {project.case_study_heading}
+                      </h2>
+                    )}
+                    <div className="max-w-none text-gray-300 font-nunito text-[var(--mobile-body)] leading-[26px] tracking-[0.03em] sm:text-[var(--desktop-body)] sm:leading-[30px] sm:tracking-[0.03em] [&_p]:text-[var(--mobile-body)] [&_p]:leading-[26px] [&_p]:tracking-[0.03em] sm:[&_p]:text-[var(--desktop-body)] sm:[&_p]:leading-[30px] sm:[&_p]:tracking-[0.03em]">
+                      <EditorContent editor={editor} />
+                    </div>
                   </div>
-                </div>
               </section>
 
               {feature.remainingGallery && feature.remainingGallery.length > 0 && (
