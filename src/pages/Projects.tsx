@@ -28,7 +28,6 @@ const Projects = () => {
   useSEO('projects');
   
   const [allProjects, setAllProjects] = useState<Project[]>([]);
-  const [displayedProjects, setDisplayedProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -89,14 +88,6 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
-  useEffect(() => {
-    // Animate in displayed projects when filters change
-    setDisplayedProjects([]);
-    const timer = setTimeout(() => {
-      setDisplayedProjects(currentProjects);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [currentProjects]);
 
   useEffect(() => {
     // Reset pagination when filters change
@@ -316,10 +307,10 @@ const Projects = () => {
             ) : (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {displayedProjects.map((project, index) => (
+                  {currentProjects.map((project, index) => (
                     <div
                       key={project.id}
-                      className="animate-fade-in-up"
+                      className="animate-fade-in"
                       style={{
                         animationDelay: `${index * 0.1}s`,
                         animationFillMode: 'both',
