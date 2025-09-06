@@ -20,6 +20,7 @@ import Contact from "./pages/Contact";
 import Enquiry from "./pages/Enquiry";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import Projects from "./pages/Projects";
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -44,6 +45,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/expertise/real-estate" element={<RealEstate />} />
           <Route path="/expertise/infrastructure" element={<Infrastructure />} />

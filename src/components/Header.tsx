@@ -110,6 +110,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
+            <Link to="/projects" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Projects</Link>
             <Link to="/about" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">About</Link>
             <Link to="/contact" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Contact</Link>
             <a href="#" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Blog</a>
@@ -195,6 +196,7 @@ const Header = () => {
             </div>
           </div>
           
+          <Link to="/projects" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Projects</Link>
           <Link to="/about" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">About</Link>
           <Link to="/contact" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Contact</Link>
           <a href="#" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Blog</a>
