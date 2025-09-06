@@ -15,6 +15,8 @@ interface ProjectRow {
   slug: string;
   summary: string | null;
   cover_image: string | null;
+  category: string;
+  subcategory: string;
 }
 
 export default function ProjectCarousel() {
@@ -26,7 +28,7 @@ export default function ProjectCarousel() {
     (async () => {
       const { data, error } = await supabase
         .from("projects")
-        .select("id,title,slug,summary,cover_image")
+        .select("id,title,slug,summary,cover_image,category,subcategory")
         .eq("status", "Published")
         .eq("carousel", true)
         .order("carousel_order", { ascending: true, nullsFirst: false });
@@ -43,6 +45,12 @@ export default function ProjectCarousel() {
       mounted = false;
     };
   }, []);
+
+  const generateProjectUrl = (project: ProjectRow) => {
+    const categorySlug = project.category.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+    const subcategorySlug = project.subcategory.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+    return `/expertise/${categorySlug}/${subcategorySlug}/projects/${project.slug}`;
+  };
 
   if (loading && items.length === 0) {
     return (
@@ -68,7 +76,7 @@ export default function ProjectCarousel() {
               {items.map((p) => (
                 <CarouselItem key={p.id} className="md:basis-1/2 lg:basis-1/3">
                   <article className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-                    <Link to={`/projects/${p.slug}`} className="block">
+                    <Link to={generateProjectUrl(p)} className="block">
                       <div className="aspect-[16/9] w-full bg-muted overflow-hidden">
                         {p.cover_image && (
                           <img
