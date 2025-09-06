@@ -142,7 +142,12 @@ const ProjectGallery = () => {
       WebkitOverflowScrolling: 'touch'
     }}>
         <div ref={wrapperRef} className="flex gap-6 px-8">
-          {allProjects.map((project, index) => <Link key={project.slug + '-' + index} to={`/projects/${project.slug}`} className="flex-shrink-0 w-[300px] bg-card rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 relative group">
+          {allProjects.map((project, index) => {
+            const categorySlug = project.category.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+            const subcategorySlug = project.subcategory.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+            const projectUrl = `/expertise/${categorySlug}/${subcategorySlug}/projects/${project.slug}`;
+            
+            return <Link key={project.slug + '-' + index} to={projectUrl} className="flex-shrink-0 w-[300px] bg-card rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 relative group">
               <img src={project.cover_image || 'https://placehold.co/400x600/111/fff?text=No+Image'} alt={`${project.title} cover image`} loading="lazy" className="w-full h-[350px] object-cover" onError={e => {
             (e.target as HTMLImageElement).src = 'https://placehold.co/400x600/111/fff?text=Image+Not+Found';
           }} />
@@ -154,7 +159,8 @@ const ProjectGallery = () => {
                   {project.category}{project.subcategory ? ` • ${project.subcategory}` : ''}
                 </p>
               </div>
-            </Link>)}
+            </Link>
+          })}
         </div>
       </div>
     </section>;
