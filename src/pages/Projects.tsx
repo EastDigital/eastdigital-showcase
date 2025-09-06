@@ -134,7 +134,7 @@ const Projects = () => {
   };
   // Generate dynamic breadcrumbs based on URL parameters
   const breadcrumbs = useMemo(() => {
-    const items = [
+    const items: Array<{ label: string; href?: string }> = [
       { label: 'Home', href: '/' },
       { label: 'Expertise', href: '/expertise' }
     ];
