@@ -86,15 +86,8 @@ const App = () => (
             <Route path="seo" element={<SEOManager />} />
           </Route>
 
-          {/* Project Case Study Routes with /projects/ in path */}
-          <Route path="/expertise/real-estate/3d-walkthrough-video/projects/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/real-estate/3d-still-renderings/projects/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/infrastructure/conceptual-3d-renderings/projects/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/infrastructure/engineering-3d-models/projects/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/architecture-design/architectural-3d-rendering/projects/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/architecture-design/product-3d-rendering/projects/:slug" element={<ProjectCaseStudy />} />
-          
-          {/* Fallback route for old project URLs has been consolidated into the primary case study routes */}
+          {/* Simplified Project Case Study Route */}
+          <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
           
           {/* Legal & Policy Pages */}
           <Route path="/terms-of-use" element={<TermsOfUse />} />

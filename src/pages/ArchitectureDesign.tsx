@@ -11,12 +11,12 @@ const ArchitectureDesign = () => {
     title: "Architectural 3D Rendering",
     category: "Architectural 3D Rendering",
     image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
-    link: "/expertise/architecture-design/architectural-rendering"
+    link: "/projects"
   }, {
     title: "Product 3D Rendering",
     category: "Product 3D Rendering",
     image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
-    link: "/expertise/architecture-design/product-rendering"
+    link: "/projects"
   }];
   return <div className="min-h-screen bg-background font-nunito">
       <Header />

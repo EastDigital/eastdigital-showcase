@@ -11,12 +11,12 @@ const Infrastructure = () => {
     title: "Conceptual 3D Renderings",
     category: "Conceptual 3D Renderings",
     image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
-    link: "/expertise/infrastructure/conceptual-renderings"
+    link: "/projects"
   }, {
     title: "Engineering 3D Models",
     category: "Engineering 3D Models",
     image: "/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png",
-    link: "/expertise/infrastructure/engineering-models"
+    link: "/projects"
   }];
   return <div className="min-h-screen bg-background font-nunito">
       <Header />
