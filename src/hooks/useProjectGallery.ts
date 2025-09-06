@@ -49,7 +49,7 @@ export const useProjectGallery = (subcategory: string, category?: string) => {
   const generateProjectUrl = (project: Project) => {
     const categorySlug = project.category.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
     const subcategorySlug = project.subcategory.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
-    return `/expertise/${categorySlug}/${subcategorySlug}/${project.slug}`;
+    return `/expertise/${categorySlug}/${subcategorySlug}/projects/${project.slug}`;
   };
 
   return { projects, loading, error, generateProjectUrl };

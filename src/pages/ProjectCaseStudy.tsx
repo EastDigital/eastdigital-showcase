@@ -36,6 +36,7 @@ interface ProjectRow {
 
 export default function ProjectCaseStudy() {
   const { slug } = useParams();
+  const location = window.location.pathname;
   const [project, setProject] = useState<ProjectRow | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -124,8 +125,10 @@ export default function ProjectCaseStudy() {
         const subcategoryPath = `${category.path}/${subcategory.path}`;
         items.push({ label: subcategory.label, href: subcategoryPath });
         
-        // Add Projects breadcrumb
-        items.push({ label: "Projects", href: `${subcategoryPath}/projects` });
+        // Add Projects breadcrumb only if URL contains /projects/
+        if (location.includes('/projects/')) {
+          items.push({ label: "Projects", href: `${subcategoryPath}/projects` });
+        }
       }
     }
     

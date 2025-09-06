@@ -62,6 +62,14 @@ const App = () => (
           {/* Architecture & Design Services */}
           <Route path="/expertise/architecture-design/architectural-3d-rendering" element={<Architectural3DRendering />} />
           <Route path="/expertise/architecture-design/product-3d-rendering" element={<Product3DRendering />} />
+
+          {/* Projects listing routes */}
+          <Route path="/expertise/real-estate/3d-walkthrough-video/projects" element={<Projects />} />
+          <Route path="/expertise/real-estate/3d-still-renderings/projects" element={<Projects />} />
+          <Route path="/expertise/infrastructure/conceptual-3d-renderings/projects" element={<Projects />} />
+          <Route path="/expertise/infrastructure/engineering-3d-models/projects" element={<Projects />} />
+          <Route path="/expertise/architecture-design/architectural-3d-rendering/projects" element={<Projects />} />
+          <Route path="/expertise/architecture-design/product-3d-rendering/projects" element={<Projects />} />
           
           {/* Contact & Enquiry */}
           <Route path="/contact" element={<Contact />} />
@@ -78,7 +86,15 @@ const App = () => (
             <Route path="seo" element={<SEOManager />} />
           </Route>
 
-          {/* Project Case Study Routes with SEO-friendly URLs */}
+          {/* Project Case Study Routes with /projects/ in path */}
+          <Route path="/expertise/real-estate/3d-walkthrough-video/projects/:slug" element={<ProjectCaseStudy />} />
+          <Route path="/expertise/real-estate/3d-still-renderings/projects/:slug" element={<ProjectCaseStudy />} />
+          <Route path="/expertise/infrastructure/conceptual-3d-renderings/projects/:slug" element={<ProjectCaseStudy />} />
+          <Route path="/expertise/infrastructure/engineering-3d-models/projects/:slug" element={<ProjectCaseStudy />} />
+          <Route path="/expertise/architecture-design/architectural-3d-rendering/projects/:slug" element={<ProjectCaseStudy />} />
+          <Route path="/expertise/architecture-design/product-3d-rendering/projects/:slug" element={<ProjectCaseStudy />} />
+          
+          {/* Legacy Project Case Study Routes (for backward compatibility) */}
           <Route path="/expertise/real-estate/3d-walkthrough-video/:slug" element={<ProjectCaseStudy />} />
           <Route path="/expertise/real-estate/3d-still-renderings/:slug" element={<ProjectCaseStudy />} />
           <Route path="/expertise/infrastructure/conceptual-3d-renderings/:slug" element={<ProjectCaseStudy />} />
