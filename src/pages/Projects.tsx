@@ -20,9 +20,10 @@ interface Project {
   category: string;
   subcategory: string;
   created_at: string;
+  carousel_order: number | null;
 }
 
-type SortOption = 'latest' | 'oldest';
+type SortOption = 'default' | 'latest' | 'oldest';
 
 const Projects = () => {
   useSEO('projects');
@@ -32,7 +33,7 @@ const Projects = () => {
   const [loadingMore, setLoadingMore] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>('all');
-  const [sortBy, setSortBy] = useState<SortOption>('latest');
+  const [sortBy, setSortBy] = useState<SortOption>('default');
   const [projectsToShow, setProjectsToShow] = useState(6);
 
   const availableSubcategories = useMemo(() => {
@@ -55,9 +56,23 @@ const Projects = () => {
 
     // Apply sorting
     filtered.sort((a, b) => {
-      const dateA = new Date(a.created_at).getTime();
-      const dateB = new Date(b.created_at).getTime();
-      return sortBy === 'latest' ? dateB - dateA : dateA - dateB;
+      if (sortBy === 'default') {
+        // Sort by carousel_order first (ascending), then by created_at (descending)
+        const orderA = a.carousel_order ?? Number.MAX_SAFE_INTEGER;
+        const orderB = b.carousel_order ?? Number.MAX_SAFE_INTEGER;
+        if (orderA !== orderB) {
+          return orderA - orderB;
+        }
+        // If carousel_order is the same, sort by created_at (latest first)
+        const dateA = new Date(a.created_at).getTime();
+        const dateB = new Date(b.created_at).getTime();
+        return dateB - dateA;
+      } else {
+        // Date-based sorting
+        const dateA = new Date(a.created_at).getTime();
+        const dateB = new Date(b.created_at).getTime();
+        return sortBy === 'latest' ? dateB - dateA : dateA - dateB;
+      }
     });
 
     return filtered;
@@ -72,8 +87,9 @@ const Projects = () => {
         setLoading(true);
         const { data, error } = await supabase
           .from('projects')
-          .select('id, title, slug, summary, cover_image, category, subcategory, created_at')
+          .select('id, title, slug, summary, cover_image, category, subcategory, created_at, carousel_order')
           .eq('status', 'Published')
+          .order('carousel_order', { ascending: true, nullsFirst: false })
           .order('created_at', { ascending: false });
 
         if (error) throw error;
@@ -255,6 +271,7 @@ const Projects = () => {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="default">Default</SelectItem>
                     <SelectItem value="latest">Latest First</SelectItem>
                     <SelectItem value="oldest">Oldest First</SelectItem>
                   </SelectContent>
