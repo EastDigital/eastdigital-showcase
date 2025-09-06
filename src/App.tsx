@@ -89,6 +89,9 @@ const App = () => (
           {/* Hierarchical Project Case Study Route */}
           <Route path="/expertise/:category/:subcategory/projects/:slug" element={<ProjectCaseStudy />} />
           
+          {/* Legacy fallback route for old project URLs */}
+          <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
+          
           {/* Legal & Policy Pages */}
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
