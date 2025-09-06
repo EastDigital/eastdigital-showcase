@@ -146,13 +146,13 @@ const Projects = () => {
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
           </div>
           <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+            <h3 className="mb-2 group-hover:text-primary transition-colors duration-300">
               {project.title}
             </h3>
-            <p className="text-sm text-muted-foreground mb-3">
+            <p className="text-muted-foreground mb-3">
               {project.category}{project.subcategory ? ` • ${project.subcategory}` : ''}
             </p>
-            {project.summary && <p className="text-sm text-muted-foreground line-clamp-2">
+            {project.summary && <p className="text-muted-foreground line-clamp-2">
                 {project.summary}
               </p>}
           </CardContent>
@@ -167,10 +167,10 @@ const Projects = () => {
         <section className="py-2 lg:py-2 bg-gradient-to-b from-muted/20 to-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-left">
-              <h1 className="text-3xl lg:text-4xl font-bold mb-4">
+              <h1 className="mb-4">
                 Our Projects
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-muted-foreground">
                 Explore our comprehensive portfolio of 3D rendering and visualization projects across real estate, infrastructure, and architecture.
               </p>
             </div>
@@ -227,7 +227,7 @@ const Projects = () => {
 
             {/* Results Count */}
             <div className="mt-4">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground">
                 {loading ? 'Loading...' : `${filteredAndSortedProjects.length} project${filteredAndSortedProjects.length !== 1 ? 's' : ''} found`}
               </p>
             </div>
@@ -250,7 +250,7 @@ const Projects = () => {
                     </div>
                   </div>)}
               </div> : filteredAndSortedProjects.length === 0 ? <div className="text-center py-16">
-                <h3 className="text-xl font-semibold mb-2">No projects found</h3>
+                <h3 className="mb-2">No projects found</h3>
                 <p className="text-muted-foreground mb-6">
                   Try adjusting your filters to see more results.
                 </p>
