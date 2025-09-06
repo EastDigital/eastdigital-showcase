@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -25,6 +25,7 @@ interface Project {
 type SortOption = 'default' | 'latest' | 'oldest';
 const Projects = () => {
   useSEO('projects');
+  const params = useParams<{ category?: string; subcategory?: string }>();
   const [allProjects, setAllProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -131,6 +132,45 @@ const Projects = () => {
     if (!url) return false;
     return /\.(mp4|webm|mov|avi)$/i.test(url);
   };
+  // Generate dynamic breadcrumbs based on URL parameters
+  const breadcrumbs = useMemo(() => {
+    const items = [
+      { label: 'Home', href: '/' },
+      { label: 'Expertise', href: '/expertise' }
+    ];
+
+    if (params.category && params.subcategory) {
+      // Category mapping (same as ProjectCaseStudy.tsx)
+      const categoryMap: Record<string, string> = {
+        'architecture-design': 'Architecture & Design',
+        'real-estate': 'Real Estate',
+        'infrastructure': 'Infrastructure'
+      };
+
+      // Subcategory mapping (same as ProjectCaseStudy.tsx)
+      const subcategoryMap: Record<string, string> = {
+        'walkthrough-video': '3D Walkthrough Video',
+        'conceptual-renderings': 'Conceptual Renderings',
+        'engineering-3d-models': 'Engineering 3D Models',
+        'product-3d-rendering': 'Product 3D Rendering',
+        'architectural-3d-rendering': 'Architectural 3D Rendering',
+        'real-estate-3d-still-renderings': 'Real Estate 3D Still Renderings'
+      };
+
+      const categoryName = categoryMap[params.category] || params.category;
+      const subcategoryName = subcategoryMap[params.subcategory] || params.subcategory;
+      
+      const categoryPath = `/expertise/${params.category}`;
+      const subcategoryPath = `${categoryPath}/${params.subcategory}`;
+
+      items.push({ label: categoryName, href: categoryPath });
+      items.push({ label: subcategoryName, href: subcategoryPath });
+    }
+
+    items.push({ label: 'Projects' });
+    return items;
+  }, [params.category, params.subcategory]);
+
   const ProjectThumbnail = ({
     project
   }: {
@@ -167,11 +207,7 @@ const Projects = () => {
         <PageBanner 
           title="Our Projects"
           backgroundImage="/contact-banner.jpg"
-          breadcrumbs={[
-            { label: 'Home', href: '/' },
-            { label: 'Expertise', href: '/expertise' },
-            { label: 'Projects' }
-          ]}
+          breadcrumbs={breadcrumbs}
         />
 
         {/* Filters Section */}
