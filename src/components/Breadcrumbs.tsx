@@ -48,7 +48,7 @@ const Breadcrumbs: React.FC = () => {
     
     if (!name) {
       // If this is the last item and we're on a project page, try to get the actual page title
-      if (isLast && pathnames[0] === 'projects') {
+      if (isLast && location.pathname.includes('/projects/')) {
         const pageTitle = getPageTitle();
         if (pageTitle && pageTitle !== 'East Digital') {
           name = pageTitle;

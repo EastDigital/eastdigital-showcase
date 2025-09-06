@@ -11,12 +11,12 @@ const RealEstate = () => {
     title: "3D Walkthrough Video",
     category: "3D Walkthrough Video",
     image: "https://eastdigital.in/img/afc_private_004.jpg",
-    link: "/projects"
+    link: "/expertise/real-estate/3d-walkthrough-video"
   }, {
     title: "3D Still Renderings",
     category: "3D Still Renderings",
     image: "https://eastdigital.in/img/apartment_001.jpg",
-    link: "/projects"
+    link: "/expertise/real-estate/3d-still-renderings"
   }];
   return <div className="min-h-screen bg-background font-nunito">
       <Header />

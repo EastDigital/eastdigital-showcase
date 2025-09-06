@@ -86,8 +86,8 @@ const App = () => (
             <Route path="seo" element={<SEOManager />} />
           </Route>
 
-          {/* Simplified Project Case Study Route */}
-          <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
+          {/* Hierarchical Project Case Study Route */}
+          <Route path="/expertise/:category/:subcategory/projects/:slug" element={<ProjectCaseStudy />} />
           
           {/* Legal & Policy Pages */}
           <Route path="/terms-of-use" element={<TermsOfUse />} />
