@@ -255,7 +255,7 @@ export default function ProjectCaseStudy() {
           <>
             <PageBanner title={project.title} backgroundImage={project.cover_image || ""} breadcrumbs={breadcrumbs} />
             <article>
-              <section className="mobile-section sm:py-16">
+              <section className="py-6 md:py-8">
                 <div className="container mx-auto px-4 sm:px-0 md:px-8">
                   {(project.summary_heading || project.summary) && (
                     <div className="max-w-none">
@@ -275,7 +275,7 @@ export default function ProjectCaseStudy() {
               </section>
 
               {galleryData.allMedia.length > 0 && (
-                <section className="mobile-section sm:py-16">
+                <section className="py-6 md:py-8">
                   <div className="container mx-auto px-4 sm:px-0 md:px-8">
                     <h2 className="text-xl font-semibold mb-6 text-on-black">Project Gallery</h2>
                     
@@ -408,7 +408,7 @@ export default function ProjectCaseStudy() {
                 </section>
               )}
 
-              <section className="mobile-section sm:py-16">
+              <section className="py-6 md:py-8">
                 <div className="container mx-auto px-4 sm:px-0 md:px-8">
                   <div className="max-w-none">
                     {project.case_study_heading && (
