@@ -22,7 +22,7 @@ export default function Product3DRendering() {
       
       <PageBanner
         title="Product 3D Rendering"
-        backgroundImage="/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png"
+        backgroundImage="https://eastdigital.in/img/banner-page-3d-product-rendering.jpg"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Expertise', href: '/expertise' },
