@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import { useSEO } from '@/hooks/useSEO';
 import { CATEGORIES, SUBCATEGORIES } from '@/constants/pms';
 import { triggerHapticFeedback, HapticPatterns } from '@/lib/haptics';
+import PageBanner from '@/components/PageBanner';
 interface Project {
   id: number;
   title: string;
@@ -124,7 +125,7 @@ const Projects = () => {
   const generateProjectUrl = (project: Project) => {
     const categorySlug = project.category.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
     const subcategorySlug = project.subcategory.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
-    return `/expertise/${categorySlug}/${subcategorySlug}/${project.slug}`;
+    return `/expertise/${categorySlug}/${subcategorySlug}/projects/${project.slug}`;
   };
   const isVideo = (url: string | null) => {
     if (!url) return false;
@@ -162,20 +163,16 @@ const Projects = () => {
   return <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-20 lg:pt-24">
-        {/* Hero Section */}
-        <section className="py-2 lg:py-2 bg-gradient-to-b from-muted/20 to-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-left">
-              <h1 className="mb-4">
-                Our Projects
-              </h1>
-              <p className="text-muted-foreground">
-                Explore our comprehensive portfolio of 3D rendering and visualization projects across real estate, infrastructure, and architecture.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main>
+        <PageBanner 
+          title="Our Projects"
+          backgroundImage="/contact-banner.jpg"
+          breadcrumbs={[
+            { label: 'Home', href: '/' },
+            { label: 'Expertise', href: '/expertise' },
+            { label: 'Projects' }
+          ]}
+        />
 
         {/* Filters Section */}
         <section className="py-2 border-b border-border">

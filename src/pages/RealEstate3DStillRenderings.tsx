@@ -27,7 +27,11 @@ export default function RealEstate3DStillRenderings() {
       label: 'Real Estate',
       href: '/expertise/real-estate'
     }, {
-      label: '3D Still Renderings'
+      label: '3D Still Renderings',
+      href: '/expertise/real-estate/3d-still-renderings'
+    }, {
+      label: 'Projects',
+      href: '/expertise/real-estate/3d-still-renderings/projects'
     }]} />
 
       <main>

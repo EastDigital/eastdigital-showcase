@@ -27,7 +27,8 @@ export default function Product3DRendering() {
           { label: 'Home', href: '/' },
           { label: 'Expertise', href: '/expertise' },
           { label: 'Architecture & Design', href: '/expertise/architecture-design' },
-          { label: 'Product 3D Rendering' }
+          { label: 'Product 3D Rendering', href: '/expertise/architecture-design/product-3d-rendering' },
+          { label: 'Projects', href: '/expertise/architecture-design/product-3d-rendering/projects' }
         ]}
       />
 

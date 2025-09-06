@@ -32,7 +32,11 @@ const WalkthroughVideo = () => {
         label: "Real Estate",
         href: "/expertise/real-estate"
       }, {
-        label: "3D Walkthrough Video"
+        label: "3D Walkthrough Video",
+        href: "/expertise/real-estate/3d-walkthrough-video"
+      }, {
+        label: "Projects",
+        href: "/expertise/real-estate/3d-walkthrough-video/projects"
       }]} />
 
         {/* Description Section */}

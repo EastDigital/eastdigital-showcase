@@ -42,7 +42,8 @@ export default function Architectural3DRendering() {
           { label: 'Home', href: '/' },
           { label: 'Expertise', href: '/expertise' },
           { label: 'Architecture & Design', href: '/expertise/architecture-design' },
-          { label: 'Architectural 3D Rendering' }
+          { label: 'Architectural 3D Rendering', href: '/expertise/architecture-design/architectural-3d-rendering' },
+          { label: 'Projects', href: '/expertise/architecture-design/architectural-3d-rendering/projects' }
         ]}
       />
 

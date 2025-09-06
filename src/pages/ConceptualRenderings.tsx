@@ -27,7 +27,8 @@ export default function ConceptualRenderings() {
           { label: 'Home', href: '/' },
           { label: 'Expertise', href: '/expertise' },
           { label: 'Infrastructure', href: '/expertise/infrastructure' },
-          { label: 'Conceptual 3D Renderings' }
+          { label: 'Conceptual 3D Renderings', href: '/expertise/infrastructure/conceptual-3d-renderings' },
+          { label: 'Projects', href: '/expertise/infrastructure/conceptual-3d-renderings/projects' }
         ]}
       />
 

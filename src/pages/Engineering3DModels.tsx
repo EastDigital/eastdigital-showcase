@@ -27,7 +27,8 @@ export default function Engineering3DModels() {
           { label: 'Home', href: '/' },
           { label: 'Expertise', href: '/expertise' },
           { label: 'Infrastructure', href: '/expertise/infrastructure' },
-          { label: 'Engineering 3D Models' }
+          { label: 'Engineering 3D Models', href: '/expertise/infrastructure/engineering-3d-models' },
+          { label: 'Projects', href: '/expertise/infrastructure/engineering-3d-models/projects' }
         ]}
       />
 

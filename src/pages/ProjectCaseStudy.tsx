@@ -94,18 +94,44 @@ export default function ProjectCaseStudy() {
       { label: "Home", href: "/" },
       { label: "Expertise", href: "/expertise" },
     ];
-    if (project?.category) {
-      const map: Record<string, string> = {
-        "REAL ESTATE": "/expertise/real-estate",
-        "INFRASTRUCTURE": "/expertise/infrastructure",
-        "ARCHITECTURE & DESIGN": "/expertise/architecture-design",
+    
+    if (project?.category && project?.subcategory) {
+      // Category mapping
+      const categoryMap: Record<string, { path: string; label: string }> = {
+        "REAL ESTATE": { path: "/expertise/real-estate", label: "Real Estate" },
+        "INFRASTRUCTURE": { path: "/expertise/infrastructure", label: "Infrastructure" },
+        "ARCHITECTURE & DESIGN": { path: "/expertise/architecture-design", label: "Architecture & Design" },
       };
-      const catPath = map[project.category] || "/expertise";
-      items.push({ label: project.category, href: catPath });
+      
+      // Subcategory mapping  
+      const subcategoryMap: Record<string, { path: string; label: string }> = {
+        "3D STILL RENDERINGS": { path: "3d-still-renderings", label: "3D Still Renderings" },
+        "3D WALKTHROUGH VIDEO": { path: "3d-walkthrough-video", label: "3D Walkthrough Video" },
+        "CONCEPTUAL 3D RENDERINGS": { path: "conceptual-3d-renderings", label: "Conceptual 3D Renderings" },
+        "ENGINEERING 3D MODELS": { path: "engineering-3d-models", label: "Engineering 3D Models" },
+        "PRODUCT 3D RENDERING": { path: "product-3d-rendering", label: "Product 3D Rendering" },
+        "ARCHITECTURAL 3D RENDERING": { path: "architectural-3d-rendering", label: "Architectural 3D Rendering" },
+      };
+      
+      const category = categoryMap[project.category];
+      const subcategory = subcategoryMap[project.subcategory];
+      
+      if (category) {
+        items.push({ label: category.label, href: category.path });
+      }
+      
+      if (subcategory && category) {
+        const subcategoryPath = `${category.path}/${subcategory.path}`;
+        items.push({ label: subcategory.label, href: subcategoryPath });
+        
+        // Add Projects breadcrumb
+        items.push({ label: "Projects", href: `${subcategoryPath}/projects` });
+      }
     }
+    
     if (project?.title) items.push({ label: project.title });
     return items;
-  }, [project?.category, project?.title]);
+  }, [project?.category, project?.subcategory, project?.title]);
 
   const galleryData = useMemo(() => {
     const gal = (project?.gallery || []) as string[];
