@@ -13,10 +13,6 @@ const TermsOfUse = () => {
         <PageBanner 
           title="Terms of Use" 
           backgroundImage="/contact-banner.jpg"
-          breadcrumbs={[
-            { label: 'Home', href: '/' },
-            { label: 'Terms of Use' }
-          ]}
         />
         
         <section className="section">

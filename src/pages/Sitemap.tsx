@@ -59,10 +59,6 @@ const Sitemap = () => {
         <PageBanner 
           title="Sitemap" 
           backgroundImage="/contact-banner.jpg"
-          breadcrumbs={[
-            { label: 'Home', href: '/' },
-            { label: 'Sitemap' }
-          ]}
         />
         
         <section className="section">

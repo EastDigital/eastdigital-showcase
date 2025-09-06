@@ -38,12 +38,6 @@ export default function Architectural3DRendering() {
       <PageBanner
         title="Architectural 3D Rendering"
         backgroundImage="/lovable-uploads/cb3cc839-b816-44d3-85eb-a514f96af439.png"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Expertise', href: '/expertise' },
-          { label: 'Architecture & Design', href: '/expertise/architecture-design' },
-          { label: 'Architectural 3D Rendering' }
-        ]}
       />
 
       <main>

@@ -16,20 +16,12 @@ const RealEstate = () => {
     title: "3D Still Renderings",
     category: "3D Still Renderings",
     image: "https://eastdigital.in/img/apartment_001.jpg",
-    link: "/expertise/real-estate/architectural-renderings"
+    link: "/expertise/real-estate/3d-still-renderings"
   }];
   return <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        <PageBanner title="Real Estate" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" breadcrumbs={[{
-        label: "Home",
-        href: "/"
-      }, {
-        label: "Expertise",
-        href: "/expertise"
-      }, {
-        label: "Real Estate"
-      }]} />
+        <PageBanner title="Real Estate" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" />
 
         {/* Description Section */}
         <section className="mobile-section sm:py-16">

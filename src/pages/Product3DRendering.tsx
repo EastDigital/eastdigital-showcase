@@ -23,12 +23,6 @@ export default function Product3DRendering() {
       <PageBanner
         title="Product 3D Rendering"
         backgroundImage="https://eastdigital.in/img/banner-page-3d-product-rendering.jpg"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Expertise', href: '/expertise' },
-          { label: 'Architecture & Design', href: '/expertise/architecture-design' },
-          { label: 'Product 3D Rendering' }
-        ]}
       />
 
       <main>

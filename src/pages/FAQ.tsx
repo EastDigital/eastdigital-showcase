@@ -66,10 +66,6 @@ export default function FAQ() {
       <PageBanner
         title="Frequently Asked Questions"
         backgroundImage="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'FAQ' }
-        ]}
       />
 
       <main>

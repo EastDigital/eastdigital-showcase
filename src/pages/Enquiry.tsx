@@ -97,10 +97,6 @@ export default function Enquiry() {
       <PageBanner
         title="Request a Proposal"
         backgroundImage="/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Request a Proposal' }
-        ]}
       />
 
       <main>

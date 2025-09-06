@@ -204,10 +204,9 @@ const Projects = () => {
       <Header />
       
       <main>
-        <PageBanner 
+        <PageBanner
           title="Our Projects"
           backgroundImage="/contact-banner.jpg"
-          breadcrumbs={breadcrumbs}
         />
 
         {/* Filters Section */}

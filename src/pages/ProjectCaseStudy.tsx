@@ -282,7 +282,7 @@ export default function ProjectCaseStudy() {
           </section>
         ) : (
           <>
-            <PageBanner title={project.title} backgroundImage={project.cover_image || ""} breadcrumbs={breadcrumbs} />
+            <PageBanner title={project.title} backgroundImage={project.cover_image || ""} />
             <article>
               <section className="py-6 md:py-8">
                 <div className="container mx-auto px-4 sm:px-0 md:px-8">

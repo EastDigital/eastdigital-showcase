@@ -33,12 +33,7 @@ const About = () => {
   return <div className="min-h-screen bg-black font-nunito">
       <Header />
       <main>
-        <PageBanner title="About" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" breadcrumbs={[{
-        label: "Home",
-        href: "/"
-      }, {
-        label: "About"
-      }]} />
+        <PageBanner title="About" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" />
 
         {/* Your Vision Section */}
         <section className="py-10">

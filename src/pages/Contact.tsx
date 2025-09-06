@@ -101,12 +101,7 @@ export default function Contact() {
       
       <Header />
       
-      <PageBanner title="Contact Us" backgroundImage="/contact-banner.jpg" breadcrumbs={[{
-      label: 'Home',
-      href: '/'
-    }, {
-      label: 'Contact Us'
-    }]} />
+      <PageBanner title="Contact Us" backgroundImage="/contact-banner.jpg" />
 
       <main>
         <section className="py-16 lg:py-24 bg-background">

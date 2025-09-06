@@ -13,10 +13,6 @@ const PrivacyPolicy = () => {
         <PageBanner 
           title="Privacy Policy" 
           backgroundImage="/contact-banner.jpg"
-          breadcrumbs={[
-            { label: 'Home', href: '/' },
-            { label: 'Privacy Policy' }
-          ]}
         />
         
         <section className="section">

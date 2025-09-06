@@ -21,15 +21,7 @@ const Infrastructure = () => {
   return <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        <PageBanner title="Infrastructure" backgroundImage="https://eastdigital.in/img/banner-page-about.jpg" breadcrumbs={[{
-        label: "Home",
-        href: "/"
-      }, {
-        label: "Expertise",
-        href: "/expertise"
-      }, {
-        label: "Infrastructure"
-      }]} />
+        <PageBanner title="Infrastructure" backgroundImage="https://eastdigital.in/img/banner-page-about.jpg" />
 
         {/* Description Section */}
         <section className="mobile-section sm:py-16">

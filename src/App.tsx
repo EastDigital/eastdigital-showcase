@@ -94,16 +94,7 @@ const App = () => (
           <Route path="/expertise/architecture-design/architectural-3d-rendering/projects/:slug" element={<ProjectCaseStudy />} />
           <Route path="/expertise/architecture-design/product-3d-rendering/projects/:slug" element={<ProjectCaseStudy />} />
           
-          {/* Legacy Project Case Study Routes (for backward compatibility) */}
-          <Route path="/expertise/real-estate/3d-walkthrough-video/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/real-estate/3d-still-renderings/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/infrastructure/conceptual-3d-renderings/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/infrastructure/engineering-3d-models/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/architecture-design/architectural-3d-rendering/:slug" element={<ProjectCaseStudy />} />
-          <Route path="/expertise/architecture-design/product-3d-rendering/:slug" element={<ProjectCaseStudy />} />
-          
-          {/* Fallback route for old project URLs */}
-          <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
+          {/* Fallback route for old project URLs has been consolidated into the primary case study routes */}
           
           {/* Legal & Policy Pages */}
           <Route path="/terms-of-use" element={<TermsOfUse />} />

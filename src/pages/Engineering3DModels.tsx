@@ -23,12 +23,6 @@ export default function Engineering3DModels() {
       <PageBanner
         title="Engineering 3D Models"
         backgroundImage="/lovable-uploads/51f0e553-c519-4d08-9cd8-88353f9acfdd.png"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Expertise', href: '/expertise' },
-          { label: 'Infrastructure', href: '/expertise/infrastructure' },
-          { label: 'Engineering 3D Models' }
-        ]}
       />
 
       <main>

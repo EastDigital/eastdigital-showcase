@@ -17,18 +17,7 @@ export default function RealEstate3DStillRenderings() {
       
       <Header />
       
-      <PageBanner title="3D Still Renderings" backgroundImage="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png" breadcrumbs={[{
-      label: 'Home',
-      href: '/'
-    }, {
-      label: 'Expertise',
-      href: '/expertise'
-    }, {
-      label: 'Real Estate',
-      href: '/expertise/real-estate'
-    }, {
-      label: '3D Still Renderings'
-    }]} />
+      <PageBanner title="3D Still Renderings" backgroundImage="/lovable-uploads/21fb07b7-1763-41d1-a379-4a6141001b94.png" />
 
       <main>
         <section className="py-16">

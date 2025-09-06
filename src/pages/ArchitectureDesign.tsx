@@ -21,15 +21,7 @@ const ArchitectureDesign = () => {
   return <div className="min-h-screen bg-background font-nunito">
       <Header />
       <main>
-        <PageBanner title="Architecture & Design" backgroundImage="https://eastdigital.in/img/builders-art_003.jpg" breadcrumbs={[{
-        label: "Home",
-        href: "/"
-      }, {
-        label: "Expertise",
-        href: "/expertise"
-      }, {
-        label: "Architecture & Design"
-      }]} />
+        <PageBanner title="Architecture & Design" backgroundImage="https://eastdigital.in/img/builders-art_003.jpg" />
 
        {/* Description Section */}
         <section className="mobile-section sm:py-16">

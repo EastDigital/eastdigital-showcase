@@ -37,10 +37,6 @@ const Expertise = () => {
         <PageBanner
           title="Expertise"
           backgroundImage="https://eastdigital.in/img/banner-page-about.jpg"
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Expertise" }
-          ]}
         />
 
         {/* Description Section */}
