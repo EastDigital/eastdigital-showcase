@@ -64,7 +64,7 @@
 
     /* Context-specific Text Colors */
     --text-on-graphics: 33 100% 89.4%;    /* #FFE0CA - for graphic/video backgrounds */
-    --text-on-black: 0 0% 73.7%;          /* #BCBCBC - for solid black backgrounds */
+    --text-on-black: 0 0% 60%;          /* #BCBCBC - for solid black backgrounds */
     --text-cta: 0 0% 100%;                 /* #FFFFFF - for CTA buttons & links */
     --text-cta-hover: 17 100% 65.1%;       /* #FF954A - hover state for CTAs & links */
 
