@@ -39,7 +39,7 @@ const About = () => {
         <section className="py-10">
           <div className="container mx-auto px-4 sm:px-0 md:px-8">
             <div className="text-left w-full mb-12">
-              <h1 className="font-bold text-on-black mb-12 text-white">
+              <h1 className="font-bold mb-12 text-white">
                 Your Vision, Brought to Life
               </h1>
               
