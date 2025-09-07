@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingCTA from "@/components/FloatingCTA";
 import PageBanner from "@/components/PageBanner";
 import { Helmet } from "react-helmet-async";
 import { EditorContent, useEditor } from "@tiptap/react";
@@ -40,7 +41,7 @@ export default function ProjectCaseStudy() {
   const [project, setProject] = useState<ProjectRow | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -456,6 +457,7 @@ export default function ProjectCaseStudy() {
           </>
         )}
       </main>
+      <FloatingCTA />
       <Footer />
     </div>
   );

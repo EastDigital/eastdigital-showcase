@@ -27,10 +27,10 @@ const Footer = () => {
                   Send us an email to get the conversation started.
                 </p>
                 <a 
-                  href="mailto:sales@eastdigital.in" 
+                  href="mailto:business@eastdigital.in" 
                   className="leading-relaxed tracking-wide text-cta hover:text-cta-hover transition-colors break-words"
                 >
-                  sales@eastdigital.in
+                  business@eastdigital.in
                 </a>
               </div>
               
@@ -101,8 +101,10 @@ const Footer = () => {
               <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 text-base sm:text-sm">
                 <a href="/" className="text-foreground hover:text-accent transition-colors py-2">Home</a>
                 <a href="/expertise" className="text-foreground hover:text-accent transition-colors py-2">Expertise</a>
+                <a href="/projects" className="text-foreground hover:text-accent transition-colors py-2">Projects</a>
                 <a href="/about" className="text-foreground hover:text-accent transition-colors py-2">About</a>
                 <a href="/contact" className="text-foreground hover:text-accent transition-colors py-2">Connect</a>
+                <a href="#" className="text-foreground hover:text-accent transition-colors py-2">Career</a>
                 <a href="/faq" className="text-foreground hover:text-accent transition-colors py-2">FAQ</a>
               </div>
               

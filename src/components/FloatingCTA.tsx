@@ -5,6 +5,14 @@ import { triggerHapticFeedback, HapticPatterns } from '@/lib/haptics';
 
 const FloatingCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  // Don't show FloatingCTA on certain pages
+  const currentPath = window.location.pathname;
+  const excludedPaths = ['/terms-of-use', '/privacy-policy', '/sitemap'];
+  
+  if (excludedPaths.includes(currentPath)) {
+    return null;
+  }
 
   const genieVariants = {
     hidden: { 

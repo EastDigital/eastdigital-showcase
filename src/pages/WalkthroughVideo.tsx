@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
+import FloatingCTA from '@/components/FloatingCTA';
 import ShortcodeRenderer from '@/components/ShortcodeRenderer';
 import { Button } from '@/components/ui/button';
 const WalkthroughVideo = () => {
@@ -115,6 +116,7 @@ const WalkthroughVideo = () => {
         {/* CTA Section */}
         
       </main>
+      <FloatingCTA />
       <Footer />
     </div>;
 };

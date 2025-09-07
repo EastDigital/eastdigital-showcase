@@ -113,12 +113,11 @@ const Header = () => {
             <Link to="/projects" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Projects</Link>
             <Link to="/about" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">About</Link>
             <Link to="/contact" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Contact</Link>
-            <a href="#" className="text-cta hover:text-cta-hover font-semibold transition-colors duration-300">Blog</a>
           </nav>
 
           <div className="hidden lg:block">
             <Link to="/enquiry" className="relative px-6 py-3 rounded-full text-cta bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border hover:text-cta-hover">
-              <span className="relative z-10">Request a Proposal</span>
+              <span className="relative z-10">Request Proposal</span>
             </Link>
           </div>
 
@@ -199,11 +198,10 @@ const Header = () => {
           <Link to="/projects" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Projects</Link>
           <Link to="/about" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">About</Link>
           <Link to="/contact" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Contact</Link>
-          <a href="#" onClick={toggleMenu} className="block text-foreground text-lg font-light hover:text-accent transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 active:scale-[0.98] active:bg-white/15 transform">Blog</a>
           
           <div className="pt-8">
             <Link to="/enquiry" onClick={toggleMenu} className="block w-full text-center relative px-6 py-4 rounded-2xl text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-base active:scale-[0.96] active:bg-white/20 hover:bg-white/10 transform">
-              <span className="relative z-10">Request a Proposal</span>
+              <span className="relative z-10">Request Proposal</span>
             </Link>
           </div>
           </div>

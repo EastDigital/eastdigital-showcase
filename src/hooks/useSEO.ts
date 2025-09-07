@@ -121,11 +121,29 @@ const applyAnalyticsScripts = (analytics: AnalyticsScript[]) => {
       // Remove existing scripts for this platform
       removeExistingScript(script.platform);
       
-      // Add new script
-      const scriptElement = document.createElement("script");
-      scriptElement.innerHTML = script.code;
-      scriptElement.setAttribute("data-platform", script.platform);
-      document.head.appendChild(scriptElement);
+      try {
+        // Add new script with proper execution
+        const scriptElement = document.createElement("script");
+        
+        // Handle different script types
+        if (script.code.includes('gtag') || script.code.includes('google-analytics')) {
+          // For Google Analytics, execute the code directly
+          scriptElement.innerHTML = script.code;
+        } else {
+          // For other scripts, set innerHTML
+          scriptElement.innerHTML = script.code;
+        }
+        
+        scriptElement.setAttribute("data-platform", script.platform);
+        document.head.appendChild(scriptElement);
+        
+        // Force execution for Google Analytics
+        if (script.code.includes('gtag')) {
+          eval(script.code);
+        }
+      } catch (error) {
+        console.error(`Error loading analytics script for ${script.platform}:`, error);
+      }
     }
   });
 };

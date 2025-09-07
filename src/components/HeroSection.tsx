@@ -118,8 +118,8 @@ const HeroSection = () => {
             <a href="/enquiry" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-cta bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
               <span className="relative z-10">Free Consultation</span>
             </a>
-            <a href="/expertise" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-cta bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
-              <span className="relative z-10">Our Expertise</span>
+            <a href="/projects" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-cta bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
+              <span className="relative z-10">Projects</span>
             </a>
           </div>
         </div>
