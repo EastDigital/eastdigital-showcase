@@ -114,11 +114,11 @@ const HeroSection = () => {
             </span>
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-6">
-            <a href="/enquiry" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-cta bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
+          <div className="flex flex-row items-center justify-start gap-3 sm:gap-6">
+            <a href="/enquiry" className="flex-1 sm:w-auto relative px-4 py-3 sm:px-8 sm:py-4 rounded-full text-cta text-sm sm:text-base bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
               <span className="relative z-10">Free Consultation</span>
             </a>
-            <a href="/projects" className="w-full sm:w-auto relative px-8 py-4 rounded-full text-cta bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
+            <a href="/projects" className="flex-1 sm:w-auto relative px-4 py-3 sm:px-8 sm:py-4 rounded-full text-cta text-sm sm:text-base bg-background/60 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border text-center hover:text-cta-hover">
               <span className="relative z-10">Projects</span>
             </a>
           </div>
