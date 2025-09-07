@@ -109,7 +109,7 @@ const Footer = () => {
               <div className="flex items-center gap-4 sm:gap-6 flex-wrap sm:flex-shrink-0">
               {/* YouTube */}
               <a 
-                href="https://youtube.com/" 
+                href="https://www.youtube.com/@EastDigitalIndia" 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
@@ -129,7 +129,7 @@ const Footer = () => {
               
               {/* Instagram */}
               <a 
-                href="https://instagram.com/" 
+                href="https://www.instagram.com/eastdigitalindia" 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -158,7 +158,7 @@ const Footer = () => {
               
               {/* Behance */}
               <a 
-                href="https://behance.net/" 
+                href="https://www.behance.net/eastdigital" 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Behance"
