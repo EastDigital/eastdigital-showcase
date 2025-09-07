@@ -24,9 +24,22 @@ const RealEstate = () => {
         <PageBanner title="Real Estate" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" />
 
         {/* Description Section */}
-        <section className="">
-          <div className="container mx-0 px-4 sm:px-0 md:px-0">
-            
+        <section className="mobile-section sm:py-16">
+          <div className="container mx-4 px-4 sm:px-0 md:px-8">
+            <div className="w-full">
+              <h2 className="content-heading mb-4 sm:mb-6">
+                <span className="block mobile-paragraph">Visualize Your Vision:</span>
+                <span className="text-primary">High-Impact 3D Solutions</span> for Real Estate Marketing & Sales.
+              </h2>
+              <div className="space-y-4">
+                <p className="text-on-black">
+                  For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage.
+                </p>
+                <p className="text-on-black">
+                  From pre-selling properties to securing stakeholder buy-in, we create <strong className="text-primary font-semibold">immersive experiences</strong> that bring your developments to life.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
