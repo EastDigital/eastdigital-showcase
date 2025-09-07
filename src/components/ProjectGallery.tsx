@@ -130,7 +130,7 @@ const ProjectGallery = () => {
             <span className="font-bold">Industry-Specific Visualizations. </span>
             <span className="font-light">Bespoke Results.</span>
           </h2>
-          <p className="text-on-black text-xl w-[90%] md:w-[70%] lg:w-[60%]">
+          <p className="text-on-black text-xl w-[60%] md:w-[70%] lg:w-[90%]">
             Our expertise is tailored to the distinct language and objectives of your sector. 
             Select your industry to see how we translate your challenges into visual triumphs.
           </p>
