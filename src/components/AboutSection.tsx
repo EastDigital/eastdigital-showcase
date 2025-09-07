@@ -17,7 +17,7 @@ const AboutSection = () => {
           </h2>
           
           <div className="mb-10">
-            <p className="text-on-graphics text-xl w-[60%] md:w-[70%] lg:w-[90%]">
+            <p className="text-on-graphics text-xl w-[50%] md:w-[100%] lg:w-[100%]">
               East Digital™ is more than a 3D visualization studio; we are a dedicated B2B visualization 
               partner for industry leaders who require world class visual assets to drive decisive action.
             </p>
