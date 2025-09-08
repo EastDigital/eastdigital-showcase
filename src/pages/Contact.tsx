@@ -14,6 +14,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
 import FAQMini from '@/components/FAQMini';
 import FAQSchema from '@/components/FAQSchema';
+
 const contactFAQs = [
   { q: "How do quotes work?", a: "Share drawings/references; we send a fixed quote and timeline in 24–48 hours." },
   { q: "Do you take partial upfront payments?", a: "Yes—standard 50% to start, 50% on final delivery." },
@@ -34,15 +35,18 @@ export default function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -86,6 +90,7 @@ export default function Contact() {
       setLoading(false);
     }
   };
+
   return <>
       <Helmet>
         <title>Contact Us | East Digital</title>
@@ -180,69 +185,80 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Contact Form */}
                 <div className="space-y-8">
-                  {/* FAQ Mini */}
-                  <FAQMini 
-                    faqs={contactFAQs}
-                    title="Before You Contact Us"
-                    className="mb-8"
-                  />
-                  
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name">Name *</Label>
-                        <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} className="mt-1" />
-                      </div>
-                      <div>
-                        <Label htmlFor="email">Email *</Label>
-                        <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className="mt-1" />
-                      </div>
-                    </div>
+                  {/* FAQ Section */}
+                  <div className="mb-12">
+                    <FAQMini 
+                      faqs={contactFAQs}
+                      title="Before You Contact Us"
+                      className="bg-muted/30 rounded-xl p-6 border"
+                    />
+                  </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="phone">Phone</Label>
-                        <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="mt-1" />
+                  {/* Contact Form */}
+                  <div className="bg-card rounded-xl p-8 border shadow-sm">
+                    <div className="mb-6">
+                      <h2 className="text-2xl font-bold text-foreground mb-2">Send us a Message</h2>
+                      <p className="text-muted-foreground">
+                        Fill out the form below and we'll get back to you within 24 hours with a detailed response.
+                      </p>
+                    </div>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="name">Name *</Label>
+                          <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} className="mt-1" />
+                        </div>
+                        <div>
+                          <Label htmlFor="email">Email *</Label>
+                          <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className="mt-1" />
+                        </div>
                       </div>
-                      <div>
-                        <Label htmlFor="company">Company</Label>
-                        <Input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className="mt-1" />
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="phone">Phone</Label>
+                          <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="mt-1" />
+                        </div>
+                        <div>
+                          <Label htmlFor="company">Company</Label>
+                          <Input id="company" name="company" type="text" value={formData.company} onChange={handleChange} className="mt-1" />
+                        </div>
                       </div>
-                    </div>
 
-                    <div>
-                      <Label htmlFor="projectType">Project Type</Label>
-                      <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} className="mt-1 w-full bg-background border border-border rounded-md h-10 px-3">
-                        <option value="">Select a service</option>
-                        <option value="3d-walkthrough-video">3D Walkthrough Video</option>
-                        <option value="3d-still-renderings">3D Still Renderings</option>
-                        <option value="conceptual-3d-renderings">Conceptual 3D Renderings</option>
-                        <option value="engineering-3d-models">Engineering 3D Models</option>
-                        <option value="architectural-3d-rendering">Architectural 3D Rendering</option>
-                        <option value="product-3d-rendering">Product 3D Rendering</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
+                      <div>
+                        <Label htmlFor="projectType">Project Type</Label>
+                        <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} className="mt-1 w-full bg-background border border-border rounded-md h-10 px-3">
+                          <option value="">Select a service</option>
+                          <option value="3d-walkthrough-video">3D Walkthrough Video</option>
+                          <option value="3d-still-renderings">3D Still Renderings</option>
+                          <option value="conceptual-3d-renderings">Conceptual 3D Renderings</option>
+                          <option value="engineering-3d-models">Engineering 3D Models</option>
+                          <option value="architectural-3d-rendering">Architectural 3D Rendering</option>
+                          <option value="product-3d-rendering">Product 3D Rendering</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
 
-                    <div>
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} placeholder="Tell us about your project..." className="mt-1" />
-                    </div>
+                      <div>
+                        <Label htmlFor="message">Message *</Label>
+                        <Textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} placeholder="Tell us about your project..." className="mt-1" />
+                      </div>
 
-                     <Button 
-                       type="submit" 
-                       disabled={loading} 
-                       className={`w-full transition-all duration-300 ${
-                         emailSent 
-                           ? 'bg-green-600 hover:bg-green-700 text-white' 
-                           : ''
-                       }`}
-                     >
-                       {loading ? 'Sending...' : emailSent ? 'Message Sent Successfully!' : 'Send Message'}
-                     </Button>
-                  </form>
+                       <Button 
+                         type="submit" 
+                         disabled={loading} 
+                         className={`w-full transition-all duration-300 ${
+                           emailSent 
+                             ? 'bg-green-600 hover:bg-green-700 text-white' 
+                             : ''
+                         }`}
+                       >
+                         {loading ? 'Sending...' : emailSent ? 'Message Sent Successfully!' : 'Send Message'}
+                       </Button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -252,5 +268,5 @@ export default function Contact() {
       
       <FloatingCTA />
       <Footer />
-    </>;
+    </>
 }
