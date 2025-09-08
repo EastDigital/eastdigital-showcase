@@ -94,7 +94,7 @@ export default function Enquiry() {
             <div className="w-full mx-auto">
               <div className="text-left mb-12">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-foreground">Get Your Custom Proposal</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p className="">
                   Tell us about your project and we'll create a detailed proposal with timeline, deliverables, and pricing 
                   tailored to your specific requirements.
                 </p>
