@@ -98,7 +98,7 @@ const HeroSection = () => {
         </div>}
       
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 sm: px-0 md:px-8 pb-8 sm:pb-12 lg:pb-32 relative z-[10]">
+      <div className="container mx-auto px-4 sm:px-6 sm: px-0 md:px-8 pb-8 sm:pb-12 lg:pb- relative z-[10] transform -translate-y-[20%]">
         <div className="w-full">
           
           
