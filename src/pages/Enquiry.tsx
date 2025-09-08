@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { Upload, FileText, Image, X, CheckCircle } from 'lucide-react';
+import { Upload, FileText, Image, X, CheckCircle, Building, Home, Factory, MapPin, FileStack } from 'lucide-react';
 import { cn } from '@/lib/utils';
 export default function Enquiry() {
   const [formData, setFormData] = useState({
@@ -334,12 +334,12 @@ export default function Enquiry() {
                           className={cn("mt-1 w-full bg-background border border-border rounded-md h-10 px-3 transition-colors", errors.projectType ? "border-red-500" : "")}
                         >
                           <option value="">Select project type</option>
-                          <option value="residential">🏠 Residential</option>
-                          <option value="commercial">🏢 Commercial</option>
-                          <option value="industrial">🏭 Industrial</option>
-                          <option value="infrastructure">🌉 Infrastructure</option>
-                          <option value="mixed-use">🏘️ Mixed Use</option>
-                          <option value="other">📋 Other</option>
+                          <option value="residential">Residential</option>
+                          <option value="commercial">Commercial</option>
+                          <option value="industrial">Industrial</option>
+                          <option value="infrastructure">Infrastructure</option>
+                          <option value="mixed-use">Mixed Use</option>
+                          <option value="other">Other</option>
                         </select>
                         {errors.projectType && <p className="text-red-500 text-xs mt-1">{errors.projectType}</p>}
                       </div>
@@ -357,13 +357,13 @@ export default function Enquiry() {
                           className={cn("mt-1 w-full bg-background border border-border rounded-md h-10 px-3 transition-colors", errors.serviceRequired ? "border-red-500" : "")}
                         >
                           <option value="">Select service</option>
-                          <option value="3d-walkthrough-video">🎬 3D Walkthrough Video</option>
-                          <option value="3d-still-renderings">📸 3D Still Renderings</option>
-                          <option value="conceptual-3d-renderings">💡 Conceptual 3D Renderings</option>
-                          <option value="engineering-3d-models">⚙️ Engineering 3D Models</option>
-                          <option value="architectural-3d-rendering">🏗️ Architectural 3D Rendering</option>
-                          <option value="product-3d-rendering">📦 Product 3D Rendering</option>
-                          <option value="multiple-services">🎯 Multiple Services</option>
+                          <option value="3d-walkthrough-video">3D Walkthrough Video</option>
+                          <option value="3d-still-renderings">3D Still Renderings</option>
+                          <option value="conceptual-3d-renderings">Conceptual 3D Renderings</option>
+                          <option value="engineering-3d-models">Engineering 3D Models</option>
+                          <option value="architectural-3d-rendering">Architectural 3D Rendering</option>
+                          <option value="product-3d-rendering">Product 3D Rendering</option>
+                          <option value="multiple-services">Multiple Services</option>
                         </select>
                         {errors.serviceRequired && <p className="text-red-500 text-xs mt-1">{errors.serviceRequired}</p>}
                       </div>

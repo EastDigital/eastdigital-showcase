@@ -83,18 +83,25 @@ const handler = async (req: Request): Promise<Response> => {
       <body>
         <div class="email-container">
           <div class="header">
-            <div class="logo">EAST DIGITAL</div>
-            <p class="subtitle">New Proposal Request Received</p>
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+              <div style="width: 50px; height: 50px; background: #ffffff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <div style="font-size: 24px; font-weight: bold; color: #dc2626;">ED</div>
+              </div>
+              <div>
+                <div class="logo">EAST DIGITAL</div>
+                <p class="subtitle">New Proposal Request Received</p>
+              </div>
+            </div>
           </div>
           
           <div class="content">
             <div class="alert">
-              <strong>🎯 High Priority:</strong> New proposal request requires immediate attention - Prepare detailed quote within 24 hours
+              <strong>High Priority:</strong> New proposal request requires immediate attention - Prepare detailed quote within 24 hours
             </div>
             
             <div class="section">
               <div class="section-header">
-                <h3 class="section-title">👤 Client Contact Information</h3>
+                <h3 class="section-title">Client Contact Information</h3>
               </div>
               <div class="section-content">
                 <div class="info-grid">
@@ -128,7 +135,7 @@ const handler = async (req: Request): Promise<Response> => {
 
             <div class="section">
               <div class="section-header">
-                <h3 class="section-title">🏗️ Project Overview</h3>
+                <h3 class="section-title">Project Overview</h3>
               </div>
               <div class="section-content">
                 <div class="info-grid">
@@ -162,7 +169,7 @@ const handler = async (req: Request): Promise<Response> => {
 
             <div class="section">
               <div class="section-header">
-                <h3 class="section-title">📋 Project Description & Requirements</h3>
+                <h3 class="section-title">Project Description & Requirements</h3>
               </div>
               <div class="section-content">
                 <div style="margin-bottom: 20px;">
@@ -181,13 +188,13 @@ const handler = async (req: Request): Promise<Response> => {
             ${requestData.fileNames && requestData.fileNames.length > 0 ? `
             <div class="section">
               <div class="section-header">
-                <h3 class="section-title">📎 Uploaded Reference Files</h3>
+                <h3 class="section-title">Uploaded Reference Files</h3>
               </div>
               <div class="section-content">
                 <div class="files-list">
                   ${requestData.fileNames.map(fileName => `
                     <div class="file-item">
-                      <span class="file-icon">📄</span>
+                      <span class="file-icon">•</span>
                       <span>${fileName}</span>
                     </div>
                   `).join('')}
@@ -275,19 +282,25 @@ const handler = async (req: Request): Promise<Response> => {
       <body>
         <div class="email-container">
           <div class="header">
-            <div class="logo">EAST DIGITAL</div>
-            <p class="tagline">3D Visualization & Architectural Rendering</p>
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+              <div style="width: 50px; height: 50px; background: #ffffff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <div style="font-size: 24px; font-weight: bold; color: #e74c3c;">ED</div>
+              </div>
+              <div>
+                <div class="logo">EAST DIGITAL</div>
+                <p class="tagline">3D Visualization & Architectural Rendering</p>
+              </div>
+            </div>
           </div>
           
           <div class="content">
             <div class="success-banner">
-              <div class="success-icon">🎉</div>
               <h2 class="success-title">Proposal Request Successfully Received!</h2>
               <p class="success-text">Thank you, ${requestData.firstName}! We're excited to work on your ${requestData.projectType} project.</p>
             </div>
             
             <div class="timeline-section">
-              <h3 class="timeline-title">📋 What Happens Next?</h3>
+              <h3 class="timeline-title">What Happens Next?</h3>
               <div class="timeline-step">
                 <div class="step-number">1</div>
                 <div class="step-content">
@@ -312,7 +325,7 @@ const handler = async (req: Request): Promise<Response> => {
             </div>
 
             <div class="project-summary">
-              <h3 class="summary-title">📊 Your Project Summary</h3>
+              <h3 class="summary-title">Your Project Summary</h3>
               <div class="summary-item">
                 <span class="summary-label">Project Name:</span> 
                 <span class="summary-value">${requestData.projectName}</span>
@@ -334,8 +347,8 @@ const handler = async (req: Request): Promise<Response> => {
             <div class="contact-section">
               <p class="contact-title">Have questions while we prepare your proposal?</p>
               <div class="contact-links">
-                <a href="mailto:contact@eastdigital.in" class="contact-link">📧 Email Us</a>
-                <a href="tel:+919910568689" class="contact-link">📞 Call Us</a>
+                <a href="mailto:contact@eastdigital.in" class="contact-link">Email Us</a>
+                <a href="tel:+919910568689" class="contact-link">Call Us</a>
               </div>
               <p style="color: #64748b; font-size: 14px; margin-top: 15px;">
                 We typically respond to inquiries within 2-4 hours during business hours.

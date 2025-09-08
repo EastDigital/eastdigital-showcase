@@ -79,8 +79,15 @@ const handler = async (req: Request): Promise<Response> => {
         <body>
           <div class="email-container">
             <div class="header">
-              <div class="logo">EAST DIGITAL</div>
-              <p class="tagline">3D Visualization & Architectural Rendering</p>
+              <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <div style="width: 50px; height: 50px; background: #ffffff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                  <div style="font-size: 24px; font-weight: bold; color: #e74c3c;">ED</div>
+                </div>
+                <div>
+                  <div class="logo">EAST DIGITAL</div>
+                  <p class="tagline">3D Visualization & Architectural Rendering</p>
+                </div>
+              </div>
             </div>
             
             <div class="content">
@@ -190,13 +197,19 @@ const handler = async (req: Request): Promise<Response> => {
         <body>
           <div class="email-container">
             <div class="header">
-              <div class="logo">EAST DIGITAL</div>
-              <p class="subtitle">New Contact Form Submission</p>
+              <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <div style="width: 50px; height: 50px; background: #ffffff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                  <div style="font-size: 24px; font-weight: bold; color: #dc2626;">ED</div>
+                </div>
+                <div>
+                  <div class="logo">EAST DIGITAL</div>
+                  <p class="subtitle">New Contact Form Submission</p>
+                </div>
+              </div>
             </div>
             
             <div class="content">
               <div class="alert">
-                <span class="alert-icon">⚠️</span>
                 <strong>Action Required:</strong> New inquiry received - Please respond within 24 hours to maintain our service standards.
               </div>
               
