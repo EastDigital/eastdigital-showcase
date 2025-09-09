@@ -130,7 +130,8 @@ export default function SEOManager() {
     meta_pixel: "Meta Pixel (Facebook)",
     twitter_pixel: "Twitter/X Pixel",
     linkedin_insight: "LinkedIn Insight Tag",
-    custom_script: "Custom Script"
+    hubspot_analytics: "HubSpot Analytics",
+    custom_script: "Custom Analytics Script"
   };
 
   if (loading) {
