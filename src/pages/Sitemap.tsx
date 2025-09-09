@@ -13,9 +13,11 @@ const Sitemap = () => {
       links: [
         { name: 'Home', url: '/' },
         { name: 'About', url: '/about' },
+        { name: 'Projects', url: '/projects' },
         { name: 'Expertise', url: '/expertise' },
         { name: 'Contact', url: '/contact' },
         { name: 'Enquiry', url: '/enquiry' },
+        { name: 'FAQ', url: '/faq' },
       ]
     },
     {
@@ -24,6 +26,8 @@ const Sitemap = () => {
         { name: 'Real Estate Overview', url: '/expertise/real-estate' },
         { name: '3D Walkthrough Video', url: '/expertise/real-estate/3d-walkthrough-video' },
         { name: '3D Still Renderings', url: '/expertise/real-estate/3d-still-renderings' },
+        { name: 'Real Estate Projects', url: '/expertise/real-estate/3d-walkthrough-video/projects' },
+        { name: 'Still Renderings Projects', url: '/expertise/real-estate/3d-still-renderings/projects' },
       ]
     },
     {
@@ -32,6 +36,8 @@ const Sitemap = () => {
         { name: 'Infrastructure Overview', url: '/expertise/infrastructure' },
         { name: 'Conceptual 3D Renderings', url: '/expertise/infrastructure/conceptual-3d-renderings' },
         { name: 'Engineering 3D Models', url: '/expertise/infrastructure/engineering-3d-models' },
+        { name: 'Conceptual Projects', url: '/expertise/infrastructure/conceptual-3d-renderings/projects' },
+        { name: 'Engineering Projects', url: '/expertise/infrastructure/engineering-3d-models/projects' },
       ]
     },
     {
@@ -40,10 +46,12 @@ const Sitemap = () => {
         { name: 'Architecture & Design Overview', url: '/expertise/architecture-design' },
         { name: 'Architectural 3D Rendering', url: '/expertise/architecture-design/architectural-3d-rendering' },
         { name: 'Product 3D Rendering', url: '/expertise/architecture-design/product-3d-rendering' },
+        { name: 'Architectural Projects', url: '/expertise/architecture-design/architectural-3d-rendering/projects' },
+        { name: 'Product Projects', url: '/expertise/architecture-design/product-3d-rendering/projects' },
       ]
     },
     {
-      title: 'Legal & Policies',
+      title: 'Legal & Information',
       links: [
         { name: 'Terms of Use', url: '/terms-of-use' },
         { name: 'Privacy Policy', url: '/privacy-policy' },
