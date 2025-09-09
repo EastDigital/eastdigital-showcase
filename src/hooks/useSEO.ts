@@ -122,25 +122,37 @@ const applyAnalyticsScripts = (analytics: AnalyticsScript[]) => {
       removeExistingScript(script.platform);
       
       try {
-        // Add new script with proper execution
-        const scriptElement = document.createElement("script");
+        // Clean the script code - remove HTML tags and extract JavaScript
+        let cleanCode = script.code.trim();
         
-        // Handle different script types
-        if (script.code.includes('gtag') || script.code.includes('google-analytics')) {
-          // For Google Analytics, execute the code directly
-          scriptElement.innerHTML = script.code;
-        } else {
-          // For other scripts, set innerHTML
-          scriptElement.innerHTML = script.code;
+        // If the code contains HTML script tags, extract the content
+        if (cleanCode.includes('<script')) {
+          const scriptMatch = cleanCode.match(/<script[^>]*>([\s\S]*?)<\/script>/gi);
+          if (scriptMatch) {
+            cleanCode = scriptMatch.map(match => {
+              // Extract content between script tags
+              const content = match.replace(/<script[^>]*>|<\/script>/gi, '').trim();
+              return content;
+            }).join('\n');
+          }
         }
         
+        // Skip if no valid JavaScript code found
+        if (!cleanCode || cleanCode.includes('<') || cleanCode.includes('>')) {
+          console.warn(`Invalid analytics code for ${script.platform}: Contains HTML or is empty`);
+          return;
+        }
+        
+        // Create script element
+        const scriptElement = document.createElement("script");
+        scriptElement.type = "text/javascript";
+        scriptElement.innerHTML = cleanCode;
         scriptElement.setAttribute("data-platform", script.platform);
+        
+        // Add to document head
         document.head.appendChild(scriptElement);
         
-        // Force execution for Google Analytics
-        if (script.code.includes('gtag')) {
-          eval(script.code);
-        }
+        console.log(`Successfully loaded analytics script for ${script.platform}`);
       } catch (error) {
         console.error(`Error loading analytics script for ${script.platform}:`, error);
       }

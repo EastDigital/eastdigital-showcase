@@ -342,16 +342,22 @@ export default function SEOManager() {
                     />
                   </div>
 
-                  <Button 
-                    onClick={() => updateAnalyticsCode(item.platform, item.code, item.is_enabled)}
-                    className="w-full"
-                  >
-                    Save {platformLabels[item.platform]}
-                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
+          
+          <Button 
+            onClick={() => {
+              analytics.forEach(item => {
+                updateAnalyticsCode(item.platform, item.code, item.is_enabled);
+              });
+            }}
+            className="w-full"
+            size="lg"
+          >
+            Save All Analytics Settings
+          </Button>
         </TabsContent>
 
         <TabsContent value="technical" className="space-y-6">
