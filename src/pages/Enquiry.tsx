@@ -508,7 +508,7 @@ export default function Enquiry() {
                     )}
                     {buttonState === 'success' && <CheckCircle className="w-4 h-4 mr-2" />}
                     {buttonState === 'loading' && 'Submitting...'}
-                    {buttonState === 'success' && 'Request Received!'}
+                    {buttonState === 'success' && 'Submitted Successfully'}
                     {buttonState === 'default' && 'Get My Custom Proposal'}
                   </Button>
                   <div className="mt-4 space-y-2">

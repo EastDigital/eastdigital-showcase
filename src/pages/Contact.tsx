@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FAQMini from '@/components/FAQMini';
 import FAQSchema from '@/components/FAQSchema';
@@ -34,7 +35,7 @@ export default function Contact() {
     message: ''
   });
   const [loading, setLoading] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
+  const [buttonState, setButtonState] = useState<'default' | 'success' | 'loading'>('default');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,7 +50,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setButtonState('loading');
 
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
@@ -70,15 +71,20 @@ export default function Contact() {
         description: "Thank you for your inquiry. We'll get back to you within 24 hours."
       });
       
-      setEmailSent(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        projectType: '',
-        message: ''
-      });
+      setButtonState('success');
+      
+      // Reset form and button state after success
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          projectType: '',
+          message: ''
+        });
+        setButtonState('default');
+      }, 3000);
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -86,8 +92,7 @@ export default function Contact() {
         description: "There was an issue sending your message. Please try again.",
         variant: "destructive"
       });
-    } finally {
-      setLoading(false);
+      setButtonState('default');
     }
   };
 
@@ -246,17 +251,23 @@ export default function Contact() {
                         <Textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} placeholder="Tell us about your project..." className="mt-1" />
                       </div>
 
-                       <Button 
-                         type="submit" 
-                         disabled={loading} 
-                         className={`w-full transition-all duration-300 ${
-                           emailSent 
-                             ? 'bg-green-600 hover:bg-green-700 text-white' 
-                             : ''
-                         }`}
-                       >
-                         {loading ? 'Sending...' : emailSent ? 'Message Sent Successfully!' : 'Send Message'}
-                       </Button>
+                        <Button 
+                          type="submit" 
+                          disabled={buttonState === 'loading'} 
+                          className={cn(
+                            "w-full transition-all duration-300 font-semibold",
+                            buttonState === 'success' 
+                              ? 'bg-green-500 hover:bg-green-600 text-white' 
+                              : ''
+                          )}
+                        >
+                          {buttonState === 'loading' && (
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                          )}
+                          {buttonState === 'loading' && 'Sending...'}
+                          {buttonState === 'success' && 'Submitted Successfully'}
+                          {buttonState === 'default' && 'Send Message'}
+                        </Button>
                     </form>
                   </div>
                 </div>
