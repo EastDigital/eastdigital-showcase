@@ -392,10 +392,10 @@ export default function Enquiry() {
                     <Label htmlFor="timeline" className="text-sm font-medium">Preferred Timeline</Label>
                     <select id="timeline" name="timeline" value={formData.timeline} onChange={handleChange} className="mt-1 w-full bg-background border border-border rounded-md h-10 px-3">
                       <option value="">Select timeline</option>
-                      <option value="rush-1-week">⚡ Rush (1 week)</option>
-                      <option value="standard-2-4-weeks">📅 Standard (2-4 weeks)</option>
-                      <option value="flexible-1-2-months">🕐 Flexible (1-2 months)</option>
-                      <option value="long-term-3-months">📆 Long-term (3+ months)</option>
+                      <option value="rush-1-week"> Rush (1 week)</option>
+                      <option value="standard-2-4-weeks"> Standard (2-4 weeks)</option>
+                      <option value="flexible-1-2-months"> Flexible (1-2 months)</option>
+                      <option value="long-term-3-months"> Long-term (3+ months)</option>
                     </select>
                     <p className="text-xs text-muted-foreground mt-1">We'll provide accurate pricing and timeline in your custom proposal</p>
                   </div>
@@ -482,10 +482,10 @@ export default function Enquiry() {
                       <Label htmlFor="previousExperience" className="text-sm font-medium">Previous 3D Visualization Experience</Label>
                       <select id="previousExperience" name="previousExperience" value={formData.previousExperience} onChange={handleChange} className="mt-1 w-full bg-background border border-border rounded-md h-10 px-3">
                         <option value="">Select experience level</option>
-                        <option value="first-time">🆕 This is my first 3D visualization project</option>
-                        <option value="some-experience">📚 I have some experience with 3D visualization</option>
-                        <option value="experienced">👨‍💼 I regularly work with 3D visualization</option>
-                        <option value="expert">🎓 I'm an expert in 3D visualization</option>
+                        <option value="first-time"> This is my first 3D visualization project</option>
+                        <option value="some-experience"> I have some experience with 3D visualization</option>
+                        <option value="experienced"> I regularly work with 3D visualization</option>
+                        <option value="expert"> I'm an expert in 3D visualization</option>
                       </select>
                     </div>
                   </div>
