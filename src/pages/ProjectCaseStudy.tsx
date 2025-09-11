@@ -79,7 +79,10 @@ export default function ProjectCaseStudy() {
   const keywords = useMemo(() => (project?.seo_keywords || []).join(", "), [project]);
   const ogTitle = useMemo(() => project?.og_title || titleTag, [project, titleTag]);
   const ogDescription = useMemo(() => project?.og_description || metaDescription, [project, metaDescription]);
-  const ogImage = useMemo(() => project?.og_image || project?.cover_image || "", [project]);
+  const ogImage = useMemo(() => {
+    const imageUrl = project?.og_image || project?.cover_image || "";
+    return imageUrl && !imageUrl.startsWith('http') ? `${window.location.origin}${imageUrl}` : imageUrl;
+  }, [project]);
 
   const schemaJsonSafe = useMemo(() => {
     try {
@@ -265,7 +268,15 @@ export default function ProjectCaseStudy() {
         <meta property="og:title" content={ogTitle} />
         {ogDescription ? <meta property="og:description" content={ogDescription} /> : null}
         {ogImage ? <meta property="og:image" content={ogImage} /> : null}
+        {ogImage ? <meta property="og:image:width" content="1200" /> : null}
+        {ogImage ? <meta property="og:image:height" content="630" /> : null}
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={typeof window !== 'undefined' ? window.location.href : ''} />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        {ogTitle ? <meta name="twitter:title" content={ogTitle} /> : null}
+        {ogDescription ? <meta name="twitter:description" content={ogDescription} /> : null}
+        {ogImage ? <meta name="twitter:image" content={ogImage} /> : null}
         {/* Schema JSON-LD */}
         {schemaJsonSafe ? (
           <script type="application/ld+json">{schemaJsonSafe}</script>

@@ -84,24 +84,42 @@ const applySEOTags = (seo: SEOData) => {
   // Add Open Graph tags
   if (seo.og_title) {
     addMetaTag("og:title", seo.og_title, "property");
+  } else if (seo.meta_title) {
+    addMetaTag("og:title", seo.meta_title, "property");
   }
+  
   if (seo.og_description) {
     addMetaTag("og:description", seo.og_description, "property");
+  } else if (seo.meta_description) {
+    addMetaTag("og:description", seo.meta_description, "property");
   }
+  
   if (seo.og_image) {
-    addMetaTag("og:image", seo.og_image, "property");
+    const fullImageUrl = seo.og_image.startsWith('http') ? seo.og_image : `${window.location.origin}${seo.og_image}`;
+    addMetaTag("og:image", fullImageUrl, "property");
+    addMetaTag("og:image:width", "1200", "property");
+    addMetaTag("og:image:height", "630", "property");
   }
+  
+  // Add required OG tags
+  addMetaTag("og:type", "website", "property");
+  addMetaTag("og:url", window.location.href, "property");
 
   // Add Twitter Card tags
   addMetaTag("twitter:card", "summary_large_image");
-  if (seo.og_title) {
-    addMetaTag("twitter:title", seo.og_title);
+  const twitterTitle = seo.og_title || seo.meta_title;
+  const twitterDescription = seo.og_description || seo.meta_description;
+  const twitterImage = seo.og_image;
+  
+  if (twitterTitle) {
+    addMetaTag("twitter:title", twitterTitle);
   }
-  if (seo.og_description) {
-    addMetaTag("twitter:description", seo.og_description);
+  if (twitterDescription) {
+    addMetaTag("twitter:description", twitterDescription);
   }
-  if (seo.og_image) {
-    addMetaTag("twitter:image", seo.og_image);
+  if (twitterImage) {
+    const fullImageUrl = twitterImage.startsWith('http') ? twitterImage : `${window.location.origin}${twitterImage}`;
+    addMetaTag("twitter:image", fullImageUrl);
   }
 
   // Add structured data
