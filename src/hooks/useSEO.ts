@@ -24,28 +24,45 @@ export const useSEO = (pageSlug: string) => {
   useEffect(() => {
     const applySEO = async () => {
       try {
-        // Fetch page SEO data
-        const { data: seoData } = await supabase
+        // Add timeout for database queries
+        const timeout = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Database query timeout')), 5000)
+        );
+
+        // Fetch page SEO data with timeout
+        const seoQuery = supabase
           .from("page_seo")
           .select("*")
           .eq("page_slug", pageSlug)
           .single();
 
-        // Fetch analytics codes
-        const { data: analyticsData } = await supabase
+        // Fetch analytics codes with timeout
+        const analyticsQuery = supabase
           .from("analytics_codes")
           .select("*")
           .eq("is_enabled", true);
 
-        if (seoData) {
-          applySEOTags(seoData);
+        const [seoResult, analyticsResult] = await Promise.allSettled([
+          Promise.race([seoQuery, timeout]),
+          Promise.race([analyticsQuery, timeout])
+        ]);
+
+        // Apply SEO data if available
+        if (seoResult.status === 'fulfilled' && seoResult.value && typeof seoResult.value === 'object' && 'data' in seoResult.value && seoResult.value.data) {
+          applySEOTags(seoResult.value.data as SEOData);
+        } else {
+          console.info(`No database SEO data found for page: ${pageSlug}, using static meta tags`);
         }
 
-        if (analyticsData) {
-          applyAnalyticsScripts(analyticsData);
+        // Apply analytics codes if available
+        if (analyticsResult.status === 'fulfilled' && analyticsResult.value && typeof analyticsResult.value === 'object' && 'data' in analyticsResult.value && analyticsResult.value.data) {
+          applyAnalyticsScripts(analyticsResult.value.data as AnalyticsScript[]);
+        } else {
+          console.info('No analytics codes found or database unavailable');
         }
       } catch (error) {
         console.error("Error applying SEO:", error);
+        console.info("Falling back to static meta tags defined in component");
       }
     };
 

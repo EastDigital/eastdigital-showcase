@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -202,6 +203,25 @@ const Projects = () => {
       </Link>;
   };
   return <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>3D Visualization Projects Portfolio | East Digital Case Studies & Gallery</title>
+        <meta name="description" content="Explore East Digital's extensive portfolio of 3D visualization projects including architectural renderings, real estate walkthroughs, engineering models, and product visualizations." />
+        <meta name="keywords" content="3D visualization portfolio, architectural rendering projects, real estate 3D gallery, engineering visualization case studies" />
+        <link rel="canonical" href="https://eastdigital.in/projects" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="3D Visualization Projects Portfolio | East Digital Case Studies & Gallery" />
+        <meta property="og:description" content="Explore East Digital's extensive portfolio of 3D visualization projects including architectural renderings, real estate walkthroughs, engineering models, and product visualizations." />
+        <meta property="og:image" content="https://eastdigital.in/contact-banner.jpg" />
+        <meta property="og:url" content="https://eastdigital.in/projects" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="3D Visualization Projects Portfolio | East Digital" />
+        <meta name="twitter:description" content="Explore East Digital's portfolio of 3D visualization projects including architectural renderings and real estate walkthroughs." />
+        <meta name="twitter:image" content="https://eastdigital.in/contact-banner.jpg" />
+      </Helmet>
+      
       <Header />
       
       <main>

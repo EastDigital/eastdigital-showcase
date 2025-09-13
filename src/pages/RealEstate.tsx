@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
@@ -19,6 +20,25 @@ const RealEstate = () => {
     link: "/expertise/real-estate/3d-still-renderings"
   }];
   return <div className="min-h-screen bg-background font-nunito">
+      <Helmet>
+        <title>Real Estate 3D Visualization Services | Property Marketing Solutions | East Digital</title>
+        <meta name="description" content="Transform your real estate marketing with East Digital's high-impact 3D visualization solutions. From property pre-sales to buyer engagement with immersive 3D experiences." />
+        <meta name="keywords" content="real estate 3D visualization, property marketing, 3D real estate renderings, property walkthrough videos, real estate marketing solutions" />
+        <link rel="canonical" href="https://eastdigital.in/expertise/real-estate" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Real Estate 3D Visualization Services | Property Marketing Solutions | East Digital" />
+        <meta property="og:description" content="Transform your real estate marketing with East Digital's high-impact 3D visualization solutions for property pre-sales and buyer engagement." />
+        <meta property="og:image" content="https://eastdigital.in/contact-banner.jpg" />
+        <meta property="og:url" content="https://eastdigital.in/expertise/real-estate" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Real Estate 3D Visualization Services | East Digital" />
+        <meta name="twitter:description" content="High-impact 3D visualization solutions for real estate marketing and property pre-sales." />
+        <meta name="twitter:image" content="https://eastdigital.in/contact-banner.jpg" />
+      </Helmet>
+      
       <Header />
       <main>
         <PageBanner title="Real Estate" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" />

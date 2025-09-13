@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
@@ -19,6 +20,25 @@ const ArchitectureDesign = () => {
     link: "/expertise/architecture-design/product-3d-rendering"
   }];
   return <div className="min-h-screen bg-background font-nunito">
+      <Helmet>
+        <title>Architecture & Design 3D Visualization Services | Professional Rendering | East Digital</title>
+        <meta name="description" content="Transform your architectural designs with East Digital's professional 3D visualization services. From concept to completion, we bring architectural visions to life." />
+        <meta name="keywords" content="architecture 3D visualization, design rendering, architectural visualization services, building design rendering, conceptual design visualization" />
+        <link rel="canonical" href="https://eastdigital.in/expertise/architecture-design" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Architecture & Design 3D Visualization Services | Professional Rendering | East Digital" />
+        <meta property="og:description" content="Transform your architectural designs with East Digital's professional 3D visualization services for building design and conceptual visualization." />
+        <meta property="og:image" content="https://eastdigital.in/contact-banner.jpg" />
+        <meta property="og:url" content="https://eastdigital.in/expertise/architecture-design" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Architecture & Design 3D Visualization | East Digital" />
+        <meta name="twitter:description" content="Professional 3D visualization services for architectural designs and building concepts." />
+        <meta name="twitter:image" content="https://eastdigital.in/contact-banner.jpg" />
+      </Helmet>
+      
       <Header />
       <main>
         <PageBanner title="Architecture & Design" backgroundImage="https://eastdigital.in/img/builders-art_003.jpg" />

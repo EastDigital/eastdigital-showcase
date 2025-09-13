@@ -1,16 +1,20 @@
 import { useRef, useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import ProjectGallery from '@/components/ProjectGallery';
 import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { useSEO } from '@/hooks/useSEO';
+
 const About = () => {
   useSEO('about');
+  
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -30,10 +34,34 @@ const About = () => {
       };
     }
   }, []);
-  return <div className="min-h-screen bg-black font-nunito">
+
+  return (
+    <div className="min-h-screen bg-black font-nunito">
+      <Helmet>
+        <title>About East Digital - Leading 3D Visualization Agency | Our Story & Vision</title>
+        <meta name="description" content="Learn about East Digital's journey in 3D visualization. Discover our mission, values, and commitment to delivering exceptional architectural renderings and visualization services." />
+        <meta name="keywords" content="East Digital about, 3D visualization company, architectural rendering company, team, mission, vision" />
+        <link rel="canonical" href="https://eastdigital.in/about" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="About East Digital - Leading 3D Visualization Agency | Our Story & Vision" />
+        <meta property="og:description" content="Learn about East Digital's journey in 3D visualization. Discover our mission, values, and commitment to delivering exceptional architectural renderings and visualization services." />
+        <meta property="og:image" content="https://eastdigital.in/contact-banner.jpg" />
+        <meta property="og:url" content="https://eastdigital.in/about" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="About East Digital - Leading 3D Visualization Agency" />
+        <meta name="twitter:description" content="Learn about East Digital's journey in 3D visualization and our commitment to delivering exceptional architectural renderings." />
+        <meta name="twitter:image" content="https://eastdigital.in/contact-banner.jpg" />
+      </Helmet>
+      
       <Header />
       <main>
-        <PageBanner title="About" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" />
+        <PageBanner
+          title="About"
+          backgroundImage="https://eastdigital.in/img/about-east-digital.jpg"
+        />
 
         {/* Your Vision Section */}
         <section className="py-10">
@@ -87,34 +115,52 @@ const About = () => {
 
         {/* Trusted by Many Section */}
         <section className="relative py-[50px] bg-black">
-            {/* Background Video */}
-      <video ref={videoRef} autoPlay loop muted playsInline preload="auto" className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'}`} style={{
-          zIndex: videoLoaded && !videoError ? 1 : -1
-        }}>
-        <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+          {/* Background Video */}
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              videoLoaded && !videoError ? 'opacity-100 z-[1]' : 'opacity-0 z-[1]'
+            }`}
+            style={{
+              zIndex: videoLoaded && !videoError ? 1 : -1
+            }}
+          >
+            <source src="https://eastdigital.in/img/vid_banner_clients.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
-      {/* Fallback Background Image */}
-      <div className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'}`} style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: videoError || !videoLoaded ? 2 : 1
-        }} />
+          {/* Fallback Background Image */}
+          <div
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+              videoError || !videoLoaded ? 'opacity-100 z-[2]' : 'opacity-0 z-[1]'
+            }`}
+            style={{
+              backgroundImage: 'url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              zIndex: videoError || !videoLoaded ? 2 : 1
+            }}
+          />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-[3]" />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/50 z-[3]" />
 
-      {/* Loading State */}
-      {isLoading && <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
-          <div className="text-gray-300">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
-            <p>Loading experience...</p>
-          </div>
-        </div>}
+          {/* Loading State */}
+          {isLoading && (
+            <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-[50]">
+              <div className="text-gray-300">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
+                <p>Loading experience...</p>
+              </div>
+            </div>
+          )}
           
-      <div className="container mx-auto px-4 sm:px-0 md:px-8 w-full relative z-10">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8 w-full relative z-10">
             <div className="text-left lg:text-left w-full mb-12">
               <h2 className="font-bold mb-8 text-on-graphics">
                 Trusted by many
@@ -130,24 +176,46 @@ const About = () => {
               
               {/* Client Logos Grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 justify-items-center">
-                {['https://eastdigital.in/img/logo_puchkas.jpg', 'https://eastdigital.in/img/logo_acer.jpg', 'https://eastdigital.in/img/logo_agile.jpg', 'https://eastdigital.in/img/logo_anantraj.jpg', 'https://eastdigital.in/img/logo_arcop.jpg', 'https://eastdigital.in/img/logo_bharti.jpg', 'https://eastdigital.in/img/logo_ddf.jpg', 'https://eastdigital.in/img/logo_japare.jpg', 'https://eastdigital.in/img/logo_jaypee.jpg', 'https://eastdigital.in/img/logo_miraj.jpg', 'https://eastdigital.in/img/logo_omaxe.jpg', 'https://eastdigital.in/img/logo_reliance.jpg'].slice().sort((a, b) => a.localeCompare(b)).map((logoUrl, index) => <div key={index} className="bg-white rounded-[20px] p-4 w-full max-w-[185px] aspect-[5/3] flex items-center justify-center shadow-md">
-                    <img src={logoUrl} alt={`Client logo ${index + 1}`} className="max-w-full max-h-full object-contain" onError={e => {
-                  e.currentTarget.style.display = 'none';
-                }} />
-                  </div>)}
+                {[
+                  'https://eastdigital.in/img/logo_puchkas.jpg',
+                  'https://eastdigital.in/img/logo_acer.jpg',
+                  'https://eastdigital.in/img/logo_agile.jpg',
+                  'https://eastdigital.in/img/logo_anantraj.jpg',
+                  'https://eastdigital.in/img/logo_arcop.jpg',
+                  'https://eastdigital.in/img/logo_bharti.jpg',
+                  'https://eastdigital.in/img/logo_ddf.jpg',
+                  'https://eastdigital.in/img/logo_japare.jpg',
+                  'https://eastdigital.in/img/logo_jaypee.jpg',
+                  'https://eastdigital.in/img/logo_miraj.jpg',
+                  'https://eastdigital.in/img/logo_omaxe.jpg',
+                  'https://eastdigital.in/img/logo_reliance.jpg'
+                ].slice().sort((a, b) => a.localeCompare(b)).map((logoUrl, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-[20px] p-4 w-full max-w-[185px] aspect-[5/3] flex items-center justify-center shadow-md"
+                  >
+                    <img
+                      src={logoUrl}
+                      alt={`Client logo ${index + 1}`}
+                      className="max-w-full max-h-full object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
-
-        {/* Industry-Specific Section */}
-        
 
         {/* Project Gallery */}
         <ProjectGallery />
       </main>
       <FloatingCTA />
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default About;
