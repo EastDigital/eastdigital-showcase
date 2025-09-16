@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
@@ -33,24 +32,6 @@ const Expertise = () => {
 
   return (
     <div className="min-h-screen bg-background font-nunito">
-      <Helmet>
-        <title>3D Visualization Expertise | Industry-Focused Services | East Digital</title>
-        <meta name="description" content="Discover East Digital's specialized 3D visualization expertise across Real Estate, Infrastructure, and Architecture & Design. Industry-focused solutions for your sector." />
-        <meta name="keywords" content="3D visualization expertise, industry-focused rendering, real estate visualization, infrastructure 3D modeling, architectural design services" />
-        <link rel="canonical" href="https://eastdigital.in/expertise" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="3D Visualization Expertise | Industry-Focused Services | East Digital" />
-        <meta property="og:description" content="Discover East Digital's specialized 3D visualization expertise across Real Estate, Infrastructure, and Architecture & Design." />
-        <meta property="og:image" content="https://eastdigital.in/contact-banner.jpg" />
-        <meta property="og:url" content="https://eastdigital.in/expertise" />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter */}
-        <meta name="twitter:title" content="3D Visualization Expertise | East Digital" />
-        <meta name="twitter:description" content="Specialized 3D visualization expertise across Real Estate, Infrastructure, and Architecture & Design." />
-        <meta name="twitter:image" content="https://eastdigital.in/contact-banner.jpg" />
-      </Helmet>
       
       <Header />
       <main>

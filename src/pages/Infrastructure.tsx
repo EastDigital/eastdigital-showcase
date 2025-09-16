@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageBanner from '@/components/PageBanner';
@@ -20,24 +19,6 @@ const Infrastructure = () => {
     link: "/expertise/infrastructure/engineering-3d-models"
   }];
   return <div className="min-h-screen bg-background font-nunito">
-      <Helmet>
-        <title>Infrastructure 3D Modeling & Visualization Services | Engineering Solutions | East Digital</title>
-        <meta name="description" content="Expert infrastructure 3D modeling and visualization services for bridges, roads, utilities, and urban planning projects. Advanced engineering visualization solutions." />
-        <meta name="keywords" content="infrastructure 3D modeling, engineering visualization, bridge rendering, road visualization, utility modeling, urban planning visualization" />
-        <link rel="canonical" href="https://eastdigital.in/expertise/infrastructure" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Infrastructure 3D Modeling & Visualization Services | Engineering Solutions | East Digital" />
-        <meta property="og:description" content="Expert infrastructure 3D modeling and visualization services for bridges, roads, utilities, and urban planning projects." />
-        <meta property="og:image" content="https://eastdigital.in/contact-banner.jpg" />
-        <meta property="og:url" content="https://eastdigital.in/expertise/infrastructure" />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter */}
-        <meta name="twitter:title" content="Infrastructure 3D Modeling & Visualization | East Digital" />
-        <meta name="twitter:description" content="Expert infrastructure 3D modeling and visualization services for engineering projects." />
-        <meta name="twitter:image" content="https://eastdigital.in/contact-banner.jpg" />
-      </Helmet>
       
       <Header />
       <main>
