@@ -1,4 +1,43 @@
+import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+
+interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  category: string;
+  subcategory: string;
+}
+
 const Footer = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const { data } = await supabase
+          .from('projects')
+          .select('id, title, slug, category, subcategory')
+          .eq('status', 'Published')
+          .limit(15);
+        
+        if (data) {
+          setProjects(data);
+        }
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  const generateProjectUrl = (project: Project) => {
+    const categorySlug = project.category.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+    const subcategorySlug = project.subcategory.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+    return `/expertise/${categorySlug}/${subcategorySlug}/projects/${project.slug}`;
+  };
+
   return (
     <footer className="bg-background">
       {/* Main Contact Section */}
@@ -190,6 +229,24 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          
+          {/* Projects Tag Cloud */}
+          {projects.length > 0 && (
+            <div className="border-t border-border pt-6 pb-4">
+              <h3 className="text-sm font-semibold text-foreground mb-4">Featured Projects</h3>
+              <div className="flex flex-wrap gap-2">
+                {projects.map((project) => (
+                  <a
+                    key={project.id}
+                    href={generateProjectUrl(project)}
+                    className="inline-block px-3 py-1.5 text-xs bg-muted/50 text-muted-foreground hover:bg-accent hover:text-accent-foreground rounded-full border border-border hover:border-accent transition-all duration-200"
+                  >
+                    {project.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
           
           <div className="border-t border-border pt-4 sm:pt-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center text-muted-foreground text-sm sm:text-xs">
