@@ -27,30 +27,60 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>East Digital - Elite 3D Visualization Agency | Professional Rendering Services</title>
-        <meta name="description" content="Leading 3D visualization agency specializing in architectural renderings, real estate marketing, engineering models, and product visualization. Get stunning 3D visuals for your projects." />
-        <meta name="keywords" content="3D visualization, architectural rendering, real estate rendering, 3D walkthrough, engineering visualization, product rendering, 3D animation" />
+        <title>3D Rendering & Architectural Visualization Services in Lucknow | East Digital</title>
+        <meta name="description" content="Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today." />
         <link rel="canonical" href="https://eastdigital.in/" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="East Digital - Elite 3D Visualization Agency | Professional Rendering Services" />
-        <meta property="og:description" content="Leading 3D visualization agency specializing in architectural renderings, real estate marketing, engineering models, and product visualization." />
-        <meta property="og:image" content="https://eastdigital.in/contact-banner.jpg" />
+        <meta property="og:title" content="3D Rendering & Architectural Visualization Services in Lucknow | East Digital" />
+        <meta property="og:description" content="Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today." />
+        <meta property="og:image" content="https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg" />
         <meta property="og:url" content="https://eastdigital.in/" />
         <meta property="og:type" content="website" />
         
         {/* Twitter */}
-        <meta name="twitter:title" content="East Digital - Elite 3D Visualization Agency" />
-        <meta name="twitter:description" content="Leading 3D visualization agency specializing in architectural renderings, real estate marketing, engineering models, and product visualization." />
-        <meta name="twitter:image" content="https://eastdigital.in/contact-banner.jpg" />
+        <meta name="twitter:title" content="3D Rendering & Architectural Visualization Services in Lucknow | East Digital" />
+        <meta name="twitter:description" content="Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today." />
+        <meta name="twitter:image" content="https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg" />
       </Helmet>
       
       <FAQSchema 
         faqs={homeFAQs} 
-        pageTitle="East Digital - 3D Visualization Services"
+        pageTitle="3D Rendering & Architectural Visualization Services in Lucknow | East Digital"
         pageUrl="https://eastdigital.in"
       />
-      
+      <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "East Digital",
+      "image": "https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg",
+      "logo": "https://www.eastdigital.in/img/logo-east-digital-white.png",
+      "url": "https://eastdigital.in/",
+      "telephone": "+91-99105 68689",
+      "email": "business@eastdigital.in",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2nd Floor, JSV Hyundai Building, Near Engineering College",
+        "addressLocality": "Lucknow",
+        "postalCode": "226021",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Lucknow"
+      },
+      "openingHours": "Mo-Sa 10:00-18:00",
+      "description": "Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today.",
+      "sameAs": [
+        "https://www.linkedin.com/company/east-digital-india",
+        "https://www.facebook.com/EastDigitalIndia",
+        "https://www.instagram.com/eastdigitalindia",
+        "https://www.youtube.com/@EastDigitalIndia"
+      ]
+    }
+    </script>
       <div id="top" className="min-h-screen bg-background font-nunito">
         <Header />
         <main>
