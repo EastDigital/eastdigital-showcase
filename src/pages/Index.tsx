@@ -49,38 +49,41 @@ const Index = () => {
         pageTitle="3D Rendering & Architectural Visualization Services in Lucknow | East Digital"
         pageUrl="https://eastdigital.in"
       />
-      <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "East Digital",
-      "image": "https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg",
-      "logo": "https://www.eastdigital.in/img/logo-east-digital-white.png",
-      "url": "https://eastdigital.in/",
-      "telephone": "+91-99105 68689",
-      "email": "business@eastdigital.in",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2nd Floor, JSV Hyundai Building, Near Engineering College",
-        "addressLocality": "Lucknow",
-        "postalCode": "226021",
-        "addressRegion": "Uttar Pradesh",
-        "addressCountry": "IN"
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Lucknow"
-      },
-      "openingHours": "Mo-Sa 10:00-18:00",
-      "description": "Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today.",
-      "sameAs": [
-        "https://www.linkedin.com/company/east-digital-india",
-        "https://www.facebook.com/EastDigitalIndia",
-        "https://www.instagram.com/eastdigitalindia",
-        "https://www.youtube.com/@EastDigitalIndia"
-      ]
-    }
-    </script>
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "East Digital",
+            "image": "https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg",
+            "logo": "https://www.eastdigital.in/img/logo-east-digital-white.png",
+            "url": "https://eastdigital.in/",
+            "telephone": "+91-99105 68689",
+            "email": "business@eastdigital.in",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2nd Floor, JSV Hyundai Building, Near Engineering College",
+              "addressLocality": "Lucknow",
+              "postalCode": "226021",
+              "addressRegion": "Uttar Pradesh",
+              "addressCountry": "IN"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Lucknow"
+            },
+            "openingHours": "Mo-Sa 10:00-18:00",
+            "description": "Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today.",
+            "sameAs": [
+              "https://www.linkedin.com/company/east-digital-india",
+              "https://www.facebook.com/EastDigitalIndia",
+              "https://www.instagram.com/eastdigitalindia",
+              "https://www.youtube.com/@EastDigitalIndia"
+            ]
+          })
+        }}
+      />
       <div id="top" className="min-h-screen bg-background font-nunito">
         <Header />
         <main>
