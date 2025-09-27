@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/useSEO';
 const RealEstate = () => {
   useSEO("real-estate");
-  
   const services = [{
     title: "3D Walkthrough Video",
     category: "3D Walkthrough Video",
@@ -27,7 +26,7 @@ const RealEstate = () => {
 
         {/* Description Section */}
         <section className="mobile-section sm:py-16">
-          <div className="container mx-auto px-4 sm:px-0 md:px-8 w-[100%] md:w-[100%]">
+          <div className="container mx-auto px-4 sm:px-0 md:px-8 w-[auto] md:w-[auto]">
             <div className="w-full">
               <h2 className="content-heading mb-4 sm:mb-6">
                 <span className="block mobile-paragraph">Transform Your Real Estate Vision into Sales:The Ultimate 3D Visualization Partner for Real Estate Marketing & Sales.</span>
