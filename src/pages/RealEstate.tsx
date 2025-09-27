@@ -29,7 +29,7 @@ const RealEstate = () => {
           <div className="container mx-auto px-4 sm:px-0 md:px-8 w-[auto] md:w-[auto]">
             <div className="w-full">
               <h2 className="content-heading mb-4 sm:mb-6">
-                <span className="block mobile-paragraph">Transform Your Real Estate Vision into Sales:The Ultimate 3D Visualization Partner for Real Estate Marketing & Sales.</span>
+                <span className="block mobile-paragraph">Transform Your Real Estate Vision into Sales: The Ultimate 3D Visualization Partner for Real Estate Marketing & Sales.</span>
               </h2>
               <div className="space-y-4">
                 <p className="text-on-black">
