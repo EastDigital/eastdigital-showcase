@@ -30,15 +30,15 @@ const RealEstate = () => {
           <div className="container mx-auto px-4 sm:px-0 md:px-8 w-[100%] md:w-[100%]">
             <div className="w-full">
               <h2 className="content-heading mb-4 sm:mb-6">
-                <span className="block mobile-paragraph">Visualize Your Vision:</span>
-                <span className="text-primary">High-Impact 3D Solutions</span> for Real Estate Marketing & Sales.
+                <span className="block mobile-paragraph">Transform Your Real Estate Vision into Sales:</span>
+                <span className="text-primary">The Ultimate 3D Visualization Partner </span> for Real Estate Marketing & Sales.
               </h2>
               <div className="space-y-4">
                 <p className="text-on-black">
-                  For real estate marketing leaders seeking to capture buyer imagination and accelerate sales, our cutting-edge 3D visualization services provide the ultimate advantage.
+                  In a competitive real estate market, seeing is selling. East Digital, a premier 3D rendering and walkthrough studio based in Lucknow, India, empowers real estate businesses to captivate buyers, accelerate sales, and launch projects with unparalleled visual impact.
                 </p>
                 <p className="text-on-black">
-                  From pre-selling properties to securing stakeholder buy-in, we create <strong className="text-primary font-semibold">immersive experiences</strong> that bring your developments to life.
+                  We craft photorealistic 3D still renders and immersive walkthrough videos that don't just showcase properties <strong className="text-primary font-semibold">—they sell a lifestyle.</strong>
                 </p>
               </div>
             </div>
