@@ -37,7 +37,7 @@ const RealEstate = () => {
                   In a competitive real estate market, seeing is selling. East Digital, a premier 3D rendering and walkthrough studio based in Lucknow, India, empowers real estate businesses to captivate buyers, accelerate sales, and launch projects with unparalleled visual impact.
                 </p>
                 <p className="text-on-black">
-                  We craft photorealistic 3D still renders and immersive walkthrough videos that don't just showcase properties <strong> —they sell a lifestyle.</strong>
+                  We craft photorealistic 3D still renders and immersive walkthrough videos that don't just showcase properties <strong>—they sell a lifestyle.</strong>
                 </p>
               </div>
             </div>
