@@ -26,7 +26,7 @@ const RealEstate = () => {
 
         {/* Description Section */}
         <section className="mobile-section sm:py-16">
-          <div className="container ml-[10px] pl-[10px] text-left mx-auto px-4 sm:px-0 md:px-8 w-[auto] md:w-[auto]">
+          <div className="container text-left ml-[10px] sm:ml-0 mx-auto px-4 sm:px-0 md:px-8 w-[auto] md:w-[auto]">
             <div className="w-full">
               <h2 className="content-heading mb-4 sm:mb-6">
                 <span className="block mobile-paragraph">Transform Your Real Estate Vision into Sales: The Ultimate 3D Visualization Partner for Real Estate Marketing & Sales.</span>
