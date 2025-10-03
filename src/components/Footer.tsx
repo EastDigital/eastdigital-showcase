@@ -106,7 +106,7 @@ const Footer = () => {
               
               <div className="flex items-center gap-4">
                 <a 
-                  href="tel:+919910568689" 
+                  href="tel:+919005550773" 
                   className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full text-foreground bg-background/15 backdrop-blur border border-transparent font-semibold transition-all duration-300 cta-border group"
                 >
                   <svg className="w-5 h-5 text-foreground/70 group-hover:text-foreground transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -114,7 +114,7 @@ const Footer = () => {
                   </svg>
                   <div className="flex flex-col text-left relative z-10">
                     <span className="text-sm font-normal">Call Now</span>
-                    <span className="text-base font-bold">+91 99105 68689</span>
+                    <span className="text-base font-bold">+91 9005 550773</span>
                   </div>
                 </a>
               </div>
