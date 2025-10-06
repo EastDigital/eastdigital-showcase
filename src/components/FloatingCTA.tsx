@@ -122,7 +122,7 @@ const FloatingCTA = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 onTouchStart={handleTouch}
-                href="https://wa.me/919910568689"
+                href="https://wa.me/919005550773"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden"
@@ -145,7 +145,7 @@ const FloatingCTA = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 onTouchStart={handleTouch}
-                href="tel:+919910568689"
+                href="tel:+919005550773"
                 className="group relative overflow-hidden"
               >
                 <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-black border border-[#FF6900] shadow-lg hover:shadow-xl hover:bg-[#FF6900]/5 active:bg-[#FF6900]/10 transition-all duration-200 min-w-[150px] backdrop-blur-sm">
