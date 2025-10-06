@@ -59,7 +59,7 @@ const Index = () => {
             "image": "https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg",
             "logo": "https://www.eastdigital.in/img/logo-east-digital-white.png",
             "url": "https://eastdigital.in/",
-            "telephone": "+91-99105 68689",
+            "telephone": "+91-9005 550773",
             "email": "business@eastdigital.in",
             "address": {
               "@type": "PostalAddress",
