@@ -6,7 +6,7 @@ interface PageBannerProps {
 }
 
 const PageBanner = ({ title, backgroundImage }: PageBannerProps) => {
-  return <section className="relative py-12 sm:py-16 lg:py-20 flex items-end min-h-[40vh] sm:min-h-[45vh]">
+  return <section className="relative py-6 sm:py-8 lg:py-10 flex items-end min-h-[20vh] sm:min-h-[22vh]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={backgroundImage} alt={`${title} Background`} className="w-full h-full object-cover" loading="lazy" onError={e => {
