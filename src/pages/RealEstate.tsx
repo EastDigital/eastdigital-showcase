@@ -10,7 +10,7 @@ const RealEstate = () => {
   const services = [{
     title: "3D Walkthrough Video",
     category: "3D Walkthrough Video",
-    image: "https://eastdigital.in/img/omaxe_rm_001.jpg",
+    image: "https://eastdigital.in/img/vid_thumb_walkthrough.mp4",
     link: "/expertise/real-estate/3d-walkthrough-video"
   }, {
     title: "3D Still Renderings",
