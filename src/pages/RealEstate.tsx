@@ -27,7 +27,7 @@ const RealEstate = () => {
         {/* Description Section */}
         <section className="mobile-section sm:py-8">
           <div className="">
-            <div className="container mx-auto px-1 sm:px-0 md:px-8 w-[auto] md:w-[auto]">
+            <div className="container mx-auto px-0 sm:px-0 md:px-8 w-[auto] md:w-[auto]">
               <h2 className="content-heading mb-4 sm:mb-6">
                 <span className="block mobile-paragraph">Transform Your Real Estate Vision into Sales: The Ultimate 3D Visualization Partner for Real Estate Marketing & Sales.</span>
               </h2>
@@ -42,7 +42,7 @@ const RealEstate = () => {
 
         {/* Services Grid */}
         <section className="mobile-section sm:py-20 lg:py-5 bg-gradient-to-br from-background via-background to-muted/20">
-          <div className="container mx-auto px-1 sm:px-0 md:px-8">
+          <div className="container mx-auto px-0 sm:px-0 md:px-8">
             <div className="text-left sm:text-left mb-8 sm:mb-16">
               <h2 className="mobile-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-4 sm:mb-6 text-4xl">
                 Our Services
