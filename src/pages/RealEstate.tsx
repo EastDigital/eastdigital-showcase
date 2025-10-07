@@ -25,7 +25,7 @@ const RealEstate = () => {
         <PageBanner title="Real Estate" backgroundImage="https://eastdigital.in/img/about-east-digital.jpg" />
 
         {/* Description Section */}
-        <section className="mobile-section sm:py-16">
+        <section className="mobile-section sm:py-8">
           <div className="">
             <div className="md:px-8 w-[auto] md:w-[auto]">
               <h2 className="content-heading mb-4 sm:mb-6">
