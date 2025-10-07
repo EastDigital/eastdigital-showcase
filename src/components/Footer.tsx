@@ -143,6 +143,7 @@ const Footer = () => {
                 <a href="/projects" className="text-foreground hover:text-accent transition-colors py-2">Projects</a>
                 <a href="/about" className="text-foreground hover:text-accent transition-colors py-2">About</a>
                 <a href="/contact" className="text-foreground hover:text-accent transition-colors py-2">Connect</a>
+                <a href="https://eastdigital.in/blog/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors py-2">Blog</a>
                 <a href="#" className="text-foreground hover:text-accent transition-colors py-2">Career</a>
                 <a href="/faq" className="text-foreground hover:text-accent transition-colors py-2">FAQ</a>
               </div>
