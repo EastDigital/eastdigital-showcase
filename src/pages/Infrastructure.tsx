@@ -26,7 +26,7 @@ const Infrastructure = () => {
 
         {/* Description Section */}
         <section className="mobile-section sm:py-16">
-          <div className="container mx-auto px-4 sm:px-0 md:px-8">
+          <div className="container mx-auto px-1 sm:px-0 md:px-8">
             <div className="w-full">
               <h2 className="content-heading mb-4 sm:mb-6">
                 <span className="block mobile-paragraph">Build the Future:</span>
