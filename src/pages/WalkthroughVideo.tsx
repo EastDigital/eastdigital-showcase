@@ -39,7 +39,7 @@ const WalkthroughVideo = () => {
               {/* Dynamic Project Gallery */}
         <ShortcodeRenderer content="[gallery-3d-walkthrough-video]" />
               
-              <div className="bg-card border rounded-lg p-8">
+              <div className="bg-card border rounded-lg p-8 px-0">
                 <h2 className="text-xl font-bold text-foreground mb-4">
                   What is a 3D Walkthrough Video?
                 </h2>
