@@ -12,3 +12,11 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://eastdigital.in/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+
+# Crawl delay for polite crawling
+Crawl-delay: 1

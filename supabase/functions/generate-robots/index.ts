@@ -10,7 +10,7 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const baseUrl = 'https://eastdigital.com' // Replace with your actual domain
+    const baseUrl = 'https://eastdigital.in'
     
     const robotsContent = `User-agent: Googlebot
 Allow: /

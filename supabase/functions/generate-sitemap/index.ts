@@ -79,7 +79,7 @@ Deno.serve(async (req) => {
     }
 
     // Generate XML sitemap
-    const baseUrl = 'https://eastdigital.com' // Replace with your actual domain
+    const baseUrl = 'https://eastdigital.in'
     
     const xmlSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
