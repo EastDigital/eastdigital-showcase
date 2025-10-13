@@ -54,16 +54,23 @@ const Index = () => {
       <Helmet>
         <title>3D Rendering & Architectural Visualization Services in Lucknow | East Digital</title>
         <meta name="description" content="Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today." />
+        <meta name="keywords" content="3D visualization, architectural rendering, real estate rendering, 3D walkthrough, engineering visualization, product rendering" />
+        <meta name="author" content="East Digital" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://eastdigital.in/" />
         
         {/* Open Graph */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="3D Rendering & Architectural Visualization Services in Lucknow | East Digital" />
         <meta property="og:description" content="Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today." />
         <meta property="og:image" content="https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://eastdigital.in/" />
-        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="East Digital" />
         
         {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="3D Rendering & Architectural Visualization Services in Lucknow | East Digital" />
         <meta name="twitter:description" content="Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today." />
         <meta name="twitter:image" content="https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg" />
@@ -84,7 +91,7 @@ const Index = () => {
             "image": "https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg",
             "logo": "https://www.eastdigital.in/img/logo-east-digital-white.png",
             "url": "https://eastdigital.in/",
-            "telephone": "+91-9005 550773",
+            "telephone": "+91-9005550773",
             "email": "business@eastdigital.in",
             "address": {
               "@type": "PostalAddress",
@@ -96,16 +103,40 @@ const Index = () => {
             },
             "areaServed": {
               "@type": "Place",
-              "name": "Lucknow"
+              "name": "Lucknow, India"
             },
             "openingHours": "Mo-Sa 10:00-18:00",
-            "description": "Bring your projects to life with photorealistic 3D rendering and architectural walkthroughs. East Digital is Lucknow's leading visualization studio for real estate, architecture, and engineering leaders. Get a quote today.",
+            "description": "East Digital is a 3D rendering and 3D walkthrough studio in Lucknow, specializing in photorealistic visualizations for real estate, engineering, and design.",
             "sameAs": [
               "https://www.linkedin.com/company/east-digital-india",
               "https://www.facebook.com/EastDigitalIndia",
               "https://www.instagram.com/eastdigitalindia",
-              "https://www.youtube.com/@EastDigitalIndia"
+              "https://www.youtube.com/@EastDigitalIndia",
+              "https://www.behance.net/eastdigital"
             ]
+          })
+        }}
+      />
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "East Digital Agency Showreel",
+            "description": "A short showreel showcasing East Digital's 3D rendering, architectural walkthroughs, and visualization work for real estate and design clients.",
+            "thumbnailUrl": "https://eastdigital.in/img/projects/3d-river-villas/3d-visualization-river-villas_01.jpg",
+            "uploadDate": "2025-09-15",
+            "contentUrl": "https://www.eastdigital.in/img/hero_video_folio.mp4",
+            "embedUrl": "https://eastdigital.in/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "East Digital",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.eastdigital.in/img/logo-east-digital-white.png"
+              }
+            }
           })
         }}
       />
