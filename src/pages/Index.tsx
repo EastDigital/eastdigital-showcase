@@ -11,6 +11,7 @@ import FAQSchema from '@/components/FAQSchema';
 
 // Lazy load components that are below the fold
 const AboutSection = lazy(() => import('@/components/AboutSection'));
+const ClientCarousel = lazy(() => import('@/components/ClientCarousel'));
 const ProjectGallery = lazy(() => import('@/components/ProjectGallery'));
 
 const homeFAQs = [
@@ -146,6 +147,9 @@ const Index = () => {
           <HeroSection />
           <Suspense fallback={<div className="h-32 bg-background animate-pulse" />}>
             <AboutSection />
+          </Suspense>
+          <Suspense fallback={<div className="h-24 bg-background animate-pulse" />}>
+            <ClientCarousel />
           </Suspense>
           <Suspense fallback={<div className="h-64 bg-background animate-pulse" />}>
             <ProjectGallery />
