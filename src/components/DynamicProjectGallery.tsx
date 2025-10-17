@@ -87,14 +87,14 @@ const DynamicProjectGallery: React.FC<DynamicProjectGalleryProps> = ({
 
   return (
     <section className="py-20">
-      <div className="container mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="container mx-auto px-0 sm:px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {projects.map((project) => (
             <Link 
               key={project.id}
               to={generateProjectUrl(project)}
               onClick={() => triggerHapticFeedback(HapticPatterns.TAP)}
-              className="group relative overflow-hidden rounded-xl border-2 border-border/50 shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 block bg-card"
+              className="group relative overflow-hidden rounded-none sm:rounded-xl border-2 border-border/50 shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 block bg-card"
             >
               <div className="aspect-[4/3] relative overflow-hidden">
                 <img 
