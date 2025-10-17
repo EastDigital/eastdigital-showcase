@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { triggerHapticFeedback, HapticPatterns } from '@/lib/haptics';
 
 interface Project {
   id: number;
@@ -87,26 +88,42 @@ const DynamicProjectGallery: React.FC<DynamicProjectGalleryProps> = ({
   return (
     <section className="py-20">
       <div className="container mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <Link 
               key={project.id}
               to={generateProjectUrl(project)}
-              className="relative group overflow-hidden rounded-lg bg-card border block"
+              onClick={() => triggerHapticFeedback(HapticPatterns.TAP)}
+              className="group relative overflow-hidden rounded-xl border-2 border-border/50 shadow-md hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 block bg-card"
             >
-              <div className="aspect-video relative">
+              <div className="aspect-[4/3] relative overflow-hidden">
                 <img 
                   src={project.cover_image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 will-change-transform" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 will-change-transform" 
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://via.placeholder.com/640x360/f0f0f0/666666?text=Image+Not+Available';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-gray-300 font-medium">{project.title}</span>
+                {/* Permanent gradient for title visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                
+                {/* Enhanced gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Always-visible title at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
+                    {project.title}
+                  </h3>
+                </div>
+                
+                {/* Category badge at top-right */}
+                <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20">
+                  <span className="text-xs text-white font-medium">
+                    {project.subcategory}
+                  </span>
                 </div>
               </div>
             </Link>

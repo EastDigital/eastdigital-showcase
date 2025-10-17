@@ -5,6 +5,7 @@ import PageBanner from '@/components/PageBanner';
 import FloatingCTA from '@/components/FloatingCTA';
 import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/useSEO';
+import { triggerHapticFeedback, HapticPatterns } from '@/lib/haptics';
 const RealEstate = () => {
   useSEO("real-estate");
   const services = [{
@@ -54,7 +55,7 @@ const RealEstate = () => {
             
             {/* Single column layout for mobile, grid for larger screens */}
             <div className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-12 lg:space-y-0 max-w-6xl mx-auto">
-              {services.map((service, index) => <Link key={index} to={service.link} className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-card to-card/50 border-2 border-border/20 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm touch-manipulation block min-h-[200px] sm:min-h-[280px]">
+              {services.map((service, index) => <Link key={index} to={service.link} onClick={() => triggerHapticFeedback(HapticPatterns.TAP)} className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-card to-card/50 border-2 border-border/20 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm touch-manipulation block min-h-[200px] sm:min-h-[280px]">
                   <div className="aspect-[16/9] sm:aspect-[16/10] relative overflow-hidden">
                     {service.image.endsWith('.mp4') || service.image.endsWith('.webm') || service.image.endsWith('.mov') ? <video src={service.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" autoPlay muted loop playsInline /> : <img src={service.image} alt={`${service.title} - Real Estate 3D Visualization`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />}
                     <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
